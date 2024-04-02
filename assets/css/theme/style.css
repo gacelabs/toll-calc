@@ -1035,3 +1035,11 @@ input:checked+.slider:before {
 .m-pointer {
   cursor: pointer;
 }
+
+li::marker {
+  font-weight: bold !important;
+}
+
+.hide {
+  display: none !important;
+}
