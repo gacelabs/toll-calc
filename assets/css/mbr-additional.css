@@ -1621,7 +1621,7 @@ a {
 .cid-u8GynFlsgK {
   padding-top: 6rem;
   padding-bottom: 6rem;
-  background-color: transparent;
+  background-color: transparent !important;
 }
 .cid-u8GynFlsgK .mbr-fallback-image.disabled {
   display: none;
