@@ -1005,11 +1005,11 @@ blockquote {
 }
 
 input:checked+.slider {
-  background-color: #fe7a2a;
+  background-color: #174ea6;
 }
 
 input:focus+.slider {
-  box-shadow: 0 0 1px #fe7a2a;
+  box-shadow: 0 0 1px #174ea6;
 }
 
 input:checked+.slider:before {
