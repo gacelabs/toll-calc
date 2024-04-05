@@ -24,6 +24,8 @@
 		<link rel="stylesheet" href="assets/css/bootstrap/bootstrap.min.css" />
 		<link rel="stylesheet" href="assets/css/bootstrap/bootstrap-grid.min.css" />
 		<link rel="stylesheet" href="assets/css/bootstrap/bootstrap-reboot.min.css" />
+		<link rel="stylesheet" href="assets/css/autocomplete/autocomplete-ui.min.css" />
+		<link rel="stylesheet" href="assets/css/autocomplete/autocomplete-ui.structure.min.css" />
 		<link rel="stylesheet" href="assets/css/dropdown/style.css" />
 		<link rel="stylesheet" href="assets/css/socicon/styles.css" />
 		<link rel="stylesheet" href="assets/css/theme/style.css" />
@@ -88,19 +90,19 @@
 					<div class="col-lg-8 mx-auto mbr-form">
 						<form action="/" method="POST" class="mbr-form form-with-styler" data-form-title="Form Name">
 							<div class="dragArea row">
-								<div class="col-md col-sm-12 form-group mb-3">
+								<div class="col-md col-sm-12 form-group mb-3" style="position: relative;">
 									<div class="text-white text-center display-7">
 										<strong class="m-pointer" data-for="im_form">I'm from</strong>
 									</div>
-									<input type="text" name="im_form" placeholder="Where are you now?" data-form-field="im_form" class="form-control text-center" value="" id="im_form">
+									<input type="text" name="im_form" placeholder="Where are you now?" data-form-field="im_form" class="form-control cities-input text-center" value="" id="im_form">
 								</div>
-								<div class="col-md col-sm-12 form-group mb-3">
+								<div class="col-md col-sm-12 form-group mb-3" style="position: relative;">
 									<div class="text-white text-center display-7">
 										<strong class="m-pointer" data-for="going_to">Going to</strong>
 									</div>
-									<input type="email" name="going_to" placeholder="And you're going to?" data-form-field="going_to" class="form-control text-center" value="" id="going_to">
+									<input type="email" name="going_to" placeholder="And you're going to?" data-form-field="going_to" class="form-control cities-input text-center" value="" id="going_to">
 								</div>
-								<div class="col-lg-12 col-md-12 col-sm-12 align-center">
+								<!-- <div class="col-lg-12 col-md-12 col-sm-12 align-center">
 									<div class="text-white display-7">
 										<strong class="m-pointer" data-for="nlex">NLEX-SCTEX</strong>
 										<label class="switch" for="nlex">
@@ -135,7 +137,7 @@
 											<input type="radio" id="skywaystage3" name="hw-type" value="skywaystage3"><span class="slider round"></span>
 										</label>
 									</div>
-								</div>
+								</div> -->
 								<div class="col-lg-12 col-md-12 col-sm-12 align-center mbr-section-btn">
 									<button type="submit" class="btn btn-primary display-7">Show Results</button>
 								</div>
@@ -384,7 +386,12 @@
 		<script src="assets/js/masonry/masonry.pkgd.min.js"></script>
 		<script src="assets/js/imagesloaded/imagesloaded.pkgd.min.js"></script>
 		<script src="assets/js/theme/script.js"></script>
+		<!-- <script src="assets/js/autocomplete/autocomplete-ui.min.js"></script> -->
+		<!-- <script src="assets/js/autocomplete/autocomplete-bootstrap.js"></script> -->
+		<script src="assets/js/autocomplete/autoinput.js"></script>
 		<script src="assets/js/formoid/formoid.min.js"></script>
+		<script src="assets/js/theme/fetch-tables.js"></script>
+		<script src="assets/js/theme/jsonQ.js"></script>
 		<script src="assets/js/theme/default.js"></script>
 	</body>
 </html>

@@ -1,0 +1,503 @@
+{
+    "class_1": [
+        {
+            "entry": "La Paz",
+            "tolls": [
+                { "exit": "Victoria", "fee": 30 },
+                { "exit": "Gerona", "fee": 58 },
+                { "exit": "Paniqui", "fee": 79 },
+                { "exit": "Moncada", "fee": 99 },
+                { "exit": "Carmen", "fee": 164 },
+                { "exit": "Urdaneta", "fee": 216 },
+                { "exit": "Binalonan", "fee": 235 },
+                { "exit": "Pozorrubio", "fee": 270 },
+                { "exit": "Sison", "fee": 290 },
+                { "exit": "Rosario", "fee": 311 }
+            ]
+        },
+        {
+            "entry": "Victoria",
+            "tolls": [
+                { "exit": "La Paz", "fee": 30 },
+                { "exit": "Gerona", "fee": 28 },
+                { "exit": "Paniqui", "fee": 49 },
+                { "exit": "Moncada", "fee": 69 },
+                { "exit": "Carmen", "fee": 134 },
+                { "exit": "Urdaneta", "fee": 186 },
+                { "exit": "Binalonan", "fee": 205 },
+                { "exit": "Pozorrubio", "fee": 240 },
+                { "exit": "Sison", "fee": 260 },
+                { "exit": "Rosario", "fee": 281 }
+            ]
+        },
+        {
+            "entry": "Gerona",
+            "tolls": [
+                { "exit": "La Paz", "fee": 58 },
+                { "exit": "Victoria", "fee": 28 },
+                { "exit": "Paniqui", "fee": 21 },
+                { "exit": "Moncada", "fee": 41 },
+                { "exit": "Carmen", "fee": 106 },
+                { "exit": "Urdaneta", "fee": 158 },
+                { "exit": "Binalonan", "fee": 177 },
+                { "exit": "Pozorrubio", "fee": 212 },
+                { "exit": "Sison", "fee": 232 },
+                { "exit": "Rosario", "fee": 253 }
+            ]
+        },
+        {
+            "entry": "Paniqui",
+            "tolls": [
+                { "exit": "La Paz", "fee": 79 },
+                { "exit": "Victoria", "fee": 49 },
+                { "exit": "Gerona", "fee": 21 },
+                { "exit": "Moncada", "fee": 20 },
+                { "exit": "Carmen", "fee": 85 },
+                { "exit": "Urdaneta", "fee": 137 },
+                { "exit": "Binalonan", "fee": 156 },
+                { "exit": "Pozorrubio", "fee": 191 },
+                { "exit": "Sison", "fee": 212 },
+                { "exit": "Rosario", "fee": 232 }
+            ]
+        },
+        {
+            "entry": "Moncada",
+            "tolls": [
+                { "exit": "La Paz", "fee": 99 },
+                { "exit": "Victoria", "fee": 69 },
+                { "exit": "Gerona", "fee": 41 },
+                { "exit": "Paniqui", "fee": 20 },
+                { "exit": "Carmen", "fee": 65 },
+                { "exit": "Urdaneta", "fee": 117 },
+                { "exit": "Binalonan", "fee": 136 },
+                { "exit": "Pozorrubio", "fee": 171 },
+                { "exit": "Sison", "fee": 192 },
+                { "exit": "Rosario", "fee": 212 }
+            ]
+        },
+        {
+            "entry": "Carmen",
+            "tolls": [
+                { "exit": "La Paz", "fee": 164 },
+                { "exit": "Victoria", "fee": 134 },
+                { "exit": "Gerona", "fee": 106 },
+                { "exit": "Paniqui", "fee": 85 },
+                { "exit": "Moncada", "fee": 65 },
+                { "exit": "Urdaneta", "fee": 52 },
+                { "exit": "Binalonan", "fee": 71 },
+                { "exit": "Pozorrubio", "fee": 106 },
+                { "exit": "Sison", "fee": 127 },
+                { "exit": "Rosario", "fee": 147 }
+            ]
+        },
+        {
+            "entry": "Urdaneta",
+            "tolls": [
+                { "exit": "La Paz", "fee": 216 },
+                { "exit": "Victoria", "fee": 186 },
+                { "exit": "Gerona", "fee": 158 },
+                { "exit": "Paniqui", "fee": 137 },
+                { "exit": "Moncada", "fee": 117 },
+                { "exit": "Carmen", "fee": 52 },
+                { "exit": "Binalonan", "fee": 19 },
+                { "exit": "Pozorrubio", "fee": 54 },
+                { "exit": "Sison", "fee": 75 },
+                { "exit": "Rosario", "fee": 95 }
+            ]
+        },
+        {
+            "entry": "Binalonan",
+            "tolls": [
+                { "exit": "La Paz", "fee": 235 },
+                { "exit": "Victoria", "fee": 205 },
+                { "exit": "Gerona", "fee": 177 },
+                { "exit": "Paniqui", "fee": 156 },
+                { "exit": "Moncada", "fee": 136 },
+                { "exit": "Carmen", "fee": 71 },
+                { "exit": "Urdaneta", "fee": 19 },
+                { "exit": "Pozorrubio", "fee": 35 },
+                { "exit": "Sison", "fee": 56 },
+                { "exit": "Rosario", "fee": 76 }
+            ]
+        },
+        {
+            "entry": "Pozorrubio",
+            "tolls": [
+                { "exit": "La Paz", "fee": 270 },
+                { "exit": "Victoria", "fee": 240 },
+                { "exit": "Gerona", "fee": 212 },
+                { "exit": "Paniqui", "fee": 191 },
+                { "exit": "Moncada", "fee": 171 },
+                { "exit": "Carmen", "fee": 106 },
+                { "exit": "Urdaneta", "fee": 54 },
+                { "exit": "Binalonan", "fee": 35 },
+                { "exit": "Sison", "fee": 21 },
+                { "exit": "Rosario", "fee": 41 }
+            ]
+        },
+        {
+            "entry": "Sison",
+            "tolls": [
+                { "exit": "La Paz", "fee": 290 },
+                { "exit": "Victoria", "fee": 260 },
+                { "exit": "Gerona", "fee": 232 },
+                { "exit": "Paniqui", "fee": 212 },
+                { "exit": "Moncada", "fee": 192 },
+                { "exit": "Carmen", "fee": 127 },
+                { "exit": "Urdaneta", "fee": 75 },
+                { "exit": "Binalonan", "fee": 56 },
+                { "exit": "Pozorrubio", "fee": 21 },
+                { "exit": "Rosario", "fee": 21 }
+            ]
+        },
+        {
+            "entry": "Rosario",
+            "tolls": [
+                { "exit": "La Paz", "fee": 311 },
+                { "exit": "Victoria", "fee": 281 },
+                { "exit": "Gerona", "fee": 253 },
+                { "exit": "Paniqui", "fee": 232 },
+                { "exit": "Moncada", "fee": 212 },
+                { "exit": "Carmen", "fee": 147 },
+                { "exit": "Urdaneta", "fee": 95 },
+                { "exit": "Binalonan", "fee": 76 },
+                { "exit": "Pozorrubio", "fee": 41 },
+                { "exit": "Sison", "fee": 21 }
+            ]
+        }
+    ],
+    "class_2": [
+        {
+            "entry": "La Paz",
+            "tolls": [
+                { "exit": "Victoria", "fee": 76 },
+                { "exit": "Gerona", "fee": 145 },
+                { "exit": "Paniqui", "fee": 197 },
+                { "exit": "Moncada", "fee": 247 },
+                { "exit": "Carmen", "fee": 410 },
+                { "exit": "Urdaneta", "fee": 540 },
+                { "exit": "Binalonan", "fee": 587 },
+                { "exit": "Pozorrubio", "fee": 675 },
+                { "exit": "Sison", "fee": 726 },
+                { "exit": "Rosario", "fee": 778 }
+            ]
+        },
+        {
+            "entry": "Victoria",
+            "tolls": [
+                { "exit": "La Paz", "fee": 76 },
+                { "exit": "Gerona", "fee": 70 },
+                { "exit": "Paniqui", "fee": 122 },
+                { "exit": "Moncada", "fee": 171 },
+                { "exit": "Carmen", "fee": 334 },
+                { "exit": "Urdaneta", "fee": 464 },
+                { "exit": "Binalonan", "fee": 511 },
+                { "exit": "Pozorrubio", "fee": 599 },
+                { "exit": "Sison", "fee": 651 },
+                { "exit": "Rosario", "fee": 702 }
+            ]
+        },
+        {
+            "entry": "Gerona",
+            "tolls": [
+                { "exit": "La Paz", "fee": 145 },
+                { "exit": "Victoria", "fee": 70 },
+                { "exit": "Paniqui", "fee": 52 },
+                { "exit": "Moncada", "fee": 102 },
+                { "exit": "Carmen", "fee": 264 },
+                { "exit": "Urdaneta", "fee": 394 },
+                { "exit": "Binalonan", "fee": 441 },
+                { "exit": "Pozorrubio", "fee": 530 },
+                { "exit": "Sison", "fee": 581 },
+                { "exit": "Rosario", "fee": 632 }
+            ]
+        },
+        {
+            "entry": "Paniqui",
+            "tolls": [
+                { "exit": "La Paz", "fee": 197 },
+                { "exit": "Victoria", "fee": 122 },
+                { "exit": "Gerona", "fee": 52 },
+                { "exit": "Moncada", "fee": 50 },
+                { "exit": "Carmen", "fee": 213 },
+                { "exit": "Urdaneta", "fee": 343 },
+                { "exit": "Binalonan", "fee": 390 },
+                { "exit": "Pozorrubio", "fee": 478 },
+                { "exit": "Sison", "fee": 529 },
+                { "exit": "Rosario", "fee": 581 }
+            ]
+        },
+        {
+            "entry": "Moncada",
+            "tolls": [
+                { "exit": "La Paz", "fee": 247 },
+                { "exit": "Victoria", "fee": 171 },
+                { "exit": "Gerona", "fee": 102 },
+                { "exit": "Paniqui", "fee": 50 },
+                { "exit": "Carmen", "fee": 163 },
+                { "exit": "Urdaneta", "fee": 293 },
+                { "exit": "Binalonan", "fee": 340 },
+                { "exit": "Pozorrubio", "fee": 428 },
+                { "exit": "Sison", "fee": 479 },
+                { "exit": "Rosario", "fee": 531 }
+            ]
+        },
+        {
+            "entry": "Carmen",
+            "tolls": [
+                { "exit": "La Paz", "fee": 410 },
+                { "exit": "Victoria", "fee": 334 },
+                { "exit": "Gerona", "fee": 264 },
+                { "exit": "Paniqui", "fee": 213 },
+                { "exit": "Moncada", "fee": 163 },
+                { "exit": "Urdaneta", "fee": 130 },
+                { "exit": "Binalonan", "fee": 177 },
+                { "exit": "Pozorrubio", "fee": 265 },
+                { "exit": "Sison", "fee": 316 },
+                { "exit": "Rosario", "fee": 368 }
+            ]
+        },
+        {
+            "entry": "Urdaneta",
+            "tolls": [
+                { "exit": "La Paz", "fee": 540 },
+                { "exit": "Victoria", "fee": 464 },
+                { "exit": "Gerona", "fee": 394 },
+                { "exit": "Paniqui", "fee": 343 },
+                { "exit": "Moncada", "fee": 293 },
+                { "exit": "Carmen", "fee": 130 },
+                { "exit": "Binalonan", "fee": 47 },
+                { "exit": "Pozorrubio", "fee": 135 },
+                { "exit": "Sison", "fee": 186 },
+                { "exit": "Rosario", "fee": 238 }
+            ]
+        },
+        {
+            "entry": "Binalonan",
+            "tolls": [
+                { "exit": "La Paz", "fee": 587 },
+                { "exit": "Victoria", "fee": 511 },
+                { "exit": "Gerona", "fee": 441 },
+                { "exit": "Paniqui", "fee": 390 },
+                { "exit": "Moncada", "fee": 340 },
+                { "exit": "Carmen", "fee": 177 },
+                { "exit": "Urdaneta", "fee": 47 },
+                { "exit": "Pozorrubio", "fee": 88 },
+                { "exit": "Sison", "fee": 139 },
+                { "exit": "Rosario", "fee": 191 }
+            ]
+        },
+        {
+            "entry": "Pozorrubio",
+            "tolls": [
+                { "exit": "La Paz", "fee": 675 },
+                { "exit": "Victoria", "fee": 599 },
+                { "exit": "Gerona", "fee": 530 },
+                { "exit": "Paniqui", "fee": 478 },
+                { "exit": "Moncada", "fee": 428 },
+                { "exit": "Carmen", "fee": 265 },
+                { "exit": "Urdaneta", "fee": 135 },
+                { "exit": "Binalonan", "fee": 88 },
+                { "exit": "Sison", "fee": 139 },
+                { "exit": "Rosario", "fee": 191 }
+            ]
+        },
+        {
+            "entry": "Sison",
+            "tolls": [
+                { "exit": "La Paz", "fee": 726 },
+                { "exit": "Victoria", "fee": 651 },
+                { "exit": "Gerona", "fee": 581 },
+                { "exit": "Paniqui", "fee": 529 },
+                { "exit": "Moncada", "fee": 479 },
+                { "exit": "Carmen", "fee": 316 },
+                { "exit": "Urdaneta", "fee": 186 },
+                { "exit": "Binalonan", "fee": 139 },
+                { "exit": "Pozorrubio", "fee": 51 },
+                { "exit": "Rosario", "fee": 103 }
+            ]
+        },
+        {
+            "entry": "Rosario",
+            "tolls": [
+                { "exit": "La Paz", "fee": 778 },
+                { "exit": "Victoria", "fee": 702 },
+                { "exit": "Gerona", "fee": 632 },
+                { "exit": "Paniqui", "fee": 581 },
+                { "exit": "Moncada", "fee": 531 },
+                { "exit": "Carmen", "fee": 368 },
+                { "exit": "Urdaneta", "fee": 238 },
+                { "exit": "Binalonan", "fee": 191 },
+                { "exit": "Pozorrubio", "fee": 103 },
+                { "exit": "Sison", "fee": 52 }
+            ]
+        }
+    ],
+    "class_3": [
+        {
+            "entry": "La Paz",
+            "tolls": [
+                { "exit": "Victoria", "fee": 91 },
+                { "exit": "Gerona", "fee": 175 },
+                { "exit": "Paniqui", "fee": 237 },
+                { "exit": "Moncada", "fee": 396 },
+                { "exit": "Carmen", "fee": 492 },
+                { "exit": "Urdaneta", "fee": 648 },
+                { "exit": "Binalonan", "fee": 704 },
+                { "exit": "Pozorrubio", "fee": 810 },
+                { "exit": "Sison", "fee": 871 },
+                { "exit": "Rosario", "fee": 933 }
+            ]
+        },
+        {
+            "entry": "Victoria",
+            "tolls": [
+                { "exit": "La Paz", "fee": 91 },
+                { "exit": "Gerona", "fee": 84 },
+                { "exit": "Paniqui", "fee": 146 },
+                { "exit": "Moncada", "fee": 206 },
+                { "exit": "Carmen", "fee": 401 },
+                { "exit": "Urdaneta", "fee": 557 },
+                { "exit": "Binalonan", "fee": 614 },
+                { "exit": "Pozorrubio", "fee": 719 },
+                { "exit": "Sison", "fee": 781 },
+                { "exit": "Rosario", "fee": 843 }
+            ]
+        },
+        {
+            "entry": "Gerona",
+            "tolls": [
+                { "exit": "La Paz", "fee": 175 },
+                { "exit": "Victoria", "fee": 84 },
+                { "exit": "Paniqui", "fee": 62 },
+                { "exit": "Moncada", "fee": 122 },
+                { "exit": "Carmen", "fee": 317 },
+                { "exit": "Urdaneta", "fee": 473 },
+                { "exit": "Binalonan", "fee": 530 },
+                { "exit": "Pozorrubio", "fee": 635 },
+                { "exit": "Sison", "fee": 697 },
+                { "exit": "Rosario", "fee": 759 }
+            ]
+        },
+        {
+            "entry": "Paniqui",
+            "tolls": [
+                { "exit": "La Paz", "fee": 237 },
+                { "exit": "Victoria", "fee": 146 },
+                { "exit": "Gerona", "fee": 62 },
+                { "exit": "Moncada", "fee": 60 },
+                { "exit": "Carmen", "fee": 255 },
+                { "exit": "Urdaneta", "fee": 411 },
+                { "exit": "Binalonan", "fee": 468 },
+                { "exit": "Pozorrubio", "fee": 573 },
+                { "exit": "Sison", "fee": 635 },
+                { "exit": "Rosario", "fee": 697 }
+            ]
+        },
+        {
+            "entry": "Moncada",
+            "tolls": [
+                { "exit": "La Paz", "fee": 396 },
+                { "exit": "Victoria", "fee": 206 },
+                { "exit": "Gerona", "fee": 122 },
+                { "exit": "Paniqui", "fee": 60 },
+                { "exit": "Carmen", "fee": 195 },
+                { "exit": "Urdaneta", "fee": 351 },
+                { "exit": "Binalonan", "fee": 408 },
+                { "exit": "Pozorrubio", "fee": 514 },
+                { "exit": "Sison", "fee": 575 },
+                { "exit": "Rosario", "fee": 637 }
+            ]
+        },
+        {
+            "entry": "Carmen",
+            "tolls": [
+                { "exit": "La Paz", "fee": 492 },
+                { "exit": "Victoria", "fee": 401 },
+                { "exit": "Gerona", "fee": 317 },
+                { "exit": "Paniqui", "fee": 255 },
+                { "exit": "Moncada", "fee": 195 },
+                { "exit": "Urdaneta", "fee": 156 },
+                { "exit": "Binalonan", "fee": 213 },
+                { "exit": "Pozorrubio", "fee": 318 },
+                { "exit": "Sison", "fee": 380 },
+                { "exit": "Rosario", "fee": 442 }
+            ]
+        },
+        {
+            "entry": "Urdaneta",
+            "tolls": [
+                { "exit": "La Paz", "fee": 648 },
+                { "exit": "Victoria", "fee": 557 },
+                { "exit": "Gerona", "fee": 473 },
+                { "exit": "Paniqui", "fee": 411 },
+                { "exit": "Moncada", "fee": 351 },
+                { "exit": "Carmen", "fee": 156 },
+                { "exit": "Binalonan", "fee": 57 },
+                { "exit": "Pozorrubio", "fee": 162 },
+                { "exit": "Sison", "fee": 224 },
+                { "exit": "Rosario", "fee": 286 }
+            ]
+        },
+        {
+            "entry": "Binalonan",
+            "tolls": [
+                { "exit": "La Paz", "fee": 704 },
+                { "exit": "Victoria", "fee": 614 },
+                { "exit": "Gerona", "fee": 530 },
+                { "exit": "Paniqui", "fee": 468 },
+                { "exit": "Moncada", "fee": 408 },
+                { "exit": "Carmen", "fee": 213 },
+                { "exit": "Urdaneta", "fee": 57 },
+                { "exit": "Pozorrubio", "fee": 106 },
+                { "exit": "Sison", "fee": 167 },
+                { "exit": "Rosario", "fee": 229 }
+            ]
+        },
+        {
+            "entry": "Pozorrubio",
+            "tolls": [
+                { "exit": "La Paz", "fee": 810 },
+                { "exit": "Victoria", "fee": 719 },
+                { "exit": "Gerona", "fee": 635 },
+                { "exit": "Paniqui", "fee": 573 },
+                { "exit": "Moncada", "fee": 514 },
+                { "exit": "Carmen", "fee": 318 },
+                { "exit": "Urdaneta", "fee": 162 },
+                { "exit": "Binalonan", "fee": 106 },
+                { "exit": "Sison", "fee": 62 },
+                { "exit": "Rosario", "fee": 124 }
+            ]
+        },
+        {
+            "entry": "Sison",
+            "tolls": [
+                { "exit": "La Paz", "fee": 871 },
+                { "exit": "Victoria", "fee": 781 },
+                { "exit": "Gerona", "fee": 697 },
+                { "exit": "Paniqui", "fee": 635 },
+                { "exit": "Moncada", "fee": 575 },
+                { "exit": "Carmen", "fee": 380 },
+                { "exit": "Urdaneta", "fee": 224 },
+                { "exit": "Binalonan", "fee": 167 },
+                { "exit": "Pozorrubio", "fee": 62 },
+                { "exit": "Rosario", "fee": 62 }
+            ]
+        },
+        {
+            "entry": "Rosario",
+            "tolls": [
+                { "exit": "La Paz", "fee": 933 },
+                { "exit": "Victoria", "fee": 843 },
+                { "exit": "Gerona", "fee": 759 },
+                { "exit": "Paniqui", "fee": 697 },
+                { "exit": "Moncada", "fee": 637 },
+                { "exit": "Carmen", "fee": 442 },
+                { "exit": "Urdaneta", "fee": 286 },
+                { "exit": "Binalonan", "fee": 229 },
+                { "exit": "Pozorrubio", "fee": 124 },
+                { "exit": "Sison", "fee": 62 }
+            ]
+        }
+    ]
+}

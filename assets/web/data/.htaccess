@@ -1,0 +1,7 @@
+# .htaccess in the specific folder you want to restrict access to
+# Deny access to the folder for non-AJAX requests
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+    RewriteCond %{HTTP:X-Requested-With} !XMLHttpRequest
+    RewriteRule .* - [F,L]
+</IfModule>

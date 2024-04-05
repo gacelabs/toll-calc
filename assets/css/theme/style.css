@@ -1043,3 +1043,59 @@ li::marker {
 .hide {
   display: none !important;
 }
+.autocomplete {
+  /* The container must be positioned relative: */
+  position: relative;
+  display: inline-block;
+}
+
+input {
+  border: 1px solid transparent;
+  background-color: #f1f1f1;
+  padding: 10px;
+  font-size: 16px;
+}
+
+input[type=text] {
+  background-color: #f1f1f1;
+  width: 100%;
+}
+
+input[type=submit] {
+  background-color: DodgerBlue;
+  color: #fff;
+}
+
+.autocomplete-items {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  /* Position the autocomplete items to be the same width as the container: */
+  top: 100%;
+  left: 0;
+  right: 0;
+  max-height: 200px;
+  /* Set maximum height for the autocomplete items */
+  overflow-y: auto;
+  /* Enable vertical scrolling when needed */
+}
+
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff;
+  border-bottom: 1px solid #d4d4d4;
+}
+
+.autocomplete-items div:hover {
+  /* When hovering an item: */
+  background-color: #e9e9e9;
+}
+
+.autocomplete-active {
+  /* When navigating through the items using the arrow keys: */
+  background-color: DodgerBlue !important;
+  color: #ffffff;
+}
