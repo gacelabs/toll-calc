@@ -69,7 +69,6 @@ var runSearchData = function () {
 			autocomplete(elem, result, 'name');
 		});
 	});
-	clearInterval(i);
 }
 
 var renderPage = function (page, parent) {
