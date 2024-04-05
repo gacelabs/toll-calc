@@ -79,9 +79,9 @@ class JSONQuery {
 		}
 	}
 
-	executeQuery(query) {
-		const { select, where } = query;
-		let result = this.data;
+	execute(query, format) {
+		var { select, where } = query;
+		var result = this.data;
 
 		if (select) {
 			result = this.select(select.fields);
@@ -89,6 +89,45 @@ class JSONQuery {
 
 		if (where) {
 			result = this.where(where.condition);
+		}
+
+		if (format != undefined) {
+			var oldResult = result;
+			result = [];
+			oldResult.forEach(function (item, i) {
+				if (Array.isArray(format.expressions) && Object.keys(format.expressions).length) {
+					if (Array.isArray(format.modify)) {
+						format.modify.forEach(function (field) {
+							if (item[field] != undefined) {
+								format.expressions.forEach(function (object) {
+									for (var expression in object) {
+										// console.log(object, expression);
+										switch (expression) {
+											case 'concat':
+												var obj = {};
+												Object.keys(oldResult[0]).forEach(function (column) {
+													if (column !== field && item[column] != undefined) {
+														obj[column] = item[column];
+													}
+												});
+												obj[field] = item[field];
+												object[expression].forEach(extraField => {
+													obj[field] += (item[extraField] != undefined) ? item[extraField] : extraField;
+												});	
+												result.push(obj);
+											break;
+										}
+									}
+								});
+							}
+						});
+					}
+				}
+			});
+
+			if (result.length == 0) {
+				result = oldResult;
+			}
 		}
 
 		return result;

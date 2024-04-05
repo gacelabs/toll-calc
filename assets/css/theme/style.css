@@ -1074,12 +1074,13 @@ input[type=submit] {
   z-index: 99;
   /* Position the autocomplete items to be the same width as the container: */
   top: 100%;
-  left: 0;
+  left: 10%;
   right: 0;
   max-height: 200px;
   /* Set maximum height for the autocomplete items */
   overflow-y: auto;
   /* Enable vertical scrolling when needed */
+  max-width: 80%;
 }
 
 .autocomplete-items div {

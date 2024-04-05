@@ -1,5 +1,4 @@
 function autocomplete(inp, arr, index) {
-	index = index == undefined ? 'name' : index;
 	/*the autocomplete function takes two arguments,
 	the text field element and an array of possible autocompleted values:*/
 	var currentFocus;
@@ -16,17 +15,23 @@ function autocomplete(inp, arr, index) {
 		a.setAttribute("class", "autocomplete-items justify-content-center");
 		/*append the DIV element as a child of the autocomplete container:*/
 		this.parentNode.appendChild(a);
+
+		var index = index == undefined ? 'name' : index;
+		
 		/*for each item in the array...*/
-		for (i = 0; i < arr.length; i++) {
+		arr.forEach(function (matchValue) {
+			// console.log(matchValue);
+			matchValue = matchValue[index];
 			/*check if the item starts with the same letters as the text field value:*/
-			if (arr[i][index].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+			if (matchValue.substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+				// console.log(matchValue);
 				/*create a DIV element for each matching element:*/
 				b = document.createElement("DIV");
 				/*make the matching letters bold:*/
-				b.innerHTML = "<strong>" + arr[i][index].substr(0, val.length) + "</strong>";
-				b.innerHTML += arr[i][index].substr(val.length);
+				b.innerHTML = "<strong>" + matchValue.substr(0, val.length) + "</strong>";
+				b.innerHTML += matchValue.substr(val.length);
 				/*insert a input field that will hold the current array item's value:*/
-				b.innerHTML += "<input type='hidden' value='" + arr[i][index] + "'>";
+				b.innerHTML += "<input type='hidden' value='" + matchValue.trim() + "'>";
 				/*execute a function when someone clicks on the item value (DIV element):*/
 				b.addEventListener("click", function (e) {
 					/*insert the value for the autocomplete text field:*/
@@ -37,7 +42,7 @@ function autocomplete(inp, arr, index) {
 				});
 				a.appendChild(b);
 			}
-		}
+		});
 	});
 	/*execute a function presses a key on the keyboard:*/
 	inp.addEventListener("keydown", function (e) {
@@ -68,17 +73,25 @@ function autocomplete(inp, arr, index) {
 		/*a function to classify an item as "active":*/
 		if (!x) return false;
 		/*start by removing the "active" class on all items:*/
-		removeActive(x);
 		if (currentFocus >= x.length) currentFocus = 0;
 		if (currentFocus < 0) currentFocus = (x.length - 1);
-		/*add class "autocomplete-active":*/
-		x[currentFocus].classList.add("autocomplete-active");
-	}
-	function removeActive(x) {
-		/*a function to remove the "active" class from all autocomplete items:*/
-		for (var i = 0; i < x.length; i++) {
-			x[i].classList.remove("autocomplete-active");
+
+		if (!isNaN(currentFocus)) {
+			removeActive(x, function (activeUI) {
+				/*add class "autocomplete-active":*/
+				activeUI[currentFocus].classList.add("autocomplete-active");
+				scrollToItem(activeUI);
+			});
 		}
+		
+	}
+	function removeActive(activeUI, fn) {
+		/*a function to remove the "active" class from all autocomplete items:*/
+		var x = document.getElementsByClassName("autocomplete-items");
+		for (var i = 0; i < x[0].children.length; i++) {
+			x[0].children[i].classList.remove("autocomplete-active");
+		}
+		fn(activeUI);
 	}
 	function closeAllLists(elmnt) {
 		/*close all autocomplete lists in the document,
@@ -87,6 +100,22 @@ function autocomplete(inp, arr, index) {
 		for (var i = 0; i < x.length; i++) {
 			if (elmnt != x[i] && elmnt != inp) {
 				x[i].parentNode.removeChild(x[i]);
+			}
+		}
+	}
+	function scrollToItem(x) {
+		if (x && x[currentFocus]) {
+			var item = x[currentFocus];
+			var container = document.getElementById(inp.id + "autocomplete-list");
+			var itemHeight = item.offsetHeight;
+			var containerScrollTop = container.scrollTop;
+			var containerHeight = container.offsetHeight - 100;
+			var itemTop = item.offsetTop - container.offsetTop;
+
+			if (itemTop < containerScrollTop) {
+				container.scrollTop = itemTop;
+			} else if (itemTop + itemHeight > containerScrollTop + containerHeight) {
+				container.scrollTop = itemTop + itemHeight - containerHeight;
 			}
 		}
 	}

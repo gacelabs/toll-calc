@@ -33,29 +33,44 @@ $(document).ready(function() {
 
 	$(window).trigger('resize');
 
-	console.log(Object.keys(dataObject).length, dataObject);
+	// console.log(Object.keys(dataObject).length, dataObject);
+	if (Object.keys(dataObject).length == 0) {
+		/* make a loader to wait for instanciation of the table datas when localStorage has no data */
+		var i = setInterval(() => {
+			if (Object.keys(dataObject).length > 0) {
+				runSearchData();
+				clearInterval(i);
+			}
+		}, 3);
+	} else {
+		runSearchData();
+	}
+	
+});
 
-	/* $('.cities-input').autoComplete({
-		resolverSettings: {
-			url: 'assets/web/data/cities.json'
-		}
-	}); */
-
-	var jsonQuery = new JSONQuery(dataObject['cities']);
+var runSearchData = function () {
+	var jsonCities = new JSONQuery(dataObject['cities']);
 	$('.cities-input').each(function (i, elem) {
 		// console.log(i, elem);
 		$(elem).on('input', function (e) {
 			// console.log(e.target.value);
 			var query = {
 				select: { fields: '*' },
-				where: { condition: { field: 'name', operator: 'LIKE', value: '%'+e.target.value+'%' } }
+				where: { condition: { field: 'name', operator: 'LIKE', value: e.target.value + '%' } }
 			};
-			var result = jsonQuery.executeQuery(query);
+			// console.log(query);
+			var result = jsonCities.execute(query, {
+				'modify': ['name'],
+				'expressions': [
+					{ 'concat': [', ', 'province'] }
+				]
+			});
 			// console.log(result);
 			autocomplete(elem, result, 'name');
 		});
-	})
-});
+	});
+	clearInterval(i);
+}
 
 var renderPage = function (page, parent) {
 	var options = {
