@@ -21,15 +21,20 @@ class JSONQuery {
 		}
 	}
 
-	where(condition) {
-		if (!condition) {
+	where(conditions) {
+		if (!conditions) {
 			return this.data;
 		} else {
 			const filteredData = [];
 			this.data.forEach(item => {
-				if (this.evaluateCondition(item, condition)) {
-					filteredData.push(item);
-				}
+				conditions.forEach(condition => {
+					// console.log(condition);
+					if (this.evaluateCondition(item, condition)) {
+						if (filteredData.includes(item) == false) {
+							filteredData.push(item);
+						}
+					}
+				});
 			});
 			return filteredData;
 		}
@@ -62,6 +67,7 @@ class JSONQuery {
 			case "like":
 				if (typeof needed === 'string') {
 					const pattern = new RegExp('^' + value.replace(/%/g, '.*') + '$');
+					// console.log(pattern, needed);
 					return pattern.test(needed);
 				} else {
 					return false;

@@ -1,5 +1,155 @@
 {
-	"class_1": [],
-	"class_2": [],
-	"class_3": []
+	"class_1": [
+		{
+            "entry": "Silang Interchange",
+            "tolls": [
+                { "exit": "Silang East", "fee": 17 },
+                { "exit": "Santa Rosa-Tagaytay", "fee": 45 },
+                { "exit": "Laguna Boulevard", "fee": 51 },
+                { "exit": "Technopark", "fee": 66 },
+                { "exit": "Greenfield", "fee": 81 }
+            ]
+        },
+		{
+            "entry": "Silang East",
+            "tolls": [
+                { "exit": "Silang Interchange", "fee": 17 },
+                { "exit": "Santa Rosa-Tagaytay", "fee": 27 },
+                { "exit": "Laguna Boulevard", "fee": 33 },
+                { "exit": "Technopark", "fee": 48 },
+                { "exit": "Greenfield", "fee": 64 }
+            ]
+        },
+		{
+            "entry": "Santa Rosa-Tagaytay",
+            "tolls": [
+                { "exit": "Silang Interchange", "fee": 45 },
+                { "exit": "Silang East", "fee": 27 },
+                { "exit": "Laguna Boulevard", "fee": 14 },
+                { "exit": "Technopark", "fee": 29 },
+                { "exit": "Greenfield", "fee": 44 }
+            ]
+        },
+		{
+            "entry": "Laguna Boulevard",
+            "tolls": [
+                { "exit": "Silang Interchange", "fee": 51 },
+                { "exit": "Silang East", "fee": 33 },
+                { "exit": "Santa Rosa-Tagaytay", "fee": 14 },
+                { "exit": "Technopark", "fee": 15 },
+                { "exit": "Greenfield", "fee": 30 }
+            ]
+        },
+		{
+            "entry": "Greenfield",
+            "tolls": [
+                { "exit": "Silang Interchange", "fee": 81 },
+                { "exit": "Silang East", "fee": 64 },
+                { "exit": "Santa Rosa-Tagaytay", "fee": 44 },
+                { "exit": "Laguna Boulevard", "fee": 30 }
+            ]
+        }
+	],
+	"class_2": [
+		{
+            "entry": "Silang Interchange",
+            "tolls": [
+                { "exit": "Silang East", "fee": 35 },
+                { "exit": "Santa Rosa-Tagaytay", "fee": 90 },
+                { "exit": "Laguna Boulevard", "fee": 102 },
+                { "exit": "Technopark", "fee": 132 },
+                { "exit": "Greenfield", "fee": 163 }
+            ]
+        },
+		{
+            "entry": "Silang East",
+            "tolls": [
+                { "exit": "Silang Interchange", "fee": 35 },
+                { "exit": "Santa Rosa-Tagaytay", "fee": 55 },
+                { "exit": "Laguna Boulevard", "fee": 67 },
+                { "exit": "Technopark", "fee": 97 },
+                { "exit": "Greenfield", "fee": 128 }
+            ]
+        },
+		{
+            "entry": "Santa Rosa-Tagaytay",
+            "tolls": [
+                { "exit": "Silang Interchange", "fee": 90 },
+                { "exit": "Silang East", "fee": 55 },
+                { "exit": "Laguna Boulevard", "fee": 29 },
+                { "exit": "Technopark", "fee": 59 },
+                { "exit": "Greenfield", "fee": 89 }
+            ]
+        },
+		{
+            "entry": "Laguna Boulevard",
+            "tolls": [
+                { "exit": "Silang Interchange", "fee": 102 },
+                { "exit": "Silang East", "fee": 67 },
+                { "exit": "Santa Rosa-Tagaytay", "fee": 29 },
+                { "exit": "Technopark", "fee": 30 },
+                { "exit": "Greenfield", "fee": 60 }
+            ]
+        },
+		{
+            "entry": "Greenfield",
+            "tolls": [
+                { "exit": "Silang Interchange", "fee": 163 },
+                { "exit": "Silang East", "fee": 128 },
+                { "exit": "Santa Rosa-Tagaytay", "fee": 89 },
+                { "exit": "Laguna Boulevard", "fee": 60 }
+            ]
+        }
+	],
+	"class_3": [
+		{
+            "entry": "Silang Interchange",
+            "tolls": [
+                { "exit": "Silang East", "fee": 52 },
+                { "exit": "Santa Rosa-Tagaytay", "fee": 136 },
+                { "exit": "Laguna Boulevard", "fee": 153 },
+                { "exit": "Technopark", "fee": 199 },
+                { "exit": "Greenfield", "fee": 244 }
+            ]
+        },
+		{
+            "entry": "Silang East",
+            "tolls": [
+                { "exit": "Silang Interchange", "fee": 52 },
+                { "exit": "Santa Rosa-Tagaytay", "fee": 83 },
+                { "exit": "Laguna Boulevard", "fee": 100 },
+                { "exit": "Technopark", "fee": 146 },
+                { "exit": "Greenfield", "fee": 192 }
+            ]
+        },
+		{
+            "entry": "Santa Rosa-Tagaytay",
+            "tolls": [
+                { "exit": "Silang Interchange", "fee": 136 },
+                { "exit": "Silang East", "fee": 83 },
+                { "exit": "Laguna Boulevard", "fee": 43 },
+                { "exit": "Technopark", "fee": 89 },
+                { "exit": "Greenfield", "fee": 134 }
+            ]
+        },
+		{
+            "entry": "Laguna Boulevard",
+            "tolls": [
+                { "exit": "Silang Interchange", "fee": 153 },
+                { "exit": "Silang East", "fee": 100 },
+                { "exit": "Santa Rosa-Tagaytay", "fee": 43 },
+                { "exit": "Technopark", "fee": 45 },
+                { "exit": "Greenfield", "fee": 91 }
+            ]
+        },
+		{
+            "entry": "Greenfield",
+            "tolls": [
+                { "exit": "Silang Interchange", "fee": 244 },
+                { "exit": "Silang East", "fee": 192 },
+                { "exit": "Santa Rosa-Tagaytay", "fee": 134 },
+                { "exit": "Laguna Boulevard", "fee": 91 }
+            ]
+        }
+	]
 }

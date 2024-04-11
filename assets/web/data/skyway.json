@@ -1,5 +1,1175 @@
 {
-	"class_1": [],
-	"class_2": [],
-	"class_3": []
+	"class_1": [
+        {
+            "entry": "Skyway",
+            "tolls": [
+                { "exit": "Merville", "fee": 0 },
+                { "exit": "Bicutan", "fee": 72 },
+                { "exit": "Sucat", "fee": 118 },
+                { "exit": "Alabang", "fee": 164 },
+                { "exit": "Filinvest", "fee": 169 },
+                { "exit": "MCX", "fee": 201 },
+                { "exit": "Susana Heights", "fee": 182 },
+                { "exit": "San Pedro", "fee": 188 },
+                { "exit": "Southwoods", "fee": 202 },
+                { "exit": "Carmona", "fee": 208 },
+                { "exit": "Mamplasan", "fee": 218 },
+                { "exit": "Sta. Rosa", "fee": 227 },
+                { "exit": "ABI/Greenfield", "fee": 239 },
+                { "exit": "Cabuyao", "fee": 247 },
+                { "exit": "Silangan", "fee": 252 },
+                { "exit": "Calamba", "fee": 270 },
+                { "exit": "Sto. Tomas", "fee": 0 }
+            ]
+        },
+        {
+            "entry": "Magallanes",
+            "tolls": [
+                { "exit": "Merville", "fee": 49 },
+                { "exit": "Bicutan", "fee": 49 },
+                { "exit": "Sucat", "fee": 84 },
+                { "exit": "Alabang", "fee": 118 },
+                { "exit": "Filinvest", "fee": 123 },
+                { "exit": "MCX", "fee": 155 },
+                { "exit": "Susana Heights", "fee": 136 },
+                { "exit": "San Pedro", "fee": 142 },
+                { "exit": "Southwoods", "fee": 156 },
+                { "exit": "Carmona", "fee": 162 },
+                { "exit": "Mamplasan", "fee": 172 },
+                { "exit": "Sta. Rosa", "fee": 181 },
+                { "exit": "ABI/Greenfield", "fee": 193 },
+                { "exit": "Cabuyao", "fee": 201 },
+                { "exit": "Silangan", "fee": 206 },
+                { "exit": "Calamba", "fee": 224 },
+                { "exit": "Sto. Tomas", "fee": 0 }
+            ]
+        },
+        {
+            "entry": "C5",
+            "tolls": [
+                { "exit": "Merville", "fee": 0 },
+                { "exit": "Bicutan", "fee": 49 },
+                { "exit": "Sucat", "fee": 84 },
+                { "exit": "Alabang", "fee": 118 },
+                { "exit": "Filinvest", "fee": 123 },
+                { "exit": "MCX", "fee": 155 },
+                { "exit": "Susana Heights", "fee": 136 },
+                { "exit": "San Pedro", "fee": 142 },
+                { "exit": "Southwoods", "fee": 156 },
+                { "exit": "Carmona", "fee": 162 },
+                { "exit": "Mamplasan", "fee": 172 },
+                { "exit": "Sta. Rosa", "fee": 181 },
+                { "exit": "ABI/Greenfield", "fee": 193 },
+                { "exit": "Cabuyao", "fee": 201 },
+                { "exit": "Silangan", "fee": 206 },
+                { "exit": "Calamba", "fee": 224 },
+                { "exit": "Sto. Tomas", "fee": 0 }
+            ]
+        },
+        {
+            "entry": "Bicutan",
+            "tolls": [
+                { "exit": "Merville", "fee": 0 },
+                { "exit": "Sucat", "fee": 34 },
+                { "exit": "Alabang", "fee": 69 },
+                { "exit": "Filinvest", "fee": 74 },
+                { "exit": "MCX", "fee": 106 },
+                { "exit": "Susana Heights", "fee": 87 },
+                { "exit": "San Pedro", "fee": 93 },
+                { "exit": "Southwoods", "fee": 107 },
+                { "exit": "Carmona", "fee": 113 },
+                { "exit": "Mamplasan", "fee": 123 },
+                { "exit": "Sta. Rosa", "fee": 132 },
+                { "exit": "ABI/Greenfield", "fee": 144 },
+                { "exit": "Cabuyao", "fee": 152 },
+                { "exit": "Silangan", "fee": 157 },
+                { "exit": "Calamba", "fee": 175 },
+                { "exit": "Sto. Tomas", "fee": 0 }
+            ]
+        },
+        {
+            "entry": "Sucat",
+            "tolls": [
+                { "exit": "Merville", "fee": 0 },
+                { "exit": "Bicutan", "fee": 34 },
+                { "exit": "Alabang", "fee": 34 },
+                { "exit": "Filinvest", "fee": 39 },
+                { "exit": "MCX", "fee": 71 },
+                { "exit": "Susana Heights", "fee": 52 },
+                { "exit": "San Pedro", "fee": 58 },
+                { "exit": "Southwoods", "fee": 72 },
+                { "exit": "Carmona", "fee": 78 },
+                { "exit": "Mamplasan", "fee": 88 },
+                { "exit": "Sta. Rosa", "fee": 97 },
+                { "exit": "ABI/Greenfield", "fee": 109 },
+                { "exit": "Cabuyao", "fee": 117 },
+                { "exit": "Silangan", "fee": 122 },
+                { "exit": "Calamba", "fee": 140 },
+                { "exit": "Sto. Tomas", "fee": 0 }
+            ]
+        },
+        {
+            "entry": "Alabang",
+            "tolls": [
+                { "exit": "Merville", "fee": 0 },
+                { "exit": "Bicutan", "fee": 69 },
+                { "exit": "Sucat", "fee": 34 },
+                { "exit": "Filinvest", "fee": 5 },
+                { "exit": "MCX", "fee": 37 },
+                { "exit": "Susana Heights", "fee": 18 },
+                { "exit": "San Pedro", "fee": 24 },
+                { "exit": "Southwoods", "fee": 38 },
+                { "exit": "Carmona", "fee": 44 },
+                { "exit": "Mamplasan", "fee": 54 },
+                { "exit": "Sta. Rosa", "fee": 63 },
+                { "exit": "ABI/Greenfield", "fee": 75 },
+                { "exit": "Cabuyao", "fee": 83 },
+                { "exit": "Silangan", "fee": 88 },
+                { "exit": "Calamba", "fee": 106 },
+                { "exit": "Sto. Tomas", "fee": 0 }
+            ]
+        },{
+            "entry": "Filinvest",
+            "tolls": [
+                { "exit": "Merville", "fee": 0 },
+                { "exit": "Bicutan", "fee": 74 },
+                { "exit": "Sucat", "fee": 39 },
+                { "exit": "Alabang", "fee": 5 },
+                { "exit": "MCX", "fee": 32 },
+                { "exit": "Susana Heights", "fee": 13 },
+                { "exit": "San Pedro", "fee": 19 },
+                { "exit": "Southwoods", "fee": 34 },
+                { "exit": "Carmona", "fee": 39 },
+                { "exit": "Mamplasan", "fee": 49 },
+                { "exit": "Sta. Rosa", "fee": 58 },
+                { "exit": "ABI/Greenfield", "fee": 70 },
+                { "exit": "Cabuyao", "fee": 78 },
+                { "exit": "Silangan", "fee": 84 },
+                { "exit": "Calamba", "fee": 101 },
+                { "exit": "Sto. Tomas", "fee": 0 }
+            ]
+        },{
+            "entry": "MCX",
+            "tolls": [
+                { "exit": "Merville", "fee": 0 },
+                { "exit": "Bicutan", "fee": 106 },
+                { "exit": "Sucat", "fee": 71 },
+                { "exit": "Alabang", "fee": 37 },
+                { "exit": "Filinvest", "fee": 32 },
+                { "exit": "Susana Heights", "fee": 19 },
+                { "exit": "San Pedro", "fee": 25 },
+                { "exit": "Southwoods", "fee": 40 },
+                { "exit": "Carmona", "fee": 45 },
+                { "exit": "Mamplasan", "fee": 55 },
+                { "exit": "Sta. Rosa", "fee": 64 },
+                { "exit": "ABI/Greenfield", "fee": 76 },
+                { "exit": "Cabuyao", "fee": 84 },
+                { "exit": "Silangan", "fee": 90 },
+                { "exit": "Calamba", "fee": 107 },
+                { "exit": "Sto. Tomas", "fee": 0 }
+            ]
+        },{
+            "entry": "Susana Heights",
+            "tolls": [
+                { "exit": "Merville", "fee": 0 },
+                { "exit": "Bicutan", "fee": 87 },
+                { "exit": "Sucat", "fee": 52 },
+                { "exit": "Alabang", "fee": 18 },
+                { "exit": "Filinvest", "fee": 13 },
+                { "exit": "MCX", "fee": 19 },
+                { "exit": "San Pedro", "fee": 6 },
+                { "exit": "Southwoods", "fee": 21 },
+                { "exit": "Carmona", "fee": 26 },
+                { "exit": "Mamplasan", "fee": 36 },
+                { "exit": "Sta. Rosa", "fee": 45 },
+                { "exit": "ABI/Greenfield", "fee": 57 },
+                { "exit": "Cabuyao", "fee": 65 },
+                { "exit": "Silangan", "fee": 71 },
+                { "exit": "Calamba", "fee": 88 },
+                { "exit": "Sto. Tomas", "fee": 0 }
+            ]
+        },{
+            "entry": "San Pedro",
+            "tolls": [
+                { "exit": "Merville", "fee": 0 },
+                { "exit": "Bicutan", "fee": 87 },
+                { "exit": "Sucat", "fee": 52 },
+                { "exit": "Alabang", "fee": 18 },
+                { "exit": "Filinvest", "fee": 13 },
+                { "exit": "MCX", "fee": 19 },
+                { "exit": "Susana Heights", "fee": 6 },
+                { "exit": "Southwoods", "fee": 15 },
+                { "exit": "Carmona", "fee": 20 },
+                { "exit": "Mamplasan", "fee": 30 },
+                { "exit": "Sta. Rosa", "fee": 39 },
+                { "exit": "ABI/Greenfield", "fee": 51 },
+                { "exit": "Cabuyao", "fee": 59 },
+                { "exit": "Silangan", "fee": 65 },
+                { "exit": "Calamba", "fee": 82 },
+                { "exit": "Sto. Tomas", "fee": 0 }
+            ]
+        },{
+            "entry": "Southwoods",
+            "tolls": [
+                { "exit": "Merville", "fee": 0 },
+                { "exit": "Bicutan", "fee": 107 },
+                { "exit": "Sucat", "fee": 72 },
+                { "exit": "Alabang", "fee": 38 },
+                { "exit": "Filinvest", "fee": 34 },
+                { "exit": "MCX", "fee": 40 },
+                { "exit": "Susana Heights", "fee": 21 },
+                { "exit": "San Pedro", "fee": 15 },
+                { "exit": "Carmona", "fee": 6 },
+                { "exit": "Mamplasan", "fee": 16 },
+                { "exit": "Sta. Rosa", "fee": 24 },
+                { "exit": "ABI/Greenfield", "fee": 37 },
+                { "exit": "Cabuyao", "fee": 45 },
+                { "exit": "Silangan", "fee": 50 },
+                { "exit": "Calamba", "fee": 68 },
+                { "exit": "Sto. Tomas", "fee": 0 }
+            ]
+        },{
+            "entry": "Carmona",
+            "tolls": [
+                { "exit": "Merville", "fee": 0 },
+                { "exit": "Bicutan", "fee": 113 },
+                { "exit": "Sucat", "fee": 78 },
+                { "exit": "Alabang", "fee": 44 },
+                { "exit": "Filinvest", "fee": 39 },
+                { "exit": "MCX", "fee": 45 },
+                { "exit": "Susana Heights", "fee": 26 },
+                { "exit": "San Pedro", "fee": 20 },
+                { "exit": "Southwoods", "fee": 6 },
+                { "exit": "Mamplasan", "fee": 10 },
+                { "exit": "Sta. Rosa", "fee": 19 },
+                { "exit": "ABI/Greenfield", "fee": 31 },
+                { "exit": "Cabuyao", "fee": 39 },
+                { "exit": "Silangan", "fee": 44 },
+                { "exit": "Calamba", "fee": 62 },
+                { "exit": "Sto. Tomas", "fee": 0 }
+            ]
+        },{
+            "entry": "Mamplasan",
+            "tolls": [
+                { "exit": "Merville", "fee": 0 },
+                { "exit": "Bicutan", "fee": 123 },
+                { "exit": "Sucat", "fee": 88 },
+                { "exit": "Alabang", "fee": 54 },
+                { "exit": "Filinvest", "fee": 49 },
+                { "exit": "MCX", "fee": 55 },
+                { "exit": "Susana Heights", "fee": 36 },
+                { "exit": "San Pedro", "fee": 30 },
+                { "exit": "Southwoods", "fee": 16 },
+                { "exit": "Carmona", "fee": 10 },
+                { "exit": "Sta. Rosa", "fee": 9 },
+                { "exit": "ABI/Greenfield", "fee": 21 },
+                { "exit": "Cabuyao", "fee": 29 },
+                { "exit": "Silangan", "fee": 35 },
+                { "exit": "Calamba", "fee": 52 },
+                { "exit": "Sto. Tomas", "fee": 0 }
+            ]
+        },{
+            "entry": "Sta. Rosa",
+            "tolls": [
+                { "exit": "Merville", "fee": 0 },
+                { "exit": "Bicutan", "fee": 132 },
+                { "exit": "Sucat", "fee": 97 },
+                { "exit": "Alabang", "fee": 63 },
+                { "exit": "Filinvest", "fee": 58 },
+                { "exit": "MCX", "fee": 64 },
+                { "exit": "Susana Heights", "fee": 45 },
+                { "exit": "San Pedro", "fee": 39 },
+                { "exit": "Southwoods", "fee": 24 },
+                { "exit": "Carmona", "fee": 19 },
+                { "exit": "Mamplasan", "fee": 9 },
+                { "exit": "ABI/Greenfield", "fee": 12 },
+                { "exit": "Cabuyao", "fee": 20 },
+                { "exit": "Silangan", "fee": 26 },
+                { "exit": "Calamba", "fee": 43 },
+                { "exit": "Sto. Tomas", "fee": 0 }
+            ]
+        },{
+            "entry": "ABI/Greenfield",
+            "tolls": [
+                { "exit": "Merville", "fee": 0 },
+                { "exit": "Bicutan", "fee": 144 },
+                { "exit": "Sucat", "fee": 109 },
+                { "exit": "Alabang", "fee": 75 },
+                { "exit": "Filinvest", "fee": 70 },
+                { "exit": "MCX", "fee": 76 },
+                { "exit": "Susana Heights", "fee": 57 },
+                { "exit": "San Pedro", "fee": 51 },
+                { "exit": "Southwoods", "fee": 37 },
+                { "exit": "Carmona", "fee": 31 },
+                { "exit": "Mamplasan", "fee": 21 },
+                { "exit": "Sta. Rosa", "fee": 12 },
+                { "exit": "Cabuyao", "fee": 8 },
+                { "exit": "Silangan", "fee": 13 },
+                { "exit": "Calamba", "fee": 31 },
+                { "exit": "Sto. Tomas", "fee": 0 }
+            ]
+        },{
+            "entry": "Cabuyao",
+            "tolls": [
+                { "exit": "Merville", "fee": 0 },
+                { "exit": "Bicutan", "fee": 152 },
+                { "exit": "Sucat", "fee": 117 },
+                { "exit": "Alabang", "fee": 83 },
+                { "exit": "Filinvest", "fee": 78 },
+                { "exit": "MCX", "fee": 84 },
+                { "exit": "Susana Heights", "fee": 65 },
+                { "exit": "San Pedro", "fee": 59 },
+                { "exit": "Southwoods", "fee": 45 },
+                { "exit": "Carmona", "fee": 39 },
+                { "exit": "Mamplasan", "fee": 29 },
+                { "exit": "Sta. Rosa", "fee": 20 },
+                { "exit": "ABI/Greenfield", "fee": 8 },
+                { "exit": "Silangan", "fee": 5 },
+                { "exit": "Calamba", "fee": 23 },
+                { "exit": "Sto. Tomas", "fee": 0 }
+            ]
+        },{
+            "entry": "Silangan",
+            "tolls": [
+                { "exit": "Merville", "fee": 0 },
+                { "exit": "Bicutan", "fee": 157 },
+                { "exit": "Sucat", "fee": 122 },
+                { "exit": "Alabang", "fee": 88 },
+                { "exit": "Filinvest", "fee": 84 },
+                { "exit": "MCX", "fee": 90 },
+                { "exit": "Susana Heights", "fee": 71 },
+                { "exit": "San Pedro", "fee": 65 },
+                { "exit": "Southwoods", "fee": 50 },
+                { "exit": "Carmona", "fee": 44 },
+                { "exit": "Mamplasan", "fee": 35 },
+                { "exit": "Sta. Rosa", "fee": 26 },
+                { "exit": "ABI/Greenfield", "fee": 13 },
+                { "exit": "Cabuyao", "fee": 5 },
+                { "exit": "Calamba", "fee": 18 },
+                { "exit": "Sto. Tomas", "fee": 0 }
+            ]
+        },{
+            "entry": "Calamba",
+            "tolls": [
+                { "exit": "Merville", "fee": 0 },
+                { "exit": "Bicutan", "fee": 175 },
+                { "exit": "Sucat", "fee": 140 },
+                { "exit": "Alabang", "fee": 106 },
+                { "exit": "Filinvest", "fee": 101 },
+                { "exit": "MCX", "fee": 107 },
+                { "exit": "Susana Heights", "fee": 88 },
+                { "exit": "San Pedro", "fee": 82 },
+                { "exit": "Southwoods", "fee": 68 },
+                { "exit": "Carmona", "fee": 62 },
+                { "exit": "Mamplasan", "fee": 52 },
+                { "exit": "Sta. Rosa", "fee": 43 },
+                { "exit": "ABI/Greenfield", "fee": 31 },
+                { "exit": "Cabuyao", "fee": 23 },
+                { "exit": "Silangan", "fee": 18 },
+                { "exit": "Sto. Tomas", "fee": 29 }
+            ]
+        },{
+            "entry": "Sto. Tomas",
+            "tolls": [
+                { "exit": "Merville", "fee": 0 },
+                { "exit": "Bicutan", "fee": 0 },
+                { "exit": "Sucat", "fee": 0 },
+                { "exit": "Alabang", "fee": 0 },
+                { "exit": "Filinvest", "fee": 0 },
+                { "exit": "MCX", "fee": 0 },
+                { "exit": "Susana Heights", "fee": 0 },
+                { "exit": "San Pedro", "fee": 0 },
+                { "exit": "Southwoods", "fee": 0 },
+                { "exit": "Carmona", "fee": 0 },
+                { "exit": "Mamplasan", "fee": 0 },
+                { "exit": "Sta. Rosa", "fee": 0 },
+                { "exit": "ABI/Greenfield", "fee": 0 },
+                { "exit": "Cabuyao", "fee": 0 },
+                { "exit": "Silangan", "fee": 0 },
+                { "exit": "Calamba", "fee": 29 }
+            ]
+        }
+	],
+	"class_2": [
+        {
+            "entry": "Skyway",
+            "tolls": [
+                { "exit": "Merville", "fee": 0 },
+                { "exit": "Bicutan", "fee": 145 },
+                { "exit": "Sucat", "fee": 237 },
+                { "exit": "Alabang", "fee": 329 },
+                { "exit": "Filinvest", "fee": 338 },
+                { "exit": "MCX", "fee": 403 },
+                { "exit": "Susana Heights", "fee": 364 },
+                { "exit": "San Pedro", "fee": 376 },
+                { "exit": "Southwoods", "fee": 405 },
+                { "exit": "Carmona", "fee": 417 },
+                { "exit": "Mamplasan", "fee": 437 },
+                { "exit": "Sta. Rosa", "fee": 454 },
+                { "exit": "ABI/Greenfield", "fee": 479 },
+                { "exit": "Cabuyao", "fee": 495 },
+                { "exit": "Silangan", "fee": 506 },
+                { "exit": "Calamba", "fee": 541 },
+                { "exit": "Sto. Tomas", "fee": 0 }
+            ]
+        },
+        {
+            "entry": "Magallanes",
+            "tolls": [
+                { "exit": "Merville", "fee": 98 },
+                { "exit": "Bicutan", "fee": 98 },
+                { "exit": "Sucat", "fee": 168 },
+                { "exit": "Alabang", "fee": 237 },
+                { "exit": "Filinvest", "fee": 246 },
+                { "exit": "MCX", "fee": 311 },
+                { "exit": "Susana Heights", "fee": 272 },
+                { "exit": "San Pedro", "fee": 284 },
+                { "exit": "Southwoods", "fee": 313 },
+                { "exit": "Carmona", "fee": 325 },
+                { "exit": "Mamplasan", "fee": 345 },
+                { "exit": "Sta. Rosa", "fee": 362 },
+                { "exit": "ABI/Greenfield", "fee": 387 },
+                { "exit": "Cabuyao", "fee": 403 },
+                { "exit": "Silangan", "fee": 414 },
+                { "exit": "Calamba", "fee": 449 },
+                { "exit": "Sto. Tomas", "fee": 0 }
+            ]
+        },
+        {
+            "entry": "C5",
+            "tolls": [
+                { "exit": "Merville", "fee": 0 },
+                { "exit": "Bicutan", "fee": 98 },
+                { "exit": "Sucat", "fee": 168 },
+                { "exit": "Alabang", "fee": 237 },
+                { "exit": "Filinvest", "fee": 246 },
+                { "exit": "MCX", "fee": 311 },
+                { "exit": "Susana Heights", "fee": 272 },
+                { "exit": "San Pedro", "fee": 284 },
+                { "exit": "Southwoods", "fee": 313 },
+                { "exit": "Carmona", "fee": 325 },
+                { "exit": "Mamplasan", "fee": 345 },
+                { "exit": "Sta. Rosa", "fee": 362 },
+                { "exit": "ABI/Greenfield", "fee": 387 },
+                { "exit": "Cabuyao", "fee": 403 },
+                { "exit": "Silangan", "fee": 414 },
+                { "exit": "Calamba", "fee": 449 },
+                { "exit": "Sto. Tomas", "fee": 0 }
+            ]
+        },
+        {
+            "entry": "Bicutan",
+            "tolls": [
+                { "exit": "Merville", "fee": 0 },
+                { "exit": "Sucat", "fee": 69 },
+                { "exit": "Alabang", "fee": 138 },
+                { "exit": "Filinvest", "fee": 147 },
+                { "exit": "MCX", "fee": 212 },
+                { "exit": "Susana Heights", "fee": 173 },
+                { "exit": "San Pedro", "fee": 185 },
+                { "exit": "Southwoods", "fee": 214 },
+                { "exit": "Carmona", "fee": 226 },
+                { "exit": "Mamplasan", "fee": 246 },
+                { "exit": "Sta. Rosa", "fee": 263 },
+                { "exit": "ABI/Greenfield", "fee": 288 },
+                { "exit": "Cabuyao", "fee": 304 },
+                { "exit": "Silangan", "fee": 315 },
+                { "exit": "Calamba", "fee": 350 },
+                { "exit": "Sto. Tomas", "fee": 0 }
+            ]
+        },
+        {
+            "entry": "Sucat",
+            "tolls": [
+                { "exit": "Merville", "fee": 0 },
+                { "exit": "Bicutan", "fee": 69 },
+                { "exit": "Alabang", "fee": 69 },
+                { "exit": "Filinvest", "fee": 78 },
+                { "exit": "MCX", "fee": 143 },
+                { "exit": "Susana Heights", "fee": 104 },
+                { "exit": "San Pedro", "fee": 116 },
+                { "exit": "Southwoods", "fee": 145 },
+                { "exit": "Carmona", "fee": 157 },
+                { "exit": "Mamplasan", "fee": 177 },
+                { "exit": "Sta. Rosa", "fee": 194 },
+                { "exit": "ABI/Greenfield", "fee": 219 },
+                { "exit": "Cabuyao", "fee": 235 },
+                { "exit": "Silangan", "fee": 246 },
+                { "exit": "Calamba", "fee": 281 },
+                { "exit": "Sto. Tomas", "fee": 0 }
+            ]
+        },
+        {
+            "entry": "Alabang",
+            "tolls": [
+                { "exit": "Merville", "fee": 0 },
+                { "exit": "Bicutan", "fee": 138 },
+                { "exit": "Sucat", "fee": 69 },
+                { "exit": "Filinvest", "fee": 9 },
+                { "exit": "MCX", "fee": 74 },
+                { "exit": "Susana Heights", "fee": 35 },
+                { "exit": "San Pedro", "fee": 47 },
+                { "exit": "Southwoods", "fee": 76 },
+                { "exit": "Carmona", "fee": 88 },
+                { "exit": "Mamplasan", "fee": 108 },
+                { "exit": "Sta. Rosa", "fee": 125 },
+                { "exit": "ABI/Greenfield", "fee": 150 },
+                { "exit": "Cabuyao", "fee": 166 },
+                { "exit": "Silangan", "fee": 177 },
+                { "exit": "Calamba", "fee": 212 },
+                { "exit": "Sto. Tomas", "fee": 0 }
+            ]
+        },{
+            "entry": "Filinvest",
+            "tolls": [
+                { "exit": "Merville", "fee": 0 },
+                { "exit": "Bicutan", "fee": 147 },
+                { "exit": "Sucat", "fee": 78 },
+                { "exit": "Alabang", "fee": 9 },
+                { "exit": "MCX", "fee": 65 },
+                { "exit": "Susana Heights", "fee": 26 },
+                { "exit": "San Pedro", "fee": 38 },
+                { "exit": "Southwoods", "fee": 67 },
+                { "exit": "Carmona", "fee": 79 },
+                { "exit": "Mamplasan", "fee": 98 },
+                { "exit": "Sta. Rosa", "fee": 116 },
+                { "exit": "ABI/Greenfield", "fee": 141 },
+                { "exit": "Cabuyao", "fee": 157 },
+                { "exit": "Silangan", "fee": 168 },
+                { "exit": "Calamba", "fee": 203 },
+                { "exit": "Sto. Tomas", "fee": 0 }
+            ]
+        },{
+            "entry": "MCX",
+            "tolls": [
+                { "exit": "Merville", "fee": 0 },
+                { "exit": "Bicutan", "fee": 212 },
+                { "exit": "Sucat", "fee": 143 },
+                { "exit": "Alabang", "fee": 74 },
+                { "exit": "Filinvest", "fee": 65 },
+                { "exit": "Susana Heights", "fee": 39 },
+                { "exit": "San Pedro", "fee": 51 },
+                { "exit": "Southwoods", "fee": 80 },
+                { "exit": "Carmona", "fee": 92 },
+                { "exit": "Mamplasan", "fee": 111 },
+                { "exit": "Sta. Rosa", "fee": 129 },
+                { "exit": "ABI/Greenfield", "fee": 154 },
+                { "exit": "Cabuyao", "fee": 170 },
+                { "exit": "Silangan", "fee": 181 },
+                { "exit": "Calamba", "fee": 216 },
+                { "exit": "Sto. Tomas", "fee": 0 }
+            ]
+        },{
+            "entry": "Susana Heights",
+            "tolls": [
+                { "exit": "Merville", "fee": 0 },
+                { "exit": "Bicutan", "fee": 173 },
+                { "exit": "Sucat", "fee": 104 },
+                { "exit": "Alabang", "fee": 35 },
+                { "exit": "Filinvest", "fee": 26 },
+                { "exit": "MCX", "fee": 39 },
+                { "exit": "San Pedro", "fee": 12 },
+                { "exit": "Southwoods", "fee": 41 },
+                { "exit": "Carmona", "fee": 53 },
+                { "exit": "Mamplasan", "fee": 72 },
+                { "exit": "Sta. Rosa", "fee": 90 },
+                { "exit": "ABI/Greenfield", "fee": 115 },
+                { "exit": "Cabuyao", "fee": 131 },
+                { "exit": "Silangan", "fee": 142 },
+                { "exit": "Calamba", "fee": 177 },
+                { "exit": "Sto. Tomas", "fee": 0 }
+            ]
+        },{
+            "entry": "San Pedro",
+            "tolls": [
+                { "exit": "Merville", "fee": 0 },
+                { "exit": "Bicutan", "fee": 185 },
+                { "exit": "Sucat", "fee": 116 },
+                { "exit": "Alabang", "fee": 47 },
+                { "exit": "Filinvest", "fee": 38 },
+                { "exit": "MCX", "fee": 51 },
+                { "exit": "Susana Heights", "fee": 12 },
+                { "exit": "Southwoods", "fee": 29 },
+                { "exit": "Carmona", "fee": 41 },
+                { "exit": "Mamplasan", "fee": 61 },
+                { "exit": "Sta. Rosa", "fee": 78 },
+                { "exit": "ABI/Greenfield", "fee": 103 },
+                { "exit": "Cabuyao", "fee": 119 },
+                { "exit": "Silangan", "fee": 130 },
+                { "exit": "Calamba", "fee": 165 },
+                { "exit": "Sto. Tomas", "fee": 0 }
+            ]
+        },{
+            "entry": "Southwoods",
+            "tolls": [
+                { "exit": "Merville", "fee": 0 },
+                { "exit": "Bicutan", "fee": 214 },
+                { "exit": "Sucat", "fee": 145 },
+                { "exit": "Alabang", "fee": 76 },
+                { "exit": "Filinvest", "fee": 67 },
+                { "exit": "MCX", "fee": 80 },
+                { "exit": "Susana Heights", "fee": 41 },
+                { "exit": "San Pedro", "fee": 29 },
+                { "exit": "Carmona", "fee": 12 },
+                { "exit": "Mamplasan", "fee": 31 },
+                { "exit": "Sta. Rosa", "fee": 49 },
+                { "exit": "ABI/Greenfield", "fee": 74 },
+                { "exit": "Cabuyao", "fee": 90 },
+                { "exit": "Silangan", "fee": 100 },
+                { "exit": "Calamba", "fee": 136 },
+                { "exit": "Sto. Tomas", "fee": 0 }
+            ]
+        },{
+            "entry": "Carmona",
+            "tolls": [
+                { "exit": "Merville", "fee": 0 },
+                { "exit": "Bicutan", "fee": 226 },
+                { "exit": "Sucat", "fee": 157 },
+                { "exit": "Alabang", "fee": 88 },
+                { "exit": "Filinvest", "fee": 79 },
+                { "exit": "MCX", "fee": 92 },
+                { "exit": "Susana Heights", "fee": 53 },
+                { "exit": "San Pedro", "fee": 41 },
+                { "exit": "Southwoods", "fee": 12 },
+                { "exit": "Mamplasan", "fee": 20 },
+                { "exit": "Sta. Rosa", "fee": 37 },
+                { "exit": "ABI/Greenfield", "fee": 62 },
+                { "exit": "Cabuyao", "fee": 78 },
+                { "exit": "Silangan", "fee": 89 },
+                { "exit": "Calamba", "fee": 124 },
+                { "exit": "Sto. Tomas", "fee": 0 }
+            ]
+        },{
+            "entry": "Mamplasan",
+            "tolls": [
+                { "exit": "Merville", "fee": 0 },
+                { "exit": "Bicutan", "fee": 246 },
+                { "exit": "Sucat", "fee": 177 },
+                { "exit": "Alabang", "fee": 108 },
+                { "exit": "Filinvest", "fee": 98 },
+                { "exit": "MCX", "fee": 111 },
+                { "exit": "Susana Heights", "fee": 72 },
+                { "exit": "San Pedro", "fee": 61 },
+                { "exit": "Southwoods", "fee": 31 },
+                { "exit": "Carmona", "fee": 20 },
+                { "exit": "Sta. Rosa", "fee": 17 },
+                { "exit": "ABI/Greenfield", "fee": 42 },
+                { "exit": "Cabuyao", "fee": 58 },
+                { "exit": "Silangan", "fee": 69 },
+                { "exit": "Calamba", "fee": 104 },
+                { "exit": "Sto. Tomas", "fee": 0 }
+            ]
+        },{
+            "entry": "Sta. Rosa",
+            "tolls": [
+                { "exit": "Merville", "fee": 0 },
+                { "exit": "Bicutan", "fee": 263 },
+                { "exit": "Sucat", "fee": 194 },
+                { "exit": "Alabang", "fee": 125 },
+                { "exit": "Filinvest", "fee": 116 },
+                { "exit": "MCX", "fee": 129 },
+                { "exit": "Susana Heights", "fee": 90 },
+                { "exit": "San Pedro", "fee": 78 },
+                { "exit": "Southwoods", "fee": 49 },
+                { "exit": "Carmona", "fee": 37 },
+                { "exit": "Mamplasan", "fee": 17 },
+                { "exit": "ABI/Greenfield", "fee": 25 },
+                { "exit": "Cabuyao", "fee": 41 },
+                { "exit": "Silangan", "fee": 52 },
+                { "exit": "Calamba", "fee": 87 },
+                { "exit": "Sto. Tomas", "fee": 0 }
+            ]
+        },{
+            "entry": "ABI/Greenfield",
+            "tolls": [
+                { "exit": "Merville", "fee": 0 },
+                { "exit": "Bicutan", "fee": 288 },
+                { "exit": "Sucat", "fee": 219 },
+                { "exit": "Alabang", "fee": 150 },
+                { "exit": "Filinvest", "fee": 141 },
+                { "exit": "MCX", "fee": 154 },
+                { "exit": "Susana Heights", "fee": 115 },
+                { "exit": "San Pedro", "fee": 103 },
+                { "exit": "Southwoods", "fee": 74 },
+                { "exit": "Carmona", "fee": 62 },
+                { "exit": "Mamplasan", "fee": 42 },
+                { "exit": "Sta. Rosa", "fee": 25 },
+                { "exit": "Cabuyao", "fee": 16 },
+                { "exit": "Silangan", "fee": 27 },
+                { "exit": "Calamba", "fee": 62 },
+                { "exit": "Sto. Tomas", "fee": 0 }
+            ]
+        },{
+            "entry": "Cabuyao",
+            "tolls": [
+                { "exit": "Merville", "fee": 0 },
+                { "exit": "Bicutan", "fee": 304 },
+                { "exit": "Sucat", "fee": 235 },
+                { "exit": "Alabang", "fee": 166 },
+                { "exit": "Filinvest", "fee": 157 },
+                { "exit": "MCX", "fee": 170 },
+                { "exit": "Susana Heights", "fee": 131 },
+                { "exit": "San Pedro", "fee": 119 },
+                { "exit": "Southwoods", "fee": 90 },
+                { "exit": "Carmona", "fee": 78 },
+                { "exit": "Mamplasan", "fee": 58 },
+                { "exit": "Sta. Rosa", "fee": 41 },
+                { "exit": "ABI/Greenfield", "fee": 16 },
+                { "exit": "Silangan", "fee": 11 },
+                { "exit": "Calamba", "fee": 46 },
+                { "exit": "Sto. Tomas", "fee": 0 }
+            ]
+        },{
+            "entry": "Silangan",
+            "tolls": [
+                { "exit": "Merville", "fee": 0 },
+                { "exit": "Bicutan", "fee": 315 },
+                { "exit": "Sucat", "fee": 246 },
+                { "exit": "Alabang", "fee": 177 },
+                { "exit": "Filinvest", "fee": 168 },
+                { "exit": "MCX", "fee": 181 },
+                { "exit": "Susana Heights", "fee": 142 },
+                { "exit": "San Pedro", "fee": 130 },
+                { "exit": "Southwoods", "fee": 100 },
+                { "exit": "Carmona", "fee": 89 },
+                { "exit": "Mamplasan", "fee": 69 },
+                { "exit": "Sta. Rosa", "fee": 52 },
+                { "exit": "ABI/Greenfield", "fee": 27 },
+                { "exit": "Cabuyao", "fee": 11 },
+                { "exit": "Calamba", "fee": 35 },
+                { "exit": "Sto. Tomas", "fee": 0 }
+            ]
+        },{
+            "entry": "Calamba",
+            "tolls": [
+                { "exit": "Merville", "fee": 0 },
+                { "exit": "Bicutan", "fee": 350 },
+                { "exit": "Sucat", "fee": 281 },
+                { "exit": "Alabang", "fee": 212 },
+                { "exit": "Filinvest", "fee": 203 },
+                { "exit": "MCX", "fee": 216 },
+                { "exit": "Susana Heights", "fee": 177 },
+                { "exit": "San Pedro", "fee": 165 },
+                { "exit": "Southwoods", "fee": 136 },
+                { "exit": "Carmona", "fee": 124 },
+                { "exit": "Mamplasan", "fee": 104 },
+                { "exit": "Sta. Rosa", "fee": 87 },
+                { "exit": "ABI/Greenfield", "fee": 62 },
+                { "exit": "Cabuyao", "fee": 46 },
+                { "exit": "Silangan", "fee": 35 },
+                { "exit": "Sto. Tomas", "fee": 57 }
+            ]
+        },{
+            "entry": "Sto. Tomas",
+            "tolls": [
+                { "exit": "Merville", "fee": 0 },
+                { "exit": "Bicutan", "fee": 0 },
+                { "exit": "Sucat", "fee": 0 },
+                { "exit": "Alabang", "fee": 0 },
+                { "exit": "Filinvest", "fee": 0 },
+                { "exit": "MCX", "fee": 0 },
+                { "exit": "Susana Heights", "fee": 0 },
+                { "exit": "San Pedro", "fee": 0 },
+                { "exit": "Southwoods", "fee": 0 },
+                { "exit": "Carmona", "fee": 0 },
+                { "exit": "Mamplasan", "fee": 0 },
+                { "exit": "Sta. Rosa", "fee": 0 },
+                { "exit": "ABI/Greenfield", "fee": 0 },
+                { "exit": "Cabuyao", "fee": 0 },
+                { "exit": "Silangan", "fee": 0 },
+                { "exit": "Calamba", "fee": 57 }
+            ]
+        }
+	],
+	"class_3": [
+        {
+            "entry": "Skyway",
+            "tolls": [
+                { "exit": "Merville", "fee": 0 },
+                { "exit": "Bicutan", "fee": 218 },
+                { "exit": "Sucat", "fee": 356 },
+                { "exit": "Alabang", "fee": 493 },
+                { "exit": "Filinvest", "fee": 507 },
+                { "exit": "MCX", "fee": 604 },
+                { "exit": "Susana Heights", "fee": 546 },
+                { "exit": "San Pedro", "fee": 564 },
+                { "exit": "Southwoods", "fee": 608 },
+                { "exit": "Carmona", "fee": 625 },
+                { "exit": "Mamplasan", "fee": 654 },
+                { "exit": "Sta. Rosa", "fee": 681 },
+                { "exit": "ABI/Greenfield", "fee": 718 },
+                { "exit": "Cabuyao", "fee": 742 },
+                { "exit": "Silangan", "fee": 758 },
+                { "exit": "Calamba", "fee": 811 },
+                { "exit": "Sto. Tomas", "fee": 0 }
+            ]
+        },
+        {
+            "entry": "Magallanes",
+            "tolls": [
+                { "exit": "Merville", "fee": 147 },
+                { "exit": "Bicutan", "fee": 147 },
+                { "exit": "Sucat", "fee": 252 },
+                { "exit": "Alabang", "fee": 356 },
+                { "exit": "Filinvest", "fee": 370 },
+                { "exit": "MCX", "fee": 467 },
+                { "exit": "Susana Heights", "fee": 409 },
+                { "exit": "San Pedro", "fee": 427 },
+                { "exit": "Southwoods", "fee": 471 },
+                { "exit": "Carmona", "fee": 488 },
+                { "exit": "Mamplasan", "fee": 517 },
+                { "exit": "Sta. Rosa", "fee": 544 },
+                { "exit": "ABI/Greenfield", "fee": 581 },
+                { "exit": "Cabuyao", "fee": 605 },
+                { "exit": "Silangan", "fee": 621 },
+                { "exit": "Calamba", "fee": 674 },
+                { "exit": "Sto. Tomas", "fee": 0 }
+            ]
+        },
+        {
+            "entry": "C5",
+            "tolls": [
+                { "exit": "Merville", "fee": 0 },
+                { "exit": "Bicutan", "fee": 147 },
+                { "exit": "Sucat", "fee": 252 },
+                { "exit": "Alabang", "fee": 356 },
+                { "exit": "Filinvest", "fee": 370 },
+                { "exit": "MCX", "fee": 467 },
+                { "exit": "Susana Heights", "fee": 409 },
+                { "exit": "San Pedro", "fee": 427 },
+                { "exit": "Southwoods", "fee": 471 },
+                { "exit": "Carmona", "fee": 488 },
+                { "exit": "Mamplasan", "fee": 517 },
+                { "exit": "Sta. Rosa", "fee": 544 },
+                { "exit": "ABI/Greenfield", "fee": 581 },
+                { "exit": "Cabuyao", "fee": 605 },
+                { "exit": "Silangan", "fee": 621 },
+                { "exit": "Calamba", "fee": 674 },
+                { "exit": "Sto. Tomas", "fee": 0 }
+            ]
+        },
+        {
+            "entry": "Bicutan",
+            "tolls": [
+                { "exit": "Merville", "fee": 0 },
+                { "exit": "Sucat", "fee": 104 },
+                { "exit": "Alabang", "fee": 208 },
+                { "exit": "Filinvest", "fee": 222 },
+                { "exit": "MCX", "fee": 319 },
+                { "exit": "Susana Heights", "fee": 261 },
+                { "exit": "San Pedro", "fee": 279 },
+                { "exit": "Southwoods", "fee": 323 },
+                { "exit": "Carmona", "fee": 340 },
+                { "exit": "Mamplasan", "fee": 369 },
+                { "exit": "Sta. Rosa", "fee": 396 },
+                { "exit": "ABI/Greenfield", "fee": 433 },
+                { "exit": "Cabuyao", "fee": 457 },
+                { "exit": "Silangan", "fee": 473 },
+                { "exit": "Calamba", "fee": 526 },
+                { "exit": "Sto. Tomas", "fee": 0 }
+            ]
+        },
+        {
+            "entry": "Sucat",
+            "tolls": [
+                { "exit": "Merville", "fee": 0 },
+                { "exit": "Bicutan", "fee": 104 },
+                { "exit": "Alabang", "fee": 104 },
+                { "exit": "Filinvest", "fee": 118 },
+                { "exit": "MCX", "fee": 215 },
+                { "exit": "Susana Heights", "fee": 157 },
+                { "exit": "San Pedro", "fee": 175 },
+                { "exit": "Southwoods", "fee": 219 },
+                { "exit": "Carmona", "fee": 236 },
+                { "exit": "Mamplasan", "fee": 265 },
+                { "exit": "Sta. Rosa", "fee": 292 },
+                { "exit": "ABI/Greenfield", "fee": 329 },
+                { "exit": "Cabuyao", "fee": 353 },
+                { "exit": "Silangan", "fee": 369 },
+                { "exit": "Calamba", "fee": 422 },
+                { "exit": "Sto. Tomas", "fee": 0 }
+            ]
+        },
+        {
+            "entry": "Alabang",
+            "tolls": [
+                { "exit": "Merville", "fee": 0 },
+                { "exit": "Bicutan", "fee": 208 },
+                { "exit": "Sucat", "fee": 104 },
+                { "exit": "Filinvest", "fee": 14 },
+                { "exit": "MCX", "fee": 111 },
+                { "exit": "Susana Heights", "fee": 53 },
+                { "exit": "San Pedro", "fee": 71 },
+                { "exit": "Southwoods", "fee": 115 },
+                { "exit": "Carmona", "fee": 132 },
+                { "exit": "Mamplasan", "fee": 161 },
+                { "exit": "Sta. Rosa", "fee": 188 },
+                { "exit": "ABI/Greenfield", "fee": 225 },
+                { "exit": "Cabuyao", "fee": 249 },
+                { "exit": "Silangan", "fee": 265 },
+                { "exit": "Calamba", "fee": 318 },
+                { "exit": "Sto. Tomas", "fee": 0 }
+            ]
+        },{
+            "entry": "Filinvest",
+            "tolls": [
+                { "exit": "Merville", "fee": 0 },
+                { "exit": "Bicutan", "fee": 222 },
+                { "exit": "Sucat", "fee": 118 },
+                { "exit": "Alabang", "fee": 14 },
+                { "exit": "MCX", "fee": 97 },
+                { "exit": "Susana Heights", "fee": 39 },
+                { "exit": "San Pedro", "fee": 57 },
+                { "exit": "Southwoods", "fee": 101 },
+                { "exit": "Carmona", "fee": 118 },
+                { "exit": "Mamplasan", "fee": 148 },
+                { "exit": "Sta. Rosa", "fee": 174 },
+                { "exit": "ABI/Greenfield", "fee": 211 },
+                { "exit": "Cabuyao", "fee": 235 },
+                { "exit": "Silangan", "fee": 251 },
+                { "exit": "Calamba", "fee": 304 },
+                { "exit": "Sto. Tomas", "fee": 0 }
+            ]
+        },{
+            "entry": "MCX",
+            "tolls": [
+                { "exit": "Merville", "fee": 0 },
+                { "exit": "Bicutan", "fee": 319 },
+                { "exit": "Sucat", "fee": 215 },
+                { "exit": "Alabang", "fee": 111 },
+                { "exit": "Filinvest", "fee": 97 },
+                { "exit": "Susana Heights", "fee": 58 },
+                { "exit": "San Pedro", "fee": 76 },
+                { "exit": "Southwoods", "fee": 120 },
+                { "exit": "Carmona", "fee": 137 },
+                { "exit": "Mamplasan", "fee": 167 },
+                { "exit": "Sta. Rosa", "fee": 193 },
+                { "exit": "ABI/Greenfield", "fee": 230 },
+                { "exit": "Cabuyao", "fee": 254 },
+                { "exit": "Silangan", "fee": 271 },
+                { "exit": "Calamba", "fee": 323 },
+                { "exit": "Sto. Tomas", "fee": 0 }
+            ]
+        },{
+            "entry": "Susana Heights",
+            "tolls": [
+                { "exit": "Merville", "fee": 0 },
+                { "exit": "Bicutan", "fee": 261 },
+                { "exit": "Sucat", "fee": 157 },
+                { "exit": "Alabang", "fee": 53 },
+                { "exit": "Filinvest", "fee": 39 },
+                { "exit": "MCX", "fee": 58 },
+                { "exit": "San Pedro", "fee": 18 },
+                { "exit": "Southwoods", "fee": 62 },
+                { "exit": "Carmona", "fee": 79 },
+                { "exit": "Mamplasan", "fee": 109 },
+                { "exit": "Sta. Rosa", "fee": 135 },
+                { "exit": "ABI/Greenfield", "fee": 172 },
+                { "exit": "Cabuyao", "fee": 196 },
+                { "exit": "Silangan", "fee": 213 },
+                { "exit": "Calamba", "fee": 265 },
+                { "exit": "Sto. Tomas", "fee": 0 }
+            ]
+        },{
+            "entry": "San Pedro",
+            "tolls": [
+                { "exit": "Merville", "fee": 0 },
+                { "exit": "Bicutan", "fee": 279 },
+                { "exit": "Sucat", "fee": 175 },
+                { "exit": "Alabang", "fee": 71 },
+                { "exit": "Filinvest", "fee": 57 },
+                { "exit": "MCX", "fee": 76 },
+                { "exit": "Susana Heights", "fee": 18 },
+                { "exit": "Southwoods", "fee": 44 },
+                { "exit": "Carmona", "fee": 61 },
+                { "exit": "Mamplasan", "fee": 91 },
+                { "exit": "Sta. Rosa", "fee": 117 },
+                { "exit": "ABI/Greenfield", "fee": 154 },
+                { "exit": "Cabuyao", "fee": 178 },
+                { "exit": "Silangan", "fee": 195 },
+                { "exit": "Calamba", "fee": 247 },
+                { "exit": "Sto. Tomas", "fee": 0 }
+            ]
+        },{
+            "entry": "Southwoods",
+            "tolls": [
+                { "exit": "Merville", "fee": 0 },
+                { "exit": "Bicutan", "fee": 323 },
+                { "exit": "Sucat", "fee": 219 },
+                { "exit": "Alabang", "fee": 115 },
+                { "exit": "Filinvest", "fee": 101 },
+                { "exit": "MCX", "fee": 120 },
+                { "exit": "Susana Heights", "fee": 62 },
+                { "exit": "San Pedro", "fee": 44 },
+                { "exit": "Carmona", "fee": 17 },
+                { "exit": "Mamplasan", "fee": 47 },
+                { "exit": "Sta. Rosa", "fee": 73 },
+                { "exit": "ABI/Greenfield", "fee": 110 },
+                { "exit": "Cabuyao", "fee": 134 },
+                { "exit": "Silangan", "fee": 151 },
+                { "exit": "Calamba", "fee": 203 },
+                { "exit": "Sto. Tomas", "fee": 0 }
+            ]
+        },{
+            "entry": "Carmona",
+            "tolls": [
+                { "exit": "Merville", "fee": 0 },
+                { "exit": "Bicutan", "fee": 340 },
+                { "exit": "Sucat", "fee": 236 },
+                { "exit": "Alabang", "fee": 132 },
+                { "exit": "Filinvest", "fee": 118 },
+                { "exit": "MCX", "fee": 137 },
+                { "exit": "Susana Heights", "fee": 79 },
+                { "exit": "San Pedro", "fee": 61 },
+                { "exit": "Southwoods", "fee": 17 },
+                { "exit": "Mamplasan", "fee": 29 },
+                { "exit": "Sta. Rosa", "fee": 56 },
+                { "exit": "ABI/Greenfield", "fee": 93 },
+                { "exit": "Cabuyao", "fee": 117 },
+                { "exit": "Silangan", "fee": 133 },
+                { "exit": "Calamba", "fee": 186 },
+                { "exit": "Sto. Tomas", "fee": 0 }
+            ]
+        },{
+            "entry": "Mamplasan",
+            "tolls": [
+                { "exit": "Merville", "fee": 0 },
+                { "exit": "Bicutan", "fee": 369 },
+                { "exit": "Sucat", "fee": 265 },
+                { "exit": "Alabang", "fee": 161 },
+                { "exit": "Filinvest", "fee": 148 },
+                { "exit": "MCX", "fee": 167 },
+                { "exit": "Susana Heights", "fee": 109 },
+                { "exit": "San Pedro", "fee": 91 },
+                { "exit": "Southwoods", "fee": 47 },
+                { "exit": "Carmona", "fee": 29 },
+                { "exit": "Sta. Rosa", "fee": 26 },
+                { "exit": "ABI/Greenfield", "fee": 64 },
+                { "exit": "Cabuyao", "fee": 87 },
+                { "exit": "Silangan", "fee": 104 },
+                { "exit": "Calamba", "fee": 157 },
+                { "exit": "Sto. Tomas", "fee": 0 }
+            ]
+        },{
+            "entry": "Sta. Rosa",
+            "tolls": [
+                { "exit": "Merville", "fee": 0 },
+                { "exit": "Bicutan", "fee": 396 },
+                { "exit": "Sucat", "fee": 292 },
+                { "exit": "Alabang", "fee": 188 },
+                { "exit": "Filinvest", "fee": 174 },
+                { "exit": "MCX", "fee": 193 },
+                { "exit": "Susana Heights", "fee": 135 },
+                { "exit": "San Pedro", "fee": 117 },
+                { "exit": "Southwoods", "fee": 73 },
+                { "exit": "Carmona", "fee": 56 },
+                { "exit": "Mamplasan", "fee": 26 },
+                { "exit": "ABI/Greenfield", "fee": 37 },
+                { "exit": "Cabuyao", "fee": 61 },
+                { "exit": "Silangan", "fee": 78 },
+                { "exit": "Calamba", "fee": 130 },
+                { "exit": "Sto. Tomas", "fee": 0 }
+            ]
+        },{
+            "entry": "ABI/Greenfield",
+            "tolls": [
+                { "exit": "Merville", "fee": 0 },
+                { "exit": "Bicutan", "fee": 433 },
+                { "exit": "Sucat", "fee": 329 },
+                { "exit": "Alabang", "fee": 225 },
+                { "exit": "Filinvest", "fee": 211 },
+                { "exit": "MCX", "fee": 230 },
+                { "exit": "Susana Heights", "fee": 172 },
+                { "exit": "San Pedro", "fee": 154 },
+                { "exit": "Southwoods", "fee": 110 },
+                { "exit": "Carmona", "fee": 93 },
+                { "exit": "Mamplasan", "fee": 64 },
+                { "exit": "Sta. Rosa", "fee": 37 },
+                { "exit": "Cabuyao", "fee": 24 },
+                { "exit": "Silangan", "fee": 40 },
+                { "exit": "Calamba", "fee": 93 },
+                { "exit": "Sto. Tomas", "fee": 0 }
+            ]
+        },{
+            "entry": "Cabuyao",
+            "tolls": [
+                { "exit": "Merville", "fee": 0 },
+                { "exit": "Bicutan", "fee": 457 },
+                { "exit": "Sucat", "fee": 353 },
+                { "exit": "Alabang", "fee": 249 },
+                { "exit": "Filinvest", "fee": 235 },
+                { "exit": "MCX", "fee": 254 },
+                { "exit": "Susana Heights", "fee": 196 },
+                { "exit": "San Pedro", "fee": 178 },
+                { "exit": "Southwoods", "fee": 134 },
+                { "exit": "Carmona", "fee": 117 },
+                { "exit": "Mamplasan", "fee": 87 },
+                { "exit": "Sta. Rosa", "fee": 61 },
+                { "exit": "ABI/Greenfield", "fee": 24 },
+                { "exit": "Silangan", "fee": 16 },
+                { "exit": "Calamba", "fee": 69 },
+                { "exit": "Sto. Tomas", "fee": 0 }
+            ]
+        },{
+            "entry": "Silangan",
+            "tolls": [
+                { "exit": "Merville", "fee": 0 },
+                { "exit": "Bicutan", "fee": 473 },
+                { "exit": "Sucat", "fee": 369 },
+                { "exit": "Alabang", "fee": 265 },
+                { "exit": "Filinvest", "fee": 251 },
+                { "exit": "MCX", "fee": 271 },
+                { "exit": "Susana Heights", "fee": 213 },
+                { "exit": "San Pedro", "fee": 195 },
+                { "exit": "Southwoods", "fee": 151 },
+                { "exit": "Carmona", "fee": 133 },
+                { "exit": "Mamplasan", "fee": 104 },
+                { "exit": "Sta. Rosa", "fee": 78 },
+                { "exit": "ABI/Greenfield", "fee": 40 },
+                { "exit": "Cabuyao", "fee": 16 },
+                { "exit": "Calamba", "fee": 53 },
+                { "exit": "Sto. Tomas", "fee": 0 }
+            ]
+        },{
+            "entry": "Calamba",
+            "tolls": [
+                { "exit": "Merville", "fee": 0 },
+                { "exit": "Bicutan", "fee": 526 },
+                { "exit": "Sucat", "fee": 422 },
+                { "exit": "Alabang", "fee": 318 },
+                { "exit": "Filinvest", "fee": 304 },
+                { "exit": "MCX", "fee": 323 },
+                { "exit": "Susana Heights", "fee": 265 },
+                { "exit": "San Pedro", "fee": 247 },
+                { "exit": "Southwoods", "fee": 203 },
+                { "exit": "Carmona", "fee": 186 },
+                { "exit": "Mamplasan", "fee": 157 },
+                { "exit": "Sta. Rosa", "fee": 130 },
+                { "exit": "ABI/Greenfield", "fee": 93 },
+                { "exit": "Cabuyao", "fee": 69 },
+                { "exit": "Silangan", "fee": 53 },
+                { "exit": "Sto. Tomas", "fee": 86 }
+            ]
+        },{
+            "entry": "Sto. Tomas",
+            "tolls": [
+                { "exit": "Merville", "fee": 0 },
+                { "exit": "Bicutan", "fee": 0 },
+                { "exit": "Sucat", "fee": 0 },
+                { "exit": "Alabang", "fee": 0 },
+                { "exit": "Filinvest", "fee": 0 },
+                { "exit": "MCX", "fee": 0 },
+                { "exit": "Susana Heights", "fee": 0 },
+                { "exit": "San Pedro", "fee": 0 },
+                { "exit": "Southwoods", "fee": 0 },
+                { "exit": "Carmona", "fee": 0 },
+                { "exit": "Mamplasan", "fee": 0 },
+                { "exit": "Sta. Rosa", "fee": 0 },
+                { "exit": "ABI/Greenfield", "fee": 0 },
+                { "exit": "Cabuyao", "fee": 0 },
+                { "exit": "Silangan", "fee": 0 },
+                { "exit": "Calamba", "fee": 86 }
+            ]
+        }
+	]
 }

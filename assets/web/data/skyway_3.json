@@ -1,5 +1,371 @@
 {
-	"class_1": [],
-	"class_2": [],
-	"class_3": []
+	"class_1": [
+        {
+            "entry": "Buendia",
+            "tolls": [
+                { "exit": "Quirino", "fee": 105 },
+                { "exit": "Plaza Azul/Nagtahan", "fee": 105 },
+                { "exit": "Quezon Avenue", "fee": 264 },
+                { "exit": "Sgt. Rivera - A.Bonifacio", "fee": 264 },
+                { "exit": "A.Bonifacio - Balintawak", "fee": 264 },
+                { "exit": "NLEX", "fee": 264 }
+            ]
+        },
+        {
+            "entry": "Quirino",
+            "tolls": [
+                { "exit": "Buendia", "fee": 105 },
+                { "exit": "Plaza Azul/Nagtahan", "fee": 105 },
+                { "exit": "Quezon Avenue", "fee": 264 },
+                { "exit": "Sgt. Rivera - A.Bonifacio", "fee": 264 },
+                { "exit": "A.Bonifacio - Balintawak", "fee": 264 },
+                { "exit": "NLEX", "fee": 264 }
+            ]
+        },
+        {
+            "entry": "Plaza Azul/Nagtahan",
+            "tolls": [
+                { "exit": "Buendia", "fee": 105 },
+                { "exit": "Quirino", "fee": 105 },
+                { "exit": "Quezon Avenue", "fee": 264 },
+                { "exit": "Sgt. Rivera - A.Bonifacio", "fee": 264 },
+                { "exit": "A.Bonifacio - Balintawak", "fee": 264 },
+                { "exit": "NLEX", "fee": 264 }
+            ]
+        },
+        {
+            "entry": "E. Rodriguez",
+            "tolls": [
+                { "exit": "Quirino", "fee": 0 },
+                { "exit": "Plaza Azul/Nagtahan", "fee": 0 },
+                { "exit": "Quezon Avenue", "fee": 129 },
+                { "exit": "Sgt. Rivera - A.Bonifacio", "fee": 129 },
+                { "exit": "A.Bonifacio - Balintawak", "fee": 129 },
+                { "exit": "NLEX", "fee": 129 }
+            ]
+        },
+        {
+            "entry": "Quezon Avenue",
+            "tolls": [
+                { "exit": "Quirino", "fee": 0 },
+                { "exit": "Plaza Azul/Nagtahan", "fee": 0 },
+                { "exit": "E. Rodriguez", "fee": 129 },
+                { "exit": "Sgt. Rivera - A.Bonifacio", "fee": 129 },
+                { "exit": "A.Bonifacio - Balintawak", "fee": 129 },
+                { "exit": "NLEX", "fee": 129 }
+            ]
+        },
+		{
+            "entry": "NLEX",
+            "tolls": [
+                { "exit": "A.Bonifacio - Balintawak", "fee": 129 },
+                { "exit": "Quezon Avenue", "fee": 129 },
+                { "exit": "E. Rodriguez", "fee": 129 },
+                { "exit": "Plaza Azul/Nagtahan", "fee": 264 },
+                { "exit": "Plaza Dilao", "fee": 264 },
+                { "exit": "Buendia", "fee": 264 }
+            ]
+        },
+		{
+            "entry": "A.Bonifacio - Balintawak",
+            "tolls": [
+                { "exit": "NLEX", "fee": 129 },
+                { "exit": "Quezon Avenue", "fee": 129 },
+                { "exit": "E. Rodriguez", "fee": 129 },
+                { "exit": "Plaza Azul/Nagtahan", "fee": 264 },
+                { "exit": "Plaza Dilao", "fee": 264 },
+                { "exit": "Buendia", "fee": 264 }
+            ]
+        },
+		{
+            "entry": "Sgt. Rivera - A.Bonifacio",
+            "tolls": [
+                { "exit": "A.Bonifacio - Balintawak", "fee": 0 },
+                { "exit": "Quezon Avenue", "fee": 129 },
+                { "exit": "E. Rodriguez", "fee": 129 },
+                { "exit": "Plaza Azul/Nagtahan", "fee": 264 },
+                { "exit": "Plaza Dilao", "fee": 264 },
+                { "exit": "Buendia", "fee": 264 }
+            ]
+        },
+		{
+            "entry": "Quezon Avenue",
+            "tolls": [
+                { "exit": "A.Bonifacio - Balintawak", "fee": 0 },
+                { "exit": "Sgt. Rivera - A.Bonifacio", "fee": 129 },
+                { "exit": "E. Rodriguez", "fee": 129 },
+                { "exit": "Plaza Azul/Nagtahan", "fee": 264 },
+                { "exit": "Plaza Dilao", "fee": 264 },
+                { "exit": "Buendia", "fee": 264 }
+            ]
+        },
+		{
+            "entry": "Plaza Dilao",
+            "tolls": [
+                { "exit": "A.Bonifacio - Balintawak", "fee": 0 },
+                { "exit": "Sgt. Rivera - A.Bonifacio", "fee": 0 },
+                { "exit": "E. Rodriguez", "fee": 0 },
+                { "exit": "Plaza Azul/Nagtahan", "fee": 0 },
+                { "exit": "Quezon Avenue", "fee": 0 },
+                { "exit": "Buendia", "fee": 105 }
+            ]
+        },
+		{
+            "entry": "Quirino",
+            "tolls": [
+                { "exit": "A.Bonifacio - Balintawak", "fee": 0 },
+                { "exit": "Sgt. Rivera - A.Bonifacio", "fee": 0 },
+                { "exit": "E. Rodriguez", "fee": 0 },
+                { "exit": "Plaza Azul/Nagtahan", "fee": 0 },
+                { "exit": "Quezon Avenue", "fee": 0 },
+                { "exit": "Buendia", "fee": 105 }
+            ]
+        }
+	],
+	"class_2": [
+        {
+            "entry": "Buendia",
+            "tolls": [
+                { "exit": "Quirino", "fee": 210 },
+                { "exit": "Plaza Azul/Nagtahan", "fee": 210 },
+                { "exit": "Quezon Avenue", "fee": 528 },
+                { "exit": "Sgt. Rivera - A.Bonifacio", "fee": 528 },
+                { "exit": "A.Bonifacio - Balintawak", "fee": 528 },
+                { "exit": "NLEX", "fee": 528 }
+            ]
+        },
+        {
+            "entry": "Quirino",
+            "tolls": [
+                { "exit": "Buendia", "fee": 210 },
+                { "exit": "Plaza Azul/Nagtahan", "fee": 210 },
+                { "exit": "Quezon Avenue", "fee": 528 },
+                { "exit": "Sgt. Rivera - A.Bonifacio", "fee": 528 },
+                { "exit": "A.Bonifacio - Balintawak", "fee": 528 },
+                { "exit": "NLEX", "fee": 528 }
+            ]
+        },
+        {
+            "entry": "Plaza Azul/Nagtahan",
+            "tolls": [
+                { "exit": "Buendia", "fee": 210 },
+                { "exit": "Quirino", "fee": 210 },
+                { "exit": "Quezon Avenue", "fee": 528 },
+                { "exit": "Sgt. Rivera - A.Bonifacio", "fee": 528 },
+                { "exit": "A.Bonifacio - Balintawak", "fee": 528 },
+                { "exit": "NLEX", "fee": 528 }
+            ]
+        },
+        {
+            "entry": "E. Rodriguez",
+            "tolls": [
+                { "exit": "Quirino", "fee": 0 },
+                { "exit": "Plaza Azul/Nagtahan", "fee": 0 },
+                { "exit": "Quezon Avenue", "fee": 258 },
+                { "exit": "Sgt. Rivera - A.Bonifacio", "fee": 258 },
+                { "exit": "A.Bonifacio - Balintawak", "fee": 258 },
+                { "exit": "NLEX", "fee": 258 }
+            ]
+        },
+        {
+            "entry": "Quezon Avenue",
+            "tolls": [
+                { "exit": "Quirino", "fee": 0 },
+                { "exit": "Plaza Azul/Nagtahan", "fee": 0 },
+                { "exit": "E. Rodriguez", "fee": 258 },
+                { "exit": "Sgt. Rivera - A.Bonifacio", "fee": 258 },
+                { "exit": "A.Bonifacio - Balintawak", "fee": 258 },
+                { "exit": "NLEX", "fee": 258 }
+            ]
+        },
+		{
+            "entry": "NLEX",
+            "tolls": [
+                { "exit": "A.Bonifacio - Balintawak", "fee": 258 },
+                { "exit": "Quezon Avenue", "fee": 258 },
+                { "exit": "E. Rodriguez", "fee": 258 },
+                { "exit": "Plaza Azul/Nagtahan", "fee": 528 },
+                { "exit": "Plaza Dilao", "fee": 528 },
+                { "exit": "Buendia", "fee": 528 }
+            ]
+        },
+		{
+            "entry": "A.Bonifacio - Balintawak",
+            "tolls": [
+                { "exit": "NLEX", "fee": 258 },
+                { "exit": "Quezon Avenue", "fee": 258 },
+                { "exit": "E. Rodriguez", "fee": 258 },
+                { "exit": "Plaza Azul/Nagtahan", "fee": 528 },
+                { "exit": "Plaza Dilao", "fee": 528 },
+                { "exit": "Buendia", "fee": 528 }
+            ]
+        },
+		{
+            "entry": "Sgt. Rivera - A.Bonifacio",
+            "tolls": [
+                { "exit": "A.Bonifacio - Balintawak", "fee": 0 },
+                { "exit": "Quezon Avenue", "fee": 258 },
+                { "exit": "E. Rodriguez", "fee": 258 },
+                { "exit": "Plaza Azul/Nagtahan", "fee": 528 },
+                { "exit": "Plaza Dilao", "fee": 528 },
+                { "exit": "Buendia", "fee": 528 }
+            ]
+        },
+		{
+            "entry": "Quezon Avenue",
+            "tolls": [
+                { "exit": "A.Bonifacio - Balintawak", "fee": 0 },
+                { "exit": "Sgt. Rivera - A.Bonifacio", "fee": 258 },
+                { "exit": "E. Rodriguez", "fee": 258 },
+                { "exit": "Plaza Azul/Nagtahan", "fee": 528 },
+                { "exit": "Plaza Dilao", "fee": 528 },
+                { "exit": "Buendia", "fee": 528 }
+            ]
+        },
+		{
+            "entry": "Plaza Dilao",
+            "tolls": [
+                { "exit": "A.Bonifacio - Balintawak", "fee": 0 },
+                { "exit": "Sgt. Rivera - A.Bonifacio", "fee": 0 },
+                { "exit": "E. Rodriguez", "fee": 0 },
+                { "exit": "Plaza Azul/Nagtahan", "fee": 0 },
+                { "exit": "Quezon Avenue", "fee": 0 },
+                { "exit": "Buendia", "fee": 210 }
+            ]
+        },
+		{
+            "entry": "Quirino",
+            "tolls": [
+                { "exit": "A.Bonifacio - Balintawak", "fee": 0 },
+                { "exit": "Sgt. Rivera - A.Bonifacio", "fee": 0 },
+                { "exit": "E. Rodriguez", "fee": 0 },
+                { "exit": "Plaza Azul/Nagtahan", "fee": 0 },
+                { "exit": "Quezon Avenue", "fee": 0 },
+                { "exit": "Buendia", "fee": 210 }
+            ]
+        }
+	],
+	"class_3": [
+        {
+            "entry": "Buendia",
+            "tolls": [
+                { "exit": "Quirino", "fee": 315 },
+                { "exit": "Plaza Azul/Nagtahan", "fee": 315 },
+                { "exit": "Quezon Avenue", "fee": 792 },
+                { "exit": "Sgt. Rivera - A.Bonifacio", "fee": 792 },
+                { "exit": "A.Bonifacio - Balintawak", "fee": 792 },
+                { "exit": "NLEX", "fee": 792 }
+            ]
+        },
+        {
+            "entry": "Quirino",
+            "tolls": [
+                { "exit": "Buendia", "fee": 315 },
+                { "exit": "Plaza Azul/Nagtahan", "fee": 315 },
+                { "exit": "Quezon Avenue", "fee": 792 },
+                { "exit": "Sgt. Rivera - A.Bonifacio", "fee": 792 },
+                { "exit": "A.Bonifacio - Balintawak", "fee": 792 },
+                { "exit": "NLEX", "fee": 792 }
+            ]
+        },
+        {
+            "entry": "Plaza Azul/Nagtahan",
+            "tolls": [
+                { "exit": "Buendia", "fee": 315 },
+                { "exit": "Quirino", "fee": 315 },
+                { "exit": "Quezon Avenue", "fee": 792 },
+                { "exit": "Sgt. Rivera - A.Bonifacio", "fee": 792 },
+                { "exit": "A.Bonifacio - Balintawak", "fee": 792 },
+                { "exit": "NLEX", "fee": 792 }
+            ]
+        },
+        {
+            "entry": "E. Rodriguez",
+            "tolls": [
+                { "exit": "Quirino", "fee": 0 },
+                { "exit": "Plaza Azul/Nagtahan", "fee": 0 },
+                { "exit": "Quezon Avenue", "fee": 387 },
+                { "exit": "Sgt. Rivera - A.Bonifacio", "fee": 387 },
+                { "exit": "A.Bonifacio - Balintawak", "fee": 387 },
+                { "exit": "NLEX", "fee": 387 }
+            ]
+        },
+        {
+            "entry": "Quezon Avenue",
+            "tolls": [
+                { "exit": "Quirino", "fee": 0 },
+                { "exit": "Plaza Azul/Nagtahan", "fee": 0 },
+                { "exit": "E. Rodriguez", "fee": 387 },
+                { "exit": "Sgt. Rivera - A.Bonifacio", "fee": 387 },
+                { "exit": "A.Bonifacio - Balintawak", "fee": 387 },
+                { "exit": "NLEX", "fee": 387 }
+            ]
+        },
+		{
+            "entry": "NLEX",
+            "tolls": [
+                { "exit": "A.Bonifacio - Balintawak", "fee": 387 },
+                { "exit": "Quezon Avenue", "fee": 387 },
+                { "exit": "E. Rodriguez", "fee": 387 },
+                { "exit": "Plaza Azul/Nagtahan", "fee": 792 },
+                { "exit": "Plaza Dilao", "fee": 792 },
+                { "exit": "Buendia", "fee": 792 }
+            ]
+        },
+		{
+            "entry": "A.Bonifacio - Balintawak",
+            "tolls": [
+                { "exit": "NLEX", "fee": 387 },
+                { "exit": "Quezon Avenue", "fee": 387 },
+                { "exit": "E. Rodriguez", "fee": 387 },
+                { "exit": "Plaza Azul/Nagtahan", "fee": 792 },
+                { "exit": "Plaza Dilao", "fee": 792 },
+                { "exit": "Buendia", "fee": 792 }
+            ]
+        },
+		{
+            "entry": "Sgt. Rivera - A.Bonifacio",
+            "tolls": [
+                { "exit": "A.Bonifacio - Balintawak", "fee": 0 },
+                { "exit": "Quezon Avenue", "fee": 387 },
+                { "exit": "E. Rodriguez", "fee": 387 },
+                { "exit": "Plaza Azul/Nagtahan", "fee": 792 },
+                { "exit": "Plaza Dilao", "fee": 792 },
+                { "exit": "Buendia", "fee": 792 }
+            ]
+        },
+		{
+            "entry": "Quezon Avenue",
+            "tolls": [
+                { "exit": "A.Bonifacio - Balintawak", "fee": 0 },
+                { "exit": "Sgt. Rivera - A.Bonifacio", "fee": 387 },
+                { "exit": "E. Rodriguez", "fee": 387 },
+                { "exit": "Plaza Azul/Nagtahan", "fee": 792 },
+                { "exit": "Plaza Dilao", "fee": 792 },
+                { "exit": "Buendia", "fee": 792 }
+            ]
+        },
+		{
+            "entry": "Plaza Dilao",
+            "tolls": [
+                { "exit": "A.Bonifacio - Balintawak", "fee": 0 },
+                { "exit": "Sgt. Rivera - A.Bonifacio", "fee": 0 },
+                { "exit": "E. Rodriguez", "fee": 0 },
+                { "exit": "Plaza Azul/Nagtahan", "fee": 0 },
+                { "exit": "Quezon Avenue", "fee": 0 },
+                { "exit": "Buendia", "fee": 315 }
+            ]
+        },
+		{
+            "entry": "Quirino",
+            "tolls": [
+                { "exit": "A.Bonifacio - Balintawak", "fee": 0 },
+                { "exit": "Sgt. Rivera - A.Bonifacio", "fee": 0 },
+                { "exit": "E. Rodriguez", "fee": 0 },
+                { "exit": "Plaza Azul/Nagtahan", "fee": 0 },
+                { "exit": "Quezon Avenue", "fee": 0 },
+                { "exit": "Buendia", "fee": 315 }
+            ]
+        }
+	]
 }

@@ -20,16 +20,19 @@ function autocomplete(inp, arr, index) {
 		
 		/*for each item in the array...*/
 		arr.forEach(function (matchValue) {
-			// console.log(matchValue);
 			matchValue = matchValue[index];
 			/*check if the item starts with the same letters as the text field value:*/
-			if (matchValue.substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+			// if (matchValue.substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+			// console.log(matchValue, val);
+			var valLength = matchValue.toUpperCase().indexOf(val.toUpperCase());
+			if (valLength >= 0) {
 				// console.log(matchValue);
 				/*create a DIV element for each matching element:*/
 				b = document.createElement("DIV");
 				/*make the matching letters bold:*/
-				b.innerHTML = "<strong>" + matchValue.substr(0, val.length) + "</strong>";
-				b.innerHTML += matchValue.substr(val.length);
+				// b.innerHTML = "<strong>" + matchValue.substr(valLength, val.length) + "</strong>";
+				// b.innerHTML += matchValue.substr(val.length);
+				b.innerHTML = matchValue.replace(matchValue.substr(valLength, val.length), "<strong>" + matchValue.substr(valLength, val.length) + "</strong>");
 				/*insert a input field that will hold the current array item's value:*/
 				b.innerHTML += "<input type='hidden' value='" + matchValue.trim() + "'>";
 				/*execute a function when someone clicks on the item value (DIV element):*/
@@ -77,11 +80,12 @@ function autocomplete(inp, arr, index) {
 		if (currentFocus < 0) currentFocus = (x.length - 1);
 
 		if (!isNaN(currentFocus)) {
-			removeActive(x, function (activeUI) {
+			var callback = function (activeUI) {
 				/*add class "autocomplete-active":*/
 				activeUI[currentFocus].classList.add("autocomplete-active");
 				scrollToItem(activeUI);
-			});
+			};
+			removeActive(x, callback);
 		}
 		
 	}

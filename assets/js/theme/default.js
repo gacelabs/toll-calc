@@ -38,17 +38,23 @@ $(document).ready(function() {
 		/* make a loader to wait for instanciation of the table datas when localStorage has no data */
 		var i = setInterval(() => {
 			if (Object.keys(dataObject).length > 0) {
-				runSearchData();
+				runCitySearchData();
 				clearInterval(i);
 			}
 		}, 3);
 	} else {
-		runSearchData();
+		runCitySearchData();
 	}
+
+	$('#search_form').on('submit', function (e) {
+		e.preventDefault();
+		e.stopPropagation();
+		
+	});
 	
 });
 
-var runSearchData = function () {
+var runCitySearchData = function () {
 	var jsonCities = new JSONQuery(dataObject['cities']);
 	$('.cities-input').each(function (i, elem) {
 		// console.log(i, elem);
@@ -56,7 +62,12 @@ var runSearchData = function () {
 			// console.log(e.target.value);
 			var query = {
 				select: { fields: '*' },
-				where: { condition: { field: 'name', operator: 'LIKE', value: e.target.value + '%' } }
+				where: { 
+					condition: [
+						{ field: 'name', operator: 'LIKE', value: '%' + e.target.value + '%' },
+						{ field: 'province', operator: 'LIKE', value: '%' + e.target.value + '%' },
+					] 
+				}
 			};
 			// console.log(query);
 			var result = jsonCities.execute(query, {

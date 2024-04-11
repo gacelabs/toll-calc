@@ -1,5 +1,260 @@
 {
-	"class_1": [],
-	"class_2": [],
-	"class_3": []
+	"class_1": [
+        {
+            "entry": "Sto.tomas",
+            "tolls": [
+                { "exit": "Tanauan", "fee": 12 },
+                { "exit": "Malvar", "fee": 27 },
+                { "exit": "Sto. Toribio", "fee": 45 },
+                { "exit": "Lipa", "fee": 55 },
+                { "exit": "Ibaan", "fee": 83 },
+                { "exit": "Batangas", "fee": 104 }
+
+            ]
+        },
+        {
+            "entry": "Tanauan",
+            "tolls": [
+                { "exit": "Sto.tomas", "fee": 12 },
+                { "exit": "Malvar", "fee": 14 },
+                { "exit": "Sto. Toribio", "fee": 32 },
+                { "exit": "Lipa", "fee": 43 },
+                { "exit": "Ibaan", "fee": 71 },
+                { "exit": "Batangas", "fee": 91 }
+
+            ]
+        },
+        {
+            "entry": "Malvar",
+            "tolls": [
+                { "exit": "Sto.tomas", "fee": 27 },
+                { "exit": "Tanauan", "fee": 14 },
+                { "exit": "Sto. Toribio", "fee": 18 },
+                { "exit": "Lipa", "fee": 28 },
+                { "exit": "Ibaan", "fee": 56 },
+                { "exit": "Batangas", "fee": 77 }
+
+            ]
+        },
+        {
+            "entry": "Sto. Toribio",
+            "tolls": [
+                { "exit": "Sto.tomas", "fee": 45 },
+                { "exit": "Tanauan", "fee": 32 },
+                { "exit": "Malvar", "fee": 18 },
+                { "exit": "Lipa", "fee": 10 },
+                { "exit": "Ibaan", "fee": 38 },
+                { "exit": "Batangas", "fee": 59 }
+
+            ]
+        },
+        {
+            "entry": "Lipa",
+            "tolls": [
+                { "exit": "Sto.tomas", "fee": 55 },
+                { "exit": "Tanauan", "fee": 43 },
+                { "exit": "Malvar", "fee": 28 },
+                { "exit": "Sto. Toribio", "fee": 10 },
+                { "exit": "Ibaan", "fee": 28 },
+                { "exit": "Batangas", "fee": 49 }
+
+            ]
+        },
+        {
+            "entry": "Ibaan",
+            "tolls": [
+                { "exit": "Sto.tomas", "fee": 83 },
+                { "exit": "Tanauan", "fee": 71 },
+                { "exit": "Malvar", "fee": 56 },
+                { "exit": "Sto. Toribio", "fee": 38 },
+                { "exit": "Lipa", "fee": 28 },
+                { "exit": "Batangas", "fee": 2 }
+
+            ]
+        },
+        {
+            "entry": "Batangas",
+            "tolls": [
+                { "exit": "Sto.tomas", "fee": 104 },
+                { "exit": "Tanauan", "fee": 91 },
+                { "exit": "Malvar", "fee": 77 },
+                { "exit": "Sto. Toribio", "fee": 59 },
+                { "exit": "Lipa", "fee": 49 },
+                { "exit": "Ibaan", "fee": 2 }
+
+            ]
+        }
+	],
+	"class_2": [
+        {
+            "entry": "Sto.tomas",
+            "tolls": [
+                { "exit": "Tanauan", "fee": 25 },
+                { "exit": "Malvar", "fee": 53 },
+                { "exit": "Sto. Toribio", "fee": 89 },
+                { "exit": "Lipa", "fee": 110 },
+                { "exit": "Ibaan", "fee": 166 },
+                { "exit": "Batangas", "fee": 208 }
+
+            ]
+        },
+        {
+            "entry": "Tanauan",
+            "tolls": [
+                { "exit": "Sto.tomas", "fee": 25 },
+                { "exit": "Malvar", "fee": 29 },
+                { "exit": "Sto. Toribio", "fee": 65 },
+                { "exit": "Lipa", "fee": 85 },
+                { "exit": "Ibaan", "fee": 142 },
+                { "exit": "Batangas", "fee": 183 }
+
+            ]
+        },
+        {
+            "entry": "Malvar",
+            "tolls": [
+                { "exit": "Sto.tomas", "fee": 53 },
+                { "exit": "Tanauan", "fee": 29 },
+                { "exit": "Sto. Toribio", "fee": 36 },
+                { "exit": "Lipa", "fee": 57 },
+                { "exit": "Ibaan", "fee": 113 },
+                { "exit": "Batangas", "fee": 154 }
+
+            ]
+        },
+        {
+            "entry": "Sto. Toribio",
+            "tolls": [
+                { "exit": "Sto.tomas", "fee": 89 },
+                { "exit": "Tanauan", "fee": 65 },
+                { "exit": "Malvar", "fee": 36 },
+                { "exit": "Lipa", "fee": 21 },
+                { "exit": "Ibaan", "fee": 77 },
+                { "exit": "Batangas", "fee": 118 }
+
+            ]
+        },
+        {
+            "entry": "Lipa",
+            "tolls": [
+                { "exit": "Sto.tomas", "fee": 110 },
+                { "exit": "Tanauan", "fee": 85 },
+                { "exit": "Malvar", "fee": 57 },
+                { "exit": "Sto. Toribio", "fee": 21 },
+                { "exit": "Ibaan", "fee": 56 },
+                { "exit": "Batangas", "fee": 98 }
+
+            ]
+        },
+        {
+            "entry": "Ibaan",
+            "tolls": [
+                { "exit": "Sto.tomas", "fee": 166 },
+                { "exit": "Tanauan", "fee": 142 },
+                { "exit": "Malvar", "fee": 113 },
+                { "exit": "Sto. Toribio", "fee": 77 },
+                { "exit": "Lipa", "fee": 56 },
+                { "exit": "Batangas", "fee": 41 }
+
+            ]
+        },
+        {
+            "entry": "Batangas",
+            "tolls": [
+                { "exit": "Sto.tomas", "fee": 208 },
+                { "exit": "Tanauan", "fee": 183 },
+                { "exit": "Malvar", "fee": 154 },
+                { "exit": "Sto. Toribio", "fee": 118 },
+                { "exit": "Lipa", "fee": 98 },
+                { "exit": "Ibaan", "fee": 41 }
+
+            ]
+        }
+	],
+	"class_3": [
+        {
+            "entry": "Sto.tomas",
+            "tolls": [
+                { "exit": "Tanauan", "fee": 37 },
+                { "exit": "Malvar", "fee": 80 },
+                { "exit": "Sto. Toribio", "fee": 134 },
+                { "exit": "Lipa", "fee": 165 },
+                { "exit": "Ibaan", "fee": 249 },
+                { "exit": "Batangas", "fee": 311 }
+
+            ]
+        },
+        {
+            "entry": "Tanauan",
+            "tolls": [
+                { "exit": "Sto.tomas", "fee": 37 },
+                { "exit": "Malvar", "fee": 43 },
+                { "exit": "Sto. Toribio", "fee": 97 },
+                { "exit": "Lipa", "fee": 128 },
+                { "exit": "Ibaan", "fee": 212 },
+                { "exit": "Batangas", "fee": 274 }
+
+            ]
+        },
+        {
+            "entry": "Malvar",
+            "tolls": [
+                { "exit": "Sto.tomas", "fee": 80 },
+                { "exit": "Tanauan", "fee": 43 },
+                { "exit": "Sto. Toribio", "fee": 54 },
+                { "exit": "Lipa", "fee": 85 },
+                { "exit": "Ibaan", "fee": 169 },
+                { "exit": "Batangas", "fee": 232 }
+
+            ]
+        },
+        {
+            "entry": "Sto. Toribio",
+            "tolls": [
+                { "exit": "Sto.tomas", "fee": 134 },
+                { "exit": "Tanauan", "fee": 97 },
+                { "exit": "Malvar", "fee": 54 },
+                { "exit": "Lipa", "fee": 31 },
+                { "exit": "Ibaan", "fee": 115 },
+                { "exit": "Batangas", "fee": 178 }
+
+            ]
+        },
+        {
+            "entry": "Lipa",
+            "tolls": [
+                { "exit": "Sto.tomas", "fee": 165 },
+                { "exit": "Tanauan", "fee": 128 },
+                { "exit": "Malvar", "fee": 85 },
+                { "exit": "Sto. Toribio", "fee": 31 },
+                { "exit": "Ibaan", "fee": 85 },
+                { "exit": "Batangas", "fee": 147 }
+
+            ]
+        },
+        {
+            "entry": "Ibaan",
+            "tolls": [
+                { "exit": "Sto.tomas", "fee": 249 },
+                { "exit": "Tanauan", "fee": 212 },
+                { "exit": "Malvar", "fee": 169 },
+                { "exit": "Sto. Toribio", "fee": 115 },
+                { "exit": "Lipa", "fee": 85 },
+                { "exit": "Batangas", "fee": 62 }
+
+            ]
+        },
+        {
+            "entry": "Batangas",
+            "tolls": [
+                { "exit": "Sto.tomas", "fee": 311 },
+                { "exit": "Tanauan", "fee": 274 },
+                { "exit": "Malvar", "fee": 232 },
+                { "exit": "Sto. Toribio", "fee": 178 },
+                { "exit": "Lipa", "fee": 147 },
+                { "exit": "Ibaan", "fee": 62 }
+
+            ]
+        }
+	]
 }

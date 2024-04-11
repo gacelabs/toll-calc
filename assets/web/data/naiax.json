@@ -1,5 +1,29 @@
 {
-	"class_1": [],
-	"class_2": [],
-	"class_3": []
+	"class_1": [
+		{
+            "entry": "Naia",
+            "tolls": [
+                { "exit": "Short Segment", "fee": 35 },
+                { "exit": "Full", "fee": 45 }
+            ]
+        }
+	],
+	"class_2": [
+		{
+            "entry": "Naia",
+            "tolls": [
+                { "exit": "Short Segment", "fee": 69 },
+                { "exit": "Full", "fee": 90 }
+            ]
+        }
+	],
+	"class_3": [
+		{
+            "entry": "Naia",
+            "tolls": [
+                { "exit": "Short Segment", "fee": 104 },
+                { "exit": "Full", "fee": 134 }
+            ]
+        }
+	]
 }

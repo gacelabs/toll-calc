@@ -1,5 +1,86 @@
 {
-	"class_1": [],
-	"class_2": [],
-	"class_3": []
+	"class_1": [
+		{
+            "entry": "Kabihasnan",
+            "tolls": [
+                { "exit": "Cavite", "fee": 8 }
+            ]
+        },
+		{
+            "entry": "Taguig Toll Plaza",
+            "tolls": [
+                { "exit": "Cavite", "fee": 22 }
+            ]
+        },
+		{
+            "entry": "Merville Toll Plaza",
+            "tolls": [
+                { "exit": "Cavite", "fee": 22 }
+            ]
+        },
+		{
+            "entry": "Parañaque Toll Plaza",
+            "tolls": [
+                { "exit": "Cavite", "fee": 35 }
+            ]
+        },
+		{
+            "entry": "Kawit Toll Plaza",
+            "tolls": [
+                { "exit": "Cavite", "fee": 73 }
+            ]
+        }
+	],
+	"class_2": [
+		{
+            "entry": "Taguig Toll Plaza",
+            "tolls": [
+                { "exit": "Cavite", "fee": 44 }
+            ]
+        },
+		{
+            "entry": "Merville Toll Plaza",
+            "tolls": [
+                { "exit": "Cavite", "fee": 44 }
+            ]
+        },
+		{
+            "entry": "Parañaque Toll Plaza",
+            "tolls": [
+                { "exit": "Cavite", "fee": 70 }
+            ]
+        },
+		{
+            "entry": "Kawit Toll Plaza",
+            "tolls": [
+                { "exit": "Cavite", "fee": 146 }
+            ]
+        }
+	],
+	"class_3": [
+		{
+            "entry": "Taguig Toll Plaza",
+            "tolls": [
+                { "exit": "Cavite", "fee": 66 }
+            ]
+        },
+		{
+            "entry": "Merville Toll Plaza",
+            "tolls": [
+                { "exit": "Cavite", "fee": 66 }
+            ]
+        },
+		{
+            "entry": "Parañaque Toll Plaza",
+            "tolls": [
+                { "exit": "Cavite", "fee": 104 }
+            ]
+        },
+		{
+            "entry": "Kawit Toll Plaza",
+            "tolls": [
+                { "exit": "Cavite", "fee": 219 }
+            ]
+        }
+	]
 }
