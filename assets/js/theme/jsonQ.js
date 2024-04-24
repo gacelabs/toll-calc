@@ -1,6 +1,7 @@
 class JSONQuery {
 	constructor(data) {
 		this.data = data;
+		this.query;
 	}
 
 	select(fields) {
@@ -8,7 +9,7 @@ class JSONQuery {
 			return this.data;
 		} else {
 			const selectedData = [];
-			this.data.forEach(item => {
+			this.data.forEach((item) => {
 				const selectedItem = {};
 				fields.forEach(field => {
 					if (item.hasOwnProperty(field)) {
@@ -26,11 +27,12 @@ class JSONQuery {
 			return this.data;
 		} else {
 			const filteredData = [];
-			this.data.forEach(item => {
+			this.data.forEach((item, i) => {
 				conditions.forEach(condition => {
 					// console.log(condition);
 					if (this.evaluateCondition(item, condition)) {
 						if (filteredData.includes(item) == false) {
+							item['index'] = i;
 							filteredData.push(item);
 						}
 					}
@@ -48,6 +50,7 @@ class JSONQuery {
 
 		if (typeof value == 'string') {
 			value = value.toLowerCase();
+			// console.log(needed, field);
 			needed = needed.toLowerCase();
 		}
 
@@ -72,6 +75,14 @@ class JSONQuery {
 				} else {
 					return false;
 				}
+			case "not like":
+				if (typeof needed === 'string') {
+					const pattern = new RegExp('^' + value.replace(/%/g, '.*') + '$');
+					// console.log(pattern, needed);
+					return pattern.test(needed) == false;
+				} else {
+					return false;
+				}
 			case "in":
 				return value.includes(needed);
 			case "not in":
@@ -85,8 +96,28 @@ class JSONQuery {
 		}
 	}
 
+	join(otherData, joinField) {
+		const joinedData = [];
+
+		this.data.forEach(item1 => {
+			otherData.forEach(item2 => {
+				if (item1[joinField] === item2[joinField]) {
+					const joinedItem = { ...item1, ...item2 };
+					joinedData.push(joinedItem);
+				}
+			});
+		});
+
+		if (joinedData.length) {
+			this.data = joinedData;
+		}
+		return this;
+	}
+
 	execute(query, format) {
+		var _this = this;
 		var { select, where } = query;
+		this.query = query;
 		var result = this.data;
 
 		if (select) {
@@ -111,15 +142,32 @@ class JSONQuery {
 										switch (expression) {
 											case 'concat':
 												var obj = {};
+												/* copy all key value pairs */
 												Object.keys(oldResult[0]).forEach(function (column) {
 													if (column !== field && item[column] != undefined) {
 														obj[column] = item[column];
+													} else if (column === field && item[column] != undefined) {
+														obj['old_'+column] = item[column];
 													}
 												});
 												obj[field] = item[field];
 												object[expression].forEach(extraField => {
-													obj[field] += (item[extraField] != undefined) ? item[extraField] : extraField;
-												});	
+													var sValue = '';
+													// console.log(extraField, item, item[extraField]);
+													if (item[extraField] != undefined) {
+														if (typeof item[extraField] == 'boolean') {
+															if (item[extraField] == true) {
+																sValue = ' ' + extraField.ucWords();
+															}
+														} else {
+															sValue = item[extraField];
+														}
+													} else {
+														sValue = extraField;
+													}
+													// obj[field] += (item[extraField] != undefined) ? item[extraField] : extraField;
+													obj[field] += sValue;
+												});
 												result.push(obj);
 											break;
 										}
@@ -137,5 +185,9 @@ class JSONQuery {
 		}
 
 		return result;
+	}
+
+	getQuery() {
+		return this.query;
 	}
 }

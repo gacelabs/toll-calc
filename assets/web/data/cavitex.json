@@ -1,31 +1,46 @@
 {
 	"class_1": [
 		{
+            "region": "IV-A",
             "entry": "Kabihasnan",
+            "province": ["NCR", "CAVITE"],
+            "nearest": ["Parañaque City", "Las Piñas City"],
             "tolls": [
                 { "exit": "Cavite", "fee": 8 }
             ]
         },
 		{
+            "region": "IV-A",
             "entry": "Taguig Toll Plaza",
+            "province": ["NCR", "CAVITE", "RIZAL"],
+            "nearest": ["Antipolo", "Taguig City", "Parañaque City"],
             "tolls": [
                 { "exit": "Cavite", "fee": 22 }
             ]
         },
 		{
+            "region": "IV-A",
             "entry": "Merville Toll Plaza",
+            "province": ["NCR", "CAVITE"],
+            "nearest": ["Parañaque City", "Pasay City"],
             "tolls": [
                 { "exit": "Cavite", "fee": 22 }
             ]
         },
 		{
+            "region": "IV-A",
             "entry": "Parañaque Toll Plaza",
+            "province": ["NCR", "CAVITE"],
+            "nearest": ["Parañaque City", "Las Piñas City"],
             "tolls": [
                 { "exit": "Cavite", "fee": 35 }
             ]
         },
 		{
+            "region": "IV-A",
             "entry": "Kawit Toll Plaza",
+            "province": ["CAVITE", "NCR"],
+            "nearest": ["Kawit", "Bacoor"],
             "tolls": [
                 { "exit": "Cavite", "fee": 73 }
             ]
@@ -33,25 +48,37 @@
 	],
 	"class_2": [
 		{
+            "region": "IV-A",
             "entry": "Taguig Toll Plaza",
+            "province": ["NCR", "CAVITE", "RIZAL"],
+            "nearest": ["Antipolo", "Taguig City", "Parañaque City"],
             "tolls": [
                 { "exit": "Cavite", "fee": 44 }
             ]
         },
 		{
+            "region": "IV-A",
             "entry": "Merville Toll Plaza",
+            "province": ["NCR", "CAVITE"],
+            "nearest": ["Parañaque City", "Pasay City"],
             "tolls": [
                 { "exit": "Cavite", "fee": 44 }
             ]
         },
 		{
+            "region": "IV-A",
             "entry": "Parañaque Toll Plaza",
+            "province": ["NCR", "CAVITE"],
+            "nearest": ["Parañaque City", "Las Piñas City"],
             "tolls": [
                 { "exit": "Cavite", "fee": 70 }
             ]
         },
 		{
+            "region": "IV-A",
             "entry": "Kawit Toll Plaza",
+            "province": ["CAVITE", "NCR"],
+            "nearest": ["Kawit", "Bacoor"],
             "tolls": [
                 { "exit": "Cavite", "fee": 146 }
             ]
@@ -59,25 +86,37 @@
 	],
 	"class_3": [
 		{
+            "region": "IV-A",
             "entry": "Taguig Toll Plaza",
+            "province": ["NCR", "CAVITE", "RIZAL"],
+            "nearest": ["Antipolo", "Taguig City", "Parañaque City"],
             "tolls": [
                 { "exit": "Cavite", "fee": 66 }
             ]
         },
 		{
+            "region": "IV-A",
             "entry": "Merville Toll Plaza",
+            "province": ["NCR", "CAVITE"],
+            "nearest": ["Parañaque City", "Pasay City"],
             "tolls": [
                 { "exit": "Cavite", "fee": 66 }
             ]
         },
 		{
+            "region": "IV-A",
             "entry": "Parañaque Toll Plaza",
+            "province": ["NCR", "CAVITE"],
+            "nearest": ["Parañaque City", "Las Piñas City"],
             "tolls": [
                 { "exit": "Cavite", "fee": 104 }
             ]
         },
 		{
+            "region": "IV-A",
             "entry": "Kawit Toll Plaza",
+            "province": ["CAVITE", "NCR"],
+            "nearest": ["Kawit", "Bacoor"],
             "tolls": [
                 { "exit": "Cavite", "fee": 219 }
             ]

@@ -1,7 +1,10 @@
 {
     "class_1": [
         {
+            "regions": ["III"],
             "entry": "La Paz",
+            "province": ["TARLAC", "NUEVA ECIJA"],
+            "nearest": ["La Paz", "Zaragoza"],
             "tolls": [
                 { "exit": "Victoria", "fee": 30 },
                 { "exit": "Gerona", "fee": 58 },
@@ -13,12 +16,17 @@
                 { "exit": "Pozorrubio", "fee": 270 },
                 { "exit": "Sison", "fee": 290 },
                 { "exit": "Rosario", "fee": 311 }
+            ],
+            "connecting": [
+                {"entry": "Buendia", "toll": ["skyway_3"]}
             ]
         },
         {
+            "regions": ["III"],
             "entry": "Victoria",
+            "province": ["TARLAC", "NUEVA ECIJA"],
+            "nearest": ["Victoria", "Gerona"],
             "tolls": [
-                { "exit": "La Paz", "fee": 30 },
                 { "exit": "Gerona", "fee": 28 },
                 { "exit": "Paniqui", "fee": 49 },
                 { "exit": "Moncada", "fee": 69 },
@@ -31,10 +39,11 @@
             ]
         },
         {
+            "regions": ["III"],
             "entry": "Gerona",
+            "province": ["TARLAC", "PANGASINAN"],
+            "nearest": ["Gerona", "Tarlac City"],
             "tolls": [
-                { "exit": "La Paz", "fee": 58 },
-                { "exit": "Victoria", "fee": 28 },
                 { "exit": "Paniqui", "fee": 21 },
                 { "exit": "Moncada", "fee": 41 },
                 { "exit": "Carmen", "fee": 106 },
@@ -46,11 +55,11 @@
             ]
         },
         {
+            "regions": ["III"],
             "entry": "Paniqui",
+            "province": ["TARLAC", "PANGASINAN"],
+            "nearest": ["Paniqui", "Gerona"],
             "tolls": [
-                { "exit": "La Paz", "fee": 79 },
-                { "exit": "Victoria", "fee": 49 },
-                { "exit": "Gerona", "fee": 21 },
                 { "exit": "Moncada", "fee": 20 },
                 { "exit": "Carmen", "fee": 85 },
                 { "exit": "Urdaneta", "fee": 137 },
@@ -61,12 +70,11 @@
             ]
         },
         {
+            "regions": ["III"],
             "entry": "Moncada",
+            "province": ["TARLAC", "PANGASINAN"],
+            "nearest": ["Moncada", "Paniqui", "Anao"],
             "tolls": [
-                { "exit": "La Paz", "fee": 99 },
-                { "exit": "Victoria", "fee": 69 },
-                { "exit": "Gerona", "fee": 41 },
-                { "exit": "Paniqui", "fee": 20 },
                 { "exit": "Carmen", "fee": 65 },
                 { "exit": "Urdaneta", "fee": 117 },
                 { "exit": "Binalonan", "fee": 136 },
@@ -76,13 +84,11 @@
             ]
         },
         {
+            "regions": ["I"],
             "entry": "Carmen",
+            "province": ["PANGASINAN", "TARLAC"],
+            "nearest": ["Carmen", "Urdaneta City"],
             "tolls": [
-                { "exit": "La Paz", "fee": 164 },
-                { "exit": "Victoria", "fee": 134 },
-                { "exit": "Gerona", "fee": 106 },
-                { "exit": "Paniqui", "fee": 85 },
-                { "exit": "Moncada", "fee": 65 },
                 { "exit": "Urdaneta", "fee": 52 },
                 { "exit": "Binalonan", "fee": 71 },
                 { "exit": "Pozorrubio", "fee": 106 },
@@ -91,14 +97,11 @@
             ]
         },
         {
+            "regions": ["I"],
             "entry": "Urdaneta",
+            "province": ["PANGASINAN", "LA UNION"],
+            "nearest": ["Urdaneta City", "Villasis"],
             "tolls": [
-                { "exit": "La Paz", "fee": 216 },
-                { "exit": "Victoria", "fee": 186 },
-                { "exit": "Gerona", "fee": 158 },
-                { "exit": "Paniqui", "fee": 137 },
-                { "exit": "Moncada", "fee": 117 },
-                { "exit": "Carmen", "fee": 52 },
                 { "exit": "Binalonan", "fee": 19 },
                 { "exit": "Pozorrubio", "fee": 54 },
                 { "exit": "Sison", "fee": 75 },
@@ -106,52 +109,40 @@
             ]
         },
         {
+            "regions": ["I"],
             "entry": "Binalonan",
+            "province": ["PANGASINAN", "LA UNION"],
+            "nearest": ["Binalonan", "Pozorrubio"],
             "tolls": [
-                { "exit": "La Paz", "fee": 235 },
-                { "exit": "Victoria", "fee": 205 },
-                { "exit": "Gerona", "fee": 177 },
-                { "exit": "Paniqui", "fee": 156 },
-                { "exit": "Moncada", "fee": 136 },
-                { "exit": "Carmen", "fee": 71 },
-                { "exit": "Urdaneta", "fee": 19 },
                 { "exit": "Pozorrubio", "fee": 35 },
                 { "exit": "Sison", "fee": 56 },
                 { "exit": "Rosario", "fee": 76 }
             ]
         },
         {
+            "regions": ["I"],
             "entry": "Pozorrubio",
+            "province": ["PANGASINAN", "LA UNION"],
+            "nearest": ["Pozorrubio", "Sison"],
             "tolls": [
-                { "exit": "La Paz", "fee": 270 },
-                { "exit": "Victoria", "fee": 240 },
-                { "exit": "Gerona", "fee": 212 },
-                { "exit": "Paniqui", "fee": 191 },
-                { "exit": "Moncada", "fee": 171 },
-                { "exit": "Carmen", "fee": 106 },
-                { "exit": "Urdaneta", "fee": 54 },
-                { "exit": "Binalonan", "fee": 35 },
                 { "exit": "Sison", "fee": 21 },
                 { "exit": "Rosario", "fee": 41 }
             ]
         },
         {
+            "regions": ["I"],
             "entry": "Sison",
+            "province": ["PANGASINAN", "LA UNION"],
+            "nearest": ["Sison", "Pozorrubio"],
             "tolls": [
-                { "exit": "La Paz", "fee": 290 },
-                { "exit": "Victoria", "fee": 260 },
-                { "exit": "Gerona", "fee": 232 },
-                { "exit": "Paniqui", "fee": 212 },
-                { "exit": "Moncada", "fee": 192 },
-                { "exit": "Carmen", "fee": 127 },
-                { "exit": "Urdaneta", "fee": 75 },
-                { "exit": "Binalonan", "fee": 56 },
-                { "exit": "Pozorrubio", "fee": 21 },
                 { "exit": "Rosario", "fee": 21 }
             ]
         },
         {
+            "regions": ["I"],
             "entry": "Rosario",
+            "province": ["LA UNION", "PANGASINAN"],
+            "nearest": ["Rosario", "Sison"],
             "tolls": [
                 { "exit": "La Paz", "fee": 311 },
                 { "exit": "Victoria", "fee": 281 },
@@ -168,7 +159,10 @@
     ],
     "class_2": [
         {
+            "regions": ["III"],
             "entry": "La Paz",
+            "province": ["TARLAC", "NUEVA ECIJA"],
+            "nearest": ["La Paz", "Zaragoza"],
             "tolls": [
                 { "exit": "Victoria", "fee": 76 },
                 { "exit": "Gerona", "fee": 145 },
@@ -180,12 +174,17 @@
                 { "exit": "Pozorrubio", "fee": 675 },
                 { "exit": "Sison", "fee": 726 },
                 { "exit": "Rosario", "fee": 778 }
+            ],
+            "connecting": [
+                {"entry": "Buendia", "toll": ["skyway_3"]}
             ]
         },
         {
+            "regions": ["III"],
             "entry": "Victoria",
+            "province": ["TARLAC", "NUEVA ECIJA"],
+            "nearest": ["Victoria", "Gerona"],
             "tolls": [
-                { "exit": "La Paz", "fee": 76 },
                 { "exit": "Gerona", "fee": 70 },
                 { "exit": "Paniqui", "fee": 122 },
                 { "exit": "Moncada", "fee": 171 },
@@ -198,10 +197,11 @@
             ]
         },
         {
+            "regions": ["III"],
             "entry": "Gerona",
+            "province": ["TARLAC", "PANGASINAN"],
+            "nearest": ["Gerona", "Tarlac City"],
             "tolls": [
-                { "exit": "La Paz", "fee": 145 },
-                { "exit": "Victoria", "fee": 70 },
                 { "exit": "Paniqui", "fee": 52 },
                 { "exit": "Moncada", "fee": 102 },
                 { "exit": "Carmen", "fee": 264 },
@@ -213,11 +213,11 @@
             ]
         },
         {
+            "regions": ["III"],
             "entry": "Paniqui",
+            "province": ["TARLAC", "PANGASINAN"],
+            "nearest": ["Paniqui", "Gerona"],
             "tolls": [
-                { "exit": "La Paz", "fee": 197 },
-                { "exit": "Victoria", "fee": 122 },
-                { "exit": "Gerona", "fee": 52 },
                 { "exit": "Moncada", "fee": 50 },
                 { "exit": "Carmen", "fee": 213 },
                 { "exit": "Urdaneta", "fee": 343 },
@@ -228,12 +228,11 @@
             ]
         },
         {
+            "regions": ["III"],
             "entry": "Moncada",
+            "province": ["TARLAC", "PANGASINAN"],
+            "nearest": ["Moncada", "Paniqui", "Anao"],
             "tolls": [
-                { "exit": "La Paz", "fee": 247 },
-                { "exit": "Victoria", "fee": 171 },
-                { "exit": "Gerona", "fee": 102 },
-                { "exit": "Paniqui", "fee": 50 },
                 { "exit": "Carmen", "fee": 163 },
                 { "exit": "Urdaneta", "fee": 293 },
                 { "exit": "Binalonan", "fee": 340 },
@@ -243,13 +242,11 @@
             ]
         },
         {
+            "regions": ["I"],
             "entry": "Carmen",
+            "province": ["PANGASINAN", "TARLAC"],
+            "nearest": ["Carmen", "Urdaneta City"],
             "tolls": [
-                { "exit": "La Paz", "fee": 410 },
-                { "exit": "Victoria", "fee": 334 },
-                { "exit": "Gerona", "fee": 264 },
-                { "exit": "Paniqui", "fee": 213 },
-                { "exit": "Moncada", "fee": 163 },
                 { "exit": "Urdaneta", "fee": 130 },
                 { "exit": "Binalonan", "fee": 177 },
                 { "exit": "Pozorrubio", "fee": 265 },
@@ -258,14 +255,11 @@
             ]
         },
         {
+            "regions": ["I"],
             "entry": "Urdaneta",
+            "province": ["PANGASINAN", "LA UNION"],
+            "nearest": ["Urdaneta City", "Villasis"],
             "tolls": [
-                { "exit": "La Paz", "fee": 540 },
-                { "exit": "Victoria", "fee": 464 },
-                { "exit": "Gerona", "fee": 394 },
-                { "exit": "Paniqui", "fee": 343 },
-                { "exit": "Moncada", "fee": 293 },
-                { "exit": "Carmen", "fee": 130 },
                 { "exit": "Binalonan", "fee": 47 },
                 { "exit": "Pozorrubio", "fee": 135 },
                 { "exit": "Sison", "fee": 186 },
@@ -273,52 +267,40 @@
             ]
         },
         {
+            "regions": ["I"],
             "entry": "Binalonan",
+            "province": ["PANGASINAN", "LA UNION"],
+            "nearest": ["Binalonan", "Pozorrubio"],
             "tolls": [
-                { "exit": "La Paz", "fee": 587 },
-                { "exit": "Victoria", "fee": 511 },
-                { "exit": "Gerona", "fee": 441 },
-                { "exit": "Paniqui", "fee": 390 },
-                { "exit": "Moncada", "fee": 340 },
-                { "exit": "Carmen", "fee": 177 },
-                { "exit": "Urdaneta", "fee": 47 },
                 { "exit": "Pozorrubio", "fee": 88 },
                 { "exit": "Sison", "fee": 139 },
                 { "exit": "Rosario", "fee": 191 }
             ]
         },
         {
+            "regions": ["I"],
             "entry": "Pozorrubio",
+            "province": ["PANGASINAN", "LA UNION"],
+            "nearest": ["Pozorrubio", "Sison"],
             "tolls": [
-                { "exit": "La Paz", "fee": 675 },
-                { "exit": "Victoria", "fee": 599 },
-                { "exit": "Gerona", "fee": 530 },
-                { "exit": "Paniqui", "fee": 478 },
-                { "exit": "Moncada", "fee": 428 },
-                { "exit": "Carmen", "fee": 265 },
-                { "exit": "Urdaneta", "fee": 135 },
-                { "exit": "Binalonan", "fee": 88 },
                 { "exit": "Sison", "fee": 139 },
                 { "exit": "Rosario", "fee": 191 }
             ]
         },
         {
+            "regions": ["I"],
             "entry": "Sison",
+            "province": ["PANGASINAN", "LA UNION"],
+            "nearest": ["Sison", "Pozorrubio"],
             "tolls": [
-                { "exit": "La Paz", "fee": 726 },
-                { "exit": "Victoria", "fee": 651 },
-                { "exit": "Gerona", "fee": 581 },
-                { "exit": "Paniqui", "fee": 529 },
-                { "exit": "Moncada", "fee": 479 },
-                { "exit": "Carmen", "fee": 316 },
-                { "exit": "Urdaneta", "fee": 186 },
-                { "exit": "Binalonan", "fee": 139 },
-                { "exit": "Pozorrubio", "fee": 51 },
                 { "exit": "Rosario", "fee": 103 }
             ]
         },
         {
+            "regions": ["I"],
             "entry": "Rosario",
+            "province": ["LA UNION", "PANGASINAN"],
+            "nearest": ["Rosario", "Sison"],
             "tolls": [
                 { "exit": "La Paz", "fee": 778 },
                 { "exit": "Victoria", "fee": 702 },
@@ -335,7 +317,10 @@
     ],
     "class_3": [
         {
+            "regions": ["III"],
             "entry": "La Paz",
+            "province": ["TARLAC", "NUEVA ECIJA"],
+            "nearest": ["La Paz", "Zaragoza"],
             "tolls": [
                 { "exit": "Victoria", "fee": 91 },
                 { "exit": "Gerona", "fee": 175 },
@@ -347,12 +332,17 @@
                 { "exit": "Pozorrubio", "fee": 810 },
                 { "exit": "Sison", "fee": 871 },
                 { "exit": "Rosario", "fee": 933 }
+            ],
+            "connecting": [
+                {"entry": "Buendia", "toll": ["skyway_3"]}
             ]
         },
         {
+            "regions": ["III"],
             "entry": "Victoria",
+            "province": ["TARLAC", "NUEVA ECIJA"],
+            "nearest": ["Victoria", "Gerona"],
             "tolls": [
-                { "exit": "La Paz", "fee": 91 },
                 { "exit": "Gerona", "fee": 84 },
                 { "exit": "Paniqui", "fee": 146 },
                 { "exit": "Moncada", "fee": 206 },
@@ -365,10 +355,11 @@
             ]
         },
         {
+            "regions": ["III"],
             "entry": "Gerona",
+            "province": ["TARLAC", "PANGASINAN"],
+            "nearest": ["Gerona", "Tarlac City"],
             "tolls": [
-                { "exit": "La Paz", "fee": 175 },
-                { "exit": "Victoria", "fee": 84 },
                 { "exit": "Paniqui", "fee": 62 },
                 { "exit": "Moncada", "fee": 122 },
                 { "exit": "Carmen", "fee": 317 },
@@ -380,11 +371,11 @@
             ]
         },
         {
+            "regions": ["III"],
             "entry": "Paniqui",
+            "province": ["TARLAC", "PANGASINAN"],
+            "nearest": ["Paniqui", "Gerona"],
             "tolls": [
-                { "exit": "La Paz", "fee": 237 },
-                { "exit": "Victoria", "fee": 146 },
-                { "exit": "Gerona", "fee": 62 },
                 { "exit": "Moncada", "fee": 60 },
                 { "exit": "Carmen", "fee": 255 },
                 { "exit": "Urdaneta", "fee": 411 },
@@ -395,12 +386,11 @@
             ]
         },
         {
+            "regions": ["III"],
             "entry": "Moncada",
+            "province": ["TARLAC", "PANGASINAN"],
+            "nearest": ["Moncada", "Paniqui", "Anao"],
             "tolls": [
-                { "exit": "La Paz", "fee": 396 },
-                { "exit": "Victoria", "fee": 206 },
-                { "exit": "Gerona", "fee": 122 },
-                { "exit": "Paniqui", "fee": 60 },
                 { "exit": "Carmen", "fee": 195 },
                 { "exit": "Urdaneta", "fee": 351 },
                 { "exit": "Binalonan", "fee": 408 },
@@ -410,13 +400,11 @@
             ]
         },
         {
+            "regions": ["I"],
             "entry": "Carmen",
+            "province": ["PANGASINAN", "TARLAC"],
+            "nearest": ["Carmen", "Urdaneta City"],
             "tolls": [
-                { "exit": "La Paz", "fee": 492 },
-                { "exit": "Victoria", "fee": 401 },
-                { "exit": "Gerona", "fee": 317 },
-                { "exit": "Paniqui", "fee": 255 },
-                { "exit": "Moncada", "fee": 195 },
                 { "exit": "Urdaneta", "fee": 156 },
                 { "exit": "Binalonan", "fee": 213 },
                 { "exit": "Pozorrubio", "fee": 318 },
@@ -425,14 +413,11 @@
             ]
         },
         {
+            "regions": ["I"],
             "entry": "Urdaneta",
+            "province": ["PANGASINAN", "LA UNION"],
+            "nearest": ["Urdaneta City", "Villasis"],
             "tolls": [
-                { "exit": "La Paz", "fee": 648 },
-                { "exit": "Victoria", "fee": 557 },
-                { "exit": "Gerona", "fee": 473 },
-                { "exit": "Paniqui", "fee": 411 },
-                { "exit": "Moncada", "fee": 351 },
-                { "exit": "Carmen", "fee": 156 },
                 { "exit": "Binalonan", "fee": 57 },
                 { "exit": "Pozorrubio", "fee": 162 },
                 { "exit": "Sison", "fee": 224 },
@@ -440,52 +425,40 @@
             ]
         },
         {
+            "regions": ["I"],
             "entry": "Binalonan",
+            "province": ["PANGASINAN", "LA UNION"],
+            "nearest": ["Binalonan", "Pozorrubio"],
             "tolls": [
-                { "exit": "La Paz", "fee": 704 },
-                { "exit": "Victoria", "fee": 614 },
-                { "exit": "Gerona", "fee": 530 },
-                { "exit": "Paniqui", "fee": 468 },
-                { "exit": "Moncada", "fee": 408 },
-                { "exit": "Carmen", "fee": 213 },
-                { "exit": "Urdaneta", "fee": 57 },
                 { "exit": "Pozorrubio", "fee": 106 },
                 { "exit": "Sison", "fee": 167 },
                 { "exit": "Rosario", "fee": 229 }
             ]
         },
         {
+            "regions": ["I"],
             "entry": "Pozorrubio",
+            "province": ["PANGASINAN", "LA UNION"],
+            "nearest": ["Pozorrubio", "Sison"],
             "tolls": [
-                { "exit": "La Paz", "fee": 810 },
-                { "exit": "Victoria", "fee": 719 },
-                { "exit": "Gerona", "fee": 635 },
-                { "exit": "Paniqui", "fee": 573 },
-                { "exit": "Moncada", "fee": 514 },
-                { "exit": "Carmen", "fee": 318 },
-                { "exit": "Urdaneta", "fee": 162 },
-                { "exit": "Binalonan", "fee": 106 },
                 { "exit": "Sison", "fee": 62 },
                 { "exit": "Rosario", "fee": 124 }
             ]
         },
         {
+            "regions": ["I"],
             "entry": "Sison",
+            "province": ["PANGASINAN", "LA UNION"],
+            "nearest": ["Sison", "Pozorrubio"],
             "tolls": [
-                { "exit": "La Paz", "fee": 871 },
-                { "exit": "Victoria", "fee": 781 },
-                { "exit": "Gerona", "fee": 697 },
-                { "exit": "Paniqui", "fee": 635 },
-                { "exit": "Moncada", "fee": 575 },
-                { "exit": "Carmen", "fee": 380 },
-                { "exit": "Urdaneta", "fee": 224 },
-                { "exit": "Binalonan", "fee": 167 },
-                { "exit": "Pozorrubio", "fee": 62 },
                 { "exit": "Rosario", "fee": 62 }
             ]
         },
         {
+            "regions": ["I"],
             "entry": "Rosario",
+            "province": ["LA UNION", "PANGASINAN"],
+            "nearest": ["Rosario", "Sison"],
             "tolls": [
                 { "exit": "La Paz", "fee": 933 },
                 { "exit": "Victoria", "fee": 843 },

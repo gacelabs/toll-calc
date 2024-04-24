@@ -1,7 +1,10 @@
 {
 	"class_1": [
 		{
+            "region": "NCR",
             "entry": "Naia",
+            "province": ["NCR"],
+            "nearest": ["Pasay City", "Parañaque City"],
             "tolls": [
                 { "exit": "Short Segment", "fee": 35 },
                 { "exit": "Full", "fee": 45 }
@@ -10,7 +13,10 @@
 	],
 	"class_2": [
 		{
+            "region": "NCR",
             "entry": "Naia",
+            "province": ["NCR"],
+            "nearest": ["Pasay City", "Parañaque City"],
             "tolls": [
                 { "exit": "Short Segment", "fee": 69 },
                 { "exit": "Full", "fee": 90 }
@@ -19,7 +25,10 @@
 	],
 	"class_3": [
 		{
+            "region": "NCR",
             "entry": "Naia",
+            "province": ["NCR"],
+            "nearest": ["Pasay City", "Parañaque City"],
             "tolls": [
                 { "exit": "Short Segment", "fee": 104 },
                 { "exit": "Full", "fee": 134 }

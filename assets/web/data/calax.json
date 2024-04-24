@@ -1,7 +1,10 @@
 {
 	"class_1": [
 		{
+            "region": "IV-A",
             "entry": "Silang Interchange",
+            "province": ["CAVITE", "LAGUNA"],
+            "nearest": ["Silang", "Dasmarinas"],
             "tolls": [
                 { "exit": "Silang East", "fee": 17 },
                 { "exit": "Santa Rosa-Tagaytay", "fee": 45 },
@@ -11,9 +14,11 @@
             ]
         },
 		{
+            "region": "IV-A",
             "entry": "Silang East",
+            "province": ["CAVITE", "LAGUNA"],
+            "nearest": ["Silang", "Dasmarinas"],
             "tolls": [
-                { "exit": "Silang Interchange", "fee": 17 },
                 { "exit": "Santa Rosa-Tagaytay", "fee": 27 },
                 { "exit": "Laguna Boulevard", "fee": 33 },
                 { "exit": "Technopark", "fee": 48 },
@@ -21,27 +26,31 @@
             ]
         },
 		{
+            "region": "IV-A",
             "entry": "Santa Rosa-Tagaytay",
+            "province": ["LAGUNA", "CAVITE"],
+            "nearest": ["Santa Rosa", "Tagaytay"],
             "tolls": [
-                { "exit": "Silang Interchange", "fee": 45 },
-                { "exit": "Silang East", "fee": 27 },
                 { "exit": "Laguna Boulevard", "fee": 14 },
                 { "exit": "Technopark", "fee": 29 },
                 { "exit": "Greenfield", "fee": 44 }
             ]
         },
 		{
+            "region": "IV-A",
             "entry": "Laguna Boulevard",
+            "province": ["LAGUNA", "CAVITE"],
+            "nearest": ["Santa Rosa", "Biñan"],
             "tolls": [
-                { "exit": "Silang Interchange", "fee": 51 },
-                { "exit": "Silang East", "fee": 33 },
-                { "exit": "Santa Rosa-Tagaytay", "fee": 14 },
                 { "exit": "Technopark", "fee": 15 },
                 { "exit": "Greenfield", "fee": 30 }
             ]
         },
 		{
+            "region": "IV-A",
             "entry": "Greenfield",
+            "province": ["LAGUNA", "CAVITE"],
+            "nearest": ["Santa Rosa", "Cabuyao"],
             "tolls": [
                 { "exit": "Silang Interchange", "fee": 81 },
                 { "exit": "Silang East", "fee": 64 },
@@ -52,7 +61,10 @@
 	],
 	"class_2": [
 		{
+            "region": "IV-A",
             "entry": "Silang Interchange",
+            "province": ["CAVITE", "LAGUNA"],
+            "nearest": ["Silang", "Dasmarinas"],
             "tolls": [
                 { "exit": "Silang East", "fee": 35 },
                 { "exit": "Santa Rosa-Tagaytay", "fee": 90 },
@@ -62,9 +74,11 @@
             ]
         },
 		{
+            "region": "IV-A",
             "entry": "Silang East",
+            "province": ["CAVITE", "LAGUNA"],
+            "nearest": ["Silang", "Dasmarinas"],
             "tolls": [
-                { "exit": "Silang Interchange", "fee": 35 },
                 { "exit": "Santa Rosa-Tagaytay", "fee": 55 },
                 { "exit": "Laguna Boulevard", "fee": 67 },
                 { "exit": "Technopark", "fee": 97 },
@@ -72,27 +86,31 @@
             ]
         },
 		{
+            "region": "IV-A",
             "entry": "Santa Rosa-Tagaytay",
+            "province": ["LAGUNA", "CAVITE"],
+            "nearest": ["Santa Rosa", "Tagaytay"],
             "tolls": [
-                { "exit": "Silang Interchange", "fee": 90 },
-                { "exit": "Silang East", "fee": 55 },
                 { "exit": "Laguna Boulevard", "fee": 29 },
                 { "exit": "Technopark", "fee": 59 },
                 { "exit": "Greenfield", "fee": 89 }
             ]
         },
 		{
+            "region": "IV-A",
             "entry": "Laguna Boulevard",
+            "province": ["LAGUNA", "CAVITE"],
+            "nearest": ["Santa Rosa", "Biñan"],
             "tolls": [
-                { "exit": "Silang Interchange", "fee": 102 },
-                { "exit": "Silang East", "fee": 67 },
-                { "exit": "Santa Rosa-Tagaytay", "fee": 29 },
                 { "exit": "Technopark", "fee": 30 },
                 { "exit": "Greenfield", "fee": 60 }
             ]
         },
 		{
+            "region": "IV-A",
             "entry": "Greenfield",
+            "province": ["LAGUNA", "CAVITE"],
+            "nearest": ["Santa Rosa", "Cabuyao"],
             "tolls": [
                 { "exit": "Silang Interchange", "fee": 163 },
                 { "exit": "Silang East", "fee": 128 },
@@ -103,7 +121,10 @@
 	],
 	"class_3": [
 		{
+            "region": "IV-A",
             "entry": "Silang Interchange",
+            "province": ["CAVITE", "LAGUNA"],
+            "nearest": ["Silang", "Dasmarinas"],
             "tolls": [
                 { "exit": "Silang East", "fee": 52 },
                 { "exit": "Santa Rosa-Tagaytay", "fee": 136 },
@@ -113,9 +134,11 @@
             ]
         },
 		{
+            "region": "IV-A",
             "entry": "Silang East",
+            "province": ["CAVITE", "LAGUNA"],
+            "nearest": ["Silang", "Dasmarinas"],
             "tolls": [
-                { "exit": "Silang Interchange", "fee": 52 },
                 { "exit": "Santa Rosa-Tagaytay", "fee": 83 },
                 { "exit": "Laguna Boulevard", "fee": 100 },
                 { "exit": "Technopark", "fee": 146 },
@@ -123,27 +146,31 @@
             ]
         },
 		{
+            "region": "IV-A",
             "entry": "Santa Rosa-Tagaytay",
+            "province": ["LAGUNA", "CAVITE"],
+            "nearest": ["Santa Rosa", "Tagaytay"],
             "tolls": [
-                { "exit": "Silang Interchange", "fee": 136 },
-                { "exit": "Silang East", "fee": 83 },
                 { "exit": "Laguna Boulevard", "fee": 43 },
                 { "exit": "Technopark", "fee": 89 },
                 { "exit": "Greenfield", "fee": 134 }
             ]
         },
 		{
+            "region": "IV-A",
             "entry": "Laguna Boulevard",
+            "province": ["LAGUNA", "CAVITE"],
+            "nearest": ["Santa Rosa", "Biñan"],
             "tolls": [
-                { "exit": "Silang Interchange", "fee": 153 },
-                { "exit": "Silang East", "fee": 100 },
-                { "exit": "Santa Rosa-Tagaytay", "fee": 43 },
                 { "exit": "Technopark", "fee": 45 },
                 { "exit": "Greenfield", "fee": 91 }
             ]
         },
 		{
+            "region": "IV-A",
             "entry": "Greenfield",
+            "province": ["LAGUNA", "CAVITE"],
+            "nearest": ["Santa Rosa", "Cabuyao"],
             "tolls": [
                 { "exit": "Silang Interchange", "fee": 244 },
                 { "exit": "Silang East", "fee": 192 },

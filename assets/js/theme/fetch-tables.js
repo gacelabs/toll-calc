@@ -1,18 +1,15 @@
 var dataObject = {};
 
 (function() {
-	var tables = ['cities', 'tplex', 'nlex', 'cavitex', 'naiax', 'skyway', 'superhighway', 'calax', 'skyway_3'];
+	var tables = ['archipelago', 'cities', 'tplex', 'nlex', 'cavitex', 'naiax', 'slex', 'superhighway', 'calax', 'skyway_3'];
 
 	if (isSessionExpired()) {
+		localStorage.clear();
+		dataObject = {};
 		localStorage.setItem('lastActive', new Date());
-		tables.forEach(function (table) {
-			// console.log(table);
-			localStorage.removeItem(table);
-			dataObject = {};
-		});
 	}
 
-	tables.forEach(function (table) {
+	tables.forEach(function (table, i) {
 		// console.log(table);
 		if (!localStorage.getItem(table)) {
 			var options = {
@@ -30,6 +27,11 @@ var dataObject = {};
 			$.ajax(options);
 		} else {
 			dataObject[table] = JSON.parse(localStorage.getItem(table));
+		}
+		if (i == (tables.length - 1)) {
+			setTimeout(() => {
+				$('.tc1-loader-overlay').removeClass('is-open');
+			}, 2000);
 		}
 	});
 	// console.log(dataObject);
