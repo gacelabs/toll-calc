@@ -3,11 +3,12 @@ var dataObject = {};
 (function() {
 	var tables = ['archipelago', 'cities', 'tplex', 'nlex', 'cavitex', 'naiax', 'slex', 'superhighway', 'calax', 'skyway_3'];
 
-	if (isSessionExpired()) {
+	localStorage.clear();
+	/* if (isSessionExpired()) {
 		localStorage.clear();
 		dataObject = {};
 		localStorage.setItem('lastActive', new Date());
-	}
+	} */
 
 	tables.forEach(function (table, i) {
 		// console.log(table);
