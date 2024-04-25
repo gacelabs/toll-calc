@@ -1,7 +1,8 @@
 class JSONQuery {
 	constructor(data) {
 		this.data = data;
-		this.query;
+		this.view = data;
+		this.query = null;
 	}
 
 	select(fields) {
@@ -48,7 +49,7 @@ class JSONQuery {
 		let value = condition.value;
 		let needed = item[field];
 
-		if (typeof value == 'string') {
+		if (typeof value == 'string' && typeof needed == 'string') {
 			value = value.toLowerCase();
 			// console.log(needed, field);
 			needed = needed.toLowerCase();
@@ -84,9 +85,36 @@ class JSONQuery {
 					return false;
 				}
 			case "in":
+				// console.log(operator, value, needed);
 				return value.includes(needed);
+			case "in like":
+				if (typeof value === 'string') {
+					var results = [];
+					for (const key in needed) {
+						var val = needed[key];
+						const pattern = new RegExp('^' + value.replace(/%/g, '.*') + '$');
+						// console.log(value, pattern, needed[key], val);
+						results.push(pattern.test(val));
+					}
+					return results.includes(true);
+				} else {
+					return needed === value;
+				}
 			case "not in":
 				return !value.includes(needed);
+			case "not in like":
+				if (typeof value === 'string') {
+					var results = [];
+					for (const key in needed) {
+						var val = needed[key];
+						const pattern = new RegExp('^' + value.replace(/%/g, '.*') + '$');
+						// console.log(value, pattern, needed[key], val);
+						results.push(pattern.test(val));
+					}
+					return results.includes(false);
+				} else {
+					return needed !== value;
+				}
 			case "is null":
 				return needed === null || needed === undefined;
 			case "is not null": case "not null":
@@ -118,11 +146,13 @@ class JSONQuery {
 		var _this = this;
 		var { select, where } = query;
 		this.query = query;
-		var result = this.data;
+		var result = this.data.length ? this.data : this.view;
 
 		if (select) {
-			result = this.select(select.fields);
+		} else if (this.query != null) {
+			select = this.query.select
 		}
+		result = this.select(select.fields);
 
 		if (where) {
 			result = this.where(where.condition);
@@ -184,7 +214,8 @@ class JSONQuery {
 			}
 		}
 
-		return result;
+		this.data = result;
+		return this;
 	}
 
 	getQuery() {

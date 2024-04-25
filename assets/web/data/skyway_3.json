@@ -4,7 +4,7 @@
             "region": "NCR",
             "entry": "Buendia",
             "province": ["NCR"],
-            "nearest": ["Manila", "Makati", "Pasay"],
+            "nearest": ["Makati", "Pasay"],
             "tolls": [
                 { "exit": "Quirino", "fee": 105 },
                 { "exit": "Plaza Azul/Nagtahan", "fee": 105 },
@@ -19,7 +19,7 @@
             "region": "NCR",
             "entry": "Quirino",
             "province": ["NCR"],
-            "nearest": ["Manila", "Makati", "Pasay"],
+            "nearest": ["Makati", "Pasay"],
             "tolls": [
                 { "exit": "Plaza Azul/Nagtahan", "fee": 105 },
                 { "exit": "Quezon Avenue", "fee": 264 },
@@ -152,7 +152,7 @@
             "region": "NCR",
             "entry": "Quirino",
             "province": ["NCR"],
-            "nearest": ["Manila", "Makati", "Pasay"],
+            "nearest": ["Makati", "Pasay"],
             "tolls": [
                 { "exit": "Buendia", "fee": 105 }
             ],
@@ -164,7 +164,7 @@
             "region": "NCR",
             "entry": "Buendia",
             "province": ["NCR"],
-            "nearest": ["Manila", "Makati", "Pasay"],
+            "nearest": ["Makati", "Pasay"],
             "tolls": [
                 { "exit": "Quirino", "fee": 210 },
                 { "exit": "Plaza Azul/Nagtahan", "fee": 210 },
@@ -179,7 +179,7 @@
             "region": "NCR",
             "entry": "Quirino",
             "province": ["NCR"],
-            "nearest": ["Manila", "Makati", "Pasay"],
+            "nearest": ["Makati", "Pasay"],
             "tolls": [
                 { "exit": "Plaza Azul/Nagtahan", "fee": 210 },
                 { "exit": "Quezon Avenue", "fee": 528 },
@@ -312,7 +312,7 @@
             "region": "NCR",
             "entry": "Quirino",
             "province": ["NCR"],
-            "nearest": ["Manila", "Makati", "Pasay"],
+            "nearest": ["Makati", "Pasay"],
             "tolls": [
                 { "exit": "Buendia", "fee": 210 }
             ],
@@ -324,7 +324,7 @@
             "region": "NCR",
             "entry": "Buendia",
             "province": ["NCR"],
-            "nearest": ["Manila", "Makati", "Pasay"],
+            "nearest": ["Makati", "Pasay"],
             "tolls": [
                 { "exit": "Quirino", "fee": 315 },
                 { "exit": "Plaza Azul/Nagtahan", "fee": 315 },
@@ -339,7 +339,7 @@
             "region": "NCR",
             "entry": "Quirino",
             "province": ["NCR"],
-            "nearest": ["Manila", "Makati", "Pasay"],
+            "nearest": ["Makati", "Pasay"],
             "tolls": [
                 { "exit": "Plaza Azul/Nagtahan", "fee": 315 },
                 { "exit": "Quezon Avenue", "fee": 792 },
@@ -472,7 +472,7 @@
             "region": "NCR",
             "entry": "Quirino",
             "province": ["NCR"],
-            "nearest": ["Manila", "Makati", "Pasay"],
+            "nearest": ["Makati", "Pasay"],
             "tolls": [
                 { "exit": "Buendia", "fee": 315 }
             ],

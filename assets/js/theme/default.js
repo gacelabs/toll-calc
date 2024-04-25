@@ -34,35 +34,15 @@ $(document).ready(function() {
 
 	$(window).trigger('resize');
 	
-	$('strong[data-for="bound"]').disableSelection();
-	$('#bound').on('change', function (e) {
-		var im_from = $('#im_from').clone(true);
-		var going_to = $('#going_to').clone(true);
-		if ($(e.target).is(':checked')) {
-			$('strong[data-for="bound"]').text('North Bound');
-			$(e.target).val('north');
-		} else {
-			$('strong[data-for="bound"]').text('South Bound');
-			$(e.target).val('south');
-		}
-		if (im_from.val() != '' && going_to.val() == '') {
-			$('#search_form').find('input#going_to').val(im_from.val()).attr('data-set', im_from.attr('data-set'));
-			setTimeout(() => {
-				$('#search_form').find('input#im_from').val('').removeAttr('data-set');
-			}, 3);
-		}
-		if (im_from.val() == '' && going_to.val() != '') {
-			$('#search_form').find('input#im_from').val(going_to.val()).attr('data-set', going_to.attr('data-set'));
-			setTimeout(() => {
-				$('#search_form').find('input#going_to').val('').removeAttr('data-set');
-			}, 3);
-		}
-		if (im_from.val() != '' && going_to.val() != '') {
-			$('#search_form').find('input#im_from').val(going_to.val()).attr('data-set', going_to.attr('data-set'));
-			setTimeout(() => {
-				$('#search_form').find('input#going_to').val(im_from.val()).attr('data-set', im_from.attr('data-set'));
-			}, 3);
-		}
+	$('strong[data-for="north"]').disableSelection();
+	$('strong[data-for="south"]').disableSelection();
+	
+	$('[name="bound"]').on('change', function (e) {
+		// console.log($(e.target).is(':checked'), e.target.value, $(e.target));
+		$('[name="bound"]').removeAttr('checked');
+		$(e.target).attr('checked', 'checked');
+		$('.cities-input').val('');
+		$('.cities-input').removeAttr('data-set');
 	});
 
 	// console.log(Object.keys(dataObject).length, dataObject);
@@ -80,9 +60,6 @@ $(document).ready(function() {
 
 	$('#search_form').on('submit', function (e) {
 		e.preventDefault();
-		// e.stopPropagation();
-		
-		var archipelago = new JSONQuery(dataObject['archipelago']);
 
 		// ORIGIN
 		var origin = $('#im_from');
@@ -90,616 +67,191 @@ $(document).ready(function() {
 		var dest = $('#going_to');
 
 		if (origin.attr('data-set') != undefined && dest.attr('data-set') != undefined) {
+			var sBound = $('[name="bound"]:checked').val();
 			var origin_data = JSON.parse(origin.attr('data-set'));
 			var dest_data = JSON.parse(dest.attr('data-set'));
+			console.log(origin_data, dest_data);
 
-			if (origin_data.name !== dest_data.name || origin_data.province !== dest_data.province) {
-				var origin_result = archipelago.execute({
-					select: { fields: '*' },
-					where: {
-						condition: [
-							{ field: 'province', operator: '=', value: origin_data.province },
-						]
-					}
-				});
-				console.log(origin_result);
-				if (origin_result.length) {
-					var first = origin_result[0];
-				}
-				var dest_result = archipelago.execute({
-					select: { fields: '*' },
-					where: {
-						condition: [
-							{ field: 'province', operator: '=', value: dest_data.province },
-						]
-					}
-				});
-				console.log(dest_result);
-				if (dest_result.length) {
-					var second = dest_result[0];
-				}
-		
-				if (first != undefined && second != undefined) {
-					// get the tollways available
-					var originRoutes = {}, destinationRoutes = {};
-					var boundFrom = first.bound;
-					var boundTo = second.bound;
-					var search_string = origin_data.old_name;
-					var search_string_2 = dest_data.old_name;
-					var provinceFrom = first.province;
-					var provinceTo = second.province;
-					
-					
-					// first.tollways.forEach((toll, c) => {
-					for (var c in first.tollways) {
-						var toll = first.tollways[c];
-						var allow = true;
-						if (first.toll_subjects != undefined) {
-							allow = (first.toll_subjects[c].cities.includes('All') || first.toll_subjects[c].cities.includes(origin_data.old_name));
-						}
-						// check if there are toll_subjects
-						// console.log(allow, toll, origin_data.old_name);
-						
-						if (allow) {
-							// console.log(toll);
-							var tollway = new JSONQuery(dataObject[toll]);
-							originRoutes[toll] = {};
-							// traverse to per class
-							for (var way in tollway) {
-								// console.log(class_name);
-								if (tollway[way] != undefined) {
-									var oClasses = tollway[way];
-									// console.log(oClasses);
-									for (var class_name in oClasses) {
-										if (Object.hasOwnProperty.call(oClasses, class_name)) {
-											var oClass = oClasses[class_name];
-											// console.log(class_name, oClass);
-											originRoutes[toll][class_name] = [];
-											// check the destination bound
-											if (first.endline) {
-												if (boundFrom == 'south') {
-													var key = oClass.length - 1;
-													var oTolls = oClass[key].tolls.reverse();
-												} else {
-													var key = 0;
-													var oTolls = oClass[key].tolls;
-												}
-												originRoutes[toll][class_name].push({
-													'entry': oClass[key].entry,
-													'tolls': oTolls,
-													'exit': oTolls.slice(-1)[0].exit,
-													// 'province': oClass[key].province,
-													// 'nearest': oClass[key].nearest
-												});
-												// console.log(originRoutes, oClass[key]);
-											} else if (boundFrom == 'south') {
-												// south
-												if (first.island == second.island) {
-													for (var key = (oClass.length - 1); key >= 0; key--) {
-														if (oClass[key].nearest.includes(search_string)) {
-															// console.log(oClass[key]);
-															originRoutes[toll][class_name].push({
-																'entry': oClass[key].entry,
-																'tolls': oClass[key].tolls,
-															});
-														}
-													}
-													originRoutes[toll][class_name].forEach(function (avail, x) {
-														for (var key = (oClass.length - 1); key >= 0; key--) {
-															var sExit = oClass[key].entry;
-															if (oClass[key].nearest.includes(search_string_2)) {
-																originRoutes[toll][class_name][x]['exit'] = sExit;
-																let oTolls = [];
-																for (var jey in originRoutes[toll][class_name][x].tolls) {
-																	var oExit = originRoutes[toll][class_name][x].tolls[jey];
-																	oTolls.push(oExit);
-																	if (oExit.exit == sExit) {
-																		break;
-																	}
-																}
-																originRoutes[toll][class_name][x].tolls = oTolls;
-															} 
-														}
-													});
-												} else {
-													for (var key = (oClass.length - 1); key >= 0; key--) {
-														var oNearest = oClass[key].nearest;
-														// check nearest city
-														for (var x in oNearest) {
-															var ct = oNearest[x];
-															if (search_string.indexOf(ct) >= 0 || ct === 'All') {
-																// console.log(key, oClass[key]);
-																var index = oClass.length - 1;
-																var oTolls = [];
-																for (var i = 0; i <= key; i++) {
-																	// get entry tolls & fees
-																	var arTolls = oClass[index].tolls[i];
-																	if (arTolls != undefined) {
-																		oTolls.push(arTolls);
-																	}
-																}
-																if (oTolls.length) {
-																	originRoutes[toll][class_name].push({
-																		'entry': oClass[key].entry,
-																		// 'tolls': oTolls.reverse(),
-																		'exit': oClass[index].tolls[0].exit
-																	});
-																}
-															}
-														}
-													}
-												}
-											} else if (boundFrom == 'north') {
-												// north
-												/* form same island */
-												if (first.island == second.island) { 
-													for (var key = 0; key < oClass.length; key++) {
-														if (oClass[key].nearest.includes(search_string)) {
-															originRoutes[toll][class_name].push({
-																'entry': oClass[key].entry,
-																'tolls': oClass[key].tolls,
-															});
-														}
-													}
-													originRoutes[toll][class_name].forEach(function (avail, x) {
-														for (var key = 0; key < oClass.length; key++) {
-															var sExit = oClass[key].entry;
-															if (oClass[key].nearest.includes(search_string_2)) {
-																originRoutes[toll][class_name][x]['exit'] = sExit;
-																let oTolls = [];
-																for (var jey in originRoutes[toll][class_name][x].tolls) {
-																	var oExit = originRoutes[toll][class_name][x].tolls[jey];
-																	oTolls.push(oExit);
-																	if (oExit.exit == sExit) {
-																		break;
-																	}
-																}
-																originRoutes[toll][class_name][x].tolls = oTolls;
-															}
-														}
-													});
-												} else {
-													for (var key = 0; key < oClass.length; key++) {
-														var oNearest = oClass[key].nearest;
-														// check nearest city
-														for (var x in oNearest) {
-															var ct = oNearest[x];
-															if (search_string.indexOf(ct) >= 0 || ct === 'All') {
-																// console.log(ct, search_string, origin_data.province, oClass[key].province);
-																// console.log(key, oClass[key]);
-																var oTolls = oClass[key].tolls;
-																if (oTolls.length) {
-																	originRoutes[toll][class_name].push({
-																		'entry': oClass[key].entry,
-																		// 'tolls': oTolls,
-																		'exit': oClass[key].tolls[oTolls.length - 1].exit
-																	});
-																}
-															}
-														}
-													}
-												}
-											}
-											if (originRoutes[toll][class_name].length == 0) {
-												delete originRoutes[toll][class_name];
-											}
-										}
-									}
-								}
-							}
-							if (Object.keys(originRoutes[toll]).length == 0) {
-								delete originRoutes[toll];
-							}
-						}
-					}
-					// });
-	
-					console.log('origin', originRoutes);
-	
-					// second.tollways.forEach((toll, c) => {
-					// for (var c in second.tollways) {
-					// 	var toll = second.tollways[c];
-					// 	// console.log(toll);
-					// 	var allow = true;
-					// 	if (second.toll_subjects != undefined) {
-					// 		allow = (second.toll_subjects[c].cities.includes('All') || second.toll_subjects[c].cities.includes(dest_data.old_name));
-
-					// 	}
-
-					// 	if (allow) {
-					// 		var tollway = new JSONQuery(dataObject[toll]);
-					// 		destinationRoutes[toll] = {};
-					// 		if (originRoutes[toll] == undefined) {
-					// 			// traverse to per class
-					// 			for (var way in tollway) {
-					// 				// console.log(class_name);
-					// 				if (tollway[way] != undefined) {
-					// 					var oClasses = tollway[way];
-					// 					// console.log(oClasses);
-					// 					for (var class_name in oClasses) {
-					// 						if (Object.hasOwnProperty.call(oClasses, class_name)) {
-					// 							var oClass = oClasses[class_name];
-					// 							// console.log(class_name, oClass);
-					// 							destinationRoutes[toll][class_name] = [];
-					// 							if (second.endline) {
-					// 								if (boundFrom == 'south') {
-					// 									var key = oClass.length - 1;
-					// 									var oTolls = oClass[key].tolls.reverse();
-					// 								} else {
-					// 									var key = 0;
-					// 									var oTolls = oClass[key].tolls;
-					// 								}
-					// 								destinationRoutes[toll][class_name].push({
-					// 									'entry': oClass[key].entry,
-					// 									'tolls': oTolls,
-					// 									'exit': oTolls.slice(-1)[0].exit
-					// 								});
-					// 							} else if (boundFrom == 'south') {
-					// 								for (var key = (oClass.length - 1); key >= 0; key--) {
-					// 									var oNearest = oClass[key].nearest;
-					// 									// check nearest city
-					// 									for (var x in oNearest) {
-					// 										var ct = oNearest[x];
-					// 										// console.log(ct, search_string_2, oClass[key]);
-					// 										if (search_string_2.indexOf(ct) >= 0 || ct === 'All') {
-					// 											// console.log(key, oClass[key]);
-					// 											var index = oClass.length - 1;
-					// 											var oTolls = [];
-					// 											for (var i = 0; i <= key; i++) {
-					// 												// get entry tolls & fees
-					// 												var arTolls = oClass[index].tolls[i];
-					// 												if (arTolls != undefined) {
-					// 													oTolls.push(arTolls);
-					// 												}
-					// 											}
-					// 											if (oTolls.length) {
-					// 												destinationRoutes[toll][class_name].push({
-					// 													'entry': oClass[index].tolls[0].exit,
-					// 													'tolls': oTolls,
-					// 													'exit': oClass[key].entry
-					// 												});
-					// 											}
-					// 										}
-					// 									}
-					// 								}
-					// 							} else if (boundFrom == 'north') {
-					// 								// north
-					// 								for (var key = 0; key < oClass.length; key++) {
-					// 									var oNearest = oClass[key].nearest;
-					// 									// check nearest city
-					// 									for (var x in oNearest) {
-					// 										var ct = oNearest[x];
-					// 										if (search_string_2.indexOf(ct) >= 0 || ct === 'All') {
-					// 											// console.log(ct, search_string, origin_data.province, oClass[key].province);
-					// 											// console.log(key, oClass[key]);
-					// 											var oTolls = oClass[key].tolls;
-					// 											if (oTolls.length) {
-					// 												destinationRoutes[toll][class_name].push({
-					// 													'entry': oClass[key].entry,
-					// 													'tolls': oTolls,
-					// 													'exit': oClass[key].tolls[oTolls.length - 1].exit
-					// 												});
-					// 											}
-					// 										}
-					// 									}
-					// 								}
-					// 							}
-					// 							if (destinationRoutes[toll][class_name].length == 0) {
-					// 								delete destinationRoutes[toll][class_name];
-					// 							}
-					// 						}
-					// 					}
-					// 				}
-					// 			}
-					// 			if (Object.keys(destinationRoutes[toll]).length == 0) {
-					// 				delete destinationRoutes[toll];
-					// 			}
-					// 		} else {
-					// 			for (var class_name in dataObject[toll]) {
-					// 				if (Object.hasOwnProperty.call(dataObject[toll], class_name)) {
-					// 					var oClass = dataObject[toll][class_name];
-					// 					destinationRoutes[toll][class_name] = [];
-					// 					// console.log(originRoutes[toll][class_name].tolls);
-					// 					if (boundFrom == 'south') {
-					// 						for (var key = (oClass.length - 1); key >= 0; key--) {
-					// 							var oNearest = oClass[key].nearest;
-					// 							// check nearest city
-					// 							for (var x in oNearest) {
-					// 								var ct = oNearest[x];
-					// 								// console.log(ct, search_string_2, oClass[key]);
-					// 								if (search_string_2.indexOf(ct) >= 0 || ct === 'All') {
-					// 									// console.log(key, oClass[key]);
-					// 									var index = oClass.length - 1;
-					// 									var oTolls = [];
-					// 									for (var i = 0; i <= key; i++) {
-					// 										// get entry tolls & fees
-					// 										var arTolls = oClass[index].tolls[i];
-					// 										if (arTolls != undefined) {
-					// 											oTolls.push(arTolls);
-					// 										}
-					// 									}
-					// 									if (oTolls.length) {
-					// 										destinationRoutes[toll][class_name].push({
-					// 											'entry': oClass[index].tolls[0].exit,
-					// 											'tolls': oTolls,
-					// 											'exit': oClass[key].entry
-					// 										});
-					// 									}
-					// 								}
-					// 							}
-					// 						}
-					// 					} else if (boundFrom == 'north') {
-					// 						// north
-					// 						for (var key = 0; key < oClass.length; key++) {
-					// 							var oNearest = oClass[key].nearest;
-					// 							// check nearest city
-					// 							for (var x in oNearest) {
-					// 								var ct = oNearest[x];
-					// 								if (search_string_2.indexOf(ct) >= 0 || ct === 'All') {
-					// 									// console.log(ct, search_string, origin_data.province, oClass[key].province);
-					// 									// console.log(key, oClass[key]);
-					// 									var oTolls = oClass[key].tolls;
-					// 									if (oTolls.length) {
-					// 										destinationRoutes[toll][class_name].push({
-					// 											'entry': oClass[key].entry,
-					// 											'tolls': oTolls,
-					// 											'exit': oClass[key].tolls[oTolls.length - 1].exit
-					// 										});
-					// 									}
-					// 								}
-					// 							}
-					// 						}
-					// 					}
-					// 				}
-					// 			}
-					// 		}
-					// 	}
-					// }
-					// });
-	
-					console.log('destination', destinationRoutes);
-					/* var firstRoutes = routeGenerator(origin_data, first, origin_data.name);
-					console.log(firstRoutes);
-					var secondRoutes = routeGenerator(dest_data, second, dest_data.name);
-					console.log(secondRoutes); */
-				}
+			if (origin_data.start != sBound) {
+				$(origin).val('');
+				$(origin).removeAttr('data-set');
+				var placeholder = $(origin).attr('placeholder');
+				$(origin).attr('placeholder', 'Value is not bound to ' + sBound);
+				setTimeout(() => {
+					$(origin).attr('placeholder', placeholder);
+				}, 3000);
 			} else {
-				console.log("No results found!");
+				var originRoutes = generateOriginRoutes(origin_data);
 			}
 
+			var sBound = $('[name="bound"]:checked').val();
+			if (dest_data.start != sBound) {
+				$(dest).val('');
+				$(dest).removeAttr('data-set');
+				var placeholder = $(dest).attr('placeholder');
+				$(dest).attr('placeholder', 'Value is not bound to ' + sBound);
+				setTimeout(() => {
+					$(dest).attr('placeholder', placeholder);
+				}, 3000);
+			} else {
+				var destinationRoutes = generateDestinationRoutes(originRoutes, dest_data);
+			}
+
+			console.log(originRoutes, destinationRoutes);
 		}
-
-		/* dataObject.nlex.class_1.forEach(function (data) {
-			var nlexSubjects = new JSONQuery(data.subjects);
-			var query = {
-				select: { fields: '*' },
-				where: {
-					condition: [
-						{ field: 'name', operator: 'LIKE', value: '%Caloocan City, NCR%' },
-					]
-				}
-			};
-			var result = nlexSubjects.execute(query);
-
-			if (result.length) {
-				console.log(result, data);
-			}
-		}); */
 	});
-	
 });
 
-var routeGenerator = function (search_data, this_data, search_name) {
-	var routes = {};
-	var bound = this_data.bound;
-	this_data.tollways.forEach(toll => {
-		var tollway = new JSONQuery(dataObject[toll]);
-		routes[toll] = {};
-		// traverse to per class
-		for (var way in tollway) {
-			// console.log(class_name);
-			if (tollway[way] != undefined) {
-				var oClasses = tollway[way];
-				// console.log(oClasses);
-				for (var class_name in oClasses) {
-					if (Object.hasOwnProperty.call(oClasses, class_name)) {
-						var oClass = oClasses[class_name];
-						// check the destination bound
-						routes[toll][class_name] = [];
-						if (this_data.endline == true) {
-							if (bound == 'south') {
-								var oClass = oClass.reverse();
-							}
-							// console.log(oClass, this_data, search_name);
-							var bContinue = false;
-							for (var key in oClass) {
-								if (Object.hasOwnProperty.call(oClass, key)) {
-									var oSubjects = new JSONQuery(oClass[key].subjects);
-									var oRoute = oSubjects.execute({
-										select: { fields: '*' },
-										where: {
-											condition: [
-												{ field: 'name', operator: '=', value: search_name },
-											]
-										}
-									});
-									if (oRoute.length == 0 && bContinue == false) {
-										delete oClass[key];
-										bContinue = true;
-									}
-									
-									if (oClass[key] != undefined) {
-										oClass[key].tolls.forEach(function (oExit, d) {
-											var oExSubjects = new JSONQuery(oExit.subjects);
-											var oExRoute = oExSubjects.execute({
-												select: { fields: '*' },
-												where: {
-													condition: [
-														{ field: 'name', operator: 'like', value: '%' + this_data.entry_points.north + '%' },
-														{ field: 'name', operator: 'like', value: '%' + this_data.entry_points.south + '%' },
-													]
-												}
-											});
-											if (oExRoute.length == 0) {
-												delete oClass[key].tolls[d];
-											}
-										});
-										if (oClass[key].tolls.length) {
-											oClass[key].tolls = oClass[key].tolls.filter((_, index) => oClass[key].tolls.hasOwnProperty(index));
-										} else {
-											// delete oClass[key];
-										}
-									}
-								}
-							}
-							routes[toll][class_name] = oClass;
-						} else {
-							for (var key in oClass) {
-								if (Object.hasOwnProperty.call(oClass, key)) {
-									var oData = oClass[key];
-									if (oData.subjects != undefined) {
-										var oSubjects = new JSONQuery(oData.subjects);
-										// console.log(oSubjects);
-										var route = oSubjects.execute({
-											select: { fields: '*' },
-											where: {
-												condition: [
-													{ field: 'name', operator: '=', value: search_name },
-												]
-											}
-										});
-										// console.log(dest_result, route, oData);
-										if (route.length == 1) {
-											oData.tolls.forEach(function (oExit, d) {
-												var oExSubjects = new JSONQuery(oExit.subjects);
-												var oExRoute = oExSubjects.execute({
-													select: { fields: '*' },
-													where: {
-														condition: [
-															{ field: 'name', operator: 'like', value: '%' + this_data.entry_points[bound] + '%' },
-														]
-													}
-												});
-												// console.log(this_data, oExSubjects.getQuery());
-												if (oExRoute.length == 0) {
-													delete oData.tolls[d];
-												} else {
-													if (parseInt(key) < parseInt(d)) {
-														delete oData.tolls[d];
-													}
-												}
-											});
-											if (oData.tolls.length) {
-												oData.tolls = oData.tolls.filter((_, index) => oData.tolls.hasOwnProperty(index));
-												routes[toll][class_name].push(oData);
-												var arClass = oClasses[class_name];
-												routes = lookForTolls(bound, key, toll, arClass, routes, class_name, this_data, oClass);
-											}
-											break;
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-	});
-
-	return routes;
-}
-
-var lookForTolls = function (bound, key, toll, arClass, routes, class_name, this_data, oClass) {
-	if (bound == 'south') {
-		// route is north
-		for (var x = (key - 1); x >= 0; x--) {
-			if (arClass[x] != undefined) {
-				var arData = arClass[x];
-				if (arData.subjects != undefined) {
-					var arSubjects = new JSONQuery(arData.subjects);
-					var arRoute = arSubjects.execute({
-						select: { fields: '*' },
-						where: {
-							condition: [
-								{ field: 'name', operator: 'like', value: '%' + this_data.entry_points[bound] + '%' },
-							]
-						}
-					});
-					// console.log(search_name, arRoute, arData);
-					if (arRoute.length) {
-						arData.tolls.forEach(function (exit, i) {
-							var exSubjects = new JSONQuery(exit.subjects);
-							var exRoute = exSubjects.execute({
-								select: { fields: '*' },
-								where: {
-									condition: [
-										{ field: 'name', operator: 'like', value: '%' + this_data.entry_points[bound] + '%' },
-									]
-								}
-							});
-							if (exRoute.length == 0) {
-								delete arData.tolls[i];
-							} else {
-								if (parseInt(key) < parseInt(i)) {
-									delete arData.tolls[i];
-								}
-							}
-						});
-						if (arData.tolls.length) {
-							arData.tolls = arData.tolls.filter((_, index) => arData.tolls.hasOwnProperty(index));
-							routes[toll][class_name].push(arData);
-						}
-					}
-				}
+var generateOriginRoutes = function (oData) {
+	var oRoutes = {};
+	var oTollways = oData.tollways;
+	var oTollSubjects = (oData.toll_subjects != undefined && oData.toll_subjects.length) ? oData.toll_subjects : false;
+	var urBoundTo = $('[name="bound"]:checked').val();
+	var bLastExit = false;
+	if (urBoundTo == 'north') {
+		if (oData.start == 'south') {
+			oTollways = oTollways.reverse();
+			if (oTollSubjects) {
+				oTollSubjects = oTollSubjects.reverse();
 			}
 		}
 	} else {
-		// route is south
-		for (var x = (parseInt(key) + 1); x < arClass.length; x++) {
-			if (arClass[x] != undefined) {
-				var arData = arClass[x];
-				if (arData.subjects != undefined) {
-					var arSubjects = new JSONQuery(arData.subjects);
-					var arRoute = arSubjects.execute({
-						select: { fields: '*' },
-						where: {
-							condition: [
-								{ field: 'name', operator: 'like', value: '%' + this_data.entry_points[bound] + '%' },
-							]
+		if (oData.start == 'north') { // starting from north
+			bLastExit = true;
+		}
+	}
+	for (var c in oTollways) {
+		var toll = oTollways[c];
+		var tollway = dataObject[toll];
+		var allow = true;
+		if (oTollSubjects) {
+			allow = oTollSubjects[c].cities.includes(oData.old_name);
+		}
+
+		if (allow) {
+			oRoutes[toll] = {};
+			for (var class_name in tollway) {
+				if (tollway[class_name] != undefined) {
+					var oClasses = tollway[class_name];
+					var oClass = new JSONQuery(oClasses);
+					oRoutes[toll][class_name] = [];
+					// console.log(oRoutes, toll, oClass);
+	
+					if (oData.endline == true) {
+						// console.log(oClass.data);
+						if (oData.start == 'south') { // started from south
+							var key = oClass.data.length - 1;
+						} else {
+							var key = 0;
 						}
-					});
-					// console.log(search_name, arRoute, arData);
-					if (arRoute.length) {
-						arData.tolls.forEach(function (exit, i) {
-							var exSubjects = new JSONQuery(exit.subjects);
-							var exRoute = exSubjects.execute({
-								select: { fields: '*' },
-								where: {
-									condition: [
-										{ field: 'name', operator: 'like', value: '%' + this_data.entry_points[bound] + '%' },
-									]
-								}
+						var oTolls = oClass.data[key].tolls;
+						if (bLastExit) {
+							var sEntry = oTolls[oTolls.length - 1].exit;
+							var sExit = oClass.data[key].entry;
+							var iFee = oTolls[oTolls.length - 1].fee;
+						} else {
+							var sEntry = oClass.data[key].entry;
+							var sExit = oTolls[0].exit;
+							var iFee = oTolls[0].fee;
+						}
+						if (sEntry != sExit) {
+							oRoutes[toll][class_name].push({
+								'entry': sEntry,
+								'tolls': oTolls,
+								'exit': sExit,
+								'fee': iFee,
+								'start': oData.start,
 							});
-							if (exRoute.length == 0) {
-								delete arData.tolls[i];
-							} else {
-								// console.log(x, arData.entry, i, arData.tolls[i].exit, oClass[0].tolls);
-								if (parseInt(key) < parseInt(i)) {
-									delete arData.tolls[i];
-								}
-							}
-						});
-						if (arData.tolls.length) {
-							arData.tolls = arData.tolls.filter((_, index) => arData.tolls.hasOwnProperty(index));
-							routes[toll][class_name].push(arData);
 						}
+					} else {
+						var oCondition = [
+							{ field: 'nearest', operator: 'in like', value: '%' + oData.old_name + '%' },
+						];
+
+						var query = {
+							select: { fields: '*' },
+							where: {
+								condition: oCondition
+							}
+						};
+						var result = oClass.execute(query);
+						// console.log(result.data.length);
+						if (result.data.length == 0) {
+							query.where = {
+								condition: [
+									{ field: 'province', operator: 'in', value: oData.province },
+								]
+							}
+							var oClass = new JSONQuery(oClasses);
+							result = oClass.execute(query);
+							// console.log(result, toll, oClass);
+						}
+						if (result.data.length) {
+							if (toll == 'skyway_3') {
+								query.where = {
+									condition: [
+										{ field: 'bound', operator: '=', value: urBoundTo },
+									]
+								};
+								result = result.execute(query);
+							}
+							// console.log(result, toll);
+							for (var x in result.data) {
+								var oResult = result.data[x];
+								var sEntry = oResult.entry;
+								var oTolls = oResult.tolls;
+								
+								if (urBoundTo == 'south' && oData.start == 'south') {
+									var sExit = sEntry;
+									var sEntry = oTolls[oTolls.length - 1].exit;
+									var iFee = oTolls[oTolls.length - 1].fee;
+								} else {
+									var sExit = oTolls[oTolls.length - 1].exit;
+									var iFee = oTolls[oTolls.length - 1].fee;
+								}
+
+								oRoutes[toll][class_name].push({
+									'entry': sEntry,
+									'tolls': oTolls,
+									'exit': sExit,
+									'fee': iFee,
+									'start': oData.start,
+								});
+							}
+						}
+					}
+	
+					if (oRoutes[toll][class_name].length == 0) {
+						delete oRoutes[toll][class_name];
+					} else {
+						// oRoutes[toll][class_name] = removeDuplicates(oRoutes[toll][class_name], 'exit');
 					}
 				}
 			}
+			if (Object.keys(oRoutes[toll]).length == 0) {
+				delete oRoutes[toll];
+			}
 		}
 	}
-	return routes;
+	// console.log(oRoutes);
+	return oRoutes;
+}
+
+var generateDestinationRoutes = function (originData, oData) {
+	var oRoutes = {};
+	var oTollways = oData.tollways;
+	// console.log(originData, oTollways);
+	for (var c in oTollways) {
+		var toll = oTollways[c];
+		if (originData[toll] == undefined) {
+			oRoutes = generateOriginRoutes(oData);
+		}
+		if (oRoutes[toll] != undefined && Object.keys(oRoutes[toll]).length == 0) {
+			delete oRoutes[toll];
+		}
+	}
+	// console.log(oRoutes);
+	return oRoutes;
 }
 
 var runCitySearchData = function () {
@@ -709,7 +261,16 @@ var runCitySearchData = function () {
 			// console.log(e.target.value);
 			var jsonCities = new JSONQuery(dataObject.cities);
 			const joinedData = jsonCities.join(dataObject.archipelago, "province");
-			// var sBound = e.target.id == 'going_to' ? ($('#bound').val() == 'north' ? 'south' : 'north') : $('#bound').val();
+			var sBound = $('[name="bound"]:checked').val();
+			if (sBound == 'north') {
+				if (e.target.id == 'im_from') {
+					sBound = 'south';
+				}
+			} else {
+				if (e.target.id == 'im_from') {
+					sBound = 'north';
+				}
+			}
 			var query = {
 				select: { fields: '*' },
 				where: { 
@@ -728,7 +289,23 @@ var runCitySearchData = function () {
 				]
 			});
 			// console.log(result);
-			autocomplete(e.target, result, 'name');
+			autocomplete(e.target, result.data, 'name');
+		/* }).on('change', function (e) {
+			if (e.target.dataset.set != undefined) {
+				var sBound = $('[name="bound"]:checked').val();
+				// console.log(e.target.dataset.set);
+				var inputData = JSON.parse(e.target.dataset.set);
+				// console.log(inputData.start, sBound);
+				if (inputData.start != sBound) {
+					$(e.target).val('');
+					$(e.target).removeAttr('data-set');
+					var placeholder = $(e.target).attr('placeholder');
+					$(e.target).attr('placeholder', 'Value is not bound to ' + sBound);
+				}
+				setTimeout(() => {
+					$(e.target).attr('placeholder', placeholder);
+				}, 3000);
+			} */
 		});
 	});
 }
@@ -778,4 +355,28 @@ window.mobileAndTabletCheck = function () {
 			.on('selectstart', false);
 	};
 })(jQuery);
+
+function removeDuplicates(array, key) {
+	return array.filter((item, index, self) =>
+		index === self.findIndex((t) => (
+			t[key] === item[key]
+		))
+	);
+}
+
+function mergeAndRemoveDuplicates(obj1, obj2, key) {
+	// Combine objects into a single array
+	const combinedArray = [...obj1, ...obj2];
+
+	// Create a new object with unique keys
+	const uniqueObject = combinedArray.reduce((acc, item) => {
+		if (!acc[item[key]]) {
+			acc[item[key]] = item;
+		}
+		return acc;
+	}, {});
+
+	// Return values of the resulting object as an array
+	return Object.values(uniqueObject);
+}
 
