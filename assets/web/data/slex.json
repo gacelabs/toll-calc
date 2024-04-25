@@ -282,10 +282,26 @@
         },{
             "region": "IV-A",
             "entry": "Calamba",
-            "province": ["LAGUNA"],
+            "province": ["LAGUNA", "BATANGAS"],
             "nearest": ["Calamba", "Los Baños"],
             "tolls": [
-                { "exit": "Santo Tomas", "fee": 29 }
+                { "exit": "Skyway", "fee": 270 },
+                { "exit": "Magallanes", "fee": 224 },
+                { "exit": "C5", "fee": 224 },
+                { "exit": "Bicutan", "fee": 175 },
+                { "exit": "Sucat", "fee": 140 },
+                { "exit": "Alabang", "fee": 106 },
+                { "exit": "Filinvest", "fee": 101 },
+                { "exit": "MCX", "fee": 107 },
+                { "exit": "Susana Heights", "fee": 88 },
+                { "exit": "San Pedro", "fee": 82 },
+                { "exit": "Southwoods", "fee": 68 },
+                { "exit": "Carmona", "fee": 62 },
+                { "exit": "Mamplasan", "fee": 52 },
+                { "exit": "Santa Rosa", "fee": 43 },
+                { "exit": "ABI/Greenfield", "fee": 31 },
+                { "exit": "Cabuyao", "fee": 23 },
+                { "exit": "Silangan", "fee": 18 }
             ]
         },{
             "region": "IV-A",
@@ -580,10 +596,26 @@
         },{
             "region": "IV-A",
             "entry": "Calamba",
-            "province": ["LAGUNA"],
+            "province": ["LAGUNA", "BATANGAS"],
             "nearest": ["Calamba", "Los Baños"],
             "tolls": [
-                { "exit": "Santo Tomas", "fee": 57 }
+                { "exit": "Skyway", "fee": 541 },
+                { "exit": "Magallanes", "fee": 449 },
+                { "exit": "C5", "fee": 449 },
+                { "exit": "Bicutan", "fee": 350 },
+                { "exit": "Sucat", "fee": 281 },
+                { "exit": "Alabang", "fee": 212 },
+                { "exit": "Filinvest", "fee": 203 },
+                { "exit": "MCX", "fee": 216 },
+                { "exit": "Susana Heights", "fee": 177 },
+                { "exit": "San Pedro", "fee": 165 },
+                { "exit": "Southwoods", "fee": 136 },
+                { "exit": "Carmona", "fee": 124 },
+                { "exit": "Mamplasan", "fee": 104 },
+                { "exit": "Santa Rosa", "fee": 87 },
+                { "exit": "ABI/Greenfield", "fee": 62 },
+                { "exit": "Cabuyao", "fee": 46 },
+                { "exit": "Silangan", "fee": 35 }
             ]
         },{
             "region": "IV-A",
@@ -878,10 +910,26 @@
         },{
             "region": "IV-A",
             "entry": "Calamba",
-            "province": ["LAGUNA"],
+            "province": ["LAGUNA", "BATANGAS"],
             "nearest": ["Calamba", "Los Baños"],
             "tolls": [
-                { "exit": "Santo Tomas", "fee": 86 }
+                { "exit": "Skyway", "fee": 811 },
+                { "exit": "Magallanes", "fee": 674 },
+                { "exit": "C5", "fee": 674 },
+                { "exit": "Bicutan", "fee": 526 },
+                { "exit": "Sucat", "fee": 422 },
+                { "exit": "Alabang", "fee": 318 },
+                { "exit": "Filinvest", "fee": 304 },
+                { "exit": "MCX", "fee": 323 },
+                { "exit": "Susana Heights", "fee": 265 },
+                { "exit": "San Pedro", "fee": 247 },
+                { "exit": "Southwoods", "fee": 203 },
+                { "exit": "Carmona", "fee": 186 },
+                { "exit": "Mamplasan", "fee": 157 },
+                { "exit": "Santa Rosa", "fee": 130 },
+                { "exit": "ABI/Greenfield", "fee": 93 },
+                { "exit": "Cabuyao", "fee": 69 },
+                { "exit": "Silangan", "fee": 53 }
             ]
         },{
             "region": "IV-A",
