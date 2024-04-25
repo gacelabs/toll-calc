@@ -67,36 +67,12 @@ $(document).ready(function() {
 		var dest = $('#going_to');
 
 		if (origin.attr('data-set') != undefined && dest.attr('data-set') != undefined) {
-			var sBound = $('[name="bound"]:checked').val();
 			var origin_data = JSON.parse(origin.attr('data-set'));
 			var dest_data = JSON.parse(dest.attr('data-set'));
 			console.log(origin_data, dest_data);
-
-			if (origin_data.start != sBound) {
-				$(origin).val('');
-				$(origin).removeAttr('data-set');
-				var placeholder = $(origin).attr('placeholder');
-				$(origin).attr('placeholder', 'Value is not bound to ' + sBound);
-				setTimeout(() => {
-					$(origin).attr('placeholder', placeholder);
-				}, 3000);
-			} else {
-				var originRoutes = generateOriginRoutes(origin_data);
-			}
-
-			var sBound = $('[name="bound"]:checked').val();
-			if (dest_data.start != sBound) {
-				$(dest).val('');
-				$(dest).removeAttr('data-set');
-				var placeholder = $(dest).attr('placeholder');
-				$(dest).attr('placeholder', 'Value is not bound to ' + sBound);
-				setTimeout(() => {
-					$(dest).attr('placeholder', placeholder);
-				}, 3000);
-			} else {
-				var destinationRoutes = generateDestinationRoutes(originRoutes, dest_data);
-			}
-
+			
+			var originRoutes = generateOriginRoutes(origin_data);
+			var destinationRoutes = generateDestinationRoutes(originRoutes, dest_data);
 			console.log(originRoutes, destinationRoutes);
 		}
 	});
