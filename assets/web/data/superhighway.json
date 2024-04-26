@@ -3,7 +3,7 @@
         {
             "region": "IV-A",
             "entry": "Santo Tomas",
-            "province": ["BATANGAS", "LAGUNA"],
+            "province": ["BATANGAS", "LAGUNA", "CAVITE"],
             "nearest": ["Santo Tomas", "Tanauan", "Santa Rosa"],
             "tolls": [
                 { "exit": "Tanauan", "fee": 12 },
@@ -88,7 +88,7 @@
         {
             "region": "IV-A",
             "entry": "Santo Tomas",
-            "province": ["BATANGAS", "LAGUNA"],
+            "province": ["BATANGAS", "LAGUNA", "CAVITE"],
             "nearest": ["Santo Tomas", "Tanauan", "Santa Rosa"],
             "tolls": [
                 { "exit": "Tanauan", "fee": 25 },
@@ -173,7 +173,7 @@
         {
             "region": "IV-A",
             "entry": "Santo Tomas",
-            "province": ["BATANGAS", "LAGUNA"],
+            "province": ["BATANGAS", "LAGUNA", "CAVITE"],
             "nearest": ["Santo Tomas", "Tanauan", "Santa Rosa"],
             "tolls": [
                 { "exit": "Tanauan", "fee": 37 },

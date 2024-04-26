@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
 	$('[data-for]').on('click', function (e) {
 		var ui = $('#' + $(e.target).data('for'));
 		if (ui.length) {
@@ -8,17 +8,17 @@ $(document).ready(function() {
 				// console.log(ui.attr('type'), $('#'+$(e.target).data('for')));
 				switch (ui.attr('type')) {
 					case 'radio':
-						$('#'+$(e.target).data('for')).trigger('click');
+						$('#' + $(e.target).data('for')).trigger('click');
 						break;
-						
+
 					default:
-						$('#'+$(e.target).data('for')).trigger('click');
+						$('#' + $(e.target).data('for')).trigger('click');
 						break;
 				}
 			}
 		}
 	});
-	
+
 	$('.year-value').text(new Date().getFullYear());
 
 	$(window).on('resize', function (e) {
@@ -33,10 +33,10 @@ $(document).ready(function() {
 	});
 
 	$(window).trigger('resize');
-	
+
 	$('strong[data-for="north"]').disableSelection();
 	$('strong[data-for="south"]').disableSelection();
-	
+
 	$('[name="bound"]').on('change', function (e) {
 		// console.log($(e.target).is(':checked'), e.target.value, $(e.target));
 		$('[name="bound"]').removeAttr('checked');
@@ -65,27 +65,44 @@ $(document).ready(function() {
 		var origin = $('#im_from');
 		// DESTINATION
 		var dest = $('#going_to');
+		if (($.trim(origin.val()) != '' && $.trim(dest.val()) != '') && $.trim(origin.val()) === $.trim(dest.val())) {
+			var placeHolder = dest.attr('placeholder');
+			dest.val('');
+			dest.removeAttr('data-set');
+			dest.attr('placeholder', 'Same origin value failed!');
+			setTimeout(() => {
+				dest.attr('placeholder', placeHolder);
+			}, 2000);
+		} else {
+			if (origin.attr('data-set') != undefined && dest.attr('data-set') != undefined) {
+				var origin_data = JSON.parse(origin.attr('data-set'));
+				var dest_data = JSON.parse(dest.attr('data-set'));
+				console.log(origin_data, dest_data);
 
-		if (origin.attr('data-set') != undefined && dest.attr('data-set') != undefined) {
-			var origin_data = JSON.parse(origin.attr('data-set'));
-			var dest_data = JSON.parse(dest.attr('data-set'));
-			console.log(origin_data, dest_data);
-			
-			var originRoutes = generateOriginRoutes(origin_data);
-			var destinationRoutes = generateDestinationRoutes(originRoutes, dest_data);
-			console.log(originRoutes, destinationRoutes);
+				var originRoutes = generateOriginRoutes(origin_data, dest_data.start);
+				var destinationRoutes = generateDestinationRoutes(originRoutes, dest_data);
+				console.log(originRoutes, destinationRoutes);
+			}
 		}
 	});
 });
 
-var generateOriginRoutes = function (oData) {
+var generateOriginRoutes = function (oData, gointTo) {
 	var oRoutes = {};
 	var oTollways = oData.tollways;
 	var oTollSubjects = (oData.toll_subjects != undefined && oData.toll_subjects.length) ? oData.toll_subjects : false;
-	var urBoundTo = $('[name="bound"]:checked').val();
+	// var urBoundTo = $('[name="bound"]:checked').val();
+	var urBoundTo = 'north';
+	if (oData.start == 'north' && gointTo == 'south') {
+		urBoundTo = 'south';
+	} else if (oData.start == gointTo) {
+		urBoundTo = oData.start;
+	}
+	console.log('started:', $.trim(oData.start), ', bound to:', $.trim(urBoundTo), 'ended:', $.trim(gointTo));
+
 	var bLastExit = false;
 	if (urBoundTo == 'north') {
-		if (oData.start == 'south') {
+		if (oData.start == 'north') {
 			oTollways = oTollways.reverse();
 			if (oTollSubjects) {
 				oTollSubjects = oTollSubjects.reverse();
@@ -107,12 +124,15 @@ var generateOriginRoutes = function (oData) {
 		if (allow) {
 			oRoutes[toll] = {};
 			for (var class_name in tollway) {
+				if (toll == 'ncr') {
+					class_name = urBoundTo;
+				}
 				if (tollway[class_name] != undefined) {
 					var oClasses = tollway[class_name];
 					var oClass = new JSONQuery(oClasses);
 					oRoutes[toll][class_name] = [];
 					// console.log(oRoutes, toll, oClass);
-	
+
 					if (oData.endline == true) {
 						// console.log(oClass.data);
 						if (oData.start == 'south') { // started from south
@@ -136,7 +156,8 @@ var generateOriginRoutes = function (oData) {
 								'tolls': oTolls,
 								'exit': sExit,
 								'fee': iFee,
-								'start': oData.start,
+								'start': urBoundTo,
+								'ended': gointTo,
 							});
 						}
 					} else {
@@ -160,7 +181,7 @@ var generateOriginRoutes = function (oData) {
 							}
 							var oClass = new JSONQuery(oClasses);
 							result = oClass.execute(query);
-							// console.log(result, toll, oClass);
+							console.log(result, toll, oClass);
 						}
 						if (result.data.length) {
 							if (toll == 'skyway_3') {
@@ -172,18 +193,46 @@ var generateOriginRoutes = function (oData) {
 								result = result.execute(query);
 							}
 							// console.log(result, toll);
+							var oGuideTolls = false, oGuideClass = false;
+							if (urBoundTo == 'north') {
+								if (oData.start == 'south') {
+									oGuideTolls = oClasses[0].tolls;
+									oGuideClass = oClasses[0];
+								}
+								// } else if (oData.start == 'south') {
+								// 	oGuideTolls = oClasses[oClasses.length - 1].tolls;
+								// 	oGuideClass = oClasses[oClasses.length - 1];
+							}
+							// console.log(urBoundTo, oData.start, result.data, oGuideTolls);
+
 							for (var x in result.data) {
 								var oResult = result.data[x];
 								var sEntry = oResult.entry;
 								var oTolls = oResult.tolls;
-								
-								if (urBoundTo == 'south' && oData.start == 'south') {
-									var sExit = sEntry;
-									var sEntry = oTolls[oTolls.length - 1].exit;
+
+								if (oGuideTolls != false) {
+									oTolls = [];
+									for (var i in oGuideTolls) {
+										var oGToll = oGuideTolls[i];
+										oTolls.push(oGToll);
+										if (oGToll.exit === sEntry) {
+											break;
+										}
+									}
+									var sExit = oGuideClass.entry;
 									var iFee = oTolls[oTolls.length - 1].fee;
 								} else {
-									var sExit = oTolls[oTolls.length - 1].exit;
-									var iFee = oTolls[oTolls.length - 1].fee;
+									if (urBoundTo == 'south' && oData.start == 'south') {
+										var sExit = oTolls[oTolls.length - 1].exit;
+										var iFee = oTolls[oTolls.length - 1].fee;
+										// console.log(oResult, sEntry, sExit, iFee);
+									} else if (urBoundTo == 'north' && oData.start == 'south') {
+										var sExit = oTolls[0].exit;
+										var iFee = oTolls[0].fee;
+									} else {
+										var sExit = oTolls[oTolls.length - 1].exit;
+										var iFee = oTolls[oTolls.length - 1].fee;
+									}
 								}
 
 								oRoutes[toll][class_name].push({
@@ -191,12 +240,13 @@ var generateOriginRoutes = function (oData) {
 									'tolls': oTolls,
 									'exit': sExit,
 									'fee': iFee,
-									'start': oData.start,
+									'start': urBoundTo,
+									'ended': gointTo,
 								});
 							}
 						}
 					}
-	
+
 					if (oRoutes[toll][class_name].length == 0) {
 						delete oRoutes[toll][class_name];
 					} else {
@@ -214,47 +264,36 @@ var generateOriginRoutes = function (oData) {
 }
 
 var generateDestinationRoutes = function (originData, oData) {
-	var oRoutes = {};
-	var oTollways = oData.tollways;
-	// console.log(originData, oTollways);
-	for (var c in oTollways) {
-		var toll = oTollways[c];
-		if (originData[toll] == undefined) {
-			oRoutes = generateOriginRoutes(oData);
-		}
-		if (oRoutes[toll] != undefined && Object.keys(oRoutes[toll]).length == 0) {
-			delete oRoutes[toll];
-		}
-	}
-	// console.log(oRoutes);
-	return oRoutes;
+	// var oRoutes = {};
+	// var oTollways = oData.tollways;
+	// // console.log(originData, oTollways);
+	// for (var c in oTollways) {
+	// 	var toll = oTollways[c];
+	// 	if (originData[toll] == undefined) {
+	// 		oRoutes = generateOriginRoutes(oData);
+	// 	}
+	// 	if (oRoutes[toll] != undefined && Object.keys(oRoutes[toll]).length == 0) {
+	// 		delete oRoutes[toll];
+	// 	}
+	// }
+	// // console.log(oRoutes);
+	// return oRoutes;
 }
 
 var runCitySearchData = function () {
 	$('.cities-input').each(function (i, elem) {
 		// console.log(i, elem);
-		$(elem).on('input', function (e) {
-			// console.log(e.target.value);
+		$(elem).on('input paste', function (e) {
+			// console.log(e);
 			var jsonCities = new JSONQuery(dataObject.cities);
 			const joinedData = jsonCities.join(dataObject.archipelago, "province");
-			var sBound = $('[name="bound"]:checked').val();
-			if (sBound == 'north') {
-				if (e.target.id == 'im_from') {
-					sBound = 'south';
-				}
-			} else {
-				if (e.target.id == 'im_from') {
-					sBound = 'north';
-				}
-			}
 			var query = {
 				select: { fields: '*' },
-				where: { 
+				where: {
 					condition: [
-						// { field: 'bound', operator: '=', value: sBound },
 						{ field: 'name', operator: 'LIKE', value: '%' + e.target.value + '%' },
 						{ field: 'province', operator: 'LIKE', value: '%' + e.target.value + '%' },
-					] 
+					]
 				}
 			};
 			// console.log(query);
@@ -266,22 +305,6 @@ var runCitySearchData = function () {
 			});
 			// console.log(result);
 			autocomplete(e.target, result.data, 'name');
-		/* }).on('change', function (e) {
-			if (e.target.dataset.set != undefined) {
-				var sBound = $('[name="bound"]:checked').val();
-				// console.log(e.target.dataset.set);
-				var inputData = JSON.parse(e.target.dataset.set);
-				// console.log(inputData.start, sBound);
-				if (inputData.start != sBound) {
-					$(e.target).val('');
-					$(e.target).removeAttr('data-set');
-					var placeholder = $(e.target).attr('placeholder');
-					$(e.target).attr('placeholder', 'Value is not bound to ' + sBound);
-				}
-				setTimeout(() => {
-					$(e.target).attr('placeholder', placeholder);
-				}, 3000);
-			} */
 		});
 	});
 }

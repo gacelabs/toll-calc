@@ -1,0 +1,366 @@
+{
+	"north": [
+		{
+            "region": "NCR",
+            "entry": "Caloocan",
+            "province": ["NCR"],
+            "nearest": ["Valenzuela", "Quezon"],
+			"tolls": [
+                { "fee": 0, "exit": "Edsa" },
+                { "fee": 0, "exit": "NLEX" }
+            ]
+        },
+		{
+            "region": "NCR",
+            "entry": "Valenzuela",
+            "province": ["NCR"],
+            "nearest": ["Obando", "Caloocan", "Quezon"],
+			"tolls": [
+				{ "fee": 0, "exit": "Edsa" },
+                { "fee": 0, "exit": "NLEX" }
+            ]
+        },
+		{
+            "region": "NCR",
+            "entry": "Navotas",
+            "province": ["NCR"],
+            "nearest": ["Malabon", "Valenzuela", "Manila"],
+			"tolls": [
+				{ "fee": 0, "exit": "Edsa" },
+                { "fee": 0, "exit": "NLEX" }
+            ]
+        },
+		{
+            "region": "NCR",
+            "entry": "Malabon",
+            "province": ["NCR"],
+            "nearest": ["Valenzuela", "Manila", "Quezon"],
+			"tolls": [
+				{ "fee": 0, "exit": "Edsa" },
+                { "fee": 0, "exit": "NLEX" }
+            ]
+        },
+		{
+            "region": "NCR",
+            "entry": "Quezon",
+            "province": ["NCR"],
+            "nearest": ["Caloocan", "San Jose del Monte", "Manila", "Marikina", "San Juan"],
+			"tolls": [
+                { "fee": 0, "exit": "C5" },
+                { "fee": 0, "exit": "Edsa" },
+                { "fee": 0, "exit": "NLEX" }
+            ]
+        },
+		{
+            "region": "NCR",
+            "entry": "Marikina",
+            "province": ["NCR"],
+            "nearest": ["Quezon", "Antipolo", "San Juan", "Pasig"],
+			"tolls": [
+                { "fee": 0, "exit": "C5" },
+                { "fee": 0, "exit": "Edsa" },
+                { "fee": 0, "exit": "NLEX" }
+            ]
+        },
+		{
+            "region": "NCR",
+            "entry": "Antipolo",
+            "province": ["NCR"],
+            "nearest": ["Marikina", "Pasig", "Quezon"],
+			"tolls": [
+                { "fee": 0, "exit": "C5" },
+                { "fee": 0, "exit": "Edsa" },
+                { "fee": 0, "exit": "NLEX" }
+            ]
+        },
+		{
+            "region": "NCR",
+            "entry": "Manila",
+            "province": ["NCR"],
+            "nearest": ["Malabon", "Quezon", "San Juan", "Mandaluyong", "Makati", "Pasay"],
+			"tolls": [
+				{ "fee": 0, "exit": "Edsa" },
+                { "fee": 0, "exit": "NLEX" }
+            ]
+        },
+		{
+            "region": "NCR",
+            "entry": "Mandaluyong",
+            "province": ["NCR"],
+            "nearest": ["Manila", "San Juan", "Makati"],
+			"tolls": [
+                { "fee": 0, "exit": "Edsa" },
+                { "fee": 0, "exit": "NLEX" }
+            ]
+        },
+		{
+            "region": "NCR",
+            "entry": "Pasig",
+            "province": ["NCR"],
+            "nearest": ["Antipolo", "Mandaluyong", "Pateros"],
+			"tolls": [
+                { "fee": 0, "exit": "C5" },
+                { "fee": 0, "exit": "Edsa" },
+                { "fee": 0, "exit": "NLEX" }
+            ]
+        },
+		{
+            "region": "NCR",
+            "entry": "Pateros",
+            "province": ["NCR"],
+            "nearest": ["Pasig", "Mandaluyong", "Taguig"],
+			"tolls": [
+                { "fee": 0, "exit": "C5" },
+                { "fee": 0, "exit": "Edsa" },
+                { "fee": 0, "exit": "NLEX" }
+            ]
+        },
+		{
+            "region": "NCR",
+            "entry": "Makati",
+            "province": ["NCR"],
+            "nearest": ["Mandaluyong", "Pasay", "Manila", "Taguig"],
+			"tolls": [
+                { "fee": 0, "exit": "Edsa" },
+                { "fee": 0, "exit": "NLEX" }
+            ]
+        },
+		{
+            "region": "NCR",
+            "entry": "Pasay",
+            "province": ["NCR"],
+            "nearest": ["Manila", "Makati", "Parañaque", "Taguig"],
+			"tolls": [
+                { "fee": 0, "exit": "Roxas Blvd" },
+                { "fee": 0, "exit": "Skyway" },
+                { "fee": 0, "exit": "Edsa" },
+                { "fee": 0, "exit": "NLEX" }
+            ]
+        },
+		{
+            "region": "NCR",
+            "entry": "Taguig",
+            "province": ["NCR"],
+            "nearest": ["Pasay", "Pateros", "Makati", "Parañaque"],
+			"tolls": [
+                { "fee": 0, "exit": "C5" },
+                { "fee": 0, "exit": "Skyway" },
+                { "fee": 0, "exit": "Edsa" },
+                { "fee": 0, "exit": "NLEX" }
+            ]
+        },
+		{
+            "region": "NCR",
+            "entry": "Parañaque",
+            "province": ["NCR"],
+            "nearest": ["Pasay", "Taguig", "Las Piñas"],
+			"tolls": [
+                { "fee": 0, "exit": "Skyway" },
+                { "fee": 0, "exit": "C5" },
+                { "fee": 0, "exit": "NLEX" }
+            ]
+        },
+		{
+            "region": "NCR",
+            "entry": "Las Piñas",
+            "province": ["NCR", "CAVITE"],
+            "nearest": ["Parañaque", "Muntinlupa", "Bacoor"],
+			"tolls": [
+                { "fee": 0, "exit": "Skyway" },
+                { "fee": 0, "exit": "NLEX" }
+            ]
+        },
+		{
+            "region": "NCR",
+            "entry": "Muntinlupa",
+            "province": ["NCR", "CAVITE", "LAGUNA"],
+            "nearest": ["Las Piñas", "Bacoor", "San Pedro"],
+			"tolls": [
+                { "fee": 0, "exit": "Skyway" },
+                { "fee": 0, "exit": "NLEX" }
+            ]
+        }
+	],
+	"south": [
+		{
+            "region": "NCR",
+            "entry": "Caloocan",
+            "province": ["NCR"],
+            "nearest": ["Valenzuela", "Quezon"],
+			"tolls": [
+                { "fee": 0, "exit": "Edsa" },
+                { "fee": 0, "exit": "SLEX" }
+            ]
+        },
+		{
+            "region": "NCR",
+            "entry": "Valenzuela",
+            "province": ["NCR"],
+            "nearest": ["Navotas", "Obando", "Caloocan", "Quezon"],
+			"tolls": [
+				{ "fee": 0, "exit": "Edsa" },
+                { "fee": 0, "exit": "SLEX" }
+            ]
+        },
+		{
+            "region": "NCR",
+            "entry": "Navotas",
+            "province": ["NCR"],
+            "nearest": ["Malabon", "Valenzuela", "Manila"],
+			"tolls": [
+				{ "fee": 0, "exit": "Edsa" },
+                { "fee": 0, "exit": "SLEX" }
+            ]
+        },
+		{
+            "region": "NCR",
+            "entry": "Malabon",
+            "province": ["NCR"],
+            "nearest": ["Navotas", "Valenzuela", "Manila", "Quezon"],
+			"tolls": [
+				{ "fee": 0, "exit": "Edsa" },
+                { "fee": 0, "exit": "SLEX" }
+            ]
+        },
+		{
+            "region": "NCR",
+            "entry": "Quezon",
+            "province": ["NCR"],
+            "nearest": ["Malabon", "Valenzuela", "Caloocan", "San Jose del Monte", "Manila", "Marikina", "San Juan"],
+			"tolls": [
+                { "fee": 0, "exit": "C5" },
+                { "fee": 0, "exit": "Edsa" },
+                { "fee": 0, "exit": "SLEX" }
+            ]
+        },
+		{
+            "region": "NCR",
+            "entry": "Marikina",
+            "province": ["NCR"],
+            "nearest": ["Quezon", "Antipolo", "San Juan", "Pasig"],
+			"tolls": [
+                { "fee": 0, "exit": "Edsa" },
+                { "fee": 0, "exit": "C5" },
+                { "fee": 0, "exit": "SLEX" }
+            ]
+        },
+		{
+            "region": "NCR",
+            "entry": "Antipolo",
+            "province": ["NCR"],
+            "nearest": ["Marikina", "Pasig", "Quezon"],
+			"tolls": [
+                { "fee": 0, "exit": "Edsa" },
+                { "fee": 0, "exit": "C5" },
+                { "fee": 0, "exit": "SLEX" }
+            ]
+        },
+		{
+            "region": "NCR",
+            "entry": "Manila",
+            "province": ["NCR"],
+            "nearest": ["Malabon", "Quezon", "San Juan", "Mandaluyong", "Makati", "Pasay"],
+			"tolls": [
+				{ "fee": 0, "exit": "Edsa" },
+                { "fee": 0, "exit": "SLEX" }
+            ]
+        },
+		{
+            "region": "NCR",
+            "entry": "Mandaluyong",
+            "province": ["NCR"],
+            "nearest": ["Manila", "San Juan", "Makati"],
+			"tolls": [
+                { "fee": 0, "exit": "Edsa" },
+                { "fee": 0, "exit": "SLEX" }
+            ]
+        },
+		{
+            "region": "NCR",
+            "entry": "Pasig",
+            "province": ["NCR"],
+            "nearest": ["Antipolo", "Mandaluyong", "Pateros"],
+			"tolls": [
+                { "fee": 0, "exit": "C5" },
+                { "fee": 0, "exit": "Edsa" },
+                { "fee": 0, "exit": "SLEX" }
+            ]
+        },
+		{
+            "region": "NCR",
+            "entry": "Pateros",
+            "province": ["NCR"],
+            "nearest": ["Pasig", "Mandaluyong", "Taguig"],
+			"tolls": [
+                { "fee": 0, "exit": "Edsa" },
+                { "fee": 0, "exit": "C5" },
+                { "fee": 0, "exit": "SLEX" }
+            ]
+        },
+		{
+            "region": "NCR",
+            "entry": "Makati",
+            "province": ["NCR"],
+            "nearest": ["Mandaluyong", "Pasay", "Manila", "Taguig"],
+			"tolls": [
+                { "fee": 0, "exit": "Edsa" },
+                { "fee": 0, "exit": "SLEX" }
+            ]
+        },
+		{
+            "region": "NCR",
+            "entry": "Pasay",
+            "province": ["NCR"],
+            "nearest": ["Manila", "Makati", "Parañaque", "Taguig"],
+			"tolls": [
+                { "fee": 0, "exit": "Edsa" },
+                { "fee": 0, "exit": "Roxas Blvd" },
+                { "fee": 0, "exit": "Skyway" },
+                { "fee": 0, "exit": "SLEX" }
+            ]
+        },
+		{
+            "region": "NCR",
+            "entry": "Taguig",
+            "province": ["NCR"],
+            "nearest": ["Pasay", "Pateros", "Makati", "Parañaque"],
+			"tolls": [
+                { "fee": 0, "exit": "Edsa" },
+                { "fee": 0, "exit": "C5" },
+                { "fee": 0, "exit": "Skyway" },
+                { "fee": 0, "exit": "SLEX" }
+            ]
+        },
+		{
+            "region": "NCR",
+            "entry": "Parañaque",
+            "province": ["NCR"],
+            "nearest": ["Pasay", "Taguig", "Las Piñas"],
+			"tolls": [
+                { "fee": 0, "exit": "C5" },
+                { "fee": 0, "exit": "Skyway" },
+                { "fee": 0, "exit": "SLEX" }
+            ]
+        },
+		{
+            "region": "NCR",
+            "entry": "Las Piñas",
+            "province": ["NCR", "CAVITE"],
+            "nearest": ["Parañaque", "Muntinlupa", "Bacoor"],
+			"tolls": [
+                { "fee": 0, "exit": "Skyway" },
+                { "fee": 0, "exit": "SLEX" }
+            ]
+        },
+		{
+            "region": "NCR",
+            "entry": "Muntinlupa",
+            "province": ["NCR", "CAVITE", "LAGUNA"],
+            "nearest": ["Las Piñas", "Bacoor", "San Pedro"],
+			"tolls": [
+                { "fee": 0, "exit": "Skyway" },
+                { "fee": 0, "exit": "SLEX" }
+            ]
+        }
+	]
+}

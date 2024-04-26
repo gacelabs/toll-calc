@@ -7,7 +7,7 @@
             "nearest": ["Pasay City", "Parañaque City"],
             "tolls": [
                 { "exit": "Short Segment", "fee": 35 },
-                { "exit": "Full", "fee": 45 }
+                { "exit": "Full Segment", "fee": 45 }
             ]
         }
 	],
@@ -19,7 +19,7 @@
             "nearest": ["Pasay City", "Parañaque City"],
             "tolls": [
                 { "exit": "Short Segment", "fee": 69 },
-                { "exit": "Full", "fee": 90 }
+                { "exit": "Full Segment", "fee": 90 }
             ]
         }
 	],
@@ -31,7 +31,7 @@
             "nearest": ["Pasay City", "Parañaque City"],
             "tolls": [
                 { "exit": "Short Segment", "fee": 104 },
-                { "exit": "Full", "fee": 134 }
+                { "exit": "Full Segment", "fee": 134 }
             ]
         }
 	]

@@ -86,7 +86,7 @@ class JSONQuery {
 				}
 			case "in":
 				// console.log(operator, value, needed);
-				return value.includes(needed);
+				return needed.includes(value);
 			case "in like":
 				if (typeof value === 'string') {
 					var results = [];
@@ -101,7 +101,7 @@ class JSONQuery {
 					return needed === value;
 				}
 			case "not in":
-				return !value.includes(needed);
+				return needed.includes(value) == false;
 			case "not in like":
 				if (typeof value === 'string') {
 					var results = [];
