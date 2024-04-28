@@ -994,6 +994,7 @@
         {
             "region": "III",
             "entry": "Sta.Rita",
+            "province": ["BULACAN", "PAMPANGA"],
             "nearest": ["Guiguinto", "Baliuag"],
             "tolls": [
                 { "exit": "Pulilan", "fee": 69 },
@@ -1019,6 +1020,7 @@
         {
             "region": "III",
             "entry": "Pulilan",
+            "province": ["BULACAN", "PAMPANGA"],
             "nearest": ["Pulilan", "Plaridel"],
             "tolls": [
                 { "exit": "San Simon", "fee": 118 },
@@ -1654,6 +1656,7 @@
         {
             "region": "III",
             "entry": "Sta.Rita",
+            "province": ["BULACAN", "PAMPANGA"],
             "nearest": ["Guiguinto", "Baliuag"],
             "tolls": [
                 { "exit": "Pulilan", "fee": 83 },
@@ -1679,6 +1682,7 @@
         {
             "region": "III",
             "entry": "Pulilan",
+            "province": ["BULACAN", "PAMPANGA"],
             "nearest": ["Pulilan", "Plaridel"],
             "tolls": [
                 { "exit": "San Simon", "fee": 142 },

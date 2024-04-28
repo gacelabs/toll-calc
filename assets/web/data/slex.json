@@ -4,7 +4,7 @@
             "region": "NCR",
             "entry": "Skyway",
             "province": ["NCR"],
-            "nearest": ["Makati City", "Pasay City"],
+            "nearest": ["Quezon", "Makati", "Pasay"],
             "tolls": [
                 { "exit": "Bicutan", "fee": 72 },
                 { "exit": "Sucat", "fee": 118 },
@@ -29,7 +29,8 @@
         {
             "region": "NCR",
             "entry": "Magallanes",
-            "nearest": ["Makati City", "Pasay City"],
+            "province": ["NCR"],
+            "nearest": ["Quezon", "Makati", "Pasay"],
             "tolls": [
                 { "exit": "Merville", "fee": 49 },
                 { "exit": "Bicutan", "fee": 49 },
@@ -52,7 +53,8 @@
         {
             "region": "NCR",
             "entry": "C5",
-            "nearest": ["Taguig City", "Pasig City"],
+            "province": ["NCR"],
+            "nearest": ["Taguig", "Pasig", "Quezon"],
             "tolls": [
                 { "exit": "Bicutan", "fee": 49 },
                 { "exit": "Sucat", "fee": 84 },
@@ -75,7 +77,7 @@
             "region": "NCR",
             "entry": "Bicutan",
             "province": ["NCR"],
-            "nearest": ["Parañaque City", "Taguig City"],
+            "nearest": ["Parañaque", "Taguig"],
             "tolls": [
                 { "exit": "Sucat", "fee": 34 },
                 { "exit": "Alabang", "fee": 69 },
@@ -97,7 +99,7 @@
             "region": "NCR",
             "entry": "Sucat",
             "province": ["NCR"],
-            "nearest": ["Parañaque City", "Muntinlupa City"],
+            "nearest": ["Parañaque", "Muntinlupa"],
             "tolls": [
                 { "exit": "Alabang", "fee": 34 },
                 { "exit": "Filinvest", "fee": 39 },
@@ -118,7 +120,7 @@
             "region": "NCR",
             "entry": "Alabang",
             "province": ["NCR"],
-            "nearest": ["Muntinlupa City"],
+            "nearest": ["Muntinlupa"],
             "tolls": [
                 { "exit": "Filinvest", "fee": 5 },
                 { "exit": "MCX", "fee": 37 },
@@ -138,7 +140,7 @@
             "region": "NCR",
             "entry": "Filinvest",
             "province": ["NCR"],
-            "nearest": ["Muntinlupa City"],
+            "nearest": ["Muntinlupa"],
             "tolls": [
                 { "exit": "MCX", "fee": 32 },
                 { "exit": "Susana Heights", "fee": 13 },
@@ -157,7 +159,7 @@
             "region": "NCR",
             "entry": "MCX",
             "province": ["NCR"],
-            "nearest": ["Muntinlupa City"],
+            "nearest": ["Muntinlupa"],
             "tolls": [
                 { "exit": "Susana Heights", "fee": 19 },
                 { "exit": "San Pedro", "fee": 25 },
@@ -175,7 +177,7 @@
             "region": "IV-A",
             "entry": "Susana Heights",
             "province": ["NCR"],
-            "nearest": ["Muntinlupa City"],
+            "nearest": ["Muntinlupa"],
             "tolls": [
                 { "exit": "San Pedro", "fee": 6 },
                 { "exit": "Southwoods", "fee": 21 },
@@ -244,9 +246,6 @@
                 { "exit": "Cabuyao", "fee": 29 },
                 { "exit": "Silangan", "fee": 35 },
                 { "exit": "Calamba", "fee": 52 }
-            ],
-            "connecting": [
-                {"entry": "Laguna Boulevard", "toll": ["calax"]}
             ]
         },
         {
@@ -297,15 +296,6 @@
             "province": ["LAGUNA", "BATANGAS"],
             "nearest": ["Calamba", "Los Baños"],
             "tolls": [
-                { "exit": "Santo Tomas", "fee": 29 }
-            ]
-        },
-        {
-            "region": "IV-A",
-            "entry": "Santo Tomas",
-            "province": ["BATANGAS"],
-            "nearest": ["Santo Tomas", "Tanauan"],
-            "tolls": [
                 { "exit": "Skyway", "fee": 270 },
                 { "exit": "Magallanes", "fee": 224 },
                 { "exit": "C5", "fee": 224 },
@@ -323,6 +313,15 @@
                 { "exit": "ABI/Greenfield", "fee": 31 },
                 { "exit": "Cabuyao", "fee": 23 },
                 { "exit": "Silangan", "fee": 18 },
+                { "exit": "Santo Tomas", "fee": 29 }
+            ]
+        },
+        {
+            "region": "IV-A",
+            "entry": "Santo Tomas",
+            "province": ["BATANGAS"],
+            "nearest": ["Santo Tomas", "Tanauan"],
+            "tolls": [
                 { "exit": "Calamba", "fee": 29 }
             ]
         }
@@ -332,7 +331,7 @@
             "region": "NCR",
             "entry": "Skyway",
             "province": ["NCR"],
-            "nearest": ["Makati City", "Pasay City"],
+            "nearest": ["Quezon", "Makati", "Pasay"],
             "tolls": [
                 { "exit": "Bicutan", "fee": 145 },
                 { "exit": "Sucat", "fee": 237 },
@@ -357,7 +356,8 @@
         {
             "region": "NCR",
             "entry": "Magallanes",
-            "nearest": ["Makati City", "Pasay City"],
+            "province": ["NCR"],
+            "nearest": ["Quezon", "Makati", "Pasay"],
             "tolls": [
                 { "exit": "Merville", "fee": 98 },
                 { "exit": "Bicutan", "fee": 98 },
@@ -380,7 +380,8 @@
         {
             "region": "NCR",
             "entry": "C5",
-            "nearest": ["Taguig City", "Pasig City"],
+            "province": ["NCR"],
+            "nearest": ["Taguig", "Pasig"],
             "tolls": [
                 { "exit": "Bicutan", "fee": 98 },
                 { "exit": "Sucat", "fee": 168 },
@@ -403,7 +404,7 @@
             "region": "NCR",
             "entry": "Bicutan",
             "province": ["NCR"],
-            "nearest": ["Parañaque City", "Taguig City"],
+            "nearest": ["Parañaque", "Taguig"],
             "tolls": [
                 { "exit": "Sucat", "fee": 69 },
                 { "exit": "Alabang", "fee": 138 },
@@ -425,7 +426,7 @@
             "region": "NCR",
             "entry": "Sucat",
             "province": ["NCR"],
-            "nearest": ["Parañaque City", "Muntinlupa City"],
+            "nearest": ["Parañaque", "Muntinlupa"],
             "tolls": [
                 { "exit": "Alabang", "fee": 69 },
                 { "exit": "Filinvest", "fee": 78 },
@@ -446,7 +447,7 @@
             "region": "NCR",
             "entry": "Alabang",
             "province": ["NCR"],
-            "nearest": ["Muntinlupa City"],
+            "nearest": ["Muntinlupa"],
             "tolls": [
                 { "exit": "Filinvest", "fee": 9 },
                 { "exit": "MCX", "fee": 74 },
@@ -466,7 +467,7 @@
             "region": "NCR",
             "entry": "Filinvest",
             "province": ["NCR"],
-            "nearest": ["Muntinlupa City"],
+            "nearest": ["Muntinlupa"],
             "tolls": [
                 { "exit": "MCX", "fee": 65 },
                 { "exit": "Susana Heights", "fee": 26 },
@@ -485,7 +486,7 @@
             "region": "NCR",
             "entry": "MCX",
             "province": ["NCR"],
-            "nearest": ["Muntinlupa City"],
+            "nearest": ["Muntinlupa"],
             "tolls": [
                 { "exit": "Susana Heights", "fee": 39 },
                 { "exit": "San Pedro", "fee": 51 },
@@ -503,7 +504,7 @@
             "region": "IV-A",
             "entry": "Susana Heights",
             "province": ["NCR"],
-            "nearest": ["Muntinlupa City"],
+            "nearest": ["Muntinlupa"],
             "tolls": [
                 { "exit": "San Pedro", "fee": 12 },
                 { "exit": "Southwoods", "fee": 41 },
@@ -572,9 +573,6 @@
                 { "exit": "Cabuyao", "fee": 58 },
                 { "exit": "Silangan", "fee": 69 },
                 { "exit": "Calamba", "fee": 104 }
-            ],
-            "connecting": [
-                {"entry": "Laguna Boulevard", "toll": ["calax"]}
             ]
         },
         {
@@ -625,15 +623,6 @@
             "province": ["LAGUNA", "BATANGAS"],
             "nearest": ["Calamba", "Los Baños"],
             "tolls": [
-                { "exit": "Santo Tomas", "fee": 29 }
-            ]
-        },
-        {
-            "region": "IV-A",
-            "entry": "Santo Tomas",
-            "province": ["BATANGAS"],
-            "nearest": ["Santo Tomas", "Tanauan"],
-            "tolls": [
                 { "exit": "Skyway", "fee": 541 },
                 { "exit": "Magallanes", "fee": 449 },
                 { "exit": "C5", "fee": 449 },
@@ -651,6 +640,15 @@
                 { "exit": "ABI/Greenfield", "fee": 62 },
                 { "exit": "Cabuyao", "fee": 46 },
                 { "exit": "Silangan", "fee": 35 },
+                { "exit": "Santo Tomas", "fee": 57 }
+            ]
+        },
+        {
+            "region": "IV-A",
+            "entry": "Santo Tomas",
+            "province": ["BATANGAS"],
+            "nearest": ["Santo Tomas", "Tanauan"],
+            "tolls": [
                 { "exit": "Calamba", "fee": 57 }
             ]
         }
@@ -660,7 +658,7 @@
             "region": "NCR",
             "entry": "Skyway",
             "province": ["NCR"],
-            "nearest": ["Makati City", "Pasay City"],
+            "nearest": ["Quezon", "Makati", "Pasay"],
             "tolls": [
                 { "exit": "Bicutan", "fee": 218 },
                 { "exit": "Sucat", "fee": 356 },
@@ -685,7 +683,8 @@
         {
             "region": "NCR",
             "entry": "Magallanes",
-            "nearest": ["Makati City", "Pasay City"],
+            "province": ["NCR"],
+            "nearest": ["Quezon", "Makati", "Pasay"],
             "tolls": [
                 { "exit": "Merville", "fee": 147 },
                 { "exit": "Bicutan", "fee": 147 },
@@ -708,7 +707,8 @@
         {
             "region": "NCR",
             "entry": "C5",
-            "nearest": ["Taguig City", "Pasig City"],
+            "province": ["NCR"],
+            "nearest": ["Taguig", "Pasig"],
             "tolls": [
                 { "exit": "Bicutan", "fee": 147 },
                 { "exit": "Sucat", "fee": 252 },
@@ -731,7 +731,7 @@
             "region": "NCR",
             "entry": "Bicutan",
             "province": ["NCR"],
-            "nearest": ["Parañaque City", "Taguig City"],
+            "nearest": ["Parañaque", "Taguig"],
             "tolls": [
                 { "exit": "Sucat", "fee": 104 },
                 { "exit": "Alabang", "fee": 208 },
@@ -753,7 +753,7 @@
             "region": "NCR",
             "entry": "Sucat",
             "province": ["NCR"],
-            "nearest": ["Parañaque City", "Muntinlupa City"],
+            "nearest": ["Parañaque", "Muntinlupa"],
             "tolls": [
                 { "exit": "Alabang", "fee": 104 },
                 { "exit": "Filinvest", "fee": 118 },
@@ -774,7 +774,7 @@
             "region": "NCR",
             "entry": "Alabang",
             "province": ["NCR"],
-            "nearest": ["Muntinlupa City"],
+            "nearest": ["Muntinlupa"],
             "tolls": [
                 { "exit": "Filinvest", "fee": 14 },
                 { "exit": "MCX", "fee": 111 },
@@ -794,7 +794,7 @@
             "region": "NCR",
             "entry": "Filinvest",
             "province": ["NCR"],
-            "nearest": ["Muntinlupa City"],
+            "nearest": ["Muntinlupa"],
             "tolls": [
                 { "exit": "MCX", "fee": 97 },
                 { "exit": "Susana Heights", "fee": 39 },
@@ -813,7 +813,7 @@
             "region": "NCR",
             "entry": "MCX",
             "province": ["NCR"],
-            "nearest": ["Muntinlupa City"],
+            "nearest": ["Muntinlupa"],
             "tolls": [
                 { "exit": "Susana Heights", "fee": 58 },
                 { "exit": "San Pedro", "fee": 76 },
@@ -831,7 +831,7 @@
             "region": "IV-A",
             "entry": "Susana Heights",
             "province": ["NCR"],
-            "nearest": ["Muntinlupa City"],
+            "nearest": ["Muntinlupa"],
             "tolls": [
                 { "exit": "San Pedro", "fee": 18 },
                 { "exit": "Southwoods", "fee": 62 },
@@ -900,9 +900,6 @@
                 { "exit": "Cabuyao", "fee": 87 },
                 { "exit": "Silangan", "fee": 104 },
                 { "exit": "Calamba", "fee": 157 }
-            ],
-            "connecting": [
-                {"entry": "Laguna Boulevard", "toll": ["calax"]}
             ]
         },
         {
@@ -953,15 +950,6 @@
             "province": ["LAGUNA", "BATANGAS"],
             "nearest": ["Calamba", "Los Baños"],
             "tolls": [
-                { "exit": "Santo Tomas", "fee": 29 }
-            ]
-        },
-        {
-            "region": "IV-A",
-            "entry": "Santo Tomas",
-            "province": ["BATANGAS"],
-            "nearest": ["Santo Tomas", "Tanauan"],
-            "tolls": [
                 { "exit": "Skyway", "fee": 811 },
                 { "exit": "Magallanes", "fee": 674 },
                 { "exit": "C5", "fee": 674 },
@@ -979,6 +967,15 @@
                 { "exit": "ABI/Greenfield", "fee": 93 },
                 { "exit": "Cabuyao", "fee": 69 },
                 { "exit": "Silangan", "fee": 53 },
+                { "exit": "Santo Tomas", "fee": 86 }
+            ]
+        },
+        {
+            "region": "IV-A",
+            "entry": "Santo Tomas",
+            "province": ["BATANGAS"],
+            "nearest": ["Santo Tomas", "Tanauan"],
+            "tolls": [
                 { "exit": "Calamba", "fee": 86 }
             ]
         }

@@ -80,23 +80,25 @@ $(document).ready(function () {
 				console.log(origin_data, dest_data);
 
 				var originRoutes = generateOriginRoutes(origin_data, dest_data.start);
-				var destinationRoutes = generateDestinationRoutes(originRoutes, dest_data);
+				var destinationRoutes = generateDestinationRoutes(originRoutes, origin_data, dest_data);
 				console.log(originRoutes, destinationRoutes);
 			}
 		}
 	});
 });
 
-var generateOriginRoutes = function (oData, gointTo) {
+var generateOriginRoutes = function (oData, gointTo, urBoundTo, oOrig) {
 	var oRoutes = {};
 	var oTollways = oData.tollways;
 	var oTollSubjects = (oData.toll_subjects != undefined && oData.toll_subjects.length) ? oData.toll_subjects : false;
 	// var urBoundTo = $('[name="bound"]:checked').val();
-	var urBoundTo = 'north';
-	if (oData.start == 'north' && gointTo == 'south') {
-		urBoundTo = 'south';
-	} else if (oData.start == gointTo) {
-		urBoundTo = oData.start;
+	if (urBoundTo == undefined) {
+		var urBoundTo = 'north';
+		if (oData.start == 'north' && gointTo == 'south') {
+			urBoundTo = 'south';
+		} else if (oData.start == gointTo) {
+			urBoundTo = oData.start;
+		}
 	}
 	console.log('started:', $.trim(oData.start), ', bound to:', $.trim(urBoundTo), 'ended:', $.trim(gointTo));
 
@@ -115,10 +117,13 @@ var generateOriginRoutes = function (oData, gointTo) {
 	}
 	for (var c in oTollways) {
 		var toll = oTollways[c];
+		if (oData.province == 'NCR' && toll == 'nlex' && urBoundTo == 'south') {
+			continue;
+		}
 		var tollway = dataObject[toll];
 		var allow = true;
 		if (oTollSubjects) {
-			allow = oTollSubjects[c].cities.includes(oData.old_name);
+			allow = oTollSubjects[c].cities.includes(oData.old_name) && oTollSubjects[c].way === urBoundTo;
 		}
 
 		if (allow) {
@@ -134,6 +139,7 @@ var generateOriginRoutes = function (oData, gointTo) {
 					// console.log(oRoutes, toll, oClass);
 
 					if (oData.endline == true) {
+						// console.log(urBoundTo, gointTo, oOrig);
 						// console.log(oClass.data);
 						if (oData.start == 'south') { // started from south
 							var key = oClass.data.length - 1;
@@ -141,22 +147,27 @@ var generateOriginRoutes = function (oData, gointTo) {
 							var key = 0;
 						}
 						var oTolls = oClass.data[key].tolls;
-						if (bLastExit) {
+						// console.log(urBoundTo, gointTo);
+						if (urBoundTo == gointTo && oOrig == undefined) {
 							var sEntry = oTolls[oTolls.length - 1].exit;
-							var sExit = oClass.data[key].entry;
-							var iFee = oTolls[oTolls.length - 1].fee;
-						} else {
-							var sEntry = oClass.data[key].entry;
 							var sExit = oTolls[0].exit;
-							var iFee = oTolls[0].fee;
+						} else {
+							var sEntry = oTolls[0].exit;
+							var sExit = oTolls[oTolls.length - 1].exit;
 						}
+						if (gointTo == 'north' && oOrig == undefined) {
+							var iFee = oTolls[0].fee;
+						} else {
+							var iFee = oTolls[oTolls.length - 1].fee;
+						}
+
 						if (sEntry != sExit) {
 							oRoutes[toll][class_name].push({
 								'entry': sEntry,
 								'tolls': oTolls,
 								'exit': sExit,
 								'fee': iFee,
-								'start': urBoundTo,
+								'start': oData.start,
 								'ended': gointTo,
 							});
 						}
@@ -181,7 +192,7 @@ var generateOriginRoutes = function (oData, gointTo) {
 							}
 							var oClass = new JSONQuery(oClasses);
 							result = oClass.execute(query);
-							console.log(result, toll, oClass);
+							// console.log(result, toll, oClass);
 						}
 						if (result.data.length) {
 							if (toll == 'skyway_3') {
@@ -194,16 +205,19 @@ var generateOriginRoutes = function (oData, gointTo) {
 							}
 							// console.log(result, toll);
 							var oGuideTolls = false, oGuideClass = false;
-							if (urBoundTo == 'north') {
-								if (oData.start == 'south') {
-									oGuideTolls = oClasses[0].tolls;
+							var toNorth = $.trim(oData.start) == 'south' && $.trim(urBoundTo) == 'north' && $.trim(gointTo) == 'north';
+							var toSouth = $.trim(oData.start) == 'north' && $.trim(urBoundTo) == 'south' && $.trim(gointTo) == 'south';
+
+							if ($.inArray(toll, ['ncr', 'skyway_3']) < 0) {
+								if (toSouth) {
+									oGuideClass = oClasses[oClasses.length - 1];
+									oGuideTolls = oGuideClass.tolls;
+								} else if (toNorth) {
 									oGuideClass = oClasses[0];
+									oGuideTolls = oGuideClass.tolls;
 								}
-								// } else if (oData.start == 'south') {
-								// 	oGuideTolls = oClasses[oClasses.length - 1].tolls;
-								// 	oGuideClass = oClasses[oClasses.length - 1];
+								// console.log(urBoundTo, oData.start, result.data, oGuideTolls);
 							}
-							// console.log(urBoundTo, oData.start, result.data, oGuideTolls);
 
 							for (var x in result.data) {
 								var oResult = result.data[x];
@@ -225,7 +239,6 @@ var generateOriginRoutes = function (oData, gointTo) {
 									if (urBoundTo == 'south' && oData.start == 'south') {
 										var sExit = oTolls[oTolls.length - 1].exit;
 										var iFee = oTolls[oTolls.length - 1].fee;
-										// console.log(oResult, sEntry, sExit, iFee);
 									} else if (urBoundTo == 'north' && oData.start == 'south') {
 										var sExit = oTolls[0].exit;
 										var iFee = oTolls[0].fee;
@@ -240,7 +253,7 @@ var generateOriginRoutes = function (oData, gointTo) {
 									'tolls': oTolls,
 									'exit': sExit,
 									'fee': iFee,
-									'start': urBoundTo,
+									'start': oData.start,
 									'ended': gointTo,
 								});
 							}
@@ -263,21 +276,29 @@ var generateOriginRoutes = function (oData, gointTo) {
 	return oRoutes;
 }
 
-var generateDestinationRoutes = function (originData, oData) {
-	// var oRoutes = {};
-	// var oTollways = oData.tollways;
-	// // console.log(originData, oTollways);
-	// for (var c in oTollways) {
-	// 	var toll = oTollways[c];
-	// 	if (originData[toll] == undefined) {
-	// 		oRoutes = generateOriginRoutes(oData);
-	// 	}
-	// 	if (oRoutes[toll] != undefined && Object.keys(oRoutes[toll]).length == 0) {
-	// 		delete oRoutes[toll];
-	// 	}
-	// }
-	// // console.log(oRoutes);
-	// return oRoutes;
+var generateDestinationRoutes = function (originData, oOrig, oNext) {
+	var oRoutes = {};
+	var oTollways = oNext.tollways;
+	// console.log(originData, oTollways);
+	var urBoundTo = 'south';
+	var gointTo = oOrig.start;
+	if (oNext.start == 'north' && gointTo == 'south') {
+		urBoundTo = 'north';
+	} else if (oNext.start == gointTo) {
+		urBoundTo = oNext.start;
+	}
+	// console.log(urBoundTo, gointTo);
+	for (var c in oTollways) {
+		var toll = oTollways[c];
+		if (originData[toll] == undefined) {
+			oRoutes = generateOriginRoutes(oNext, gointTo, urBoundTo, oOrig);
+		}
+		if (oRoutes[toll] != undefined && Object.keys(oRoutes[toll]).length == 0) {
+			delete oRoutes[toll];
+		}
+	}
+	// console.log(oRoutes);
+	return oRoutes;
 }
 
 var runCitySearchData = function () {
