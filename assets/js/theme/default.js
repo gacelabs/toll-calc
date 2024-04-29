@@ -400,8 +400,6 @@ var runCitySearchData = function () {
 
 var runSearchResults = function () {
 	if (localStorage.getItem('search_results') != null) {
-		renderSearchResults();
-
 		var urlParam = urlParams();
 		var originValue = urlParam.get('origin').toString();
 		var destValue = urlParam.get('destination').toString();
@@ -439,6 +437,8 @@ var runSearchResults = function () {
 		// DESTINATION
 		var dest = $('#going_to');
 		dest.val(destValue).attr('data-set', JSON.stringify(destResult.data[0]));
+		
+		renderSearchResults();
 	}
 }
 
@@ -446,10 +446,16 @@ var renderSearchResults = function () {
 	var oResults = JSON.parse(localStorage.getItem('search_results'));
 	// console.log(oResults);
 	var expresswayData = dataObject.expressways;
+	// ORIGIN
+	var origin = $('#im_from');
+	// DESTINATION
+	var dest = $('#going_to');
+	// console.log(origin.val(), dest.val());
 	
 	/* render origin */
 	var oOrigin = oResults.origin;
 	var uiOrigin = $('.origin-results');
+	uiOrigin.find('.timeline-intro-head').html(origin.val());
 
 	for (var route in oOrigin) {
 		var oItems = oOrigin[route];
@@ -483,6 +489,7 @@ var renderSearchResults = function () {
 	/* render destination */
 	var oDestination = oResults.destination;
 	var uiDestination = $('.destination-results');
+	uiDestination.find('.timeline-intro-head').html(dest.val());
 	var oDestinationRev = Object.keys(oDestination).reverse();
 
 	for (var x in oDestinationRev) {
