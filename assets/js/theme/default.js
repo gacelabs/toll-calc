@@ -92,7 +92,7 @@ $(document).ready(function () {
 				var destinationRoutes = generateRoutes(dest_data, origin_data.start);
 				// console.log(originRoutes, destinationRoutes);
 
-				var bBetweenMain = (originRoutes.slex != undefined && destinationRoutes.nlex != undefined)
+				/* var bBetweenMain = (originRoutes.slex != undefined && destinationRoutes.nlex != undefined)
 					|| (originRoutes.nlex != undefined && destinationRoutes.slex != undefined)
 					|| (originRoutes.nlex != undefined && destinationRoutes.tplex != undefined)
 					|| (originRoutes.slex != undefined && destinationRoutes.tplex != undefined)
@@ -145,7 +145,7 @@ $(document).ready(function () {
 							destinationRoutes['ncr'][direction].push(oPush);
 						}
 					}
-				}
+				} */
 
 				if (Object.keys(originRoutes).length && Object.keys(destinationRoutes).length) {
 					localStorage.setItem('search_results', JSON.stringify({ 'origin': originRoutes, 'destination': destinationRoutes }));
@@ -450,6 +450,7 @@ var renderSearchResults = function () {
 	/* render origin */
 	var oOrigin = oResults.origin;
 	var uiOrigin = $('.origin-results');
+
 	for (var route in oOrigin) {
 		var oItems = oOrigin[route];
 		// console.log(oItems);
@@ -477,14 +478,13 @@ var renderSearchResults = function () {
 		uiOrigin.find('.page-body').append(oCloneTimeline.removeClass('hide'));
 	}
 	// console.log(uiOrigin.get(0));
-	localStorage.setItem('origin_all_routes', JSON.stringify(oOrigin));	
+	localStorage.setItem('origin_all_routes', JSON.stringify(oOrigin));
 	
 	/* render destination */
 	var oDestination = oResults.destination;
 	var uiDestination = $('.destination-results');
-
-	// console.log(Object.keys(oDestination).reverse(), oDestination);
 	var oDestinationRev = Object.keys(oDestination).reverse();
+
 	for (var x in oDestinationRev) {
 		var route = oDestinationRev[x];
 		var oItems = oDestination[route];
