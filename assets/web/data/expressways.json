@@ -1,0 +1,38 @@
+{
+	"ncr": {
+		"fullname": "National Capital Region Highways",
+		"country": "Philippines"
+	},
+	"tplex": {
+		"fullname": "Tarlac-Pangasinan-La Unioin Expressway",
+		"country": "Philippines"
+	},
+	"nlex": {
+		"fullname": "North Luzon Expressway",
+		"country": "Philippines"
+	},
+	"cavitex": {
+		"fullname": "Manila-Cavite Toll Expressway",
+		"country": "Philippines"
+	},
+	"naiax": {
+		"fullname": "Ninoy Aquino International Airport Expressway",
+		"country": "Philippines"
+	},
+	"slex": {
+		"fullname": "South Luzon Expressway",
+		"country": "Philippines"
+	},
+	"superhighway": {
+		"fullname": "Apolinario Mabini Superhighway",
+		"country": "Philippines"
+	},
+	"calax": {
+		"fullname": "Cavite-Laguna Expressway",
+		"country": "Philippines"
+	},
+	"skyway_3": {
+		"fullname": "Metro Manila Skyway Stage 3",
+		"country": "Philippines"
+	}
+}
