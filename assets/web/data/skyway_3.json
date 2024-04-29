@@ -6,6 +6,7 @@
             "province": ["NCR"],
             "nearest": ["Makati", "Pasay"],
             "tolls": [
+                { "exit": "Buendia", "fee": 0 },
                 { "exit": "Quirino", "fee": 105 },
                 { "exit": "Plaza Azul/Nagtahan", "fee": 105 },
                 { "exit": "Quezon Avenue", "fee": 264 },
@@ -21,6 +22,7 @@
             "province": ["NCR"],
             "nearest": ["Makati", "Pasay"],
             "tolls": [
+                { "exit": "Quirino", "fee": 0 },
                 { "exit": "Plaza Azul/Nagtahan", "fee": 105 },
                 { "exit": "Quezon Avenue", "fee": 264 },
                 { "exit": "Sgt. Rivera - A.Bonifacio", "fee": 264 },
@@ -35,6 +37,7 @@
             "province": ["NCR"],
             "nearest": ["Manila", "Mandaluyong", "San Juan"],
             "tolls": [
+                { "exit": "Plaza Azul/Nagtahan", "fee": 0 },
                 { "exit": "Quezon Avenue", "fee": 264 },
                 { "exit": "Sgt. Rivera - A.Bonifacio", "fee": 264 },
                 { "exit": "A.Bonifacio - Balintawak", "fee": 264 },
@@ -48,6 +51,7 @@
             "province": ["NCR"],
             "nearest": ["Manila", "Quezon", "San Juan"],
             "tolls": [
+                { "exit": "E. Rodriguez", "fee": 0 },
                 { "exit": "Quezon Avenue", "fee": 129 },
                 { "exit": "Sgt. Rivera - A.Bonifacio", "fee": 129 },
                 { "exit": "A.Bonifacio - Balintawak", "fee": 129 },
@@ -61,6 +65,7 @@
             "province": ["NCR"],
             "nearest": ["Caloocan", "Manila", "Quezon"],
             "tolls": [
+                { "exit": "Quezon Avenue", "fee": 0 },
                 { "exit": "Sgt. Rivera - A.Bonifacio", "fee": 129 },
                 { "exit": "A.Bonifacio - Balintawak", "fee": 129 },
                 { "exit": "NLEX", "fee": 129 }
@@ -78,7 +83,8 @@
                 { "exit": "E. Rodriguez",  "fee": 129 },
                 { "exit": "Plaza Azul/Nagtahan", "fee": 264 },
                 { "exit": "Quirino", "fee": 264 },
-                { "exit": "Buendia", "fee": 264 }
+                { "exit": "Buendia", "fee": 264 },
+                { "exit": "NLEX", "fee": 0 }
             ],
             "bound": "north"
         },
@@ -88,6 +94,7 @@
             "province": ["NCR", "BULACAN"],
             "nearest": ["Valenzuela", "Caloocan", "Quezon"],
             "tolls": [
+                { "exit": "NLEX", "fee": 0 },
                 { "exit": "A.Bonifacio - Balintawak", "fee": 129 },
                 { "exit": "Quezon Avenue", "fee": 129 },
                 { "exit": "E. Rodriguez",  "fee": 129 },
@@ -103,6 +110,7 @@
             "province": ["NCR"],
             "nearest": ["Quezon", "Caloocan"],
             "tolls": [
+                { "exit": "A.Bonifacio - Balintawak", "fee": 0 },
                 { "exit": "Quezon Avenue", "fee": 129 },
                 { "exit": "E. Rodriguez",  "fee": 129 },
                 { "exit": "Plaza Azul/Nagtahan", "fee": 264 },
@@ -117,6 +125,7 @@
             "province": ["NCR"],
             "nearest": ["Quezon", "Manila"],
             "tolls": [
+                { "exit": "Sgt. Rivera - A.Bonifacio", "fee": 0 },
                 { "exit": "Quezon Avenue", "fee": 129 },
                 { "exit": "E. Rodriguez",  "fee": 129 },
                 { "exit": "Plaza Azul/Nagtahan", "fee": 264 },
@@ -131,6 +140,7 @@
             "province": ["NCR"],
             "nearest": ["Caloocan", "Manila", "Quezon"],
             "tolls": [
+                { "exit": "Quezon Avenue", "fee": 0 },
                 { "exit": "E. Rodriguez",  "fee": 129 },
                 { "exit": "Plaza Azul/Nagtahan", "fee": 264 },
                 { "exit": "Plaza Dilao", "fee": 264 },
@@ -144,6 +154,7 @@
             "province": ["NCR"],
             "nearest": ["Manila", "Mandaluyong", "Makati"],
             "tolls": [
+                { "exit": "Plaza Dilao", "fee": 0 },
                 { "exit": "Buendia", "fee": 105 }
             ],
             "bound": "south"
@@ -154,6 +165,7 @@
             "province": ["NCR"],
             "nearest": ["Makati", "Pasay"],
             "tolls": [
+                { "exit": "Quirino", "fee": 0 },
                 { "exit": "Buendia", "fee": 105 }
             ],
             "bound": "south"
@@ -166,6 +178,7 @@
             "province": ["NCR"],
             "nearest": ["Makati", "Pasay"],
             "tolls": [
+                { "exit": "Buendia", "fee": 0 },
                 { "exit": "Quirino", "fee": 210 },
                 { "exit": "Plaza Azul/Nagtahan", "fee": 210 },
                 { "exit": "Quezon Avenue", "fee": 528 },
@@ -181,6 +194,7 @@
             "province": ["NCR"],
             "nearest": ["Makati", "Pasay"],
             "tolls": [
+                { "exit": "Quirino", "fee": 0 },
                 { "exit": "Plaza Azul/Nagtahan", "fee": 210 },
                 { "exit": "Quezon Avenue", "fee": 528 },
                 { "exit": "Sgt. Rivera - A.Bonifacio", "fee": 528 },
@@ -195,6 +209,7 @@
             "province": ["NCR"],
             "nearest": ["Manila", "Mandaluyong", "San Juan"],
             "tolls": [
+                { "exit": "Plaza Azul/Nagtahan", "fee": 0 },
                 { "exit": "Quezon Avenue", "fee": 528 },
                 { "exit": "Sgt. Rivera - A.Bonifacio", "fee": 528 },
                 { "exit": "A.Bonifacio - Balintawak", "fee": 528 },
@@ -208,6 +223,7 @@
             "province": ["NCR"],
             "nearest": ["Manila", "Quezon", "San Juan"],
             "tolls": [
+                { "exit": "E. Rodriguez", "fee": 0 },
                 { "exit": "Quezon Avenue", "fee": 258 },
                 { "exit": "Sgt. Rivera - A.Bonifacio", "fee": 258 },
                 { "exit": "A.Bonifacio - Balintawak", "fee": 258 },
@@ -221,6 +237,7 @@
             "province": ["NCR"],
             "nearest": ["Caloocan", "Manila", "Quezon"],
             "tolls": [
+                { "exit": "Quezon Avenue", "fee": 0 },
                 { "exit": "Sgt. Rivera - A.Bonifacio", "fee": 258 },
                 { "exit": "A.Bonifacio - Balintawak", "fee": 258 },
                 { "exit": "NLEX", "fee": 258 }
@@ -238,7 +255,8 @@
                 { "exit": "E. Rodriguez",  "fee": 258 },
                 { "exit": "Plaza Azul/Nagtahan", "fee": 528 },
                 { "exit": "Plaza Dilao", "fee": 528 },
-                { "exit": "Buendia", "fee": 528 }
+                { "exit": "Buendia", "fee": 528 },
+                { "exit": "NLEX", "fee": 0 }
             ],
             "bound": "north"
         },
@@ -248,6 +266,7 @@
             "province": ["NCR", "BULACAN"],
             "nearest": ["Valenzuela", "Caloocan", "Quezon"],
             "tolls": [
+                { "exit": "NLEX", "fee": 0 },
                 { "exit": "A.Bonifacio - Balintawak", "fee": 258 },
                 { "exit": "Quezon Avenue", "fee": 258 },
                 { "exit": "E. Rodriguez",  "fee": 258 },
@@ -263,6 +282,7 @@
             "province": ["NCR"],
             "nearest": ["Quezon", "Caloocan"],
             "tolls": [
+                { "exit": "A.Bonifacio - Balintawak", "fee": 0 },
                 { "exit": "Quezon Avenue", "fee": 258 },
                 { "exit": "E. Rodriguez",  "fee": 258 },
                 { "exit": "Plaza Azul/Nagtahan", "fee": 528 },
@@ -277,6 +297,7 @@
             "province": ["NCR"],
             "nearest": ["Quezon", "Manila"],
             "tolls": [
+                { "exit": "Sgt. Rivera - A.Bonifacio", "fee": 0 },
                 { "exit": "Quezon Avenue", "fee": 258 },
                 { "exit": "E. Rodriguez",  "fee": 258 },
                 { "exit": "Plaza Azul/Nagtahan", "fee": 528 },
@@ -291,6 +312,7 @@
             "province": ["NCR"],
             "nearest": ["Caloocan", "Manila", "Quezon"],
             "tolls": [
+                { "exit": "Quezon Avenue", "fee": 0 },
                 { "exit": "E. Rodriguez",  "fee": 258 },
                 { "exit": "Plaza Azul/Nagtahan", "fee": 528 },
                 { "exit": "Plaza Dilao", "fee": 528 },
@@ -304,6 +326,7 @@
             "province": ["NCR"],
             "nearest": ["Manila", "Mandaluyong", "Makati"],
             "tolls": [
+                { "exit": "Plaza Dilao", "fee": 0 },
                 { "exit": "Buendia", "fee": 210 }
             ],
             "bound": "south"
@@ -314,6 +337,7 @@
             "province": ["NCR"],
             "nearest": ["Makati", "Pasay"],
             "tolls": [
+                { "exit": "Quirino", "fee": 0 },
                 { "exit": "Buendia", "fee": 210 }
             ],
             "bound": "south"
@@ -326,6 +350,7 @@
             "province": ["NCR"],
             "nearest": ["Makati", "Pasay"],
             "tolls": [
+                { "exit": "Buendia", "fee": 0 },
                 { "exit": "Quirino", "fee": 315 },
                 { "exit": "Plaza Azul/Nagtahan", "fee": 315 },
                 { "exit": "Quezon Avenue", "fee": 792 },
@@ -341,6 +366,7 @@
             "province": ["NCR"],
             "nearest": ["Makati", "Pasay"],
             "tolls": [
+                { "exit": "Quirino", "fee": 0 },
                 { "exit": "Plaza Azul/Nagtahan", "fee": 315 },
                 { "exit": "Quezon Avenue", "fee": 792 },
                 { "exit": "Sgt. Rivera - A.Bonifacio", "fee": 792 },
@@ -355,6 +381,7 @@
             "province": ["NCR"],
             "nearest": ["Manila", "Mandaluyong", "San Juan"],
             "tolls": [
+                { "exit": "Plaza Azul/Nagtahan", "fee": 0 },
                 { "exit": "Quezon Avenue", "fee": 792 },
                 { "exit": "Sgt. Rivera - A.Bonifacio", "fee": 792 },
                 { "exit": "A.Bonifacio - Balintawak", "fee": 792 },
@@ -368,6 +395,7 @@
             "province": ["NCR"],
             "nearest": ["Manila", "Quezon", "San Juan"],
             "tolls": [
+                { "exit": "E. Rodriguez", "fee": 0 },
                 { "exit": "Quezon Avenue", "fee": 387 },
                 { "exit": "Sgt. Rivera - A.Bonifacio", "fee": 387 },
                 { "exit": "A.Bonifacio - Balintawak", "fee": 387 },
@@ -381,6 +409,7 @@
             "province": ["NCR"],
             "nearest": ["Caloocan", "Manila", "Quezon"],
             "tolls": [
+                { "exit": "Quezon Avenue", "fee": 0 },
                 { "exit": "Sgt. Rivera - A.Bonifacio", "fee": 387 },
                 { "exit": "A.Bonifacio - Balintawak", "fee": 387 },
                 { "exit": "NLEX", "fee": 387 }
@@ -398,7 +427,8 @@
                 { "exit": "E. Rodriguez",  "fee": 387 },
                 { "exit": "Plaza Azul/Nagtahan", "fee": 792 },
                 { "exit": "Plaza Dilao", "fee": 792 },
-                { "exit": "Buendia", "fee": 792 }
+                { "exit": "Buendia", "fee": 792 },
+                { "exit": "NLEX", "fee": 0 }
             ],
             "bound": "north"
         },
@@ -408,6 +438,7 @@
             "province": ["NCR", "BULACAN"],
             "nearest": ["Valenzuela", "Caloocan", "Quezon"],
             "tolls": [
+                { "exit": "NLEX", "fee": 0 },
                 { "exit": "A.Bonifacio - Balintawak", "fee": 387 },
                 { "exit": "Quezon Avenue", "fee": 387 },
                 { "exit": "E. Rodriguez",  "fee": 387 },
@@ -423,6 +454,7 @@
             "province": ["NCR"],
             "nearest": ["Quezon", "Caloocan"],
             "tolls": [
+                { "exit": "A.Bonifacio - Balintawak", "fee": 0 },
                 { "exit": "Quezon Avenue", "fee": 387 },
                 { "exit": "E. Rodriguez",  "fee": 387 },
                 { "exit": "Plaza Azul/Nagtahan", "fee": 792 },
@@ -437,6 +469,7 @@
             "province": ["NCR"],
             "nearest": ["Quezon", "Manila"],
             "tolls": [
+                { "exit": "Sgt. Rivera - A.Bonifacio", "fee": 0 },
                 { "exit": "Quezon Avenue", "fee": 387 },
                 { "exit": "E. Rodriguez",  "fee": 387 },
                 { "exit": "Plaza Azul/Nagtahan", "fee": 792 },
@@ -451,6 +484,7 @@
             "province": ["NCR"],
             "nearest": ["Caloocan", "Manila", "Quezon"],
             "tolls": [
+                { "exit": "Quezon Avenue", "fee": 0 },
                 { "exit": "E. Rodriguez",  "fee": 387 },
                 { "exit": "Plaza Azul/Nagtahan", "fee": 792 },
                 { "exit": "Plaza Dilao", "fee": 792 },
@@ -464,6 +498,7 @@
             "province": ["NCR"],
             "nearest": ["Manila", "Mandaluyong", "Makati"],
             "tolls": [
+                { "exit": "Plaza Dilao", "fee": 0 },
                 { "exit": "Buendia", "fee": 315 }
             ],
             "bound": "south"
@@ -474,6 +509,7 @@
             "province": ["NCR"],
             "nearest": ["Makati", "Pasay"],
             "tolls": [
+                { "exit": "Quirino", "fee": 0 },
                 { "exit": "Buendia", "fee": 315 }
             ],
             "bound": "south"

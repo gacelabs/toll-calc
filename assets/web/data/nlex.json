@@ -6,6 +6,7 @@
             "province": ["NCR"],
             "nearest": ["Caloocan", "Las Piñas", "Makati", "Malabon", "Mandaluyong", "Manila", "Marikina", "Muntinlupa", "Navotas", "Parañaque", "Pasay", "Pasig", "Pateros", "Quezon", "San Juan", "Taguig", "Valenzuela"],
             "tolls": [
+                { "exit": "Balintawak", "fee": 0 },
                 { "exit": "Mindanao Avenue", "fee": 69 },
                 { "exit": "Karuhatan", "fee": 69 },
                 { "exit": "Valenzuela", "fee": 69 },
@@ -44,6 +45,7 @@
             "province": ["NCR"],
             "nearest": ["Quezon", "Valenzuela"],
             "tolls": [
+                { "exit": "Mindanao Avenue", "fee": 0 },
                 { "exit": "Karuhatan", "fee": 69 },
                 { "exit": "Valenzuela", "fee": 69 },
                 { "exit": "Lawang Bato", "fee": 69 },
@@ -81,6 +83,7 @@
             "province": ["NCR"],
             "nearest": ["Valenzuela"],
             "tolls": [
+                { "exit": "Karuhatan", "fee": 0 },
                 { "exit": "Valenzuela", "fee": 69 },
                 { "exit": "Lawang Bato", "fee": 69 },
                 { "exit": "Meycauayan", "fee": 69 },
@@ -117,6 +120,7 @@
             "province": ["NCR", "BULACAN"],
             "nearest": ["Valenzuela"],
             "tolls": [
+                { "exit": "Valenzuela", "fee": 0 },
                 { "exit": "Lawang Bato", "fee": 69 },
                 { "exit": "Meycauayan", "fee": 69 },
                 { "exit": "Marilao", "fee": 69 },
@@ -152,6 +156,7 @@
             "province": ["BULACAN", "NCR"],
             "nearest": ["Meycauayan", "Marilao", "San Jose del Monte"],
             "tolls": [
+                { "exit": "Meycauayan", "fee": 0 },
                 { "exit": "Marilao", "fee": 69 },
                 { "exit": "Ciudad de Victoria", "fee": 77 },
                 { "exit": "Bocaue", "fee": 84 },
@@ -185,6 +190,7 @@
             "province": ["BULACAN", "NCR"],
             "nearest": ["Meycauayan", "Marilao", "San Jose del Monte"],
             "tolls": [
+                { "exit": "Marilao", "fee": 0 },
                 { "exit": "Ciudad de Victoria", "fee": 77 },
                 { "exit": "Bocaue", "fee": 84 },
                 { "exit": "Tambubong", "fee": 88 },
@@ -217,6 +223,7 @@
             "province": ["BULACAN", "NCR"],
             "nearest": ["Bocaue", "Santa Maria"],
             "tolls": [
+                { "exit": "Ciudad de Victoria", "fee": 0 },
                 { "exit": "Bocaue", "fee": 7 },
                 { "exit": "Tambubong", "fee": 10 },
                 { "exit": "Balagtas", "fee": 30 },
@@ -248,6 +255,7 @@
             "province": ["BULACAN", "NCR"],
             "nearest": ["Bocaue", "Marilao"],
             "tolls": [
+                { "exit": "Bocaue", "fee": 0 },
                 { "exit": "Tambubong", "fee": 4 },
                 { "exit": "Balagtas", "fee": 23 },
                 { "exit": "Tabang", "fee": 38 },
@@ -278,6 +286,7 @@
             "province": ["BULACAN", "NCR"],
             "nearest": ["San Rafael", "Bocaue"],
             "tolls": [
+                { "exit": "Tambubong", "fee": 0 },
                 { "exit": "Balagtas", "fee": 19 },
                 { "exit": "Tabang", "fee": 35 },
                 { "exit": "Sta.Rita", "fee": 40 },
@@ -307,6 +316,7 @@
             "province": ["BULACAN", "NCR"],
             "nearest": ["Balagtas", "Guiguinto"],
             "tolls": [
+                { "exit": "Balagtas", "fee": 0 },
                 { "exit": "Tabang", "fee": 15 },
                 { "exit": "Sta.Rita", "fee": 21 },
                 { "exit": "Pulilan", "fee": 49 },
@@ -335,6 +345,7 @@
             "province": ["BULACAN", "PAMPANGA"],
             "nearest": ["Guiguinto", "Baliuag"],
             "tolls": [
+                { "exit": "Sta.Rita", "fee": 0 },
                 { "exit": "Pulilan", "fee": 28 },
                 { "exit": "San Simon", "fee": 75 },
                 { "exit": "San Fernando", "fee": 111 },
@@ -361,6 +372,7 @@
             "province": ["BULACAN", "PAMPANGA"],
             "nearest": ["Pulilan", "Plaridel"],
             "tolls": [
+                { "exit": "Pulilan", "fee": 0 },
                 { "exit": "San Simon", "fee": 47 },
                 { "exit": "San Fernando", "fee": 83 },
                 { "exit": "Mexico", "fee": 112 },
@@ -386,7 +398,7 @@
             "province": ["PAMPANGA"],
             "nearest": ["San Simon", "Apalit"],
             "tolls": [
-                { "exit": "San Fernando", "fee": 36 },
+                { "exit": "San Simon", "fee": 0 },
                 { "exit": "Mexico", "fee": 65 },
                 { "exit": "Angeles", "fee": 99 },
                 { "exit": "Dau", "fee": 107 },
@@ -410,6 +422,7 @@
             "province": ["PAMPANGA"],
             "nearest": ["San Fernando", "Mexico"],
             "tolls": [
+                { "exit": "San Fernando", "fee": 0 },
                 { "exit": "Mexico", "fee": 29 },
                 { "exit": "Angeles", "fee": 63 },
                 { "exit": "Dau", "fee": 71 },
@@ -433,6 +446,7 @@
             "province": ["PAMPANGA"],
             "nearest": ["Mexico", "San Fernando"],
             "tolls": [
+                { "exit": "Mexico", "fee": 0 },
                 { "exit": "Angeles", "fee": 34 },
                 { "exit": "Dau", "fee": 43 },
                 { "exit": "Sta.Ines", "fee": 64 },
@@ -455,6 +469,7 @@
             "province": ["PAMPANGA"],
             "nearest": ["Angeles", "Mabalacat"],
             "tolls": [
+                { "exit": "Angeles", "fee": 0 },
                 { "exit": "Dau", "fee": 8 },
                 { "exit": "Sta.Ines", "fee": 30 },
                 { "exit": "Tipo / SFEX", "fee": 354 },
@@ -476,6 +491,7 @@
             "province": ["PAMPANGA"],
             "nearest": ["Mabalacat", "Angeles"],
             "tolls": [
+                { "exit": "Dau", "fee": 0 },
                 { "exit": "Sta.Ines", "fee": 21 },
                 { "exit": "Tipo / SFEX", "fee": 345 },
                 { "exit": "Dinalupihan", "fee": 249 },
@@ -496,6 +512,7 @@
             "province": ["BATAAN", "PAMPANGA"],
             "nearest": ["Subic", "Olongapo"],
             "tolls": [
+                { "exit": "Tipo / SFEX", "fee": 0 },
                 { "exit": "Dinalupihan", "fee": 97 },
                 { "exit": "Floridablanca", "fee": 193 },
                 { "exit": "Porac", "fee": 263 },
@@ -514,6 +531,7 @@
             "province": ["BATAAN", "PAMPANGA"],
             "nearest": ["Dinalupihan", "Hermosa"],
             "tolls": [
+                { "exit": "Dinalupihan", "fee": 0 },
                 { "exit": "Floridablanca", "fee": 96 },
                 { "exit": "Porac", "fee": 166 },
                 { "exit": "Clark South", "fee": 219 },
@@ -531,6 +549,7 @@
             "province": ["PAMPANGA", "BATAAN"],
             "nearest": ["Floridablanca", "Porac"],
             "tolls": [
+                { "exit": "Floridablanca", "fee": 0 },
                 { "exit": "Porac", "fee": 70 },
                 { "exit": "Clark South", "fee": 123 },
                 { "exit": "Mabalacat(Mabiga)", "fee": 132 },
@@ -547,6 +566,7 @@
             "province": ["PAMPANGA", "BATAAN"],
             "nearest": ["Porac", "Angeles"],
             "tolls": [
+                { "exit": "Porac", "fee": 0 },
                 { "exit": "Clark South", "fee": 53 },
                 { "exit": "Mabalacat(Mabiga)", "fee": 61 },
                 { "exit": "Clark North", "fee": 83 },
@@ -562,6 +582,7 @@
             "province": ["PAMPANGA", "TARLAC"],
             "nearest": ["Angeles", "Mabalacat"],
             "tolls": [
+                { "exit": "Clark South", "fee": 0 },
                 { "exit": "Mabalacat(Mabiga)", "fee": 9 },
                 { "exit": "Clark North", "fee": 30 },
                 { "exit": "Dolores", "fee": 38 },
@@ -576,6 +597,7 @@
             "province": ["PAMPANGA", "TARLAC"],
             "nearest": ["Mabalacat", "Clark"],
             "tolls": [
+                { "exit": "Mabalacat(Mabiga)", "fee": 0 },
                 { "exit": "Clark North", "fee": 21 },
                 { "exit": "Dolores", "fee": 29 },
                 { "exit": "Concepcion", "fee": 82 },
@@ -589,6 +611,7 @@
             "province": ["PAMPANGA", "TARLAC"],
             "nearest": ["Mabalacat", "Clark"],
             "tolls": [
+                { "exit": "Clark North", "fee": 0 },
                 { "exit": "Dolores", "fee": 8 },
                 { "exit": "Concepcion", "fee": 61 },
                 { "exit": "San Miguel", "fee": 133 },
@@ -601,6 +624,7 @@
             "province": ["PAMPANGA", "TARLAC"],
             "nearest": ["San Fernando", "Bacolor"],
             "tolls": [
+                { "exit": "Dolores", "fee": 0 },
                 { "exit": "Concepcion", "fee": 53 },
                 { "exit": "San Miguel", "fee": 125 },
                 { "exit": "Tarlac", "fee": 151 }
@@ -612,6 +636,7 @@
             "province": ["TARLAC", "PAMPANGA"],
             "nearest": ["Concepcion", "Capas"],
             "tolls": [
+                { "exit": "Concepcion", "fee": 0 },
                 { "exit": "San Miguel", "fee": 72 },
                 { "exit": "Tarlac", "fee": 97 }
             ]
@@ -622,6 +647,7 @@
             "province": ["TARLAC", "PAMPANGA"],
             "nearest": ["San Miguel", "San Ildefonso"],
             "tolls": [
+                { "exit": "San Miguel", "fee": 0 },
                 { "exit": "Tarlac", "fee": 25 }
             ]
         },
@@ -657,7 +683,8 @@
                 { "exit": "Clark North", "fee": 158 },
                 { "exit": "Dolores", "fee": 151 },
                 { "exit": "Concepcion", "fee": 97 },
-                { "exit": "San Miguel", "fee": 25 }
+                { "exit": "San Miguel", "fee": 25 },
+                { "exit": "Tarlac", "fee": 0 }
             ]
         }
     ],
@@ -668,6 +695,7 @@
             "province": ["NCR", "BULACAN"],
             "nearest": ["Caloocan", "Las Piñas", "Makati", "Malabon", "Mandaluyong", "Manila", "Marikina", "Muntinlupa", "Navotas", "Parañaque", "Pasay", "Pasig", "Pateros", "Quezon", "San Juan", "Taguig", "Valenzuela"],
             "tolls": [
+                { "exit": "Balintawak", "fee": 0 },
                 { "exit": "Mindanao Avenue", "fee": 172 },
                 { "exit": "Karuhatan", "fee": 172 },
                 { "exit": "Valenzuela", "fee": 172 },
@@ -706,6 +734,7 @@
             "province": ["NCR", "BULACAN"],
             "nearest": ["Quezon", "Valenzuela"],
             "tolls": [
+                { "exit": "Mindanao Avenue", "fee": 0 },
                 { "exit": "Karuhatan", "fee": 172 },
                 { "exit": "Valenzuela", "fee": 172 },
                 { "exit": "Lawang Bato", "fee": 172 },
@@ -743,6 +772,7 @@
             "province": ["NCR", "BULACAN"],
             "nearest": ["Valenzuela"],
             "tolls": [
+                { "exit": "Karuhatan", "fee": 0 },
                 { "exit": "Valenzuela", "fee": 172 },
                 { "exit": "Lawang Bato", "fee": 172 },
                 { "exit": "Meycauayan", "fee": 172 },
@@ -779,6 +809,7 @@
             "province": ["NCR", "BULACAN"],
             "nearest": ["Valenzuela"],
             "tolls": [
+                { "exit": "Valenzuela", "fee": 0 },
                 { "exit": "Lawang Bato", "fee": 172 },
                 { "exit": "Meycauayan", "fee": 172 },
                 { "exit": "Marilao", "fee": 172 },
@@ -814,6 +845,7 @@
             "province": ["BULACAN", "NCR"],
             "nearest": ["Meycauayan", "Marilao", "San Jose del Monte"],
             "tolls": [
+                { "exit": "Meycauayan", "fee": 0 },
                 { "exit": "Marilao", "fee": 172 },
                 { "exit": "Ciudad de Victoria", "fee": 193 },
                 { "exit": "Bocaue", "fee": 210 },
@@ -847,6 +879,7 @@
             "province": ["BULACAN", "NCR"],
             "nearest": ["Meycauayan", "Marilao", "San Jose del Monte"],
             "tolls": [
+                { "exit": "Marilao", "fee": 0 },
                 { "exit": "Ciudad de Victoria", "fee": 193 },
                 { "exit": "Bocaue", "fee": 210 },
                 { "exit": "Tambubong", "fee": 219 },
@@ -879,6 +912,7 @@
             "province": ["BULACAN", "NCR"],
             "nearest": ["Bocaue", "Santa Maria"],
             "tolls": [
+                { "exit": "Ciudad de Victoria", "fee": 10 },
                 { "exit": "Bocaue", "fee": 17 },
                 { "exit": "Tambubong", "fee": 26 },
                 { "exit": "Balagtas", "fee": 74 },
@@ -910,6 +944,7 @@
             "province": ["BULACAN", "NCR"],
             "nearest": ["Bocaue", "Marilao"],
             "tolls": [
+                { "exit": "Bocaue", "fee": 0 },
                 { "exit": "Tambubong", "fee": 9 },
                 { "exit": "Balagtas", "fee": 57 },
                 { "exit": "Tabang", "fee": 96 },
@@ -940,6 +975,7 @@
             "province": ["BULACAN", "NCR"],
             "nearest": ["San Rafael", "Bocaue"],
             "tolls": [
+                { "exit": "Tambubong", "fee": 0 },
                 { "exit": "Balagtas", "fee": 48 },
                 { "exit": "Tabang", "fee": 87 },
                 { "exit": "Sta.Rita", "fee": 100 },
@@ -969,6 +1005,7 @@
             "province": ["BULACAN", "NCR"],
             "nearest": ["Balagtas", "Guiguinto"],
             "tolls": [
+                { "exit": "Balagtas", "fee": 0 },
                 { "exit": "Tabang", "fee": 39 },
                 { "exit": "Sta.Rita", "fee": 52 },
                 { "exit": "Pulilan", "fee": 122 },
@@ -997,6 +1034,7 @@
             "province": ["BULACAN", "PAMPANGA"],
             "nearest": ["Guiguinto", "Baliuag"],
             "tolls": [
+                { "exit": "Sta.Rita", "fee": 0 },
                 { "exit": "Pulilan", "fee": 69 },
                 { "exit": "San Simon", "fee": 188 },
                 { "exit": "San Fernando", "fee": 278 },
@@ -1023,6 +1061,7 @@
             "province": ["BULACAN", "PAMPANGA"],
             "nearest": ["Pulilan", "Plaridel"],
             "tolls": [
+                { "exit": "Pulilan", "fee": 0 },
                 { "exit": "San Simon", "fee": 118 },
                 { "exit": "San Fernando", "fee": 208 },
                 { "exit": "Mexico", "fee": 280 },
@@ -1048,7 +1087,7 @@
             "province": ["PAMPANGA"],
             "nearest": ["San Simon", "Apalit"],
             "tolls": [
-                { "exit": "San Fernando", "fee": 90 },
+                { "exit": "San Simon", "fee": 0 },
                 { "exit": "Mexico", "fee": 162 },
                 { "exit": "Angeles", "fee": 247 },
                 { "exit": "Dau", "fee": 268 },
@@ -1072,6 +1111,7 @@
             "province": ["PAMPANGA"],
             "nearest": ["San Fernando", "Mexico"],
             "tolls": [
+                { "exit": "San Fernando", "fee": 0 },
                 { "exit": "Mexico", "fee": 72 },
                 { "exit": "Angeles", "fee": 157 },
                 { "exit": "Dau", "fee": 178 },
@@ -1095,6 +1135,7 @@
             "province": ["PAMPANGA"],
             "nearest": ["Mexico", "San Fernando"],
             "tolls": [
+                { "exit": "Mexico", "fee": 0 },
                 { "exit": "Angeles", "fee": 86 },
                 { "exit": "Dau", "fee": 106 },
                 { "exit": "Sta.Ines", "fee": 160 },
@@ -1117,6 +1158,7 @@
             "province": ["PAMPANGA"],
             "nearest": ["Angeles", "Mabalacat"],
             "tolls": [
+                { "exit": "Angeles", "fee": 0 },
                 { "exit": "Dau", "fee": 21 },
                 { "exit": "Sta.Ines", "fee": 74 },
                 { "exit": "Tipo / SFEX", "fee": 739 },
@@ -1138,6 +1180,7 @@
             "province": ["PAMPANGA"],
             "nearest": ["Mabalacat", "Angeles"],
             "tolls": [
+                { "exit": "Dau", "fee": 0 },
                 { "exit": "Sta.Ines", "fee": 54 },
                 { "exit": "Tipo / SFEX", "fee": 719 },
                 { "exit": "Dinalupihan", "fee": 509 },
@@ -1158,6 +1201,7 @@
             "province": ["BATAAN", "PAMPANGA"],
             "nearest": ["Subic", "Olongapo"],
             "tolls": [
+                { "exit": "Tipo / SFEX", "fee": 0 },
                 { "exit": "Dinalupihan", "fee": 209 },
                 { "exit": "Floridablanca", "fee": 401 },
                 { "exit": "Porac", "fee": 542 },
@@ -1176,6 +1220,7 @@
             "province": ["BATAAN", "PAMPANGA"],
             "nearest": ["Dinalupihan", "Hermosa"],
             "tolls": [
+                { "exit": "Dinalupihan", "fee": 0 },
                 { "exit": "Floridablanca", "fee": 192 },
                 { "exit": "Porac", "fee": 333 },
                 { "exit": "Clark South", "fee": 438 },
@@ -1193,6 +1238,7 @@
             "province": ["PAMPANGA", "BATAAN"],
             "nearest": ["Floridablanca", "Porac"],
             "tolls": [
+                { "exit": "Floridablanca", "fee": 0 },
                 { "exit": "Porac", "fee": 140 },
                 { "exit": "Clark South", "fee": 246 },
                 { "exit": "Mabalacat(Mabiga)", "fee": 263 },
@@ -1209,6 +1255,7 @@
             "province": ["PAMPANGA", "BATAAN"],
             "nearest": ["Porac", "Angeles"],
             "tolls": [
+                { "exit": "Porac", "fee": 0 },
                 { "exit": "Clark South", "fee": 106 },
                 { "exit": "Mabalacat(Mabiga)", "fee": 123 },
                 { "exit": "Clark North", "fee": 165 },
@@ -1224,6 +1271,7 @@
             "province": ["PAMPANGA", "TARLAC"],
             "nearest": ["Angeles", "Mabalacat"],
             "tolls": [
+                { "exit": "Clark South", "fee": 10 },
                 { "exit": "Mabalacat(Mabiga)", "fee": 17 },
                 { "exit": "Clark North", "fee": 60 },
                 { "exit": "Dolores", "fee": 75 },
@@ -1238,6 +1286,7 @@
             "province": ["PAMPANGA", "TARLAC"],
             "nearest": ["Mabalacat", "Clark"],
             "tolls": [
+                { "exit": "Mabalacat(Mabiga)", "fee": 0 },
                 { "exit": "Clark North", "fee": 42 },
                 { "exit": "Dolores", "fee": 58 },
                 { "exit": "Concepcion", "fee": 165 },
@@ -1251,6 +1300,7 @@
             "province": ["PAMPANGA", "TARLAC"],
             "nearest": ["Mabalacat", "Clark"],
             "tolls": [
+                { "exit": "Clark North", "fee": 10 },
                 { "exit": "Dolores", "fee": 16 },
                 { "exit": "Concepcion", "fee": 122 },
                 { "exit": "San Miguel", "fee": 267 },
@@ -1263,6 +1313,7 @@
             "province": ["PAMPANGA", "TARLAC"],
             "nearest": ["San Fernando", "Bacolor"],
             "tolls": [
+                { "exit": "Dolores", "fee": 0 },
                 { "exit": "Concepcion", "fee": 107 },
                 { "exit": "San Miguel", "fee": 251 },
                 { "exit": "Tarlac", "fee": 301 }
@@ -1274,6 +1325,7 @@
             "province": ["TARLAC", "PAMPANGA"],
             "nearest": ["Concepcion", "Capas"],
             "tolls": [
+                { "exit": "Concepcion", "fee": 0 },
                 { "exit": "San Miguel", "fee": 144 },
                 { "exit": "Tarlac", "fee": 194 }
             ]
@@ -1284,6 +1336,7 @@
             "province": ["TARLAC", "PAMPANGA"],
             "nearest": ["San Miguel", "San Ildefonso"],
             "tolls": [
+                { "exit": "San Miguel", "fee": 0 },
                 { "exit": "Tarlac", "fee": 50 }
             ]
         },
@@ -1319,7 +1372,8 @@
                 { "exit": "Clark North", "fee": 317 },
                 { "exit": "Dolores", "fee": 301 },
                 { "exit": "Concepcion", "fee": 194 },
-                { "exit": "San Miguel", "fee": 50 }
+                { "exit": "San Miguel", "fee": 50 },
+                { "exit": "Tarlac", "fee": 0 }
             ]
         }
     ],
@@ -1330,6 +1384,7 @@
             "province": ["NCR", "BULACAN"],
             "nearest": ["Caloocan", "Las Piñas", "Makati", "Malabon", "Mandaluyong", "Manila", "Marikina", "Muntinlupa", "Navotas", "Parañaque", "Pasay", "Pasig", "Pateros", "Quezon", "San Juan", "Taguig", "Valenzuela"],
             "tolls": [
+                { "exit": "Balintawak", "fee": 0 },
                 { "exit": "Mindanao Avenue", "fee": 206 },
                 { "exit": "Karuhatan", "fee": 206 },
                 { "exit": "Valenzuela", "fee": 206 },
@@ -1368,6 +1423,7 @@
             "province": ["NCR", "BULACAN"],
             "nearest": ["Quezon", "Valenzuela"],
             "tolls": [
+                { "exit": "Mindanao Avenue", "fee": 0 },
                 { "exit": "Karuhatan", "fee": 206 },
                 { "exit": "Valenzuela", "fee": 206 },
                 { "exit": "Lawang Bato", "fee": 206 },
@@ -1405,6 +1461,7 @@
             "province": ["NCR", "BULACAN"],
             "nearest": ["Valenzuela"],
             "tolls": [
+                { "exit": "Karuhatan", "fee": 0 },
                 { "exit": "Valenzuela", "fee": 206 },
                 { "exit": "Lawang Bato", "fee": 206 },
                 { "exit": "Meycauayan", "fee": 206 },
@@ -1441,6 +1498,7 @@
             "province": ["NCR", "BULACAN"],
             "nearest": ["Valenzuela"],
             "tolls": [
+                { "exit": "Valenzuela", "fee": 0 },
                 { "exit": "Lawang Bato", "fee": 206 },
                 { "exit": "Meycauayan", "fee": 206 },
                 { "exit": "Marilao", "fee": 206 },
@@ -1476,6 +1534,7 @@
             "province": ["BULACAN", "NCR"],
             "nearest": ["Meycauayan", "Marilao", "San Jose del Monte"],
             "tolls": [
+                { "exit": "Meycauayan", "fee": 0 },
                 { "exit": "Marilao", "fee": 206 },
                 { "exit": "Ciudad de Victoria", "fee": 232 },
                 { "exit": "Bocaue", "fee": 252 },
@@ -1509,6 +1568,7 @@
             "province": ["BULACAN", "NCR"],
             "nearest": ["Meycauayan", "Marilao", "San Jose del Monte"],
             "tolls": [
+                { "exit": "Marilao", "fee": 0 },
                 { "exit": "Ciudad de Victoria", "fee": 232 },
                 { "exit": "Bocaue", "fee": 252 },
                 { "exit": "Tambubong", "fee": 263 },
@@ -1541,6 +1601,7 @@
             "province": ["BULACAN", "NCR"],
             "nearest": ["Bocaue", "Santa Maria"],
             "tolls": [
+                { "exit": "Ciudad de Victoria", "fee": 20 },
                 { "exit": "Bocaue", "fee": 20 },
                 { "exit": "Tambubong", "fee": 31 },
                 { "exit": "Balagtas", "fee": 89 },
@@ -1572,6 +1633,7 @@
             "province": ["BULACAN", "NCR"],
             "nearest": ["Bocaue", "Marilao"],
             "tolls": [
+                { "exit": "Bocaue", "fee": 10 },
                 { "exit": "Tambubong", "fee": 11 },
                 { "exit": "Balagtas", "fee": 68 },
                 { "exit": "Tabang", "fee": 115 },
@@ -1602,6 +1664,7 @@
             "province": ["BULACAN", "NCR"],
             "nearest": ["San Rafael", "Bocaue"],
             "tolls": [
+                { "exit": "Tambubong", "fee": 0 },
                 { "exit": "Balagtas", "fee": 57 },
                 { "exit": "Tabang", "fee": 104 },
                 { "exit": "Sta.Rita", "fee": 120 },
@@ -1631,6 +1694,7 @@
             "province": ["BULACAN", "NCR"],
             "nearest": ["Balagtas", "Guiguinto"],
             "tolls": [
+                { "exit": "Balagtas", "fee": 0 },
                 { "exit": "Tabang", "fee": 46 },
                 { "exit": "Sta.Rita", "fee": 63 },
                 { "exit": "Pulilan", "fee": 146 },
@@ -1659,6 +1723,7 @@
             "province": ["BULACAN", "PAMPANGA"],
             "nearest": ["Guiguinto", "Baliuag"],
             "tolls": [
+                { "exit": "Sta.Rita", "fee": 0 },
                 { "exit": "Pulilan", "fee": 83 },
                 { "exit": "San Simon", "fee": 225 },
                 { "exit": "San Fernando", "fee": 333 },
@@ -1685,6 +1750,7 @@
             "province": ["BULACAN", "PAMPANGA"],
             "nearest": ["Pulilan", "Plaridel"],
             "tolls": [
+                { "exit": "Pulilan", "fee": 0 },
                 { "exit": "San Simon", "fee": 142 },
                 { "exit": "San Fernando", "fee": 250 },
                 { "exit": "Mexico", "fee": 336 },
@@ -1710,6 +1776,7 @@
             "province": ["PAMPANGA"],
             "nearest": ["San Simon", "Apalit"],
             "tolls": [
+                { "exit": "San Simon", "fee": 0 },
                 { "exit": "Mexico", "fee": 194 },
                 { "exit": "Angeles", "fee": 297 },
                 { "exit": "Dau", "fee": 322 },
@@ -1733,6 +1800,7 @@
             "province": ["PAMPANGA"],
             "nearest": ["San Fernando", "Mexico"],
             "tolls": [
+                { "exit": "San Fernando", "fee": 0 },
                 { "exit": "Mexico", "fee": 86 },
                 { "exit": "Angeles", "fee": 189 },
                 { "exit": "Dau", "fee": 214 },
@@ -1756,6 +1824,7 @@
             "province": ["PAMPANGA"],
             "nearest": ["Mexico", "San Fernando"],
             "tolls": [
+                { "exit": "Mexico", "fee": 0 },
                 { "exit": "Angeles", "fee": 103 },
                 { "exit": "Dau", "fee": 128 },
                 { "exit": "Sta.Ines", "fee": 192 },
@@ -1778,6 +1847,7 @@
             "province": ["PAMPANGA"],
             "nearest": ["Angeles", "Mabalacat"],
             "tolls": [
+                { "exit": "Angeles", "fee": 0 },
                 { "exit": "Dau", "fee": 25 },
                 { "exit": "Sta.Ines", "fee": 89 },
                 { "exit": "Tipo / SFEX", "fee": 1061 },
@@ -1799,6 +1869,7 @@
             "province": ["PAMPANGA"],
             "nearest": ["Mabalacat", "Angeles"],
             "tolls": [
+                { "exit": "Dau", "fee": 0 },
                 { "exit": "Sta.Ines", "fee": 64 },
                 { "exit": "Tipo / SFEX", "fee": 1036 },
                 { "exit": "Dinalupihan", "fee": 747 },
@@ -1819,6 +1890,7 @@
             "province": ["BATAAN", "PAMPANGA"],
             "nearest": ["Subic", "Olongapo"],
             "tolls": [
+                { "exit": "Tipo / SFEX", "fee": 0 },
                 { "exit": "Dinalupihan", "fee": 289 },
                 { "exit": "Floridablanca", "fee": 577 },
                 { "exit": "Porac", "fee": 788 },
@@ -1837,6 +1909,7 @@
             "province": ["BATAAN", "PAMPANGA"],
             "nearest": ["Dinalupihan", "Hermosa"],
             "tolls": [
+                { "exit": "Dinalupihan", "fee": 0 },
                 { "exit": "Floridablanca", "fee": 288 },
                 { "exit": "Porac", "fee": 499 },
                 { "exit": "Clark South", "fee": 657 },
@@ -1849,11 +1922,12 @@
             ]
         },
         {
-        
+            "region": "III",
             "entry": "Floridablanca",
             "province": ["PAMPANGA", "BATAAN"],
             "nearest": ["Floridablanca", "Porac"],
             "tolls": [
+                { "exit": "Floridablanca", "fee": 0 },
                 { "exit": "Porac", "fee": 211 },
                 { "exit": "Clark South", "fee": 369 },
                 { "exit": "Mabalacat(Mabiga)", "fee": 395 },
@@ -1870,6 +1944,7 @@
             "province": ["PAMPANGA", "BATAAN"],
             "nearest": ["Porac", "Angeles"],
             "tolls": [
+                { "exit": "Porac", "fee": 0 },
                 { "exit": "Clark South", "fee": 159 },
                 { "exit": "Mabalacat(Mabiga)", "fee": 184 },
                 { "exit": "Clark North", "fee": 248 },
@@ -1885,6 +1960,7 @@
             "province": ["PAMPANGA", "TARLAC"],
             "nearest": ["Angeles", "Mabalacat"],
             "tolls": [
+                { "exit": "Clark South", "fee": 20 },
                 { "exit": "Mabalacat(Mabiga)", "fee": 26 },
                 { "exit": "Clark North", "fee": 89 },
                 { "exit": "Dolores", "fee": 113 },
@@ -1899,6 +1975,7 @@
             "province": ["PAMPANGA", "TARLAC"],
             "nearest": ["Mabalacat", "Clark"],
             "tolls": [
+                { "exit": "Mabalacat(Mabiga)", "fee": 0 },
                 { "exit": "Clark North", "fee": 64 },
                 { "exit": "Dolores", "fee": 87 },
                 { "exit": "Concepcion", "fee": 247 },
@@ -1912,6 +1989,7 @@
             "province": ["PAMPANGA", "TARLAC"],
             "nearest": ["Mabalacat", "Clark"],
             "tolls": [
+                { "exit": "Clark North", "fee": 20 },
                 { "exit": "Dolores", "fee": 24 },
                 { "exit": "Concepcion", "fee": 184 },
                 { "exit": "San Miguel", "fee": 400 },
@@ -1924,6 +2002,7 @@
             "province": ["PAMPANGA", "TARLAC"],
             "nearest": ["San Fernando", "Bacolor"],
             "tolls": [
+                { "exit": "Dolores", "fee": 0 },
                 { "exit": "Concepcion", "fee": 160 },
                 { "exit": "San Miguel", "fee": 376 },
                 { "exit": "Tarlac", "fee": 452 }
@@ -1935,6 +2014,7 @@
             "province": ["TARLAC", "PAMPANGA"],
             "nearest": ["Concepcion", "Capas"],
             "tolls": [
+                { "exit": "Concepcion", "fee": 0 },
                 { "exit": "San Miguel", "fee": 216 },
                 { "exit": "Tarlac", "fee": 292 }
             ]
@@ -1945,6 +2025,7 @@
             "province": ["TARLAC", "PAMPANGA"],
             "nearest": ["San Miguel", "San Ildefonso"],
             "tolls": [
+                { "exit": "San Miguel", "fee": 0 },
                 { "exit": "Tarlac", "fee": 75 }
             ]
         },
@@ -1980,7 +2061,8 @@
                 { "exit": "Clark North", "fee": 475 },
                 { "exit": "Dolores", "fee": 452 },
                 { "exit": "Concepcion", "fee": 292 },
-                { "exit": "San Miguel", "fee": 75 }
+                { "exit": "San Miguel", "fee": 75 },
+                { "exit": "Tarlac", "fee": 0 }
             ]
         }
     ]

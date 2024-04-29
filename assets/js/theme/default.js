@@ -1,4 +1,11 @@
+if (window.location.pathname == '/') {
+	localStorage.removeItem('search_results');
+	localStorage.removeItem('origin_all_routes');
+	localStorage.removeItem('destination_all_routes');
+}
+
 $(document).ready(function () {
+
 	$('[data-for]').on('click', function (e) {
 		var ui = $('#' + $(e.target).data('for'));
 		if (ui.length) {
@@ -51,11 +58,13 @@ $(document).ready(function () {
 		var i = setInterval(() => {
 			if (Object.keys(dataObject).length > 0) {
 				runCitySearchData();
+				runSearchResults();
 				clearInterval(i);
 			}
-		}, 3);
+		}, 333);
 	} else {
 		runCitySearchData();
+		runSearchResults();
 	}
 
 	$('#search_form').on('submit', function (e) {
@@ -77,12 +86,11 @@ $(document).ready(function () {
 			if (origin.attr('data-set') != undefined && dest.attr('data-set') != undefined) {
 				var origin_data = JSON.parse(origin.attr('data-set'));
 				var dest_data = JSON.parse(dest.attr('data-set'));
-				console.log(origin_data, dest_data);
+				// console.log(origin_data, dest_data);
 
-				var originRoutes = generateOriginRoutes(origin_data, dest_data.start);
-				// var destinationRoutes = generateDestinationRoutes(originRoutes, origin_data, dest_data);
-				var destinationRoutes = generateOriginRoutes(dest_data, origin_data.start);
-				console.log(originRoutes, destinationRoutes);
+				var originRoutes = generateRoutes(origin_data, dest_data.start);
+				var destinationRoutes = generateRoutes(dest_data, origin_data.start);
+				// console.log(originRoutes, destinationRoutes);
 
 				var bBetweenMain = (originRoutes.slex != undefined && destinationRoutes.nlex != undefined)
 					|| (originRoutes.nlex != undefined && destinationRoutes.slex != undefined)
@@ -138,12 +146,23 @@ $(document).ready(function () {
 						}
 					}
 				}
+
+				if (Object.keys(originRoutes).length && Object.keys(destinationRoutes).length) {
+					localStorage.setItem('search_results', JSON.stringify({ 'origin': originRoutes, 'destination': destinationRoutes }));
+					$('.tc1-loader-overlay').addClass('is-open');
+					setTimeout(() => {
+						// console.log(localStorage.getItem('search_results'));
+						window.location = '/results?origin=' + encodeURI($.trim(origin.val())) + '&destination=' + encodeURI($.trim(dest.val()));
+					}, 3000);
+				}
 			}
 		}
 	});
+
+	
 });
 
-var generateOriginRoutes = function (oData, gointTo, urBoundTo, oOrig) {
+var generateRoutes = function (oData, gointTo, urBoundTo, oOrig) {
 	var oRoutes = {};
 	var oTollways = oData.tollways;
 	var oTollSubjects = (oData.toll_subjects != undefined && oData.toll_subjects.length) ? oData.toll_subjects : false;
@@ -158,17 +177,12 @@ var generateOriginRoutes = function (oData, gointTo, urBoundTo, oOrig) {
 	}
 	console.log('started:', $.trim(oData.start), ', bound to:', $.trim(urBoundTo), 'ended:', $.trim(gointTo));
 
-	var bLastExit = false;
 	if (urBoundTo == 'north') {
 		if (oData.start == 'north') {
 			oTollways = oTollways.reverse();
 			if (oTollSubjects) {
 				oTollSubjects = oTollSubjects.reverse();
 			}
-		}
-	} else {
-		if (oData.start == 'north') { // starting from north
-			bLastExit = true;
 		}
 	}
 	for (var c in oTollways) {
@@ -199,25 +213,22 @@ var generateOriginRoutes = function (oData, gointTo, urBoundTo, oOrig) {
 						// console.log(oClass.data);
 						if (oData.start == 'south') { // started from south
 							var key = oClass.data.length - 1;
-							if (toll === 'slex') {
-								key -= 1;
-							}
+							if (toll === 'slex') key -= 1;
 						} else {
 							var key = 0;
 						}
 						var oTolls = oClass.data[key].tolls;
 						// console.log(urBoundTo, gointTo);
-						if (urBoundTo == gointTo && oOrig == undefined) {
+						if (urBoundTo == gointTo) {
 							var sEntry = oTolls[oTolls.length - 1].exit;
 							var sExit = oTolls[0].exit;
 						} else {
 							var sEntry = oTolls[0].exit;
 							var sExit = oTolls[oTolls.length - 1].exit;
 						}
-						if (gointTo == 'north' && oOrig == undefined) {
-							var iFee = oTolls[0].fee;
-						} else {
-							var iFee = oTolls[oTolls.length - 1].fee;
+						var iFee = oTolls[oTolls.length - 1].fee == 0 ? oTolls[0].fee : oTolls[oTolls.length - 1].fee;
+						if (gointTo == 'north') {
+							iFee = oTolls[0].fee == 0 ? oTolls[oTolls.length - 1].fee : oTolls[0].fee;
 						}
 
 						if (sEntry != sExit) {
@@ -267,12 +278,11 @@ var generateOriginRoutes = function (oData, gointTo, urBoundTo, oOrig) {
 							var toNorth = $.trim(oData.start) == 'south' && $.trim(urBoundTo) == 'north' && $.trim(gointTo) == 'north';
 							var toSouth = $.trim(oData.start) == 'north' && $.trim(urBoundTo) == 'south' && $.trim(gointTo) == 'south';
 
-
 							if ($.inArray(toll, ['ncr', 'skyway_3']) < 0) {
-								if (toSouth) {
+								if (toSouth || gointTo == 'south') {
 									oGuideClass = oClasses[oClasses.length - 1];
 									oGuideTolls = oGuideClass.tolls;
-								} else if (toNorth) {
+								} else if (toNorth || gointTo == 'north') {
 									oGuideClass = oClasses[0];
 									oGuideTolls = oGuideClass.tolls;
 								}
@@ -297,42 +307,44 @@ var generateOriginRoutes = function (oData, gointTo, urBoundTo, oOrig) {
 
 									if (toSouth) {
 										var sExit = oTolls[0].exit;
-										var iFee = oTolls[0].fee;
+										var iFee = oTolls[0].fee == 0 ? oTolls[oTolls.length - 1].fee : oTolls[0].fee;
 									} else {
 										var sExit = oGuideClass.entry;
-										var iFee = oTolls[oTolls.length - 1].fee;
+										var iFee = oTolls[oTolls.length - 1].fee == 0 ? oTolls[0].fee : oTolls[oTolls.length - 1].fee;
 									}
 								} else {
 									if (oData.start == 'south' && gointTo == 'north') {
 										// sEntry = oTolls[oTolls.length - 1].exit;
 										sExit = oTolls[0].exit;
-										iFee = oTolls[0].fee;
+										iFee = oTolls[0].fee == 0 ? oTolls[oTolls.length - 1].fee : oTolls[0].fee;
 									} else if (oData.start == 'north' && gointTo == 'south') {
 										sEntry = oTolls[0].exit;
 										sExit = oTolls[oTolls.length - 1].exit;
-										iFee = oTolls[oTolls.length - 1].fee;
+										iFee = oTolls[oTolls.length - 1].fee == 0 ? oTolls[0].fee : oTolls[oTolls.length - 1].fee;
 									} else {
 										if (gointTo == 'north') {
 											sEntry = oTolls[0].exit;
 											sExit = oTolls[oTolls.length - 1].exit;
-											iFee = oTolls[oTolls.length - 1].fee;
+											iFee = oTolls[oTolls.length - 1].fee == 0 ? oTolls[0].fee : oTolls[oTolls.length - 1].fee;
 										} else {
 											sEntry = oTolls[oTolls.length - 1].exit;
 											sExit = oTolls[0].exit;
-											iFee = oTolls[0].fee;
+											iFee = oTolls[0].fee == 0 ? oTolls[oTolls.length - 1].fee : oTolls[0].fee;
 										}
 									}
 								}
-								if (sEntry != sExit) {
-									oRoutes[toll][class_name].push({
-										'entry': sEntry,
-										'tolls': oTolls,
-										'exit': sExit,
-										'fee': iFee,
-										'start': oData.start,
-										'ended': gointTo,
-									});
+								if (sEntry == sExit) {
+									sEntry = oResult.entry;
 								}
+
+								oRoutes[toll][class_name].push({
+									'entry': sEntry,
+									'tolls': oTolls,
+									'exit': sExit,
+									'fee': iFee,
+									'start': oData.start,
+									'ended': gointTo,
+								});
 							}
 						}
 					}
@@ -340,7 +352,7 @@ var generateOriginRoutes = function (oData, gointTo, urBoundTo, oOrig) {
 					if (oRoutes[toll][class_name].length == 0) {
 						delete oRoutes[toll][class_name];
 					} else {
-						// oRoutes[toll][class_name] = removeDuplicates(oRoutes[toll][class_name], 'exit');
+						oRoutes[toll][class_name] = removeDuplicates(oRoutes[toll][class_name], 'entry');
 					}
 				}
 			}
@@ -351,125 +363,6 @@ var generateOriginRoutes = function (oData, gointTo, urBoundTo, oOrig) {
 	}
 	// console.log(oRoutes);
 	return oRoutes;
-}
-
-var generateDestinationRoutes = function (originRoutesData, oOrig, oNext) {
-	var oDestRoutesData = {};
-	var oTollways = oNext.tollways;
-	// console.log(originRoutesData, oTollways);
-	var urBoundTo = 'south';
-	var gointTo = oOrig.start;
-	if (oNext.start == 'north' && gointTo == 'south') {
-		urBoundTo = 'north';
-	} else if (oNext.start == gointTo) {
-		urBoundTo = oNext.start;
-	}
-	// console.log(urBoundTo, gointTo);
-	for (var c in oTollways) {
-		var toll = oTollways[c];
-		if (originRoutesData[toll] == undefined) {
-			oDestRoutesData = generateOriginRoutes(oNext, gointTo, urBoundTo, oOrig);
-			var bBetweenMain = (originRoutesData.slex != undefined && oDestRoutesData.nlex != undefined) || (originRoutesData.nlex != undefined && oDestRoutesData.slex != undefined);
-			var bNoNcr = originRoutesData.ncr == undefined || oDestRoutesData.ncr == undefined;
-			if (bBetweenMain) {
-				var direction = oOrig.start;
-				if (bNoNcr) {
-					if (oDestRoutesData.ncr == undefined) {
-						direction = oNext.start;
-					}
-				}
-				var oClass = new JSONQuery(dataObject.ncr[direction]);
-				var entry = 'Pasay';
-				if (direction == 'south') {
-					entry = 'Quezon';
-				}
-				var oCondition = [
-					{ field: 'entry', operator: 'like', value: '%' + entry + '%' },
-				];
-
-				var query = {
-					select: { fields: '*' },
-					where: {
-						condition: oCondition
-					}
-				};
-				var result = oClass.execute(query);
-				// console.log(result);
-
-				if (result.data.length) {
-					var oPush = {
-						'entry': result.data[0].entry,
-						'tolls': result.data[0].tolls,
-						'exit': result.data[0].tolls[result.data[0].tolls.length - 1].exit,
-						'fee': result.data[0].tolls[result.data[0].tolls.length - 1].fee,
-						'start': direction,
-						'ended': gointTo,
-					};
-
-					if (direction == 'north') {
-						originRoutesData['ncr'] = {};
-						originRoutesData['ncr'][direction] = [];
-						originRoutesData['ncr'][direction].push(oPush);
-						/* for (var sClass in dataObject.nlex) {
-							var oTollSet = dataObject.nlex[sClass][0];
-
-							for (var i in oDestRoutesData.nlex[sClass]) {
-								var prevToll = oDestRoutesData.nlex[sClass][i];
-								var newTolls = [];
-								for (var x in oTollSet.tolls) {
-									newTolls.push(oTollSet.tolls[x]);
-									if (prevToll.entry == oTollSet.tolls[x].exit) {
-										break;
-									}
-								}
-								// console.log(newTolls)
-								oDestRoutesData.nlex[sClass][i] = {
-									'entry': oTollSet.entry,
-									'tolls': newTolls,
-									'exit': newTolls[newTolls.length - 1].exit,
-									'fee': newTolls[newTolls.length - 1].fee,
-									'start': prevToll.start,
-									'ended': prevToll.ended,
-								}
-							}
-						} */
-					} else {
-						oDestRoutesData['ncr'] = {};
-						oDestRoutesData['ncr'][direction] = [];
-						oDestRoutesData['ncr'][direction].push(oPush);
-						/* for (var sClass in dataObject.nlex) {
-							var oTollSet = dataObject.nlex[sClass][dataObject.nlex[sClass].length - 1];
-
-							for (var i in originRoutesData.nlex[sClass]) {
-								var prevToll = originRoutesData.nlex[sClass][i];
-								var newTolls = [];
-								for (var x in oTollSet.tolls) {
-									newTolls.push(oTollSet.tolls[x]);
-									if (prevToll.entry == oTollSet.tolls[x].exit) {
-										break;
-									}
-								}
-								// console.log(newTolls)
-								originRoutesData.nlex[sClass][i] = {
-									'entry': oTollSet.entry,
-									'tolls': newTolls.reverse(),
-									'exit': newTolls[0].exit,
-									'fee': newTolls[0].fee,
-									'start': prevToll.start,
-									'ended': prevToll.ended,
-								}
-							}
-						} */
-					}
-				}
-			}
-		}
-		if (oDestRoutesData[toll] != undefined && Object.keys(oDestRoutesData[toll]).length == 0) {
-			delete oDestRoutesData[toll];
-		}
-	}
-	// console.log(oDestRoutesData);
-	return oDestRoutesData;
 }
 
 var runCitySearchData = function () {
@@ -483,8 +376,8 @@ var runCitySearchData = function () {
 				select: { fields: '*' },
 				where: {
 					condition: [
-						{ field: 'name', operator: 'LIKE', value: '%' + e.target.value + '%' },
-						{ field: 'province', operator: 'LIKE', value: '%' + e.target.value + '%' },
+						{ field: 'name', operator: 'like', value: '%' + e.target.value + '%' },
+						{ field: 'province', operator: 'like', value: '%' + e.target.value + '%' },
 					]
 				}
 			};
@@ -497,27 +390,129 @@ var runCitySearchData = function () {
 			});
 			// console.log(result);
 			autocomplete(e.target, result.data, 'name');
+		}).on('keyup', function (e) {
+			if (e.keyCode == 13) {
+				$('#search_form').trigger('submit');
+			}
 		});
 	});
 }
 
-var renderPage = function (page, parent) {
-	var options = {
-		type: "GET",
-		url: page,// "assets/web/styles.html"
-		dataType: "html",
-		success: function (html) {
-			if ($(parent).length) {
-				$(parent).append(html);
-			} else {
-				console.log('No such parent page!', parent);
+var runSearchResults = function () {
+	if (localStorage.getItem('search_results') != null) {
+		renderSearchResults();
+
+		var urlParam = urlParams();
+		var originValue = urlParam.get('origin').toString();
+		var destValue = urlParam.get('destination').toString();
+		var modObject = { 'modify': ['name'], 'expressions': [{ 'concat': ['city', ', ', 'province'] }] };
+
+		var originJsonCities = new JSONQuery(dataObject.cities);
+		var originJoinedData = originJsonCities.join(dataObject.archipelago, "province");
+		var destJsonCities = new JSONQuery(dataObject.cities);
+		var destJoinedData = destJsonCities.join(dataObject.archipelago, "province");
+
+		var originQuery = {
+			select: { fields: '*' },
+			where: {
+				condition: [
+					{ field: 'name', operator: '=', value: originValue.replace(' City', '').split(', ')[0] },
+				]
 			}
-		},
-		error: function () {
-			console.log('No such page!', page);
+		};
+		var originResult = originJoinedData.execute(originQuery, modObject);
+		// console.log(originResult, originResult.data);
+		var destQuery = {
+			select: { fields: '*' },
+			where: {
+				condition: [
+					{ field: 'name', operator: '=', value: destValue.replace(' City', '').split(', ')[0] },
+				]
+			}
+		};
+		var destResult = destJoinedData.execute(destQuery, modObject);
+		// console.log(destResult, destResult.data);
+
+		// ORIGIN
+		var origin = $('#im_from');
+		origin.val(originValue).attr('data-set', JSON.stringify(originResult.data[0]));
+		// DESTINATION
+		var dest = $('#going_to');
+		dest.val(destValue).attr('data-set', JSON.stringify(destResult.data[0]));
+	}
+}
+
+var renderSearchResults = function () {
+	var oResults = JSON.parse(localStorage.getItem('search_results'));
+	// console.log(oResults);
+	var expresswayData = dataObject.expressways;
+	
+	/* render origin */
+	var oOrigin = oResults.origin;
+	var uiOrigin = $('.origin-results');
+	for (var route in oOrigin) {
+		var oItems = oOrigin[route];
+		// console.log(oItems);
+		var timelineTitle = expresswayData[route].fullname;
+		var oCloneTimeline = uiOrigin.find('.timeline:first').clone();
+		for (var classname in oItems) {
+			// timelineTitle += ' - ' + classname.ucWords().replace('_', ' ');
+			oCloneTimeline.find('.timeline-inverted .timeline-title').html(timelineTitle);
+			
+			var oRoute = oItems[classname];
+			let pUI = '';
+			for (var i in oRoute) {
+				var toLook = oRoute[i].exit;
+				if (route == 'ncr') {
+					toLook = oRoute[i].exit.toLowerCase().ucWords();
+				}
+				var travelTo = (route == 'ncr' ? oRoute[i].exit.toLowerCase().ucWords() + '</b> via <b>EDSA</b>' : oRoute[i].exit + '</b> exit');
+				if (pUI.indexOf(toLook) < 0) {
+					pUI += '<p>- travel to <b>' + travelTo + '</p>'
+				}
+			}
+			oCloneTimeline.find('.timeline-inverted .timeline-body').append(pUI);
+			break;
 		}
-	};
-	$.ajax(options);
+		uiOrigin.find('.page-body').append(oCloneTimeline.removeClass('hide'));
+	}
+	// console.log(uiOrigin.get(0));
+	localStorage.setItem('origin_all_routes', JSON.stringify(oOrigin));	
+	
+	/* render destination */
+	var oDestination = oResults.destination;
+	var uiDestination = $('.destination-results');
+
+	// console.log(Object.keys(oDestination).reverse(), oDestination);
+	var oDestinationRev = Object.keys(oDestination).reverse();
+	for (var x in oDestinationRev) {
+		var route = oDestinationRev[x];
+		var oItems = oDestination[route];
+		// console.log(oItems, route);
+		var timelineTitle = expresswayData[route].fullname;
+		var oCloneTimeline = uiDestination.find('.timeline:first').clone();
+		for (var classname in oItems) {
+			// timelineTitle += ' - ' + classname.ucWords().replace('_', ' ');
+			oCloneTimeline.find('.timeline-inverted .timeline-title').html(timelineTitle);
+
+			var oRoute = oItems[classname];
+			let pUI = '';
+			for (var i in oRoute) {
+				var toLook = oRoute[i].entry;
+				if (route == 'ncr') {
+					toLook = oRoute[i].entry.toLowerCase().ucWords();
+				}
+				var travelTo = (route == 'ncr' ? oRoute[i].entry.toLowerCase().ucWords() + '</b> via <b>EDSA</b>' : oRoute[i].entry + '</b> exit');
+				if (pUI.indexOf(toLook) < 0) {
+					pUI += '<p>- travel to <b>' + travelTo + '</p>'
+				}
+			}
+			oCloneTimeline.find('.timeline-inverted .timeline-body').append(pUI);
+			break;
+		}
+		uiDestination.find('.page-body').append(oCloneTimeline.removeClass('hide'));
+	}
+	localStorage.setItem('destination_all_routes', JSON.stringify(oDestination));
 }
 
 String.prototype.ucWords = function () {
@@ -571,3 +566,7 @@ function mergeAndRemoveDuplicates(obj1, obj2, key) {
 	return Object.values(uniqueObject);
 }
 
+function urlParams() {
+	var url = new URL(window.location.href);
+	return url.searchParams;
+}

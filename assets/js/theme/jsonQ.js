@@ -138,6 +138,7 @@ class JSONQuery {
 
 		if (joinedData.length) {
 			this.data = joinedData;
+			this.view = joinedData;
 		}
 		return this;
 	}

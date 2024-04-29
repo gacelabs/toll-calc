@@ -1,9 +1,12 @@
 var dataObject = {};
 
 (function() {
-	var tables = ['archipelago', 'cities', 'ncr', 'tplex', 'nlex', 'cavitex', 'naiax', 'slex', 'superhighway', 'calax', 'skyway_3'];
+	var tables = ['archipelago', 'cities', 'expressways', 'ncr', 'tplex', 'nlex', 'cavitex', 'naiax', 'slex', 'superhighway', 'calax', 'skyway_3'];
 
-	localStorage.clear();
+	tables.forEach(function (table, i) {
+		localStorage.removeItem(table);
+	});
+	// localStorage.clear();
 	/* if (isSessionExpired()) {
 		localStorage.clear();
 		dataObject = {};
