@@ -469,11 +469,11 @@ var renderSearchResults = function () {
 			var oRoute = oItems[classname];
 			let pUI = '';
 			for (var i in oRoute) {
-				var toLook = oRoute[i].exit;
+				var toLook = oRoute[i].entry;
 				if (route == 'ncr') {
-					toLook = oRoute[i].exit.toLowerCase().ucWords();
+					toLook = oRoute[i].entry.toLowerCase().ucWords();
 				}
-				var travelTo = (route == 'ncr' ? oRoute[i].exit.toLowerCase().ucWords() + '</b> via <b>EDSA</b>' : oRoute[i].exit + '</b> exit');
+				var travelTo = (route == 'ncr' ? oRoute[i].entry.toLowerCase().ucWords() + '</b> via <b>EDSA</b>' : oRoute[i].entry + '</b> exit');
 				if (pUI.indexOf(toLook) < 0) {
 					pUI += '<p>- travel to <b>' + travelTo + '</p>'
 				}

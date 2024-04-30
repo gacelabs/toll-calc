@@ -1246,6 +1246,7 @@ svg {
   animation: loader-section-pulse .7s cubic-bezier(.7, .1, .2, 1) infinite alternate;
   animation-delay: var(--delay);
 }
+
 .timeline {
   list-style: none;
   padding: 20px 20px 20px;
@@ -1289,7 +1290,7 @@ svg {
 }
 
 .timeline>li>.timeline-panel {
-  width: 90%;
+  width: auto;
   float: left;
   border: 1px solid #d4d4d4;
   border-radius: 2px;
@@ -1343,7 +1344,8 @@ svg {
 }
 
 .timeline>li.timeline-inverted>.timeline-panel {
-  float: right;
+  /* float: right; */
+  left: 60px;
 }
 
 .timeline>li.timeline-inverted>.timeline-panel:before {
@@ -1416,6 +1418,7 @@ svg {
 
   ul.timeline>li>.timeline-panel {
     float: right;
+    left: auto !important;
   }
 
   ul.timeline>li>.timeline-panel:before {

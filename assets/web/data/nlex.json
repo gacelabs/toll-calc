@@ -253,7 +253,7 @@
             "region": "III",
             "entry": "Bocaue",
             "province": ["BULACAN", "NCR"],
-            "nearest": ["Bocaue", "Marilao"],
+            "nearest": ["Bocaue", "Marilao", "San Jose del Monte"],
             "tolls": [
                 { "exit": "Bocaue", "fee": 0 },
                 { "exit": "Tambubong", "fee": 4 },
@@ -942,7 +942,7 @@
             "region": "III",
             "entry": "Bocaue",
             "province": ["BULACAN", "NCR"],
-            "nearest": ["Bocaue", "Marilao"],
+            "nearest": ["Bocaue", "Marilao", "San Jose del Monte"],
             "tolls": [
                 { "exit": "Bocaue", "fee": 0 },
                 { "exit": "Tambubong", "fee": 9 },
@@ -1631,7 +1631,7 @@
             "region": "III",
             "entry": "Bocaue",
             "province": ["BULACAN", "NCR"],
-            "nearest": ["Bocaue", "Marilao"],
+            "nearest": ["Bocaue", "Marilao", "San Jose del Monte"],
             "tolls": [
                 { "exit": "Bocaue", "fee": 10 },
                 { "exit": "Tambubong", "fee": 11 },
