@@ -1,7 +1,7 @@
 if (window.location.pathname == '/') {
-	localStorage.removeItem('search_results');
-	localStorage.removeItem('origin_all_routes');
-	localStorage.removeItem('destination_all_routes');
+	// localStorage.removeItem('search_results');
+	// localStorage.removeItem('origin_all_routes');
+	// localStorage.removeItem('destination_all_routes');
 }
 
 $(document).ready(function () {
@@ -58,13 +58,11 @@ $(document).ready(function () {
 		var i = setInterval(() => {
 			if (Object.keys(dataObject).length > 0) {
 				runCitySearchData();
-				runSearchResults();
 				clearInterval(i);
 			}
 		}, 333);
 	} else {
 		runCitySearchData();
-		runSearchResults();
 	}
 
 	$('#search_form').on('submit', function (e) {
@@ -395,6 +393,10 @@ var runCitySearchData = function () {
 				$('#search_form').trigger('submit');
 			}
 		});
+
+		if (i === ($('.cities-input').length - 1)) {
+			runSearchResults();
+		}
 	});
 }
 

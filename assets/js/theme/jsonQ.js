@@ -126,6 +126,7 @@ class JSONQuery {
 
 	join(otherData, joinField) {
 		const joinedData = [];
+		this.data = this.data != undefined ? this.data : this.view;
 
 		this.data.forEach(item1 => {
 			otherData.forEach(item2 => {
@@ -147,7 +148,7 @@ class JSONQuery {
 		var _this = this;
 		var { select, where } = query;
 		this.query = query;
-		var result = this.data.length ? this.data : this.view;
+		var result = this.data != undefined ? this.data : this.view;
 
 		if (select) {
 		} else if (this.query != null) {
