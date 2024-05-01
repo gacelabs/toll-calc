@@ -372,9 +372,14 @@ var runCitySearchData = function () {
 			}
 		});
 
-		if (window.location.pathname == '/results') {
-			if (i === ($('.cities-input').length - 1)) {
-				runSearchResults();
+		if (i === ($('.cities-input').length - 1)) {
+			switch (window.location.pathname) {
+				case '/results':
+					runSearchResults();
+					break;
+				case '/routes':
+					runDetailedRoutes();
+					break;
 			}
 		}
 	});
@@ -430,7 +435,7 @@ var runSearchResults = function () {
 			// DESTINATION
 			var dest = $('#destination');
 			dest.val(destValue).attr('data-set', JSON.stringify(destResult.data[0]));
-			
+			console.log(originValue, destValue);
 			$('.tc1-loader-overlay').addClass('is-open');
 			setTimeout(() => {
 				renderSearchResults();
@@ -709,5 +714,17 @@ function runNCRData(origin_data, originRoutes, dest_data, destinationRoutes) {
 		}
 
 		return { origin: originRoutes, destination: destinationRoutes };
+	}
+}
+
+function runDetailedRoutes() {
+	var origin_all_routes_data = localStorage.getItem('origin_all_routes');
+	var destination_all_routes_data = localStorage.getItem('destination_all_routes');
+	if (origin_all_routes_data != null && destination_all_routes_data != null) {
+		$('.tc1-loader-overlay').addClass('is-open');
+		setTimeout(() => {
+			// console.log(localStorage.getItem('search_results'));
+			
+		}, 3000);
 	}
 }
