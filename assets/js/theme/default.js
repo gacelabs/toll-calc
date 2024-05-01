@@ -1,16 +1,10 @@
-if (window.location.pathname == '/') {
-	// localStorage.removeItem('search_results');
-	// localStorage.removeItem('origin_all_routes');
-	// localStorage.removeItem('destination_all_routes');
-}
-
 $(document).ready(function () {
-	/* setInterval(() => {
+	setInterval(() => {
 		if ($('.tc1-loader-overlay.is-open').length) {
 			$('.tc1-loader-overlay').removeClass('is-open');
 			clearInterval();
 		}
-	}, 3000); */
+	}, 9000);
 
 	$('[data-for]').on('click', function (e) {
 		var ui = $('#' + $(e.target).data('for'));
@@ -44,19 +38,18 @@ $(document).ready(function () {
 			$('#header-title').removeClass('pt-5');
 		}
 	});
-
 	$(window).trigger('resize');
 
 	$('strong[data-for="north"]').disableSelection();
 	$('strong[data-for="south"]').disableSelection();
 
-	$('[name="bound"]').on('change', function (e) {
+	/* $('[name="bound"]').on('change', function (e) {
 		// console.log($(e.target).is(':checked'), e.target.value, $(e.target));
 		$('[name="bound"]').removeAttr('checked');
 		$(e.target).attr('checked', 'checked');
 		$('.cities-input').val('');
 		$('.cities-input').removeAttr('data-set');
-	});
+	}); */
 
 	// console.log(Object.keys(dataObject).length, dataObject);
 	if (Object.keys(dataObject).length == 0) {
@@ -72,21 +65,23 @@ $(document).ready(function () {
 	}
 
 	$('#search_form').on('submit', function (e) {
-		e.preventDefault();
-
 		// ORIGIN
 		var origin = $('#origin');
 		// DESTINATION
 		var dest = $('#destination');
 		if (($.trim(origin.val()) != '' && $.trim(dest.val()) != '') && $.trim(origin.val()) === $.trim(dest.val())) {
+			e.preventDefault();
 			var placeHolder = dest.attr('placeholder');
 			dest.val('');
 			dest.removeAttr('data-set');
 			dest.attr('placeholder', 'Same origin value failed!');
-			showToast({content: '<b>The same inputed values are not allowed!</b>', type: 'bad'});
+			showToast({ content: '<strong>The same inputed values are not allowed!</strong>', type: 'bad' });
 			setTimeout(() => {
 				dest.attr('placeholder', placeHolder);
 			}, 2000);
+		} else if ($.trim(origin.val()) == '' || $.trim(dest.val()) == '') {
+			e.preventDefault();
+			showToast({ content: '<strong>Please enter value on both fields!</strong>', type: 'bad' });
 		} else {
 			if (origin.attr('data-set') != undefined && dest.attr('data-set') != undefined) {
 				var origin_data = JSON.parse(origin.attr('data-set'));
@@ -97,100 +92,31 @@ $(document).ready(function () {
 				var destinationRoutes = generateRoutes(dest_data, origin_data.start);
 				// console.log(originRoutes, destinationRoutes);
 
-				/* if ($.inArray('ncr', origin_data.tollways) >= 0 || $.inArray('ncr', dest_data.tollways) >= 0) {
-					var bBetweenMain = (originRoutes.slex != undefined && destinationRoutes.nlex != undefined)
-						|| (originRoutes.nlex != undefined && destinationRoutes.slex != undefined)
-						|| (originRoutes.nlex != undefined && destinationRoutes.tplex != undefined)
-						|| (originRoutes.slex != undefined && destinationRoutes.tplex != undefined)
-						|| (originRoutes.tplex != undefined && destinationRoutes.nlex != undefined)
-						|| (originRoutes.tplex != undefined && destinationRoutes.slex != undefined)
-						;
-	
-					var bNoNcr = originRoutes.ncr == undefined || destinationRoutes.ncr == undefined;
-					var result = { data: [] };
-					if (bBetweenMain) {
-						var direction = origin_data.start;
-						if (bNoNcr) {
-							if (destinationRoutes.ncr == undefined) {
-								direction = dest_data.start;
-							}
-						}
-						if (direction == 'south') {
-							result = generateNCRRoutes(direction, dest_data);
-						} else {
-							result = generateNCRRoutes(direction, origin_data);
-						}
-						// console.log(result);
-						if (result.data.length) {
-							var oPush = {
-								'entry': result.data[0].entry,
-								'tolls': result.data[0].tolls,
-								'exit': result.data[0].tolls[result.data[0].tolls.length - 1].exit,
-								'fee': result.data[0].tolls[result.data[0].tolls.length - 1].fee,
-								'start': direction,
-								'ended': direction == 'north' ? 'south' : direction,
-							};
-	
-							if (direction == 'north') {
-								originRoutes['ncr'] = {};
-								originRoutes['ncr'][direction] = [];
-								originRoutes['ncr'][direction].push(oPush);
-							} else {
-								destinationRoutes['ncr'] = {};
-								destinationRoutes['ncr'][direction] = [];
-								destinationRoutes['ncr'][direction].push(oPush);
-							}
-						}
-					}
-					
-					var bothExpress = (originRoutes.nlex == undefined && destinationRoutes.nlex == undefined)
-						|| (originRoutes.slex == undefined && destinationRoutes.slex == undefined)
-						;
-	
-					if (bothExpress) {
-						if (originRoutes.ncr == undefined) {
-							var direction = origin_data.start;
-							result = generateNCRRoutes(direction, origin_data);
-							var oPush = {
-								'entry': result.data[0].entry,
-								'tolls': result.data[0].tolls,
-								'exit': result.data[0].tolls[result.data[0].tolls.length - 1].exit,
-								'fee': result.data[0].tolls[result.data[0].tolls.length - 1].fee,
-								'start': direction,
-								'ended': direction == 'north' ? 'south' : direction,
-							};
-							originRoutes['ncr'] = {};
-							originRoutes['ncr'][direction] = [];
-							originRoutes['ncr'][direction].push(oPush);
-						}
-	
-						if (destinationRoutes.ncr == undefined) {
-							var direction = dest_data.start;
-							result = generateNCRRoutes(direction, dest_data);
-							var oPush = {
-								'entry': result.data[0].entry,
-								'tolls': result.data[0].tolls,
-								'exit': result.data[0].tolls[result.data[0].tolls.length - 1].exit,
-								'fee': result.data[0].tolls[result.data[0].tolls.length - 1].fee,
-								'start': direction,
-								'ended': direction == 'north' ? 'south' : direction,
-							};
-							destinationRoutes['ncr'] = {};
-							destinationRoutes['ncr'][direction] = [];
-							destinationRoutes['ncr'][direction].push(oPush);
-						}
-					}
-				} */
+				/* var oAllData = runNCRData(origin_data, originRoutes, dest_data, destinationRoutes);
+				originRoutes = oAllData.origin;
+				destinationRoutes = oAllData.destination; */
 
 				if (Object.keys(originRoutes).length && Object.keys(destinationRoutes).length) {
 					localStorage.setItem('search_results', JSON.stringify({ 'origin': originRoutes, 'destination': destinationRoutes }));
 					$('.tc1-loader-overlay').addClass('is-open');
-					setTimeout(() => {
+					/* setTimeout(() => {
 						// console.log(localStorage.getItem('search_results'));
 						window.location = '/results?origin=' + encodeURI($.trim(origin.val())) + '&destination=' + encodeURI($.trim(dest.val()));
-					}, 3000);
+					}, 3000); */
 				}
 			}
+		}
+	});
+
+	$('#detailed-routes').on('click', function (e) {
+		var origin_all_routes_data = localStorage.getItem('origin_all_routes');
+		var destination_all_routes_data = localStorage.getItem('destination_all_routes');
+		if (origin_all_routes_data != null && destination_all_routes_data != null) {
+			$('.tc1-loader-overlay').addClass('is-open');
+			setTimeout(() => {
+				// console.log(localStorage.getItem('search_results'));
+				window.location = '/routes?mode=complete';
+			}, 3000);
 		}
 	});
 });
@@ -440,10 +366,16 @@ var runCitySearchData = function () {
 			if (e.keyCode == 13) {
 				$('#search_form').trigger('submit');
 			}
+		}).on('change', function (e) {
+			if (e.keyCode == 13) {
+				$('#search_form').trigger('submit');
+			}
 		});
 
-		if (i === ($('.cities-input').length - 1)) {
-			runSearchResults();
+		if (window.location.pathname == '/results') {
+			if (i === ($('.cities-input').length - 1)) {
+				runSearchResults();
+			}
 		}
 	});
 }
@@ -523,7 +455,7 @@ var renderSearchResults = function () {
 	/* render origin */
 	var oOrigin = oResults.origin;
 	var uiOrigin = $('.origin-results');
-	uiOrigin.find('.timeline-intro-head').html(origin.val());
+	uiOrigin.find('.timeline-intro-head').html('From ' + origin.val());
 	if (sameProvince) {
 		var oOriginRev = Object.keys(oOrigin);
 	} else {
@@ -539,7 +471,7 @@ var renderSearchResults = function () {
 		var oCloneTimeline = uiOrigin.find('.timeline:first').clone();
 		for (var classname in oItems) {
 			// timelineTitle += ' - ' + classname.ucWords().replace('_', ' ');
-			oCloneTimeline.find('.timeline-inverted .timeline-title').html(timelineTitle);
+			oCloneTimeline.find('.timeline-inverted .timeline-title').html('Take ' + timelineTitle);
 			
 			var oRoute = oItems[classname];
 			let pUI = '';
@@ -572,7 +504,7 @@ var renderSearchResults = function () {
 	/* render destination */
 	var oDestination = oResults.destination;
 	var uiDestination = $('.destination-results');
-	uiDestination.find('.timeline-intro-head').html(dest.val());
+	uiDestination.find('.timeline-intro-head').html('to ' + dest.val());
 	if (sameProvince) {
 		var oDestinationRev = Object.keys(oDestination).reverse();
 	} else {
@@ -588,7 +520,7 @@ var renderSearchResults = function () {
 		var oCloneTimeline = uiDestination.find('.timeline:first').clone();
 		for (var classname in oItems) {
 			// timelineTitle += ' - ' + classname.ucWords().replace('_', ' ');
-			oCloneTimeline.find('.timeline-inverted .timeline-title').html(timelineTitle);
+			oCloneTimeline.find('.timeline-inverted .timeline-title').html('Take ' + timelineTitle);
 
 			var oRoute = oItems[classname];
 			let pUI = '';
@@ -688,4 +620,93 @@ function showToast(params) {
 		break;
 	}
 	$('#tc-toast').toast('show');
+}
+
+function runNCRData(origin_data, originRoutes, dest_data, destinationRoutes) {
+	if ($.inArray('ncr', origin_data.tollways) >= 0 || $.inArray('ncr', dest_data.tollways) >= 0) {
+		var bBetweenMain = (originRoutes.slex != undefined && destinationRoutes.nlex != undefined)
+			|| (originRoutes.nlex != undefined && destinationRoutes.slex != undefined)
+			|| (originRoutes.nlex != undefined && destinationRoutes.tplex != undefined)
+			|| (originRoutes.slex != undefined && destinationRoutes.tplex != undefined)
+			|| (originRoutes.tplex != undefined && destinationRoutes.nlex != undefined)
+			|| (originRoutes.tplex != undefined && destinationRoutes.slex != undefined)
+			;
+
+		var bNoNcr = originRoutes.ncr == undefined || destinationRoutes.ncr == undefined;
+		var result = { data: [] };
+		if (bBetweenMain) {
+			var direction = origin_data.start;
+			if (bNoNcr) {
+				if (destinationRoutes.ncr == undefined) {
+					direction = dest_data.start;
+				}
+			}
+			if (direction == 'south') {
+				result = generateNCRRoutes(direction, dest_data);
+			} else {
+				result = generateNCRRoutes(direction, origin_data);
+			}
+			// console.log(result);
+			if (result.data.length) {
+				var oPush = {
+					'entry': result.data[0].entry,
+					'tolls': result.data[0].tolls,
+					'exit': result.data[0].tolls[result.data[0].tolls.length - 1].exit,
+					'fee': result.data[0].tolls[result.data[0].tolls.length - 1].fee,
+					'start': direction,
+					'ended': direction == 'north' ? 'south' : direction,
+				};
+
+				if (direction == 'north') {
+					originRoutes['ncr'] = {};
+					originRoutes['ncr'][direction] = [];
+					originRoutes['ncr'][direction].push(oPush);
+				} else {
+					destinationRoutes['ncr'] = {};
+					destinationRoutes['ncr'][direction] = [];
+					destinationRoutes['ncr'][direction].push(oPush);
+				}
+			}
+		}
+
+		var bothExpress = (originRoutes.nlex == undefined && destinationRoutes.nlex == undefined)
+			|| (originRoutes.slex == undefined && destinationRoutes.slex == undefined)
+			;
+
+		if (bothExpress) {
+			if (originRoutes.ncr == undefined) {
+				var direction = origin_data.start;
+				result = generateNCRRoutes(direction, origin_data);
+				var oPush = {
+					'entry': result.data[0].entry,
+					'tolls': result.data[0].tolls,
+					'exit': result.data[0].tolls[result.data[0].tolls.length - 1].exit,
+					'fee': result.data[0].tolls[result.data[0].tolls.length - 1].fee,
+					'start': direction,
+					'ended': direction == 'north' ? 'south' : direction,
+				};
+				originRoutes['ncr'] = {};
+				originRoutes['ncr'][direction] = [];
+				originRoutes['ncr'][direction].push(oPush);
+			}
+
+			if (destinationRoutes.ncr == undefined) {
+				var direction = dest_data.start;
+				result = generateNCRRoutes(direction, dest_data);
+				var oPush = {
+					'entry': result.data[0].entry,
+					'tolls': result.data[0].tolls,
+					'exit': result.data[0].tolls[result.data[0].tolls.length - 1].exit,
+					'fee': result.data[0].tolls[result.data[0].tolls.length - 1].fee,
+					'start': direction,
+					'ended': direction == 'north' ? 'south' : direction,
+				};
+				destinationRoutes['ncr'] = {};
+				destinationRoutes['ncr'][direction] = [];
+				destinationRoutes['ncr'][direction].push(oPush);
+			}
+		}
+
+		return { origin: originRoutes, destination: destinationRoutes };
+	}
 }
