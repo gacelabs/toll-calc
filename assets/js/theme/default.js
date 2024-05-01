@@ -389,51 +389,52 @@ var runSearchResults = function () {
 			var destValue = urlParam.get('destination').toString();
 			var modObject = { 'modify': ['name'], 'expressions': [{ 'concat': ['city', ', ', 'province'] }] };
 
+			var originJsonCities = new JSONQuery(dataObject.cities);
+			var originJoinedData = originJsonCities.join(dataObject.archipelago, "province");
+			var destJsonCities = new JSONQuery(dataObject.cities);
+			var destJoinedData = destJsonCities.join(dataObject.archipelago, "province");
+
+			var originData = originValue.replace(' City', '').split(', ');
+			var cityOrigin = originData[0];
+			var provinceOrigin = originData[1];
+			var originQuery = {
+				select: { fields: '*' },
+				where: {
+					condition: [
+						{ field: 'name', operator: '=', value: cityOrigin },
+						{ field: 'province', operator: '=', value: provinceOrigin },
+					]
+				}
+			};
+			var originResult = originJoinedData.execute(originQuery, modObject);
+			// console.log(originResult, originResult.data);
+
+			var destData = destValue.replace(' City', '').split(', ');
+			var cityDest = destData[0];
+			var provinceDest = destData[1];
+			var destQuery = {
+				select: { fields: '*' },
+				where: {
+					condition: [
+						{ field: 'name', operator: '=', value: cityDest },
+						{ field: 'province', operator: '=', value: provinceDest },
+					]
+				}
+			};
+			var destResult = destJoinedData.execute(destQuery, modObject);
+			// console.log(destResult, destResult.data);
+	
+			// ORIGIN
+			var origin = $('#origin');
+			origin.val(originValue).attr('data-set', JSON.stringify(originResult.data[0]));
+			// DESTINATION
+			var dest = $('#destination');
+			dest.val(destValue).attr('data-set', JSON.stringify(destResult.data[0]));
+			
+			$('.tc1-loader-overlay').addClass('is-open');
 			setTimeout(() => {
-				var originJsonCities = new JSONQuery(dataObject.cities);
-				var originJoinedData = originJsonCities.join(dataObject.archipelago, "province");
-				var destJsonCities = new JSONQuery(dataObject.cities);
-				var destJoinedData = destJsonCities.join(dataObject.archipelago, "province");
-	
-				var originData = originValue.replace(' City', '').split(', ');
-				var cityOrigin = originData[0];
-				var provinceOrigin = originData[1];
-				var originQuery = {
-					select: { fields: '*' },
-					where: {
-						condition: [
-							{ field: 'name', operator: '=', value: cityOrigin },
-							{ field: 'province', operator: '=', value: provinceOrigin },
-						]
-					}
-				};
-				var originResult = originJoinedData.execute(originQuery, modObject);
-				// console.log(originResult, originResult.data);
-	
-				var destData = destValue.replace(' City', '').split(', ');
-				var cityDest = destData[0];
-				var provinceDest = destData[1];
-				var destQuery = {
-					select: { fields: '*' },
-					where: {
-						condition: [
-							{ field: 'name', operator: '=', value: cityDest },
-							{ field: 'province', operator: '=', value: provinceDest },
-						]
-					}
-				};
-				var destResult = destJoinedData.execute(destQuery, modObject);
-				// console.log(destResult, destResult.data);
-		
-				// ORIGIN
-				var origin = $('#origin');
-				origin.val(originValue).attr('data-set', JSON.stringify(originResult.data[0]));
-				// DESTINATION
-				var dest = $('#destination');
-				dest.val(destValue).attr('data-set', JSON.stringify(destResult.data[0]));
-				
 				renderSearchResults();
-			}, 333);
+			}, 1000);
 		}
 	}
 }
