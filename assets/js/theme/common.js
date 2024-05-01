@@ -80,14 +80,15 @@ function showNotification(title, body, redirectUrl) {
 		showToast({ conten: 'This browser does not support desktop notification', type: 'bad' });
 		return;
 	}
+	
+	var options = {
+		body: body,
+		icon: '/assets/icons/toll-calc-b.png'
+	};
 
 	// Check if the user has granted permission to show notifications
 	if (Notification.permission === "granted") {
 		// If permission is granted, create a notification
-		var options = {
-			body: body,
-			icon: '/assets/icons/toll-calc-b.png'
-		};
 		var notification = new Notification(title, options);
 
 		notification.onclick = function (event) {
@@ -99,10 +100,6 @@ function showNotification(title, body, redirectUrl) {
 		// If permission has not been denied, request permission
 		Notification.requestPermission().then(function (permission) {
 			if (permission === "granted") {
-				var options = {
-					body: body,
-					icon: '/assets/icons/toll-calc-b.png'
-				};
 				var notification = new Notification(title, options);
 	
 				notification.onclick = function (event) {

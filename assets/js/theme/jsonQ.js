@@ -130,7 +130,7 @@ class JSONQuery {
 		}
 	}
 
-	join(otherData, joinField) {
+	async join(otherData, joinField) {
 		const joinedData = [];
 		this.data = this.data != undefined ? this.data : this.view;
 

@@ -1,4 +1,6 @@
-$(document).ready(function () {
+var originJoinedData, destJoinedData;
+
+$(document).ready(async function () {
 	setInterval(() => {
 		if ($('.tc1-loader-overlay.is-open').length) {
 			$('.tc1-loader-overlay').removeClass('is-open');
@@ -54,13 +56,23 @@ $(document).ready(function () {
 	// console.log(Object.keys(dataObject).length, dataObject);
 	if (Object.keys(dataObject).length == 0) {
 		/* make a loader to wait for instanciation of the table datas when localStorage has no data */
-		var i = setInterval(() => {
+		const i = setInterval(async () => {
 			if (Object.keys(dataObject).length > 0) {
+				var originJsonCities = new JSONQuery(dataObject.cities);
+				originJoinedData = await originJsonCities.join(dataObject.archipelago, "province");
+				var destJsonCities = new JSONQuery(dataObject.cities);
+				destJoinedData = await destJsonCities.join(dataObject.archipelago, "province");
+
 				runCitySearchData();
 				clearInterval(i);
 			}
 		}, 333);
 	} else {
+		var originJsonCities = new JSONQuery(dataObject.cities);
+		originJoinedData = await originJsonCities.join(dataObject.archipelago, "province");
+		var destJsonCities = new JSONQuery(dataObject.cities);
+		destJoinedData = await destJsonCities.join(dataObject.archipelago, "province");
+
 		runCitySearchData();
 	}
 
@@ -97,10 +109,13 @@ $(document).ready(function () {
 				destinationRoutes = oAllData.destination; */
 
 				if (Object.keys(originRoutes).length && Object.keys(destinationRoutes).length) {
-					localStorage.setItem('search_results', JSON.stringify({ 'origin': originRoutes, 'destination': destinationRoutes }));
+					localStorage.setItem('search_results', JSON.stringify({
+						'origin': originRoutes, 'destination': destinationRoutes,
+						'origin_dataset': origin_data, 'destination_dataset': dest_data,
+					}));
 					$('.tc1-loader-overlay').addClass('is-open');
+					// console.log(localStorage.getItem('search_results'));
 					/* setTimeout(() => {
-						// console.log(localStorage.getItem('search_results'));
 						window.location = '/results?origin=' + encodeURI($.trim(origin.val())) + '&destination=' + encodeURI($.trim(dest.val()));
 					}, 3000); */
 				}
@@ -340,10 +355,10 @@ var generateRoutes = function (oData, gointTo, urBoundTo, oOrig) {
 var runCitySearchData = function () {
 	$('.cities-input').each(function (i, elem) {
 		// console.log(i, elem);
-		$(elem).on('input paste', function (e) {
+		$(elem).on('input paste', async function (e) {
 			// console.log(e);
 			var jsonCities = new JSONQuery(dataObject.cities);
-			const joinedData = jsonCities.join(dataObject.archipelago, "province");
+			const joinedData = await jsonCities.join(dataObject.archipelago, "province");
 			var query = {
 				select: { fields: '*' },
 				where: {
@@ -386,56 +401,25 @@ var runCitySearchData = function () {
 }
 
 var runSearchResults = function () {
-	if (localStorage.getItem('search_results') != null) {
+	var search_results = localStorage.getItem('search_results');
+	if (search_results != null) {
+		search_results = JSON.parse(search_results);
 		var urlParam = urlParams();
-
+		
 		if (urlParam.size) {
-			var originValue = urlParam.get('origin').toString();
-			var destValue = urlParam.get('destination').toString();
-			var modObject = { 'modify': ['name'], 'expressions': [{ 'concat': ['city', ', ', 'province'] }] };
-
-			var originJsonCities = new JSONQuery(dataObject.cities);
-			var originJoinedData = originJsonCities.join(dataObject.archipelago, "province");
-			var destJsonCities = new JSONQuery(dataObject.cities);
-			var destJoinedData = destJsonCities.join(dataObject.archipelago, "province");
-
-			var originData = originValue.replace(' City', '').split(', ');
-			var cityOrigin = originData[0];
-			var provinceOrigin = originData[1];
-			var originQuery = {
-				select: { fields: '*' },
-				where: {
-					condition: [
-						{ field: 'name', operator: '=', value: cityOrigin },
-						{ field: 'province', operator: '=', value: provinceOrigin },
-					]
-				}
-			};
-			var originResult = originJoinedData.execute(originQuery, modObject);
-			// console.log(originResult, originResult.data);
-
-			var destData = destValue.replace(' City', '').split(', ');
-			var cityDest = destData[0];
-			var provinceDest = destData[1];
-			var destQuery = {
-				select: { fields: '*' },
-				where: {
-					condition: [
-						{ field: 'name', operator: '=', value: cityDest },
-						{ field: 'province', operator: '=', value: provinceDest },
-					]
-				}
-			};
-			var destResult = destJoinedData.execute(destQuery, modObject);
-			// console.log(destResult, destResult.data);
-	
-			// ORIGIN
 			var origin = $('#origin');
-			origin.val(originValue).attr('data-set', JSON.stringify(originResult.data[0]));
-			// DESTINATION
+			var originValue = urlParam.get('origin').toString();
+			origin.val(originValue);
+
 			var dest = $('#destination');
-			dest.val(destValue).attr('data-set', JSON.stringify(destResult.data[0]));
-			console.log(originValue, destValue);
+			var destValue = urlParam.get('destination').toString();
+			dest.val(destValue);
+			
+			// ORIGIN
+			origin.attr('data-set', JSON.stringify(search_results.origin_dataset));
+			// DESTINATION
+			dest.attr('data-set', JSON.stringify(search_results.destination_dataset));
+
 			$('.tc1-loader-overlay').addClass('is-open');
 			setTimeout(() => {
 				renderSearchResults();
@@ -446,7 +430,7 @@ var runSearchResults = function () {
 
 var renderSearchResults = function () {
 	var oResults = JSON.parse(localStorage.getItem('search_results'));
-	// console.log(oResults);
+	console.log(oResults);
 	var expresswayData = dataObject.expressways;
 	// ORIGIN
 	var origin = $('#origin');
@@ -456,100 +440,107 @@ var renderSearchResults = function () {
 	var origin_data = JSON.parse(origin.attr('data-set'));
 	var dest_data = JSON.parse(dest.attr('data-set'));
 
-	var sameProvince = origin_data.province == dest_data.province;
-	
-	/* render origin */
-	var oOrigin = oResults.origin;
-	var uiOrigin = $('.origin-results');
-	uiOrigin.find('.timeline-intro-head').html('From ' + origin.val());
-	if (sameProvince) {
-		var oOriginRev = Object.keys(oOrigin);
-	} else {
-		var oOriginRev = Object.keys(oOrigin).reverse();
+	if (origin_data == undefined || dest_data == undefined) {
+		addTheDataSets(origin.val(), dest.val());
+		var origin_data = JSON.parse(origin.attr('data-set'));
+		var dest_data = JSON.parse(dest.attr('data-set'));
 	}
 
-	for (var x in oOriginRev) {
-		var route = oOriginRev[x];
-	// for (var route in oOrigin) {
-		var oItems = oOrigin[route];
-		// console.log(oItems);
-		var timelineTitle = expresswayData[route].fullname;
-		var oCloneTimeline = uiOrigin.find('.timeline:first').clone();
-		for (var classname in oItems) {
-			// timelineTitle += ' - ' + classname.ucWords().replace('_', ' ');
-			oCloneTimeline.find('.timeline-inverted .timeline-title').html('Take ' + timelineTitle);
-			
-			var oRoute = oItems[classname];
-			let pUI = '';
-			for (var i in oRoute) {
-				if (sameProvince) {
+	setTimeout(() => {
+		var sameProvince = origin_data.province == dest_data.province;
+		/* render origin */
+		var oOrigin = oResults.origin;
+		var uiOrigin = $('.origin-results');
+		uiOrigin.find('.timeline-intro-head').html('From ' + origin.val());
+		if (sameProvince) {
+			var oOriginRev = Object.keys(oOrigin);
+		} else {
+			var oOriginRev = Object.keys(oOrigin).reverse();
+		}
+
+		for (var x in oOriginRev) {
+			var route = oOriginRev[x];
+			// for (var route in oOrigin) {
+			var oItems = oOrigin[route];
+			// console.log(oItems);
+			var timelineTitle = expresswayData[route].fullname;
+			var oCloneTimeline = uiOrigin.find('.timeline:first').clone();
+			for (var classname in oItems) {
+				// timelineTitle += ' - ' + classname.ucWords().replace('_', ' ');
+				oCloneTimeline.find('.timeline-inverted .timeline-title').html('Take ' + timelineTitle);
+
+				var oRoute = oItems[classname];
+				let pUI = '';
+				for (var i in oRoute) {
+					if (sameProvince) {
+						var toLook = oRoute[i].entry;
+					} else {
+						var toLook = oRoute[i].exit;
+					}
+					if (route == 'ncr') {
+						toLook = toLook.toUpperCase();
+					}
+					var travelTo = (route == 'ncr' ? toLook.toUpperCase() + '</b>' : toLook + '</b> tollgate');
+					if (pUI.indexOf(toLook) < 0) {
+						if (route == 'ncr') {
+							pUI += '<p>- Travel to <b>' + travelTo + '</p>'
+						} else {
+							pUI += '<p>- Enter <b>' + travelTo + '</p>'
+						}
+					}
+				}
+				oCloneTimeline.find('.timeline-inverted .timeline-body').append(pUI);
+				break;
+			}
+			uiOrigin.find('.page-body').append(oCloneTimeline.removeClass('hide'));
+		}
+		// console.log(uiOrigin.get(0));
+		localStorage.setItem('origin_all_routes', JSON.stringify(oOrigin));
+
+		/* render destination */
+		var oDestination = oResults.destination;
+		var uiDestination = $('.destination-results');
+		uiDestination.find('.timeline-intro-head').html('to ' + dest.val());
+		if (sameProvince) {
+			var oDestinationRev = Object.keys(oDestination).reverse();
+		} else {
+			var oDestinationRev = Object.keys(oDestination);
+		}
+
+		for (var x in oDestinationRev) {
+			var route = oDestinationRev[x];
+			// for (var route in oDestination) {
+			var oItems = oDestination[route];
+			// console.log(oItems, route);
+			var timelineTitle = expresswayData[route].fullname;
+			var oCloneTimeline = uiDestination.find('.timeline:first').clone();
+			for (var classname in oItems) {
+				// timelineTitle += ' - ' + classname.ucWords().replace('_', ' ');
+				oCloneTimeline.find('.timeline-inverted .timeline-title').html('Take ' + timelineTitle);
+
+				var oRoute = oItems[classname];
+				let pUI = '';
+				for (var i in oRoute) {
 					var toLook = oRoute[i].entry;
-				} else {
-					var toLook = oRoute[i].exit;
-				}
-				if (route == 'ncr') {
-					toLook = toLook.toUpperCase();
-				}
-				var travelTo = (route == 'ncr' ? toLook.toUpperCase() + '</b>' : toLook + '</b> tollgate');
-				if (pUI.indexOf(toLook) < 0) {
 					if (route == 'ncr') {
-						pUI += '<p>- Travel to <b>' + travelTo + '</p>'
-					} else {
-						pUI += '<p>- Enter <b>' + travelTo + '</p>'
+						toLook = oRoute[i].entry.toUpperCase();
+					}
+					var travelTo = (route == 'ncr' ? toLook.toUpperCase() + '</b>' : toLook + '</b> exit');
+					if (pUI.indexOf(toLook) < 0) {
+						if (route == 'ncr') {
+							pUI += '<p>- Travel to <b>' + travelTo + '</p>'
+						} else {
+							pUI += '<p>- Exit through <b>' + travelTo + '</p>'
+						}
 					}
 				}
+				oCloneTimeline.find('.timeline-inverted .timeline-body').append(pUI);
+				break;
 			}
-			oCloneTimeline.find('.timeline-inverted .timeline-body').append(pUI);
-			break;
+			uiDestination.find('.page-body').append(oCloneTimeline.removeClass('hide'));
 		}
-		uiOrigin.find('.page-body').append(oCloneTimeline.removeClass('hide'));
-	}
-	// console.log(uiOrigin.get(0));
-	localStorage.setItem('origin_all_routes', JSON.stringify(oOrigin));
-	
-	/* render destination */
-	var oDestination = oResults.destination;
-	var uiDestination = $('.destination-results');
-	uiDestination.find('.timeline-intro-head').html('to ' + dest.val());
-	if (sameProvince) {
-		var oDestinationRev = Object.keys(oDestination).reverse();
-	} else {
-		var oDestinationRev = Object.keys(oDestination);
-	}
-
-	for (var x in oDestinationRev) {
-		var route = oDestinationRev[x];
-	// for (var route in oDestination) {
-		var oItems = oDestination[route];
-		// console.log(oItems, route);
-		var timelineTitle = expresswayData[route].fullname;
-		var oCloneTimeline = uiDestination.find('.timeline:first').clone();
-		for (var classname in oItems) {
-			// timelineTitle += ' - ' + classname.ucWords().replace('_', ' ');
-			oCloneTimeline.find('.timeline-inverted .timeline-title').html('Take ' + timelineTitle);
-
-			var oRoute = oItems[classname];
-			let pUI = '';
-			for (var i in oRoute) {
-				var toLook = oRoute[i].entry;
-				if (route == 'ncr') {
-					toLook = oRoute[i].entry.toUpperCase();
-				}
-				var travelTo = (route == 'ncr' ? toLook.toUpperCase() + '</b>' : toLook + '</b> exit');
-				if (pUI.indexOf(toLook) < 0) {
-					if (route == 'ncr') {
-						pUI += '<p>- Travel to <b>' + travelTo + '</p>'
-					} else {
-						pUI += '<p>- Exit through <b>' + travelTo + '</p>'
-					}
-				}
-			}
-			oCloneTimeline.find('.timeline-inverted .timeline-body').append(pUI);
-			break;
-		}
-		uiDestination.find('.page-body').append(oCloneTimeline.removeClass('hide'));
-	}
-	localStorage.setItem('destination_all_routes', JSON.stringify(oDestination));
+		localStorage.setItem('destination_all_routes', JSON.stringify(oDestination));
+	}, 333);
 }
 
 function runNCRData(origin_data, originRoutes, dest_data, destinationRoutes) {
@@ -646,9 +637,56 @@ function runDetailedRoutes() {
 	var destination_all_routes_data = localStorage.getItem('destination_all_routes');
 	if (origin_all_routes_data != null && destination_all_routes_data != null) {
 		$('.tc1-loader-overlay').addClass('is-open');
+		var origin_all_routes = JSON.parse(origin_all_routes_data);
+		var destination_all_routes = JSON.parse(destination_all_routes_data);
 		setTimeout(() => {
-			// console.log(localStorage.getItem('search_results'));
-			
+			console.log(origin_all_routes);
+			console.log(destination_all_routes);
 		}, 3000);
+	}
+}
+
+function addTheDataSets(originValue, destValue) {
+	// ORIGIN
+	var origin = $('#origin');
+	// DESTINATION
+	var dest = $('#destination');
+	var modObject = { 'modify': ['name'], 'expressions': [{ 'concat': ['city', ', ', 'province'] }] };
+
+	var originData = originValue.replace(' City', '').split(', ');
+	var cityOrigin = originData[0];
+	var provinceOrigin = originData[1];
+
+	var originQuery = {
+		select: { fields: '*' },
+		where: {
+			condition: [
+				{ field: 'name', operator: '=', value: cityOrigin },
+				{ field: 'province', operator: '=', value: provinceOrigin },
+			]
+		}
+	};
+	var originResult = originJoinedData.execute(originQuery, modObject);
+	// console.log(originResult, originResult.data);
+	if (originResult.data.length) {
+		origin.attr('data-set', JSON.stringify(originResult.data[0]));
+	}
+
+	var destData = destValue.replace(' City', '').split(', ');
+	var cityDest = destData[0];
+	var provinceDest = destData[1];
+	var destQuery = {
+		select: { fields: '*' },
+		where: {
+			condition: [
+				{ field: 'name', operator: '=', value: cityDest },
+				{ field: 'province', operator: '=', value: provinceDest },
+			]
+		}
+	};
+	var destResult = destJoinedData.execute(destQuery, modObject);
+	// console.log(destResult, destResult.data);
+	if (destResult.data.length) {
+		dest.attr('data-set', JSON.stringify(destResult.data[0]));
 	}
 }
