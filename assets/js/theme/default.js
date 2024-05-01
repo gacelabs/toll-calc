@@ -5,6 +5,12 @@ if (window.location.pathname == '/') {
 }
 
 $(document).ready(function () {
+	/* setInterval(() => {
+		if ($('.tc1-loader-overlay.is-open').length) {
+			$('.tc1-loader-overlay').removeClass('is-open');
+			clearInterval();
+		}
+	}, 3000); */
 
 	$('[data-for]').on('click', function (e) {
 		var ui = $('#' + $(e.target).data('for'));
@@ -69,14 +75,15 @@ $(document).ready(function () {
 		e.preventDefault();
 
 		// ORIGIN
-		var origin = $('#im_from');
+		var origin = $('#origin');
 		// DESTINATION
-		var dest = $('#going_to');
+		var dest = $('#destination');
 		if (($.trim(origin.val()) != '' && $.trim(dest.val()) != '') && $.trim(origin.val()) === $.trim(dest.val())) {
 			var placeHolder = dest.attr('placeholder');
 			dest.val('');
 			dest.removeAttr('data-set');
 			dest.attr('placeholder', 'Same origin value failed!');
+			showToast({content: '<b>The same inputed values are not allowed!</b>', type: 'bad'});
 			setTimeout(() => {
 				dest.attr('placeholder', placeHolder);
 			}, 2000);
@@ -90,54 +97,84 @@ $(document).ready(function () {
 				var destinationRoutes = generateRoutes(dest_data, origin_data.start);
 				// console.log(originRoutes, destinationRoutes);
 
-				/* var bBetweenMain = (originRoutes.slex != undefined && destinationRoutes.nlex != undefined)
-					|| (originRoutes.nlex != undefined && destinationRoutes.slex != undefined)
-					|| (originRoutes.nlex != undefined && destinationRoutes.tplex != undefined)
-					|| (originRoutes.slex != undefined && destinationRoutes.tplex != undefined)
-					|| (originRoutes.tplex != undefined && destinationRoutes.nlex != undefined)
-					|| (originRoutes.tplex != undefined && destinationRoutes.slex != undefined)
-					;
-				var bNoNcr = originRoutes.ncr == undefined || destinationRoutes.ncr == undefined;
-				if (bBetweenMain) {
-					var direction = origin_data.start;
-					if (bNoNcr) {
-						if (destinationRoutes.ncr == undefined) {
-							direction = dest_data.start;
+				/* if ($.inArray('ncr', origin_data.tollways) >= 0 || $.inArray('ncr', dest_data.tollways) >= 0) {
+					var bBetweenMain = (originRoutes.slex != undefined && destinationRoutes.nlex != undefined)
+						|| (originRoutes.nlex != undefined && destinationRoutes.slex != undefined)
+						|| (originRoutes.nlex != undefined && destinationRoutes.tplex != undefined)
+						|| (originRoutes.slex != undefined && destinationRoutes.tplex != undefined)
+						|| (originRoutes.tplex != undefined && destinationRoutes.nlex != undefined)
+						|| (originRoutes.tplex != undefined && destinationRoutes.slex != undefined)
+						;
+	
+					var bNoNcr = originRoutes.ncr == undefined || destinationRoutes.ncr == undefined;
+					var result = { data: [] };
+					if (bBetweenMain) {
+						var direction = origin_data.start;
+						if (bNoNcr) {
+							if (destinationRoutes.ncr == undefined) {
+								direction = dest_data.start;
+							}
+						}
+						if (direction == 'south') {
+							result = generateNCRRoutes(direction, dest_data);
+						} else {
+							result = generateNCRRoutes(direction, origin_data);
+						}
+						// console.log(result);
+						if (result.data.length) {
+							var oPush = {
+								'entry': result.data[0].entry,
+								'tolls': result.data[0].tolls,
+								'exit': result.data[0].tolls[result.data[0].tolls.length - 1].exit,
+								'fee': result.data[0].tolls[result.data[0].tolls.length - 1].fee,
+								'start': direction,
+								'ended': direction == 'north' ? 'south' : direction,
+							};
+	
+							if (direction == 'north') {
+								originRoutes['ncr'] = {};
+								originRoutes['ncr'][direction] = [];
+								originRoutes['ncr'][direction].push(oPush);
+							} else {
+								destinationRoutes['ncr'] = {};
+								destinationRoutes['ncr'][direction] = [];
+								destinationRoutes['ncr'][direction].push(oPush);
+							}
 						}
 					}
-					var oClass = new JSONQuery(dataObject.ncr[direction]);
-					var entry = 'Pasay';
-					if (direction == 'south') {
-						entry = 'Quezon';
-					}
-					var oCondition = [
-						{ field: 'entry', operator: 'like', value: '%' + entry + '%' },
-					];
-
-					var query = {
-						select: { fields: '*' },
-						where: {
-							condition: oCondition
-						}
-					};
-					var result = oClass.execute(query);
-					// console.log(result);
-
-					if (result.data.length) {
-						var oPush = {
-							'entry': result.data[0].entry,
-							'tolls': result.data[0].tolls,
-							'exit': result.data[0].tolls[result.data[0].tolls.length - 1].exit,
-							'fee': result.data[0].tolls[result.data[0].tolls.length - 1].fee,
-							'start': direction,
-							'ended': direction == 'north' ? 'south' : direction,
-						};
-
-						if (direction == 'north') {
+					
+					var bothExpress = (originRoutes.nlex == undefined && destinationRoutes.nlex == undefined)
+						|| (originRoutes.slex == undefined && destinationRoutes.slex == undefined)
+						;
+	
+					if (bothExpress) {
+						if (originRoutes.ncr == undefined) {
+							var direction = origin_data.start;
+							result = generateNCRRoutes(direction, origin_data);
+							var oPush = {
+								'entry': result.data[0].entry,
+								'tolls': result.data[0].tolls,
+								'exit': result.data[0].tolls[result.data[0].tolls.length - 1].exit,
+								'fee': result.data[0].tolls[result.data[0].tolls.length - 1].fee,
+								'start': direction,
+								'ended': direction == 'north' ? 'south' : direction,
+							};
 							originRoutes['ncr'] = {};
 							originRoutes['ncr'][direction] = [];
 							originRoutes['ncr'][direction].push(oPush);
-						} else {
+						}
+	
+						if (destinationRoutes.ncr == undefined) {
+							var direction = dest_data.start;
+							result = generateNCRRoutes(direction, dest_data);
+							var oPush = {
+								'entry': result.data[0].entry,
+								'tolls': result.data[0].tolls,
+								'exit': result.data[0].tolls[result.data[0].tolls.length - 1].exit,
+								'fee': result.data[0].tolls[result.data[0].tolls.length - 1].fee,
+								'start': direction,
+								'ended': direction == 'north' ? 'south' : direction,
+							};
 							destinationRoutes['ncr'] = {};
 							destinationRoutes['ncr'][direction] = [];
 							destinationRoutes['ncr'][direction].push(oPush);
@@ -156,9 +193,28 @@ $(document).ready(function () {
 			}
 		}
 	});
-
-	
 });
+
+function generateNCRRoutes(direction, oData) {
+	var oClass = new JSONQuery(dataObject.ncr[direction]);
+	var inputValue = oData.old_name;
+	var inputProv = oData.province;
+
+	var oCondition = [
+		{ field: 'nearest', operator: 'in like', value: '%' + inputValue + '%' },
+		{ field: 'province', operator: 'in like', value: '%' + inputProv + '%' },
+	];
+
+	var query = {
+		select: { fields: '*' },
+		where: {
+			condition_or: oCondition
+		}
+	};
+	var result = oClass.execute(query);
+	// console.log(result);
+	return result;
+}
 
 var generateRoutes = function (oData, gointTo, urBoundTo, oOrig) {
 	var oRoutes = {};
@@ -186,7 +242,7 @@ var generateRoutes = function (oData, gointTo, urBoundTo, oOrig) {
 	for (var c in oTollways) {
 		var toll = oTollways[c];
 		if (oData.province == 'NCR' && toll == 'nlex' && urBoundTo == 'south') {
-			continue;
+			// continue;
 		}
 		var tollway = dataObject[toll];
 		var allow = true;
@@ -199,6 +255,7 @@ var generateRoutes = function (oData, gointTo, urBoundTo, oOrig) {
 			for (var class_name in tollway) {
 				if (toll == 'ncr') {
 					class_name = urBoundTo;
+					console.log(class_name, tollway);
 				}
 				if (tollway[class_name] != undefined) {
 					var oClasses = tollway[class_name];
@@ -242,8 +299,8 @@ var generateRoutes = function (oData, gointTo, urBoundTo, oOrig) {
 					} else {
 						var oCondition = [
 							{ field: 'nearest', operator: 'in like', value: '%' + oData.old_name + '%' },
+							{ field: 'province', operator: 'in', value: oData.province },
 						];
-
 						var query = {
 							select: { fields: '*' },
 							where: {
@@ -251,17 +308,8 @@ var generateRoutes = function (oData, gointTo, urBoundTo, oOrig) {
 							}
 						};
 						var result = oClass.execute(query);
-						// console.log(result.data.length);
-						if (result.data.length == 0) {
-							query.where = {
-								condition: [
-									{ field: 'province', operator: 'in', value: oData.province },
-								]
-							}
-							var oClass = new JSONQuery(oClasses);
-							result = oClass.execute(query);
-							// console.log(result, toll, oClass);
-						}
+
+						// console.log(result.data);
 						if (result.data.length) {
 							if (toll == 'skyway_3') {
 								query.where = {
@@ -373,7 +421,7 @@ var runCitySearchData = function () {
 			var query = {
 				select: { fields: '*' },
 				where: {
-					condition: [
+					condition_or: [
 						{ field: 'name', operator: 'like', value: '%' + e.target.value + '%' },
 						{ field: 'province', operator: 'like', value: '%' + e.target.value + '%' },
 					]
@@ -403,44 +451,58 @@ var runCitySearchData = function () {
 var runSearchResults = function () {
 	if (localStorage.getItem('search_results') != null) {
 		var urlParam = urlParams();
-		var originValue = urlParam.get('origin').toString();
-		var destValue = urlParam.get('destination').toString();
-		var modObject = { 'modify': ['name'], 'expressions': [{ 'concat': ['city', ', ', 'province'] }] };
 
-		var originJsonCities = new JSONQuery(dataObject.cities);
-		var originJoinedData = originJsonCities.join(dataObject.archipelago, "province");
-		var destJsonCities = new JSONQuery(dataObject.cities);
-		var destJoinedData = destJsonCities.join(dataObject.archipelago, "province");
+		if (urlParam.size) {
+			var originValue = urlParam.get('origin').toString();
+			var destValue = urlParam.get('destination').toString();
+			var modObject = { 'modify': ['name'], 'expressions': [{ 'concat': ['city', ', ', 'province'] }] };
 
-		var originQuery = {
-			select: { fields: '*' },
-			where: {
-				condition: [
-					{ field: 'name', operator: '=', value: originValue.replace(' City', '').split(', ')[0] },
-				]
-			}
-		};
-		var originResult = originJoinedData.execute(originQuery, modObject);
-		// console.log(originResult, originResult.data);
-		var destQuery = {
-			select: { fields: '*' },
-			where: {
-				condition: [
-					{ field: 'name', operator: '=', value: destValue.replace(' City', '').split(', ')[0] },
-				]
-			}
-		};
-		var destResult = destJoinedData.execute(destQuery, modObject);
-		// console.log(destResult, destResult.data);
-
-		// ORIGIN
-		var origin = $('#im_from');
-		origin.val(originValue).attr('data-set', JSON.stringify(originResult.data[0]));
-		// DESTINATION
-		var dest = $('#going_to');
-		dest.val(destValue).attr('data-set', JSON.stringify(destResult.data[0]));
+			setTimeout(() => {
+				var originJsonCities = new JSONQuery(dataObject.cities);
+				var originJoinedData = originJsonCities.join(dataObject.archipelago, "province");
+				var destJsonCities = new JSONQuery(dataObject.cities);
+				var destJoinedData = destJsonCities.join(dataObject.archipelago, "province");
+	
+				var originData = originValue.replace(' City', '').split(', ');
+				var cityOrigin = originData[0];
+				var provinceOrigin = originData[1];
+				var originQuery = {
+					select: { fields: '*' },
+					where: {
+						condition: [
+							{ field: 'name', operator: '=', value: cityOrigin },
+							{ field: 'province', operator: '=', value: provinceOrigin },
+						]
+					}
+				};
+				var originResult = originJoinedData.execute(originQuery, modObject);
+				// console.log(originResult, originResult.data);
+	
+				var destData = destValue.replace(' City', '').split(', ');
+				var cityDest = destData[0];
+				var provinceDest = destData[1];
+				var destQuery = {
+					select: { fields: '*' },
+					where: {
+						condition: [
+							{ field: 'name', operator: '=', value: cityDest },
+							{ field: 'province', operator: '=', value: provinceDest },
+						]
+					}
+				};
+				var destResult = destJoinedData.execute(destQuery, modObject);
+				// console.log(destResult, destResult.data);
 		
-		renderSearchResults();
+				// ORIGIN
+				var origin = $('#origin');
+				origin.val(originValue).attr('data-set', JSON.stringify(originResult.data[0]));
+				// DESTINATION
+				var dest = $('#destination');
+				dest.val(destValue).attr('data-set', JSON.stringify(destResult.data[0]));
+				
+				renderSearchResults();
+			}, 333);
+		}
 	}
 }
 
@@ -449,17 +511,28 @@ var renderSearchResults = function () {
 	// console.log(oResults);
 	var expresswayData = dataObject.expressways;
 	// ORIGIN
-	var origin = $('#im_from');
+	var origin = $('#origin');
 	// DESTINATION
-	var dest = $('#going_to');
+	var dest = $('#destination');
 	// console.log(origin.val(), dest.val());
+	var origin_data = JSON.parse(origin.attr('data-set'));
+	var dest_data = JSON.parse(dest.attr('data-set'));
+
+	var sameProvince = origin_data.province == dest_data.province;
 	
 	/* render origin */
 	var oOrigin = oResults.origin;
 	var uiOrigin = $('.origin-results');
 	uiOrigin.find('.timeline-intro-head').html(origin.val());
+	if (sameProvince) {
+		var oOriginRev = Object.keys(oOrigin);
+	} else {
+		var oOriginRev = Object.keys(oOrigin).reverse();
+	}
 
-	for (var route in oOrigin) {
+	for (var x in oOriginRev) {
+		var route = oOriginRev[x];
+	// for (var route in oOrigin) {
 		var oItems = oOrigin[route];
 		// console.log(oItems);
 		var timelineTitle = expresswayData[route].fullname;
@@ -471,13 +544,21 @@ var renderSearchResults = function () {
 			var oRoute = oItems[classname];
 			let pUI = '';
 			for (var i in oRoute) {
-				var toLook = oRoute[i].entry;
-				if (route == 'ncr') {
-					toLook = oRoute[i].entry.toLowerCase().ucWords();
+				if (sameProvince) {
+					var toLook = oRoute[i].entry;
+				} else {
+					var toLook = oRoute[i].exit;
 				}
-				var travelTo = (route == 'ncr' ? oRoute[i].entry.toLowerCase().ucWords() + '</b> via <b>EDSA</b>' : oRoute[i].entry + '</b> exit');
+				if (route == 'ncr') {
+					toLook = toLook.toUpperCase();
+				}
+				var travelTo = (route == 'ncr' ? toLook.toUpperCase() + '</b>' : toLook + '</b> tollgate');
 				if (pUI.indexOf(toLook) < 0) {
-					pUI += '<p>- travel to <b>' + travelTo + '</p>'
+					if (route == 'ncr') {
+						pUI += '<p>- Travel to <b>' + travelTo + '</p>'
+					} else {
+						pUI += '<p>- Enter <b>' + travelTo + '</p>'
+					}
 				}
 			}
 			oCloneTimeline.find('.timeline-inverted .timeline-body').append(pUI);
@@ -492,10 +573,15 @@ var renderSearchResults = function () {
 	var oDestination = oResults.destination;
 	var uiDestination = $('.destination-results');
 	uiDestination.find('.timeline-intro-head').html(dest.val());
-	var oDestinationRev = Object.keys(oDestination).reverse();
+	if (sameProvince) {
+		var oDestinationRev = Object.keys(oDestination).reverse();
+	} else {
+		var oDestinationRev = Object.keys(oDestination);
+	}
 
 	for (var x in oDestinationRev) {
 		var route = oDestinationRev[x];
+	// for (var route in oDestination) {
 		var oItems = oDestination[route];
 		// console.log(oItems, route);
 		var timelineTitle = expresswayData[route].fullname;
@@ -509,11 +595,15 @@ var renderSearchResults = function () {
 			for (var i in oRoute) {
 				var toLook = oRoute[i].entry;
 				if (route == 'ncr') {
-					toLook = oRoute[i].entry.toLowerCase().ucWords();
+					toLook = oRoute[i].entry.toUpperCase();
 				}
-				var travelTo = (route == 'ncr' ? oRoute[i].entry.toLowerCase().ucWords() + '</b> via <b>EDSA</b>' : oRoute[i].entry + '</b> exit');
+				var travelTo = (route == 'ncr' ? toLook.toUpperCase() + '</b>' : toLook + '</b> exit');
 				if (pUI.indexOf(toLook) < 0) {
-					pUI += '<p>- travel to <b>' + travelTo + '</p>'
+					if (route == 'ncr') {
+						pUI += '<p>- Travel to <b>' + travelTo + '</p>'
+					} else {
+						pUI += '<p>- Exit through <b>' + travelTo + '</p>'
+					}
 				}
 			}
 			oCloneTimeline.find('.timeline-inverted .timeline-body').append(pUI);
@@ -578,4 +668,24 @@ function mergeAndRemoveDuplicates(obj1, obj2, key) {
 function urlParams() {
 	var url = new URL(window.location.href);
 	return url.searchParams;
+}
+
+function showToast(params) {
+	$('#tc-toast').find('.toast-body').html(params.content);
+	$('#tc-toast').removeClass('bg-success bg-danger bg-warning bg-info');
+	switch (params.type) {
+		case 'good':
+			$('#tc-toast').addClass('bg-success');
+		break;
+		case 'bad':
+			$('#tc-toast').addClass('bg-danger');
+		break;
+		case 'alert':
+			$('#tc-toast').addClass('bg-warning');
+		break;
+		case 'info':
+			$('#tc-toast').addClass('bg-info');
+		break;
+	}
+	$('#tc-toast').toast('show');
 }

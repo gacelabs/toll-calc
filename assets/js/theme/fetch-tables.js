@@ -1,5 +1,3 @@
-var dataObject = {};
-
 (function() {
 	var tables = ['archipelago', 'cities', 'expressways', 'ncr', 'tplex', 'nlex', 'cavitex', 'naiax', 'slex', 'superhighway', 'calax', 'skyway_3'];
 

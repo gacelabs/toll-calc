@@ -4,7 +4,7 @@
             "region": "NCR",
             "entry": "Balintawak",
             "province": ["NCR"],
-            "nearest": ["Caloocan", "Las Piñas", "Makati", "Malabon", "Mandaluyong", "Manila", "Marikina", "Muntinlupa", "Navotas", "Parañaque", "Pasay", "Pasig", "Pateros", "Quezon", "San Juan", "Taguig", "Valenzuela"],
+            "nearest": ["Caloocan", "Las Piñas", "Makati", "Malabon", "Mandaluyong", "Manila", "Marikina", "Muntinlupa", "Navotas", "Parañaque", "Pasay", "Pasig", "Pateros", "Quezon", "San Juan", "Taguig", "Valenzuela", "Antipolo"],
             "tolls": [
                 { "exit": "Balintawak", "fee": 0 },
                 { "exit": "Mindanao Avenue", "fee": 69 },

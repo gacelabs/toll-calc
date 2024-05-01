@@ -23,17 +23,23 @@ class JSONQuery {
 		}
 	}
 
-	where(conditions) {
+	where(conditions, is_or) {
 		if (!conditions) {
 			return this.data;
 		} else {
 			const filteredData = [];
 			this.data.forEach((item, i) => {
-				conditions.forEach(condition => {
+				var arFound = [];
+				conditions.forEach((condition, x) => {
 					// console.log(condition);
 					if (this.evaluateCondition(item, condition)) {
-						if (filteredData.includes(item) == false) {
+						if (filteredData.includes(item) == false || is_or === true) {
 							item['index'] = i;
+							arFound.push(true);
+						}
+					}
+					if (x === (conditions.length - 1)) {
+						if (arFound.length == conditions.length || is_or === true) {
 							filteredData.push(item);
 						}
 					}
@@ -128,14 +134,19 @@ class JSONQuery {
 		const joinedData = [];
 		this.data = this.data != undefined ? this.data : this.view;
 
-		this.data.forEach(item1 => {
-			otherData.forEach(item2 => {
-				if (item1[joinField] === item2[joinField]) {
-					const joinedItem = { ...item1, ...item2 };
-					joinedData.push(joinedItem);
-				}
+		try {
+			this.data.forEach(item1 => {
+				otherData.forEach(item2 => {
+					if (item1[joinField] === item2[joinField]) {
+						const joinedItem = { ...item1, ...item2 };
+						joinedData.push(joinedItem);
+					}
+				});
 			});
-		});
+		} catch (error) {
+			console.log(this);
+			// this.join(otherData, joinField);
+		}
 
 		if (joinedData.length) {
 			this.data = joinedData;
@@ -157,7 +168,11 @@ class JSONQuery {
 		result = this.select(select.fields);
 
 		if (where) {
-			result = this.where(where.condition);
+			if (where.condition_or != undefined) {
+				result = this.where(where.condition_or, true);
+			} else {
+				result = this.where(where.condition);
+			}
 		}
 
 		if (format != undefined) {
