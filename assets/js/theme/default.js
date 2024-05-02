@@ -18,11 +18,10 @@ $(document).ready(async function () {
 				switch (ui.attr('type')) {
 					case 'radio':
 						$('#' + $(e.target).data('for')).trigger('click');
-						break;
-
+					break;
 					default:
 						$('#' + $(e.target).data('for')).trigger('click');
-						break;
+					break;
 				}
 			}
 		}
