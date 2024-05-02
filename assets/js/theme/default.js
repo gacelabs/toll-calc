@@ -498,11 +498,11 @@ var renderSearchResults = function () {
 		var oDestination = oResults.destination;
 		var uiDestination = $('.destination-results');
 		uiDestination.find('.timeline-intro-head').html('to ' + dest.val());
-		if (sameProvince) {
-			var oDestinationRev = Object.keys(oDestination).reverse();
-		} else {
+		// if (sameProvince) {
+		// 	var oDestinationRev = Object.keys(oDestination).reverse();
+		// } else {
 			var oDestinationRev = Object.keys(oDestination);
-		}
+		// }
 
 		for (var x in oDestinationRev) {
 			var route = oDestinationRev[x];
@@ -513,7 +513,7 @@ var renderSearchResults = function () {
 			var oCloneTimeline = uiDestination.find('.timeline:first').clone();
 			for (var classname in oItems) {
 				// timelineTitle += ' - ' + classname.ucWords().replace('_', ' ');
-				oCloneTimeline.find('.timeline-inverted .timeline-title').html('Upon ' + timelineTitle);
+				oCloneTimeline.find('.timeline-inverted .timeline-title').html((route == 'ncr' ? 'Upon ' : 'Take ') + timelineTitle);
 
 				var oRoute = oItems[classname];
 				let pUI = '<ul>';
@@ -527,7 +527,11 @@ var renderSearchResults = function () {
 						if (route == 'ncr') {
 							pUI += '<li>Travel to <b>' + travelTo + '</li>'
 						} else {
-							pUI += '<li>Exit through <b>' + travelTo + '</li>'
+							if (origin_data.start == 'north') {
+								pUI += '<li>Enter <b>' + travelTo + '</li>'
+							} else {
+								pUI += '<li>Exit through <b>' + travelTo + '</li>'
+							}
 						}
 					}
 				}

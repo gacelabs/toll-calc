@@ -2,7 +2,8 @@
 	"north": [
 		{
             "region": "NCR",
-            "entry": "Caloocan North",
+            "entry": "Caloocan (North)",
+            "came_from": "north",
             "province": ["NCR"],
             "nearest": ["Valenzuela", "Quezon"],
 			"tolls": [
@@ -11,7 +12,8 @@
         },
         {
             "region": "NCR",
-            "entry": "Caloocan South",
+            "entry": "Caloocan (South)",
+            "came_from": "south",
             "province": ["NCR"],
             "nearest": ["Manila"],
 			"tolls": [
@@ -21,8 +23,9 @@
 		{
             "region": "NCR",
             "entry": "Valenzuela",
+            "came_from": "north",
             "province": ["NCR"],
-            "nearest": ["Caloocan North", "Caloocan South"],
+            "nearest": ["Caloocan (North)", "Caloocan (South)"],
 			"tolls": [
                 { "fee": 0, "exit": "nlex" }
             ]
@@ -30,8 +33,9 @@
 		{
             "region": "NCR",
             "entry": "Navotas",
+            "came_from": "north",
             "province": ["NCR"],
-            "nearest": ["Malabon", "Caloocan South"],
+            "nearest": ["Malabon", "Caloocan (South)"],
 			"tolls": [
                 { "fee": 0, "exit": "nlex" }
             ]
@@ -39,8 +43,9 @@
 		{
             "region": "NCR",
             "entry": "Malabon",
+            "came_from": "north",
             "province": ["NCR"],
-            "nearest": ["Caloocan South", "Navotas", "Manila"],
+            "nearest": ["Caloocan (South)", "Navotas", "Manila"],
 			"tolls": [
                 { "fee": 0, "exit": "nlex" }
             ]
@@ -48,8 +53,9 @@
 		{
             "region": "NCR",
             "entry": "Quezon",
+            "came_from": "north",
             "province": ["NCR"],
-            "nearest": ["Caloocan South", "Marikina", "San Juan"],
+            "nearest": ["Caloocan (South)", "Marikina", "San Juan"],
 			"tolls": [
                 { "fee": 0, "exit": "nlex" }
             ]
@@ -57,6 +63,7 @@
 		{
             "region": "NCR",
             "entry": "Marikina",
+            "came_from": "south",
             "province": ["NCR", "RIZAL"],
             "nearest": ["Antipolo", "San Juan"],
 			"tolls": [
@@ -66,6 +73,7 @@
 		{
             "region": "NCR",
             "entry": "Manila",
+            "came_from": "south",
             "province": ["NCR"],
             "nearest": ["Pasay"],
 			"tolls": [
@@ -75,6 +83,7 @@
 		{
             "region": "NCR",
             "entry": "Mandaluyong",
+            "came_from": "south",
             "province": ["NCR"],
             "nearest": ["Pasay", "Makati"],
 			"tolls": [
@@ -84,6 +93,7 @@
 		{
             "region": "NCR",
             "entry": "Pasig",
+            "came_from": "south",
             "province": ["NCR", "RIZAL"],
             "nearest": ["Taytay", "Pateros"],
 			"tolls": [
@@ -93,6 +103,7 @@
 		{
             "region": "NCR",
             "entry": "Pateros",
+            "came_from": "south",
             "province": ["NCR"],
             "nearest": ["Taguig"],
 			"tolls": [
@@ -102,6 +113,7 @@
 		{
             "region": "NCR",
             "entry": "Makati",
+            "came_from": "south",
             "province": ["NCR"],
             "nearest": ["Pasay", "Taguig"],
 			"tolls": [
@@ -111,6 +123,7 @@
 		{
             "region": "NCR",
             "entry": "Pasay",
+            "came_from": "south",
             "province": ["NCR"],
             "nearest": ["Parañaque", "Taguig"],
 			"tolls": [
@@ -121,6 +134,7 @@
 		{
             "region": "NCR",
             "entry": "Taguig",
+            "came_from": "south",
             "province": ["NCR"],
             "nearest": ["Parañaque"],
 			"tolls": [
@@ -131,6 +145,7 @@
 		{
             "region": "NCR",
             "entry": "Parañaque",
+            "came_from": "south",
             "province": ["NCR"],
             "nearest": ["Las Piñas"],
 			"tolls": [
@@ -141,6 +156,7 @@
 		{
             "region": "NCR",
             "entry": "Las Piñas",
+            "came_from": "south",
             "province": ["NCR", "CAVITE"],
             "nearest": ["Muntinlupa", "Bacoor"],
 			"tolls": [
@@ -151,6 +167,7 @@
 		{
             "region": "NCR",
             "entry": "Muntinlupa",
+            "came_from": "south",
             "province": ["NCR", "CAVITE", "LAGUNA"],
             "nearest": ["Bacoor", "San Pedro"],
 			"tolls": [
@@ -162,7 +179,8 @@
 	"south": [
 		{
             "region": "NCR",
-            "entry": "Caloocan North",
+            "entry": "Caloocan (North)",
+            "came_from": "north",
             "province": ["BULACAN"],
             "nearest": ["San Jose del Monte"],
 			"tolls": [
@@ -171,7 +189,8 @@
         },
         {
             "region": "NCR",
-            "entry": "Caloocan South",
+            "entry": "Caloocan (South)",
+            "came_from": "south",
             "province": ["NCR"],
             "nearest": ["Valenzuela", "Malabon"],
 			"tolls": [
@@ -181,8 +200,9 @@
 		{
             "region": "NCR",
             "entry": "Valenzuela",
+            "came_from": "north",
             "province": ["NCR", "BULACAN"],
-            "nearest": ["Meycauayan", "Caloocan North"],
+            "nearest": ["Meycauayan", "Caloocan (North)"],
 			"tolls": [
                 { "fee": 0, "exit": "slex" }
             ]
@@ -190,6 +210,7 @@
 		{
             "region": "NCR",
             "entry": "Navotas",
+            "came_from": "north",
             "province": ["NCR", "BULACAN"],
             "nearest": ["Obando", "Valenzuela"],
 			"tolls": [
@@ -199,6 +220,7 @@
 		{
             "region": "NCR",
             "entry": "Malabon",
+            "came_from": "north",
             "province": ["NCR"],
             "nearest": ["Navotas", "Valenzuela"],
 			"tolls": [
@@ -208,8 +230,9 @@
 		{
             "region": "NCR",
             "entry": "Quezon",
+            "came_from": "north",
             "province": ["NCR"],
-            "nearest": ["Caloocan North", "San Jose del Monte"],
+            "nearest": ["Caloocan (North)", "San Jose del Monte"],
 			"tolls": [
                 { "fee": 0, "exit": "slex" }
             ]
@@ -217,6 +240,7 @@
 		{
             "region": "NCR",
             "entry": "Marikina",
+            "came_from": "south",
             "province": ["NCR", "RIZAL"],
             "nearest": ["San Mateo", "Antipolo"],
 			"tolls": [
@@ -226,8 +250,9 @@
 		{
             "region": "NCR",
             "entry": "Manila",
+            "came_from": "south",
             "province": ["NCR"],
-            "nearest": ["Caloocan South", "Quezon"],
+            "nearest": ["Caloocan (South)", "Quezon"],
 			"tolls": [
                 { "fee": 0, "exit": "slex" }
             ]
@@ -235,6 +260,7 @@
 		{
             "region": "NCR",
             "entry": "Mandaluyong",
+            "came_from": "south",
             "province": ["NCR"],
             "nearest": ["San Juan", "Quezon"],
 			"tolls": [
@@ -244,6 +270,7 @@
 		{
             "region": "NCR",
             "entry": "Pasig",
+            "came_from": "south",
             "province": ["NCR", "RIZAL"],
             "nearest": ["Taytay", "Cainta"],
 			"tolls": [
@@ -253,6 +280,7 @@
 		{
             "region": "NCR",
             "entry": "Pateros",
+            "came_from": "south",
             "province": ["NCR"],
             "nearest": ["Pasig"],
 			"tolls": [
@@ -262,6 +290,7 @@
 		{
             "region": "NCR",
             "entry": "Makati",
+            "came_from": "south",
             "province": ["NCR"],
             "nearest": ["Mandaluyong"],
 			"tolls": [
@@ -271,6 +300,7 @@
 		{
             "region": "NCR",
             "entry": "Pasay",
+            "came_from": "south",
             "province": ["NCR"],
             "nearest": ["Makati", "Manila"],
 			"tolls": [
@@ -280,6 +310,7 @@
 		{
             "region": "NCR",
             "entry": "Taguig",
+            "came_from": "south",
             "province": ["NCR"],
             "nearest": ["Pateros", "Makati"],
 			"tolls": [
@@ -290,6 +321,7 @@
 		{
             "region": "NCR",
             "entry": "Parañaque",
+            "came_from": "south",
             "province": ["NCR"],
             "nearest": ["Taguig", "Pasay"],
 			"tolls": [
@@ -300,6 +332,7 @@
 		{
             "region": "NCR",
             "entry": "Las Piñas",
+            "came_from": "south",
             "province": ["NCR", "CAVITE"],
             "nearest": ["Parañaque"],
 			"tolls": [
@@ -310,6 +343,7 @@
 		{
             "region": "NCR",
             "entry": "Muntinlupa",
+            "came_from": "south",
             "province": ["NCR", "CAVITE"],
             "nearest": ["Las Piñas", "Parañaque"],
 			"tolls": [
