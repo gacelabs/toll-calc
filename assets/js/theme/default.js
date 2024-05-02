@@ -28,7 +28,7 @@ $(document).ready(async function () {
 		}
 	});
 
-	$('.year-value').text(new Date().getFullYear());
+	$('.year-value').html(new Date().getFullYear());
 
 	$(window).on('resize', function (e) {
 		var nav = $('.navbar-nav.nav-dropdown');
