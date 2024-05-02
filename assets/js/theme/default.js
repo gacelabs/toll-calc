@@ -61,7 +61,6 @@ $(document).ready(async function () {
 				originJoinedData = await originJsonCities.join(dataObject.archipelago, "province");
 				var destJsonCities = new JSONQuery(dataObject.cities);
 				destJoinedData = await destJsonCities.join(dataObject.archipelago, "province");
-
 				runCitySearchData();
 				clearInterval(i);
 			}
@@ -71,7 +70,6 @@ $(document).ready(async function () {
 		originJoinedData = await originJsonCities.join(dataObject.archipelago, "province");
 		var destJsonCities = new JSONQuery(dataObject.cities);
 		destJoinedData = await destJsonCities.join(dataObject.archipelago, "province");
-
 		runCitySearchData();
 	}
 
@@ -451,11 +449,11 @@ var renderSearchResults = function () {
 		var oOrigin = oResults.origin;
 		var uiOrigin = $('.origin-results');
 		uiOrigin.find('.timeline-intro-head').html('From ' + origin.val());
-		if (sameProvince) {
+		// if (sameProvince) {
 			var oOriginRev = Object.keys(oOrigin);
-		} else {
-			var oOriginRev = Object.keys(oOrigin).reverse();
-		}
+		// } else {
+		// 	var oOriginRev = Object.keys(oOrigin).reverse();
+		// }
 
 		for (var x in oOriginRev) {
 			var route = oOriginRev[x];
@@ -469,7 +467,7 @@ var renderSearchResults = function () {
 				oCloneTimeline.find('.timeline-inverted .timeline-title').html('Take ' + timelineTitle);
 
 				var oRoute = oItems[classname];
-				let pUI = '';
+				let pUI = '<ul>';
 				for (var i in oRoute) {
 					if (sameProvince) {
 						var toLook = oRoute[i].entry;
@@ -477,18 +475,18 @@ var renderSearchResults = function () {
 						var toLook = oRoute[i].exit;
 					}
 					if (route == 'ncr') {
-						toLook = toLook.toUpperCase();
+						toLook = ($.inArray(toLook, ['nlex', 'slex']) >= 0) ? toLook.toUpperCase() : toLook;
 					}
-					var travelTo = (route == 'ncr' ? toLook.toUpperCase() + '</b>' : toLook + '</b> tollgate');
+					var travelTo = (route == 'ncr' ? toLook + ' City</b>' : toLook + '</b> tollgate');
 					if (pUI.indexOf(toLook) < 0) {
 						if (route == 'ncr') {
-							pUI += '<p>- Travel to <b>' + travelTo + '</p>'
+							pUI += '<li>Travel to <b>' + travelTo + '</li>'
 						} else {
-							pUI += '<p>- Enter <b>' + travelTo + '</p>'
+							pUI += '<li>Enter <b>' + travelTo + '</li>'
 						}
 					}
 				}
-				oCloneTimeline.find('.timeline-inverted .timeline-body').append(pUI);
+				oCloneTimeline.find('.timeline-inverted .timeline-body').append(pUI + '</ul>');
 				break;
 			}
 			uiOrigin.find('.page-body').append(oCloneTimeline.removeClass('hide'));
@@ -515,25 +513,25 @@ var renderSearchResults = function () {
 			var oCloneTimeline = uiDestination.find('.timeline:first').clone();
 			for (var classname in oItems) {
 				// timelineTitle += ' - ' + classname.ucWords().replace('_', ' ');
-				oCloneTimeline.find('.timeline-inverted .timeline-title').html('Take ' + timelineTitle);
+				oCloneTimeline.find('.timeline-inverted .timeline-title').html('Upon ' + timelineTitle);
 
 				var oRoute = oItems[classname];
-				let pUI = '';
+				let pUI = '<ul>';
 				for (var i in oRoute) {
 					var toLook = oRoute[i].entry;
 					if (route == 'ncr') {
-						toLook = oRoute[i].entry.toUpperCase();
+						toLook = ($.inArray(toLook, ['nlex', 'slex']) >= 0) ? toLook.toUpperCase() : toLook;
 					}
-					var travelTo = (route == 'ncr' ? toLook.toUpperCase() + '</b>' : toLook + '</b> exit');
+					var travelTo = (route == 'ncr' ? toLook + ' City</b>' : toLook + '</b> tollgate');
 					if (pUI.indexOf(toLook) < 0) {
 						if (route == 'ncr') {
-							pUI += '<p>- Travel to <b>' + travelTo + '</p>'
+							pUI += '<li>Travel to <b>' + travelTo + '</li>'
 						} else {
-							pUI += '<p>- Exit through <b>' + travelTo + '</p>'
+							pUI += '<li>Exit through <b>' + travelTo + '</li>'
 						}
 					}
 				}
-				oCloneTimeline.find('.timeline-inverted .timeline-body').append(pUI);
+				oCloneTimeline.find('.timeline-inverted .timeline-body').append(pUI + '</ul>');
 				break;
 			}
 			uiDestination.find('.page-body').append(oCloneTimeline.removeClass('hide'));

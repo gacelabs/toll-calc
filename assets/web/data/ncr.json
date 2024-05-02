@@ -22,7 +22,7 @@
             "region": "NCR",
             "entry": "Valenzuela",
             "province": ["NCR"],
-            "nearest": ["Navotas", "Malabon", "Caloocan South"],
+            "nearest": ["Caloocan North", "Caloocan South"],
 			"tolls": [
                 { "fee": 0, "exit": "nlex" }
             ]
@@ -40,7 +40,7 @@
             "region": "NCR",
             "entry": "Malabon",
             "province": ["NCR"],
-            "nearest": ["Caloocan South", "Manila"],
+            "nearest": ["Caloocan South", "Navotas", "Manila"],
 			"tolls": [
                 { "fee": 0, "exit": "nlex" }
             ]

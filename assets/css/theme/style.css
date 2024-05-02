@@ -1439,3 +1439,8 @@ svg {
 .timeline-heading {
   margin-bottom: 7px;
 }
+
+.timeline-body ul li {
+  list-style-position: inside;
+  list-style-type: disclosure-closed;
+}
