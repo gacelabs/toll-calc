@@ -157,7 +157,7 @@ function generateNCRRoutes(direction, oData) {
 	return result;
 }
 
-var generateRoutes = function (oData, gointTo, urBoundTo, oOrig) {
+var generateRoutes = function (oData, gointTo, urBoundTo) {
 	var oRoutes = {};
 	var oTollways = oData.tollways;
 	var oTollSubjects = (oData.toll_subjects != undefined && oData.toll_subjects.length) ? oData.toll_subjects : false;

@@ -109,5 +109,46 @@ function showNotification(title, body, redirectUrl) {
 				};
 			}
 		});
+	} else {
+		showToast({ content: 'Cannot accept Notifications, site must be secured and on HTTPS protocol!', type: 'bad' });
 	}
 }
+
+// Example function to get directions on Philippine expressways
+async function getPhilippineExpresswayDirections(origin, destination, apiKey) {
+	const expresswayWaypoints = ["NLEX", "SLEX", /* Add more expressway waypoints */];
+
+	// Construct waypoints string for the request
+	const waypointsString = expresswayWaypoints.map(waypoint => `via:${waypoint}`).join('|');
+
+	// Construct the URL for the directions request
+	const url = `https://maps.googleapis.com/maps/api/directions/json?origin=${origin}&destination=${destination}&waypoints=${waypointsString}&key=${apiKey}`;
+
+	try {
+		const response = await fetch(url);
+		const data = await response.json();
+
+		// Filter routes to include only those passing through expressway waypoints
+		const filteredRoutes = data.routes.filter(route => {
+			return expresswayWaypoints.some(waypoint => {
+				return route.summary.includes(waypoint);
+			});
+		});
+
+		return filteredRoutes;
+	} catch (error) {
+		console.error('Error:', error);
+		return null;
+	}
+}
+
+/* // Example usage
+const origin = "Manila, Philippines";
+const destination = "Quezon City, Philippines";
+const apiKey = "AIzaSyD0akNdbYMmrk7YqPVC7pHSU0x2iXgYlVw";
+
+getPhilippineExpresswayDirections(origin, destination, apiKey).then(routes => {
+	console.log(routes);
+}).catch(error => {
+	console.error('Error:', error);
+}); */
