@@ -15,7 +15,7 @@
             "entry": "(South) Caloocan",
             "came_from": "south",
             "province": ["NCR"],
-            "nearest": ["Manila", "Quezon"],
+            "nearest": ["Manila"],
 			"tolls": [
                 { "fee": 0, "exit": "nlex" }
             ]

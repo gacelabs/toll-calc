@@ -199,6 +199,7 @@ var generateRoutes = function (oData, gointTo, urBoundTo) {
 								'fee': iFee,
 								'start': oData.start,
 								'ended': gointTo,
+								'region': oData.region,
 							});
 						}
 					} else {
@@ -295,6 +296,7 @@ var generateRoutes = function (oData, gointTo, urBoundTo) {
 									'fee': iFee,
 									'start': oData.start,
 									'ended': gointTo,
+									'region': oData.region,
 								});
 							}
 						}
@@ -519,7 +521,7 @@ var runSearchResults = function () {
 
 var renderSearchResults = function () {
 	var oResults = JSON.parse(localStorage.getItem('search_results'));
-	// console.log(oResults);
+	console.log(oResults);
 	var expresswayData = dataObject.expressways;
 	// ORIGIN
 	var origin = $('#origin');
@@ -568,14 +570,16 @@ var renderSearchResults = function () {
 						oDetailedRoute[route][classname].push({
 							entry: oRoute[i].exit,
 							exit: oRoute[i].entry,
-							fee: oRoute[i].fee
+							fee: oRoute[i].fee,
+							region: oRoute[i].region
 						});
 					} else {
 						var toLook = oRoute[i].exit;
 						oDetailedRoute[route][classname].push({
 							entry: oRoute[i].entry,
 							exit: oRoute[i].exit,
-							fee: oRoute[i].fee
+							fee: oRoute[i].fee,
+							region: oRoute[i].region
 						});
 					}
 					if (route == 'ncr') {
@@ -642,13 +646,15 @@ var renderSearchResults = function () {
 							oDetailedRoute[route][classname].push({
 								entry: oRoute[i].entry,
 								exit: oRoute[i].exit,
-								fee: oRoute[i].fee
+								fee: oRoute[i].fee,
+								region: oRoute[i].region
 							});
 						} else {
 							oDetailedRoute[route][classname].push({
 								entry: oRoute[i].exit,
 								exit: oRoute[i].entry,
-								fee: oRoute[i].fee
+								fee: oRoute[i].fee,
+								region: oRoute[i].region
 							});
 						}
 						if (route == 'ncr') {
@@ -799,9 +805,8 @@ function runDetailedRoutes() {
 				var oDestination = routes[1];
 
 				var uiFromContent = uiRoute.find('.page-content:first').clone(true).removeClass('hide');
-				uiFromContent.find('.page-header .timeline-intro-head').html('From ' + oOrigin.from + ' To ' + oDestination.to);
+				uiFromContent.find('.page-header .timeline-intro-head').html('From ' + oOrigin.from/*  + ' To ' + oDestination.to */);
 				var uiFromTimeline = uiFromContent.find('.page-body .timeline').clone(true).removeClass('hide');
-				var sLastPoint = '';
 
 				for (var x in oOrigin.routes) {
 					var oFromGate = oOrigin.routes[x];
@@ -823,10 +828,9 @@ function runDetailedRoutes() {
 					var sPrefix = 'Enter ';
 					var sSuffix = 'exit to ';
 					if (sWay == 'ncr') {
-						sLastPoint = oFromGate.exit;
 						sPrefix = 'Travel from ';
 						sSuffix = 'enter ';
-						var uiRoutes = '<ul><li>' + sPrefix + '<b>' + oFromGate.enter + '</b> and ' + sSuffix + '<b>' + sLastPoint + '</b></li><li class="toll" style="margin-left: 15px;"><a href="https://www.google.com/maps/dir/' + oFromGate.enter + '/' + sLastPoint + '" target="_blank"><b>Show Direction Map</b></a></li></ul>';
+						var uiRoutes = '<ul><li>' + sPrefix + '<b>' + oFromGate.enter + '</b> and ' + sSuffix + '<b>' + oFromGate.exit + '</b></li><li class="toll" style="margin-left: 15px;"><a href="https://www.google.com/maps/dir/' + oFromGate.enter + '/' + oFromGate.exit + '" target="_blank"><b>Show Direction Map</b></a></li></ul>';
 						uiTimeline.find('.timeline-body').html(uiRoutes);
 					} else {
 						var wayCount = oFromGate.details.class_1.length;
@@ -841,7 +845,7 @@ function runDetailedRoutes() {
 									uiTolls += '<li class="toll" style="margin-left: 15px; margin-top: 10px;"><b>' + classname.ucWords().replace('_', ' ') + ' - Vehicles:</b></li>';
 								}
 								var iFee = new Intl.NumberFormat('en-PH', { style: 'currency', currency: 'PHP' }).format(oItem.fee);
-								uiTolls += '<li class="toll route" style="margin-left: 30px;">' + (wayCount > 1 ? (parseInt(i) + 1) + '. ' : '') + 'Enter ' + oItem.entry + ' and exit ' + oItem.exit + '</li><li class="toll fee" style="margin-left: 45px;"><b>Fee: ' + iFee + '</b></li><li class="toll fee" style="margin-left: 45px;"><a href="https://www.google.com/maps/dir/' + oItem.entry + '/' + oItem.exit + '" target="_blank"><b>Show Direction Map</b></a></li>';
+								uiTolls += '<li class="toll route" style="margin-left: 30px;">' + (wayCount > 1 ? (parseInt(i) + 1) + '. ' : '') + 'Enter ' + oItem.entry + ' and exit ' + oItem.exit + '</li><li class="toll fee" style="margin-left: 45px;"><b>Fee: ' + iFee + '</b></li><li class="toll fee" style="margin-left: 45px;"><a href="https://www.google.com/maps/dir/' + oItem.entry + '/' + oItem.exit + ',Region ' + oItem.region + '" target="_blank"><b>Show Direction Map</b></a></li>';
 							}
 							uiRoutes += uiTolls;
 						}
@@ -855,7 +859,7 @@ function runDetailedRoutes() {
 				uiRoute.append(uiFromContent);
 
 				var uiToContent = uiRoute.find('.page-content:first').clone(true).removeClass('hide');
-				// uiToContent.find('.page-header .timeline-intro-head').addClass('mt-3').html('To ' + oDestination.to);
+				uiToContent.find('.page-header .timeline-intro-head').addClass('mt-3').html('To ' + oDestination.to);
 				var uiToTimeline = uiToContent.find('.page-body .timeline').clone(true).removeClass('hide');
 
 				for (var x in oDestination.routes) {
@@ -878,10 +882,9 @@ function runDetailedRoutes() {
 					var sPrefix = 'Enter ';
 					var sSuffix = 'exit to ';
 					if (sWay == 'ncr') {
-						sLastPoint = oToGate.exit;
 						sPrefix = 'Travel from ';
 						sSuffix = 'enter ';
-						var uiRoutes = '<ul><li>' + sPrefix + '<b>' + oToGate.enter + '</b> and ' + sSuffix + '<b>' + sLastPoint + '</b></li><li class="toll" style="margin-left: 15px;"><a href="https://www.google.com/maps/dir/' + oToGate.enter + '/' + sLastPoint + '" target="_blank"><b>Show Direction Map</b></a></li></ul>';
+						var uiRoutes = '<ul><li>' + sPrefix + '<b>' + oToGate.enter + '</b> and ' + sSuffix + '<b>' + oToGate.exit + '</b></li><li class="toll" style="margin-left: 15px;"><a href="https://www.google.com/maps/dir/' + oToGate.enter + '/' + oToGate.exit + '" target="_blank"><b>Show Direction Map</b></a></li></ul>';
 						uiTimeline.find('.timeline-body').html(uiRoutes);
 					} else {
 						var wayCount = oToGate.details.class_1.length;
@@ -896,14 +899,14 @@ function runDetailedRoutes() {
 									uiTolls += '<li class="toll" style="margin-left: 15px; margin-top: 10px;"><b>' + classname.ucWords().replace('_', ' ') + ' - Vehicles:</b></li>';
 								}
 								var iFee = new Intl.NumberFormat('en-PH', { style: 'currency', currency: 'PHP' }).format(oItem.fee);
-								uiTolls += '<li class="toll route" style="margin-left: 30px;">' + (wayCount > 1 ? (parseInt(i) + 1) + '. ' : '') + 'Enter ' + oItem.entry + ' and exit ' + oItem.exit + '</li><li class="toll fee" style="margin-left: 45px;"><b>Fee: ' + iFee + '</b></li><li class="toll fee" style="margin-left: 45px;"><a href="https://www.google.com/maps/dir/' + oItem.entry + '/' + oItem.exit + '" target="_blank"><b>Show Direction Map</b></a></li>';
+								uiTolls += '<li class="toll route" style="margin-left: 30px;">' + (wayCount > 1 ? (parseInt(i) + 1) + '. ' : '') + 'Enter ' + oItem.entry + ' and exit ' + oItem.exit + '</li><li class="toll fee" style="margin-left: 45px;"><b>Fee: ' + iFee + '</b></li><li class="toll fee" style="margin-left: 45px;"><a href="https://www.google.com/maps/dir/' + oItem.entry + '/' + oItem.exit + ',Region ' + oItem.region + '" target="_blank"><b>Show Direction Map</b></a></li>';
 							}
 							uiRoutes += uiTolls;
 						}
 						uiTimeline.find('.timeline-body').html('</ul>' + uiRoutes + '</ul>');
 					}
 
-					uiFromContent.find('.page-body').append(uiTimeline);
+					uiToContent.find('.page-body').append(uiTimeline);
 				}
 				uiToContent.find('.page-body .timeline.hide').remove();
 				uiRoute.append(uiToContent);
