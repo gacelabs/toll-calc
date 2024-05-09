@@ -1,0 +1,104 @@
+{
+	"class_1": [
+		{
+            "region": "NCR",
+            "entry": "Taguig Toll Plaza",
+            "province": ["NCR"],
+            "nearest": ["Taguig", "Pateros", "Pasig"],
+            "tolls": [
+                { "exit": "Taguig Toll Plaza", "fee": 0 },
+                { "exit": "Merville Toll Plaza", "fee": 35 },
+                { "exit": "Sucat Toll Plaza", "fee": 35 }
+            ]
+        },
+		{
+            "region": "NCR",
+            "entry": "Merville Toll Plaza",
+            "province": ["NCR"],
+            "nearest": ["Pasay", "Taguig"],
+            "tolls": [
+                { "exit": "Merville Toll Plaza", "fee": 0 },
+                { "exit": "Sucat Toll Plaza", "fee": 35 }
+            ]
+        },
+		{
+            "region": "NCR",
+            "entry": "Sucat Toll Plaza",
+            "province": ["NCR"],
+            "nearest": ["Parañaque", "Pasay"],
+            "tolls": [
+                { "exit": "Taguig Toll Plaza", "fee": 35 },
+                { "exit": "Merville Toll Plaza", "fee": 35 },
+                { "exit": "Sucat Toll Plaza", "fee": 0 }
+            ]
+        }
+	],
+	"class_2": [
+		{
+            "region": "NCR",
+            "entry": "Taguig Toll Plaza",
+            "province": ["NCR"],
+            "nearest": ["Taguig", "Pateros", "Pasig"],
+            "tolls": [
+                { "exit": "Taguig Toll Plaza", "fee": 0 },
+                { "exit": "Merville Toll Plaza", "fee": 69 },
+                { "exit": "Sucat Toll Plaza", "fee": 69 }
+            ]
+        },
+		{
+            "region": "NCR",
+            "entry": "Merville Toll Plaza",
+            "province": ["NCR"],
+            "nearest": ["Pasay", "Taguig"],
+            "tolls": [
+                { "exit": "Merville Toll Plaza", "fee": 0 },
+                { "exit": "Sucat Toll Plaza", "fee": 69 }
+            ]
+        },
+		{
+            "region": "NCR",
+            "entry": "Sucat Toll Plaza",
+            "province": ["NCR"],
+            "nearest": ["Parañaque", "Pasay"],
+            "tolls": [
+                { "exit": "Taguig Toll Plaza", "fee": 69 },
+                { "exit": "Merville Toll Plaza", "fee": 69 },
+                { "exit": "Sucat Toll Plaza", "fee": 0 }
+            ]
+        }
+	],
+	"class_3": [
+		{
+            "region": "NCR",
+            "entry": "Taguig Toll Plaza",
+            "province": ["NCR"],
+            "nearest": ["Taguig", "Pateros", "Pasig"],
+            "tolls": [
+                { "exit": "Taguig Toll Plaza", "fee": 0 },
+                { "exit": "Merville Toll Plaza", "fee": 104 },
+                { "exit": "Sucat Toll Plaza", "fee": 104 }
+            ]
+        },
+		{
+            "region": "NCR",
+            "entry": "Merville Toll Plaza",
+            "province": ["NCR"],
+            "nearest": ["Pasay", "Taguig"],
+            "tolls": [
+                { "exit": "Merville Toll Plaza", "fee": 0 },
+                { "exit": "Sucat Toll Plaza", "fee": 104 }
+            ]
+        },
+		{
+            "region": "NCR",
+            "entry": "Sucat Toll Plaza",
+            "province": ["NCR"],
+            "nearest": ["Parañaque", "Pasay"],
+            "tolls": [
+                { "exit": "Taguig Toll Plaza", "fee": 104 },
+                { "exit": "Merville Toll Plaza", "fee": 104 },
+                { "exit": "Sucat Toll Plaza", "fee": 0 }
+            ]
+        }
+	]
+}

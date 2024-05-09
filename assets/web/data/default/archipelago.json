@@ -20,12 +20,12 @@
 	{"province": "AURORA", "island": "luzon","tollways": ["tplex", "nlex"], "endline": true, "start": "north", "region": "III"},
 	{"province": "TARLAC", "island": "luzon","tollways": ["tplex", "nlex"], "endline": false, "start": "north", "region": "III"},
 	{"province": "NUEVA ECIJA", "island": "luzon","tollways": ["tplex", "nlex"], "endline": false, "start": "north", "region": "III"},
-	{"province": "ZAMBALES", "island": "luzon","tollways": ["nlex"], "endline": false, "start": "north", "region": "III"},
+	{"province": "ZAMBALES", "island": "luzon","tollways": ["sfex", "nlex"], "endline": false, "start": "north", "region": "III"},
 	{"province": "PAMPANGA", "island": "luzon","tollways": ["nlex"], "endline": false, "start": "north", "region": "III"},
 	{"province": "BULACAN", "island": "luzon","tollways": ["nlex"], "endline": false, "start": "north", "region": "III"},
-	{"province": "BATAAN", "island": "luzon","tollways": ["nlex"], "endline": false, "start": "north", "region": "III"},
+	{"province": "BATAAN", "island": "luzon","tollways": ["sfex", "nlex"], "endline": false, "start": "north", "region": "III"},
 
-	{"province": "NCR", "island": "luzon","tollways": ["nlex", "ncr", "skyway_3", "naiax", "cavitex", "slex"], "endline": false, "start": "north", "region": "NCR", "toll_subjects": [{"cities": ["Manila", "Caloocan", "Valenzuela", "Quezon"], "way": "north"}, {"cities": ["Valenzuela", "Malabon", "Navotas", "Caloocan", "Novaliches", "Quezon", "Marikina", "San Juan", "Manila", "Mandaluyong", "Pasig", "Makati", "Pateros", "Pasay", "Taguig", "Parañaque", "Las Piñas", "Muntinlupa"], "way": "north"}, {"cities": ["Manila", "Quezon", "San Juan", "Mandaluyong", "Pasig", "Makati"], "way": "north"}, {"cities": ["Parañaque", "Pasay", "Las piñas", "Muntinplupa", "Taguig"], "way": "south"}, {"cities": ["Parañaque", "Pasay", "Las piñas", "Muntinplupa"], "way": "south"}, {"cities": ["Parañaque", "Pasay", "Las piñas", "Muntinplupa", "Makati", "Taguig"], "way": "south"}]},
+	{"province": "NCR", "island": "luzon","tollways": ["ncr", "nlex", "skyway_3", "naiax", "cavitex", "slex"], "endline": false, "start": "north", "region": "NCR", "toll_subjects": [{"cities": ["Valenzuela", "Malabon", "Navotas", "Caloocan", "Novaliches", "Quezon", "Marikina", "San Juan", "Manila", "Mandaluyong", "Pasig", "Makati", "Pateros", "Pasay", "Taguig", "Parañaque", "Las Piñas", "Muntinlupa"], "way": "north"}, {"cities": ["Manila", "Caloocan", "Valenzuela", "Quezon"], "way": "north"}, {"cities": ["Manila", "Quezon", "San Juan", "Mandaluyong", "Pasig", "Makati"], "way": "north"}, {"cities": ["Parañaque", "Pasay", "Las piñas", "Muntinplupa", "Taguig"], "way": "south"}, {"cities": ["Parañaque", "Pasay", "Las piñas", "Muntinplupa"], "way": "south"}, {"cities": ["Parañaque", "Pasay", "Las piñas", "Muntinplupa", "Makati", "Taguig"], "way": "south"}]},
 
 	{"province": "RIZAL", "island": "luzon","tollways": ["ncr", "nlex"], "endline": true, "start": "north", "region": "IV-A"},
 	

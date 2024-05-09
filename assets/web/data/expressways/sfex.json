@@ -1,0 +1,182 @@
+{
+	"class_1": [
+		{
+            "region": "III",
+            "entry": "SFEX toll plaza",
+            "province": ["BATAAN"],
+            "nearest": ["Dinalupihan", "Hermosa"],
+            "tolls": [
+                { "exit": "SFEX toll plaza", "fee": 0 },
+                { "exit": "Subic–Tipo toll plaza", "fee": 27 },
+                { "exit": "Jadjad Bridge", "fee": 27 },
+                { "exit": "SFEX Tunnel", "fee": 27 },
+                { "exit": "Argonaut Bridge", "fee": 27 }
+            ]
+        },
+		{
+            "region": "III",
+            "entry": "Subic–Tipo toll plaza",
+            "province": ["BATAAN"],
+            "nearest": ["Hermosa"],
+            "tolls": [
+                { "exit": "Subic–Tipo toll plaza", "fee": 0 },
+                { "exit": "Jadjad Bridge", "fee": 27 },
+                { "exit": "SFEX Tunnel", "fee": 27 },
+                { "exit": "Argonaut Bridge", "fee": 27 }
+            ]
+        },
+		{
+            "region": "III",
+            "entry": "Jadjad Bridge",
+            "province": ["BATAAN"],
+            "nearest": ["Morong"],
+            "tolls": [
+                { "exit": "Jadjad Bridge", "fee": 0 },
+                { "exit": "SFEX Tunnel", "fee": 27 },
+                { "exit": "Argonaut Bridge", "fee": 27 }
+            ]
+        },
+		{
+            "region": "III",
+            "entry": "SFEX Tunnel",
+            "province": ["BATAAN"],
+            "nearest": ["Morong"],
+            "tolls": [
+                { "exit": "SFEX Tunnel", "fee": 0 },
+                { "exit": "Argonaut Bridge", "fee": 27 }
+            ]
+        },
+		{
+            "region": "III",
+            "entry": "Argonaut Bridge",
+            "province": ["ZAMBALES"],
+            "nearest": ["Olongapo"],
+            "tolls": [
+                { "exit": "Subic–Tipo toll plaza", "fee": 27 },
+                { "exit": "Jadjad Bridge", "fee": 27 },
+                { "exit": "SFEX Tunnel", "fee": 27 },
+                { "exit": "Argonaut Bridge", "fee": 0 }
+            ]
+        }
+	],
+	"class_2": [
+		{
+            "region": "III",
+            "entry": "SFEX toll plaza",
+            "province": ["BATAAN"],
+            "nearest": ["Dinalupihan", "Hermosa"],
+            "tolls": [
+                { "exit": "SFEX toll plaza", "fee": 0 },
+                { "exit": "Subic–Tipo toll plaza", "fee": 67 },
+                { "exit": "Jadjad Bridge", "fee": 67 },
+                { "exit": "SFEX Tunnel", "fee": 67 },
+                { "exit": "Argonaut Bridge", "fee": 67 }
+            ]
+        },
+		{
+            "region": "III",
+            "entry": "Subic–Tipo toll plaza",
+            "province": ["BATAAN"],
+            "nearest": ["Hermosa"],
+            "tolls": [
+                { "exit": "Subic–Tipo toll plaza", "fee": 0 },
+                { "exit": "Jadjad Bridge", "fee": 67 },
+                { "exit": "SFEX Tunnel", "fee": 67 },
+                { "exit": "Argonaut Bridge", "fee": 67 }
+            ]
+        },
+		{
+            "region": "III",
+            "entry": "Jadjad Bridge",
+            "province": ["BATAAN"],
+            "nearest": ["Morong"],
+            "tolls": [
+                { "exit": "Jadjad Bridge", "fee": 0 },
+                { "exit": "SFEX Tunnel", "fee": 67 },
+                { "exit": "Argonaut Bridge", "fee": 67 }
+            ]
+        },
+		{
+            "region": "III",
+            "entry": "SFEX Tunnel",
+            "province": ["BATAAN"],
+            "nearest": ["Morong"],
+            "tolls": [
+                { "exit": "SFEX Tunnel", "fee": 0 },
+                { "exit": "Argonaut Bridge", "fee": 67 }
+            ]
+        },
+		{
+            "region": "III",
+            "entry": "Argonaut Bridge",
+            "province": ["ZAMBALES"],
+            "nearest": ["Olongapo"],
+            "tolls": [
+                { "exit": "Subic–Tipo toll plaza", "fee": 67 },
+                { "exit": "Jadjad Bridge", "fee": 67 },
+                { "exit": "SFEX Tunnel", "fee": 67 },
+                { "exit": "Argonaut Bridge", "fee": 0 }
+            ]
+        }
+	],
+	"class_3": [
+		{
+            "region": "III",
+            "entry": "SFEX toll plaza",
+            "province": ["BATAAN"],
+            "nearest": ["Dinalupihan", "Hermosa"],
+            "tolls": [
+                { "exit": "SFEX toll plaza", "fee": 0 },
+                { "exit": "Subic–Tipo toll plaza", "fee": 80 },
+                { "exit": "Jadjad Bridge", "fee": 80 },
+                { "exit": "SFEX Tunnel", "fee": 80 },
+                { "exit": "Argonaut Bridge", "fee": 80 }
+            ]
+        },
+		{
+            "region": "III",
+            "entry": "Subic–Tipo toll plaza",
+            "province": ["BATAAN"],
+            "nearest": ["Hermosa"],
+            "tolls": [
+                { "exit": "Subic–Tipo toll plaza", "fee": 0 },
+                { "exit": "Jadjad Bridge", "fee": 80 },
+                { "exit": "SFEX Tunnel", "fee": 80 },
+                { "exit": "Argonaut Bridge", "fee": 80 }
+            ]
+        },
+		{
+            "region": "III",
+            "entry": "Jadjad Bridge",
+            "province": ["BATAAN"],
+            "nearest": ["Morong"],
+            "tolls": [
+                { "exit": "Jadjad Bridge", "fee": 0 },
+                { "exit": "SFEX Tunnel", "fee": 80 },
+                { "exit": "Argonaut Bridge", "fee": 80 }
+            ]
+        },
+		{
+            "region": "III",
+            "entry": "SFEX Tunnel",
+            "province": ["BATAAN"],
+            "nearest": ["Morong"],
+            "tolls": [
+                { "exit": "SFEX Tunnel", "fee": 0 },
+                { "exit": "Argonaut Bridge", "fee": 80 }
+            ]
+        },
+		{
+            "region": "III",
+            "entry": "Argonaut Bridge",
+            "province": ["ZAMBALES"],
+            "nearest": ["Olongapo"],
+            "tolls": [
+                { "exit": "Subic–Tipo toll plaza", "fee": 80 },
+                { "exit": "Jadjad Bridge", "fee": 80 },
+                { "exit": "SFEX Tunnel", "fee": 80 },
+                { "exit": "Argonaut Bridge", "fee": 0 }
+            ]
+        }
+	]
+}

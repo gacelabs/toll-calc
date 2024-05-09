@@ -1,13 +1,7 @@
 var originJoinedData, destJoinedData;
+var isSubmitting = false;
 
-$(document).ready(async function () {
-	setInterval(() => {
-		if ($('.tc1-loader-overlay.is-open').length) {
-			$('.tc1-loader-overlay').removeClass('is-open');
-			clearInterval();
-		}
-	}, 9000);
-
+var initMainFunctions = function () {
 	$('[data-for]').on('click', function (e) {
 		var ui = $('#' + $(e.target).data('for'));
 		if (ui.length) {
@@ -55,83 +49,66 @@ $(document).ready(async function () {
 	// console.log(Object.keys(dataObject).length, dataObject);
 	if (Object.keys(dataObject).length == 0) {
 		/* make a loader to wait for instanciation of the table datas when localStorage has no data */
-		const i = setInterval(async () => {
+		const i = setInterval(() => {
 			if (Object.keys(dataObject).length > 0) {
 				var originJsonCities = new JSONQuery(dataObject.cities);
-				originJoinedData = await originJsonCities.join(dataObject.archipelago, "province");
+				originJoinedData = originJsonCities.join(dataObject.archipelago, "province");
 				var destJsonCities = new JSONQuery(dataObject.cities);
-				destJoinedData = await destJsonCities.join(dataObject.archipelago, "province");
+				destJoinedData = destJsonCities.join(dataObject.archipelago, "province");
 				runCitySearchData();
 				clearInterval(i);
 			}
 		}, 333);
 	} else {
 		var originJsonCities = new JSONQuery(dataObject.cities);
-		originJoinedData = await originJsonCities.join(dataObject.archipelago, "province");
+		originJoinedData = originJsonCities.join(dataObject.archipelago, "province");
 		var destJsonCities = new JSONQuery(dataObject.cities);
-		destJoinedData = await destJsonCities.join(dataObject.archipelago, "province");
+		destJoinedData = destJsonCities.join(dataObject.archipelago, "province");
 		runCitySearchData();
 	}
 
 	$('#search_form').on('submit', function (e) {
-		// ORIGIN
-		var origin = $('#origin');
-		// DESTINATION
-		var dest = $('#destination');
-		if (($.trim(origin.val()) != '' && $.trim(dest.val()) != '') && $.trim(origin.val()) === $.trim(dest.val())) {
-			e.preventDefault();
-			var placeHolder = dest.attr('placeholder');
-			dest.val('');
-			dest.removeAttr('data-set');
-			dest.attr('placeholder', 'Same origin value failed!');
-			showToast({ content: '<strong>The same inputed values are not allowed!</strong>', type: 'bad' });
-			setTimeout(() => {
-				dest.attr('placeholder', placeHolder);
-			}, 2000);
-		} else if ($.trim(origin.val()) == '' || $.trim(dest.val()) == '') {
-			e.preventDefault();
-			showToast({ content: '<strong>Please enter value on both fields!</strong>', type: 'bad' });
-		} else {
-			if (origin.attr('data-set') != undefined && dest.attr('data-set') != undefined) {
-				var origin_data = JSON.parse(origin.attr('data-set'));
-				var dest_data = JSON.parse(dest.attr('data-set'));
-				// console.log(origin_data, dest_data);
-
-				var originRoutes = generateRoutes(origin_data, dest_data.start);
-				var destinationRoutes = generateRoutes(dest_data, origin_data.start);
-				// console.log(originRoutes, destinationRoutes);
-
-				/* var oAllData = runNCRData(origin_data, originRoutes, dest_data, destinationRoutes);
-				originRoutes = oAllData.origin;
-				destinationRoutes = oAllData.destination; */
-
-				if (Object.keys(originRoutes).length && Object.keys(destinationRoutes).length) {
-					localStorage.setItem('search_results', JSON.stringify({
-						'origin': originRoutes, 'destination': destinationRoutes,
-						'origin_dataset': origin_data, 'destination_dataset': dest_data,
-					}));
-					$('.tc1-loader-overlay').addClass('is-open');
-					// console.log(localStorage.getItem('search_results'));
-					/* setTimeout(() => {
-						window.location = '/results?origin=' + encodeURI($.trim(origin.val())) + '&destination=' + encodeURI($.trim(dest.val()));
-					}, 3000); */
+		if (isSubmitting == false) {
+			// ORIGIN
+			var origin = $('#origin');
+			// DESTINATION
+			var dest = $('#destination');
+			if (($.trim(origin.val()) != '' && $.trim(dest.val()) != '') && $.trim(origin.val()) === $.trim(dest.val())) {
+				e.preventDefault();
+				var placeHolder = dest.attr('placeholder');
+				dest.val('');
+				dest.removeAttr('data-set');
+				dest.attr('placeholder', 'Same origin value failed!');
+				showToast({ content: '<strong>The same inputed values are not allowed!</strong>', type: 'bad' });
+				setTimeout(() => {
+					dest.attr('placeholder', placeHolder);
+				}, 2000);
+			} else if ($.trim(origin.val()) == '' || $.trim(dest.val()) == '') {
+				e.preventDefault();
+				showToast({ content: '<strong>Please enter value on both fields!</strong>', type: 'bad' });
+			} else {
+				e.preventDefault();
+				if (origin.attr('data-set') != undefined && dest.attr('data-set') != undefined) {
+					var origin_data = JSON.parse(origin.attr('data-set'));
+					var dest_data = JSON.parse(dest.attr('data-set'));
+					getSearchResults(origin_data, dest_data, this);
+				} else {
+					showToast({ content: 'Please enter the origin and detination routes you want to know', type: 'info' });
 				}
 			}
 		}
 	});
 
 	$('#detailed-routes').on('click', function (e) {
-		var origin_all_routes_data = localStorage.getItem('origin_all_routes');
-		var destination_all_routes_data = localStorage.getItem('destination_all_routes');
-		if (origin_all_routes_data != null && destination_all_routes_data != null) {
-			$('.tc1-loader-overlay').addClass('is-open');
+		var detailed_routes = localStorage.getItem('detailed_routes');
+		if (detailed_routes != null) {
 			setTimeout(() => {
-				// console.log(localStorage.getItem('search_results'));
-				window.location = '/routes?mode=complete';
-			}, 3000);
+				// console.log(localStorage.getItem('detailed_routes'));
+				window.location = '/routes' + window.location.search;
+			}, 777);
 		}
 	});
-});
+};
 
 function generateNCRRoutes(direction, oData) {
 	var oClass = new JSONQuery(dataObject.ncr[direction]);
@@ -155,6 +132,7 @@ function generateNCRRoutes(direction, oData) {
 }
 
 var generateRoutes = function (oData, gointTo, urBoundTo) {
+	// console.log(oData, gointTo, urBoundTo);
 	var oRoutes = {};
 	var oTollways = oData.tollways;
 	var oTollSubjects = (oData.toll_subjects != undefined && oData.toll_subjects.length) ? oData.toll_subjects : false;
@@ -169,19 +147,8 @@ var generateRoutes = function (oData, gointTo, urBoundTo) {
 	}
 	console.log('started:', $.trim(oData.start), ', bound to:', $.trim(urBoundTo), 'ended:', $.trim(gointTo));
 
-	if (urBoundTo == 'north') {
-		if (oData.start == 'north') {
-			oTollways = oTollways.reverse();
-			if (oTollSubjects) {
-				oTollSubjects = oTollSubjects.reverse();
-			}
-		}
-	}
 	for (var c in oTollways) {
 		var toll = oTollways[c];
-		if (oData.province == 'NCR' && toll == 'nlex' && urBoundTo == 'south') {
-			// continue;
-		}
 		var tollway = dataObject[toll];
 		var allow = true;
 		if (oTollSubjects) {
@@ -193,7 +160,7 @@ var generateRoutes = function (oData, gointTo, urBoundTo) {
 			for (var class_name in tollway) {
 				if (toll == 'ncr') {
 					class_name = urBoundTo;
-					console.log(class_name, tollway);
+					// console.log(class_name, tollway);
 				}
 				if (tollway[class_name] != undefined) {
 					var oClasses = tollway[class_name];
@@ -352,10 +319,10 @@ var generateRoutes = function (oData, gointTo, urBoundTo) {
 var runCitySearchData = function () {
 	$('.cities-input').each(function (i, elem) {
 		// console.log(i, elem);
-		$(elem).on('input paste', async function (e) {
+		$(elem).on('input paste', function (e) {
 			// console.log(e);
 			var jsonCities = new JSONQuery(dataObject.cities);
-			const joinedData = await jsonCities.join(dataObject.archipelago, "province");
+			const joinedData = jsonCities.join(dataObject.archipelago, "province");
 			var query = {
 				select: { fields: '*' },
 				where: {
@@ -376,15 +343,72 @@ var runCitySearchData = function () {
 			autocomplete(e.target, result.data, 'name');
 		}).on('keyup', function (e) {
 			if (e.keyCode == 13) {
-				$('#search_form').trigger('submit');
+				var origin = $('#origin');
+				var dest = $('#destination');
+				if (origin.val().trim() != '' && dest.val().trim()) {
+					$('#search_form').trigger('submit');
+				} else {
+					if (e.target.id == 'origin') {
+						$('.cities-input').get(1).focus();
+					} else {
+						$('.cities-input').get(0).focus();
+					}
+				}
 			}
 		}).on('change', function (e) {
 			if (e.keyCode == 13) {
-				$('#search_form').trigger('submit');
+				var origin = $('#origin');
+				var dest = $('#destination');
+				if (origin.val().trim() != '' && dest.val().trim()) {
+					$('#search_form').trigger('submit');
+				} else {
+					if (e.target.id == 'origin') {
+						$('.cities-input').get(1).focus();
+					} else {
+						$('.cities-input').get(0).focus();
+					}
+				}
 			}
+		}).on('search', function (e) {
+			$(e.target).removeAttr('data-set');
 		});
+	});
+	switch (window.location.pathname) {
+		case '/results':
+			runSearchResults();
+			break;
+		case '/routes':
+			runDetailedRoutes();
+			break;
+		default:
+			$('.tc1-loader-overlay').removeClass('is-open');
+			break;
+	}
+}
 
-		if (i === ($('.cities-input').length - 1)) {
+var getSearchResults = function (origin_data, dest_data, oThis) {
+	// console.log(origin_data, dest_data, oThis);
+	var originRoutes = generateRoutes(origin_data, dest_data.start);
+	var destinationRoutes = generateRoutes(dest_data, origin_data.start);
+	// console.log(originRoutes, destinationRoutes);
+
+	var oAllData = runNCRData(origin_data, originRoutes, dest_data, destinationRoutes);
+	originRoutes = oAllData.origin;
+	destinationRoutes = oAllData.destination;
+
+	if (Object.keys(originRoutes).length && Object.keys(destinationRoutes).length) {
+		localStorage.setItem('search_results', JSON.stringify({
+			'origin': originRoutes, 'destination': destinationRoutes,
+			'origin_dataset': origin_data, 'destination_dataset': dest_data,
+		}));
+		
+		// console.log(localStorage.getItem('search_results'));
+		if (oThis != true) {
+			// window.location = '/results?origin=' + encodeURI($.trim(origin.val())) + '&destination=' + encodeURI($.trim(dest.val()));
+			isSubmitting = true;
+			$('.tc1-loader-overlay').addClass('is-open');
+			$(oThis).submit();
+		} else {
 			switch (window.location.pathname) {
 				case '/results':
 					runSearchResults();
@@ -394,40 +418,108 @@ var runCitySearchData = function () {
 					break;
 			}
 		}
-	});
+	} else {
+		showToast({
+			content: 'We are trying to gather accurate data for this query, We will inform you as soon as we have gathered the data. Thanks!',
+			type: 'alert',
+			closure: function () {
+				if ("Notification" in window) {
+					console.error("This browser does not support desktop notification");
+					showToast({ content: 'This browser does not support desktop notification', type: 'bad' });
+				} else {
+					Notification.requestPermission().then(function (permission) {
+						if (permission === "granted") {
+							showToast({ content: 'We will notify you in regarding routes & data updates.', type: 'success' });
+						}
+					});
+				}
+			}
+		});
+	}
 }
 
 var runSearchResults = function () {
+	var urlParam = urlParams();
+	var origin = $('#origin');
+	var dest = $('#destination');
+
+	if (urlParam.size) {
+		var originValue = urlParam.get('origin').toString();
+		origin.val(originValue);
+
+		var destValue = urlParam.get('destination').toString();
+		dest.val(destValue);
+	}
+
 	var search_results = localStorage.getItem('search_results');
+	// console.log(search_results);
 	if (search_results != null) {
 		search_results = JSON.parse(search_results);
-		var urlParam = urlParams();
-		
-		if (urlParam.size) {
-			var origin = $('#origin');
-			var originValue = urlParam.get('origin').toString();
-			origin.val(originValue);
 
-			var dest = $('#destination');
-			var destValue = urlParam.get('destination').toString();
-			dest.val(destValue);
-			
-			// ORIGIN
-			origin.attr('data-set', JSON.stringify(search_results.origin_dataset));
-			// DESTINATION
-			dest.attr('data-set', JSON.stringify(search_results.destination_dataset));
+		// ORIGIN
+		origin.attr('data-set', JSON.stringify(search_results.origin_dataset));
+		// DESTINATION
+		dest.attr('data-set', JSON.stringify(search_results.destination_dataset));
 
-			$('.tc1-loader-overlay').addClass('is-open');
-			setTimeout(() => {
-				renderSearchResults();
-			}, 1000);
-		}
+		setTimeout(() => {
+			switch (window.location.pathname) {
+				case '/results':
+					renderSearchResults();
+					break;
+				case '/routes':
+					
+					break;
+			}
+		}, 1000);
+	} else {
+		$('.cities-input').each(function (i, elem) {
+			var jsonCities = new JSONQuery(dataObject.cities);
+			var joinedData = jsonCities.join(dataObject.archipelago, "province");
+			var splited = elem.value.split(', ');
+			var cityname = splited[0].replace(' City', '');
+			var provincename = splited[1];
+
+			var query = {
+				select: { fields: '*' },
+				where: {
+					condition: [
+						{ field: 'name', operator: 'like', value: '%' + cityname + '%' },
+						{ field: 'province', operator: 'like', value: '%' + provincename + '%' },
+					]
+				}
+			};
+			// console.log(query);
+			var result = joinedData.execute(query, {
+				'modify': ['name'],
+				'expressions': [
+					{ 'concat': ['city', ', ', 'province'] },
+				]
+			});
+			// console.log(result);
+			if (result.data.length) {
+				if (elem.id == 'origin') {
+					// ORIGIN
+					origin.attr('data-set', JSON.stringify(result.data[0]));
+				} else {
+					// DESTINATION
+					dest.attr('data-set', JSON.stringify(result.data[0]));
+				}
+			}
+			if (i == ($('.cities-input').length - 1)) {
+				var origin_data = JSON.parse(origin.attr('data-set'));
+				var dest_data = JSON.parse(dest.attr('data-set'));
+				// console.log(origin_data, dest_data);
+				setTimeout(() => {
+					getSearchResults(origin_data, dest_data, true);
+				}, 333);
+			}
+		});
 	}
 }
 
 var renderSearchResults = function () {
 	var oResults = JSON.parse(localStorage.getItem('search_results'));
-	console.log(oResults);
+	// console.log(oResults);
 	var expresswayData = dataObject.expressways;
 	// ORIGIN
 	var origin = $('#origin');
@@ -443,41 +535,53 @@ var renderSearchResults = function () {
 		var dest_data = JSON.parse(dest.attr('data-set'));
 	}
 
+	var oDetailedOrigin = [];
+	var oDetailedDestination = [];
+	var oFinalDetailed = [];
+
 	setTimeout(() => {
 		var sameProvince = origin_data.province == dest_data.province;
 		/* render origin */
 		var oOrigin = oResults.origin;
 		var uiOrigin = $('.origin-results');
 		uiOrigin.find('.timeline-intro-head').html('From ' + origin.val());
-		// if (sameProvince) {
-			var oOriginRev = Object.keys(oOrigin);
-		// } else {
-		// 	var oOriginRev = Object.keys(oOrigin).reverse();
-		// }
+		var oOriginRev = Object.keys(oOrigin);
 
 		for (var x in oOriginRev) {
 			var route = oOriginRev[x];
-			// for (var route in oOrigin) {
 			var oItems = oOrigin[route];
+			var oDetailedRoute = {};
 			// console.log(oItems);
 			var timelineTitle = expresswayData[route].fullname;
 			var oCloneTimeline = uiOrigin.find('.timeline:first').clone();
+			// timelineTitle += ' - ' + classname.ucWords().replace('_', ' ');
+			oCloneTimeline.find('.timeline-inverted .timeline-title').html('Take ' + timelineTitle);
+			oDetailedRoute[route] = {};
+			var cnt = 0, sEnter = '';
 			for (var classname in oItems) {
-				// timelineTitle += ' - ' + classname.ucWords().replace('_', ' ');
-				oCloneTimeline.find('.timeline-inverted .timeline-title').html('Take ' + timelineTitle);
-
 				var oRoute = oItems[classname];
+				oDetailedRoute[route][classname] = [];
 				let pUI = '<ul>';
 				for (var i in oRoute) {
 					if (sameProvince) {
 						var toLook = oRoute[i].entry;
+						oDetailedRoute[route][classname].push({
+							entry: oRoute[i].exit,
+							exit: oRoute[i].entry,
+							fee: oRoute[i].fee
+						});
 					} else {
 						var toLook = oRoute[i].exit;
+						oDetailedRoute[route][classname].push({
+							entry: oRoute[i].entry,
+							exit: oRoute[i].exit,
+							fee: oRoute[i].fee
+						});
 					}
 					if (route == 'ncr') {
 						toLook = ($.inArray(toLook, ['nlex', 'slex']) >= 0) ? toLook.toUpperCase() : toLook;
 					}
-					var travelTo = (route == 'ncr' ? toLook + ' City</b>' : toLook + '</b> tollgate');
+					var travelTo = ((route == 'ncr' && $.inArray(toLook.toLowerCase(), ['nlex', 'slex']) < 0) ? toLook + ' City</b>' : toLook + '</b> tollgate');
 					if (pUI.indexOf(toLook) < 0) {
 						if (route == 'ncr') {
 							pUI += '<li>Travel to <b>' + travelTo + '</li>'
@@ -486,67 +590,117 @@ var renderSearchResults = function () {
 						}
 					}
 				}
-				oCloneTimeline.find('.timeline-inverted .timeline-body').append(pUI + '</ul>');
-				break;
+				if (cnt == 0) {
+					sEnter = oRoute[i].entry;
+					oCloneTimeline.find('.timeline-inverted .timeline-body').append(pUI + '</ul>');
+				}
+				cnt++;
+				// break;
 			}
+			var sExit = oRoute[i].exit;
 			uiOrigin.find('.page-body').append(oCloneTimeline.removeClass('hide'));
+
+			oDetailedOrigin.push({
+				'expressway': 'Take ' + timelineTitle,
+				'enter': route == 'ncr' ? ($.inArray(sEnter.toLowerCase(), ['nlex', 'slex']) >= 0 ? sEnter.toUpperCase() + ' tollgate' : sEnter + ' City') : sEnter + ' tollgate',
+				'exit': route == 'ncr' ? ($.inArray(sExit.toLowerCase(), ['nlex', 'slex']) >= 0 ? sExit.toUpperCase() + ' tollgate' : sExit + ' City') : sExit + ' tollgate',
+				'way': route,
+				'details': oDetailedRoute[route]
+			});
 		}
+		oFinalDetailed.push({ from: origin.val(), routes: oDetailedOrigin, province: origin_data.province });
+		// console.log(oFinalDetailed);
 		// console.log(uiOrigin.get(0));
-		localStorage.setItem('origin_all_routes', JSON.stringify(oOrigin));
 
 		/* render destination */
 		var oDestination = oResults.destination;
 		var uiDestination = $('.destination-results');
 		uiDestination.find('.timeline-intro-head').html('to ' + dest.val());
-		// if (sameProvince) {
-		// 	var oDestinationRev = Object.keys(oDestination).reverse();
-		// } else {
-			var oDestinationRev = Object.keys(oDestination);
-		// }
+		var oDestinationRev = Object.keys(oDestination).reverse();
 
 		for (var x in oDestinationRev) {
 			var route = oDestinationRev[x];
-			// for (var route in oDestination) {
 			var oItems = oDestination[route];
+			var oDetailedRoute = {};
 			// console.log(oItems, route);
 			var timelineTitle = expresswayData[route].fullname;
 			var oCloneTimeline = uiDestination.find('.timeline:first').clone();
-			for (var classname in oItems) {
-				// timelineTitle += ' - ' + classname.ucWords().replace('_', ' ');
-				oCloneTimeline.find('.timeline-inverted .timeline-title').html((route == 'ncr' ? 'Upon ' : 'Take ') + timelineTitle);
+			// timelineTitle += ' - ' + classname.ucWords().replace('_', ' ');
+			oCloneTimeline.find('.timeline-inverted .timeline-title').html((route == 'ncr' ? 'Upon ' : 'Take ') + timelineTitle);
 
+			oDetailedRoute[route] = {};
+			var cnt = 0, sEnter = '';
+			for (var classname in oItems) {
 				var oRoute = oItems[classname];
+				oDetailedRoute[route][classname] = [];
+
 				let pUI = '<ul>';
 				for (var i in oRoute) {
-					var toLook = oRoute[i].entry;
-					if (route == 'ncr') {
-						toLook = ($.inArray(toLook, ['nlex', 'slex']) >= 0) ? toLook.toUpperCase() : toLook;
-					}
-					var travelTo = (route == 'ncr' ? toLook + ' City</b>' : toLook + '</b> tollgate');
-					if (pUI.indexOf(toLook) < 0) {
-						if (route == 'ncr') {
-							pUI += '<li>Travel to <b>' + travelTo + '</li>'
+					if (oRoute[i].entry != oRoute[i].exit) {
+						var toLook = oRoute[i].entry;
+						if (sameProvince) {
+							oDetailedRoute[route][classname].push({
+								entry: oRoute[i].entry,
+								exit: oRoute[i].exit,
+								fee: oRoute[i].fee
+							});
 						} else {
-							if (origin_data.start == 'north') {
-								pUI += '<li>Enter <b>' + travelTo + '</li>'
+							oDetailedRoute[route][classname].push({
+								entry: oRoute[i].exit,
+								exit: oRoute[i].entry,
+								fee: oRoute[i].fee
+							});
+						}
+						if (route == 'ncr') {
+							toLook = ($.inArray(toLook, ['nlex', 'slex']) >= 0) ? toLook.toUpperCase() : toLook;
+						}
+						var travelTo = ((route == 'ncr' && $.inArray(toLook.toLowerCase(), ['nlex', 'slex']) < 0) ? toLook + ' City</b>' : toLook + '</b> tollgate');
+						if (pUI.indexOf(toLook) < 0) {
+							if (route == 'ncr') {
+								pUI += '<li>Travel to <b>' + travelTo + '</li>'
 							} else {
-								pUI += '<li>Exit through <b>' + travelTo + '</li>'
+								if (origin_data.start == 'north') {
+									pUI += '<li>Exit through <b>' + travelTo + '</li>'
+								} else {
+									pUI += '<li>Enter <b>' + travelTo + '</li>'
+								}
 							}
 						}
 					}
 				}
-				oCloneTimeline.find('.timeline-inverted .timeline-body').append(pUI + '</ul>');
-				break;
+				if (cnt == 0) {
+					sEnter = oRoute[i].exit;
+					oCloneTimeline.find('.timeline-inverted .timeline-body').append(pUI + '</ul>');
+				}
+				cnt++;
+				// break;
 			}
+			var sExit = oRoute[i].entry;
 			uiDestination.find('.page-body').append(oCloneTimeline.removeClass('hide'));
+
+			oDetailedDestination.push({
+				'expressway': (route == 'ncr' ? 'Upon ' : 'Take ') + timelineTitle,
+				'enter': route == 'ncr' ? ($.inArray(sEnter.toLowerCase(), ['nlex', 'slex']) >= 0 ? sEnter.toUpperCase() + ' tollgate' : sEnter + ' City') : sEnter + ' tollgate',
+				'exit': route == 'ncr' ? ($.inArray(sExit.toLowerCase(), ['nlex', 'slex']) >= 0 ? sExit.toUpperCase() + ' tollgate' : sExit + ' City') : sExit + ' tollgate',
+				'way': route,
+				'details': oDetailedRoute[route]
+			});
 		}
-		localStorage.setItem('destination_all_routes', JSON.stringify(oDestination));
-	}, 333);
+		oFinalDetailed.push({ to: dest.val(), routes: oDetailedDestination, province: dest_data.province });
+		console.log(oFinalDetailed);
+		localStorage.setItem('detailed_routes', JSON.stringify(oFinalDetailed));
+
+		if (sameProvince) {
+			$('<p class="mbr-fonts-style mbr-text display-7">* Routes may not be accurate when the origin and destination are close to each other.<br>Please ensure that the desired routes are sufficiently distant from each other for accurate results.</p>').insertBefore($('#detailed-routes'));
+		}
+
+		$('.tc1-loader-overlay').removeClass('is-open');
+	}, 1000);
 }
 
 function runNCRData(origin_data, originRoutes, dest_data, destinationRoutes) {
-	if ($.inArray('ncr', origin_data.tollways) >= 0 || $.inArray('ncr', dest_data.tollways) >= 0) {
-		var bBetweenMain = (originRoutes.slex != undefined && destinationRoutes.nlex != undefined)
+	// if ($.inArray('ncr', origin_data.tollways) >= 0 || $.inArray('ncr', dest_data.tollways) >= 0) {
+		/* var bBetweenMain = (originRoutes.slex != undefined && destinationRoutes.nlex != undefined)
 			|| (originRoutes.nlex != undefined && destinationRoutes.slex != undefined)
 			|| (originRoutes.nlex != undefined && destinationRoutes.tplex != undefined)
 			|| (originRoutes.slex != undefined && destinationRoutes.tplex != undefined)
@@ -589,15 +743,15 @@ function runNCRData(origin_data, originRoutes, dest_data, destinationRoutes) {
 					destinationRoutes['ncr'][direction].push(oPush);
 				}
 			}
-		}
+		} */
 
-		var bothExpress = (originRoutes.nlex == undefined && destinationRoutes.nlex == undefined)
-			|| (originRoutes.slex == undefined && destinationRoutes.slex == undefined)
+		var bothExpress = (originRoutes.nlex != undefined && destinationRoutes.slex != undefined)
+			|| (originRoutes.slex != undefined && destinationRoutes.nlex != undefined)
 			;
 
 		if (bothExpress) {
-			if (originRoutes.ncr == undefined) {
-				var direction = origin_data.start;
+			if (originRoutes.ncr == undefined && origin_data.region != 'NCR') {
+				var direction = dest_data.start;
 				result = generateNCRRoutes(direction, origin_data);
 				var oPush = {
 					'entry': result.data[0].entry,
@@ -610,10 +764,8 @@ function runNCRData(origin_data, originRoutes, dest_data, destinationRoutes) {
 				originRoutes['ncr'] = {};
 				originRoutes['ncr'][direction] = [];
 				originRoutes['ncr'][direction].push(oPush);
-			}
-
-			if (destinationRoutes.ncr == undefined) {
-				var direction = dest_data.start;
+			} else if (destinationRoutes.ncr == undefined && dest_data.region != 'NCR') {
+				var direction = origin_data.start;
 				result = generateNCRRoutes(direction, dest_data);
 				var oPush = {
 					'entry': result.data[0].entry,
@@ -630,20 +782,136 @@ function runNCRData(origin_data, originRoutes, dest_data, destinationRoutes) {
 		}
 
 		return { origin: originRoutes, destination: destinationRoutes };
-	}
+	// }
 }
 
 function runDetailedRoutes() {
-	var origin_all_routes_data = localStorage.getItem('origin_all_routes');
-	var destination_all_routes_data = localStorage.getItem('destination_all_routes');
-	if (origin_all_routes_data != null && destination_all_routes_data != null) {
-		$('.tc1-loader-overlay').addClass('is-open');
-		var origin_all_routes = JSON.parse(origin_all_routes_data);
-		var destination_all_routes = JSON.parse(destination_all_routes_data);
-		setTimeout(() => {
-			console.log(origin_all_routes);
-			console.log(destination_all_routes);
-		}, 3000);
+	var detailed_routes = localStorage.getItem('detailed_routes');
+	if (detailed_routes != null) {
+		var routes = JSON.parse(detailed_routes);
+
+		if (routes.length) {
+			console.log(routes);
+			runSearchResults();
+			setTimeout(() => {
+				var uiRoute = $('.routes-results');
+				var oOrigin = routes[0];
+				var oDestination = routes[1];
+
+				var uiFromContent = uiRoute.find('.page-content:first').clone(true).removeClass('hide');
+				uiFromContent.find('.page-header .timeline-intro-head').html('From ' + oOrigin.from + ' To ' + oDestination.to);
+				var uiFromTimeline = uiFromContent.find('.page-body .timeline').clone(true).removeClass('hide');
+				var sLastPoint = '';
+
+				for (var x in oOrigin.routes) {
+					var oFromGate = oOrigin.routes[x];
+					var sWay = oFromGate.way;
+					var isOR = false;
+					if (x == 0) {
+						var uiTimeline = uiFromTimeline;
+					} else {
+						var uiOther = uiFromTimeline.clone(true);
+						var uiTimeline = uiOther;
+						if (oOrigin.province == 'NCR') {
+							uiTimeline.find('.timeline-badge').append('OR');
+							isOR = true;
+						}
+					}
+
+					uiTimeline.find('.timeline-title').html(oFromGate.expressway);
+					
+					var sPrefix = 'Enter ';
+					var sSuffix = 'exit to ';
+					if (sWay == 'ncr') {
+						sLastPoint = oFromGate.exit;
+						sPrefix = 'Travel from ';
+						sSuffix = 'enter ';
+						var uiRoutes = '<ul><li>' + sPrefix + '<b>' + oFromGate.enter + '</b> and ' + sSuffix + '<b>' + sLastPoint + '</b></li><li class="toll" style="margin-left: 15px;"><a href="https://www.google.com/maps/dir/' + oFromGate.enter + '/' + sLastPoint + '" target="_blank"><b>Show Direction Map</b></a></li></ul>';
+						uiTimeline.find('.timeline-body').html(uiRoutes);
+					} else {
+						var wayCount = oFromGate.details.class_1.length;
+						var sText = isOR ? '<small class="text-info">Click below to expand</small>' : '';
+						var uiRoutes = sText + '<ul style="cursor: pointer;" onclick="runCollapseEvent(this);"><li>There ' + (wayCount > 1 ? 'are ' : 'is ') + '<b>' + (wayCount > 1 ? wayCount + ' ways' : 'way') + '</b> to enter <b>' + sLastPoint + '</b></li></ul><ul class="expandable"' + (isOR ? ' style="display: none;"' : '') + '>';
+						for (var classname in oFromGate.details) {
+							var oToll = oFromGate.details[classname];
+							var uiTolls = '';
+							for (var i in oToll) {
+								var oItem = oToll[i];
+								if (i == 0) {
+									uiTolls += '<li class="toll" style="margin-left: 15px; margin-top: 10px;"><b>' + classname.ucWords().replace('_', ' ') + ' - Vehicles:</b></li>';
+								}
+								var iFee = new Intl.NumberFormat('en-PH', { style: 'currency', currency: 'PHP' }).format(oItem.fee);
+								uiTolls += '<li class="toll route" style="margin-left: 30px;">' + (wayCount > 1 ? (parseInt(i) + 1) + '. ' : '') + 'Enter ' + oItem.entry + ' and exit ' + oItem.exit + '</li><li class="toll fee" style="margin-left: 45px;"><b>Fee: ' + iFee + '</b></li><li class="toll fee" style="margin-left: 45px;"><a href="https://www.google.com/maps/dir/' + oItem.entry + '/' + oItem.exit + '" target="_blank"><b>Show Direction Map</b></a></li>';
+							}
+							uiRoutes += uiTolls;
+						}
+						uiTimeline.find('.timeline-body').html('</ul>' + uiRoutes + '</ul>');
+					}
+
+					uiFromContent.find('.page-body').append(uiTimeline);
+					
+				}
+				uiFromContent.find('.page-body .timeline.hide').remove();
+				uiRoute.append(uiFromContent);
+
+				var uiToContent = uiRoute.find('.page-content:first').clone(true).removeClass('hide');
+				// uiToContent.find('.page-header .timeline-intro-head').addClass('mt-3').html('To ' + oDestination.to);
+				var uiToTimeline = uiToContent.find('.page-body .timeline').clone(true).removeClass('hide');
+
+				for (var x in oDestination.routes) {
+					var oToGate = oDestination.routes[x];
+					var sWay = oToGate.way;
+					var isOR = false;
+					if (x == 0) {
+						var uiTimeline = uiToTimeline;
+					} else {
+						var uiOther = uiToTimeline.clone(true);
+						var uiTimeline = uiOther;
+						if (oDestination.province == 'NCR') {
+							uiTimeline.find('.timeline-badge').append('OR');
+							isOR = true;
+						}
+					}
+
+					uiTimeline.find('.timeline-title').html(oToGate.expressway);
+
+					var sPrefix = 'Enter ';
+					var sSuffix = 'exit to ';
+					if (sWay == 'ncr') {
+						sLastPoint = oToGate.exit;
+						sPrefix = 'Travel from ';
+						sSuffix = 'enter ';
+						var uiRoutes = '<ul><li>' + sPrefix + '<b>' + oToGate.enter + '</b> and ' + sSuffix + '<b>' + sLastPoint + '</b></li><li class="toll" style="margin-left: 15px;"><a href="https://www.google.com/maps/dir/' + oToGate.enter + '/' + sLastPoint + '" target="_blank"><b>Show Direction Map</b></a></li></ul>';
+						uiTimeline.find('.timeline-body').html(uiRoutes);
+					} else {
+						var wayCount = oToGate.details.class_1.length;
+						var sText = isOR ? '<small class="text-info">Click below to expand</small>' : '';
+						var uiRoutes = sText + '<ul style="cursor: pointer;" onclick="runCollapseEvent(this);"><li>There ' + (wayCount > 1 ? 'are ' : 'is ') + '<b>' + (wayCount > 1 ? wayCount + ' ways' : 'way') + '</b> to enter <b>' + oToGate.exit + '</b></li></ul><ul class="expandable"' + (isOR ? ' style="display: none;"' : '') + '>';
+						for (var classname in oToGate.details) {
+							var oToll = oToGate.details[classname];
+							var uiTolls = '';
+							for (var i in oToll) {
+								var oItem = oToll[i];
+								if (i == 0) {
+									uiTolls += '<li class="toll" style="margin-left: 15px; margin-top: 10px;"><b>' + classname.ucWords().replace('_', ' ') + ' - Vehicles:</b></li>';
+								}
+								var iFee = new Intl.NumberFormat('en-PH', { style: 'currency', currency: 'PHP' }).format(oItem.fee);
+								uiTolls += '<li class="toll route" style="margin-left: 30px;">' + (wayCount > 1 ? (parseInt(i) + 1) + '. ' : '') + 'Enter ' + oItem.entry + ' and exit ' + oItem.exit + '</li><li class="toll fee" style="margin-left: 45px;"><b>Fee: ' + iFee + '</b></li><li class="toll fee" style="margin-left: 45px;"><a href="https://www.google.com/maps/dir/' + oItem.entry + '/' + oItem.exit + '" target="_blank"><b>Show Direction Map</b></a></li>';
+							}
+							uiRoutes += uiTolls;
+						}
+						uiTimeline.find('.timeline-body').html('</ul>' + uiRoutes + '</ul>');
+					}
+
+					uiFromContent.find('.page-body').append(uiTimeline);
+				}
+				uiToContent.find('.page-body .timeline.hide').remove();
+				uiRoute.append(uiToContent);
+
+				$('.timeline-body').disableSelection();
+				$('.tc1-loader-overlay').removeClass('is-open');
+			}, 777);
+		}
 	}
 }
 
@@ -689,5 +957,17 @@ function addTheDataSets(originValue, destValue) {
 	// console.log(destResult, destResult.data);
 	if (destResult.data.length) {
 		dest.attr('data-set', JSON.stringify(destResult.data[0]));
+	}
+}
+
+function runCollapseEvent(target) {
+	var oThis = $(target);
+	// console.log(oThis.next('.expandable').is(':visible'));
+	if (oThis.next('.expandable').is(':visible') == false) {
+		oThis.next('.expandable').slideDown();
+		oThis.prev('small').html('Click below to collapse');
+	} else {
+		oThis.next('.expandable').slideUp();
+		oThis.prev('small').html('Click below to expand');
 	}
 }

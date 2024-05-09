@@ -55,23 +55,28 @@ function urlParams() {
 }
 
 function showToast(params) {
-	$('#tc-toast').find('.toast-body').html(params.content);
-	$('#tc-toast').removeClass('bg-success bg-danger bg-warning bg-info');
+	let toastClone = $('#tc-toast').clone().removeAttr('id');
+	toastClone.find('.toast-body').html(params.content);
+	toastClone.removeClass('bg-success bg-danger bg-warning bg-info');
 	switch (params.type) {
 		case 'good':
-			$('#tc-toast').addClass('bg-success');
+			toastClone.addClass('bg-success');
 			break;
 		case 'bad':
-			$('#tc-toast').addClass('bg-danger');
+			toastClone.addClass('bg-danger');
 			break;
 		case 'alert':
-			$('#tc-toast').addClass('bg-warning');
+			toastClone.addClass('bg-warning');
 			break;
 		case 'info':
-			$('#tc-toast').addClass('bg-info');
+			toastClone.addClass('bg-info');
 			break;
 	}
-	$('#tc-toast').toast('show');
+	$('.toast-container').prepend(toastClone);
+	toastClone.toast('show');
+	if (typeof params.closure == 'function') {
+		params.closure();
+	}
 }
 
 function showNotification(title, body, redirectUrl) {
@@ -152,3 +157,7 @@ getPhilippineExpresswayDirections(origin, destination, apiKey).then(routes => {
 }).catch(error => {
 	console.error('Error:', error);
 }); */
+
+function getMapDirections(params) {
+	window.open('https://www.google.com/maps/dir/Marikina,+Metro+Manila/Valenzuela,+Metro+Manila/', '_blank');
+}

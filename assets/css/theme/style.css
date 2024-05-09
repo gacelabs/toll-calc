@@ -1444,3 +1444,15 @@ svg {
   list-style-position: inside;
   list-style-type: disclosure-closed;
 }
+
+.timeline-body ul li.toll {
+  list-style-type: circle !important;
+}
+
+.timeline-body ul li.toll.fee {
+  list-style-type: disc !important;
+}
+
+.timeline-body ul li.toll.route {
+  list-style-type: none !important;
+}

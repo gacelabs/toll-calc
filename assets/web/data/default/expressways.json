@@ -1,38 +1,62 @@
 {
 	"ncr": {
-		"fullname": "Epifanio de los Santos Avenue (EDSA)",
+		"fullname": "Epifanio de los Santos Avenue",
+		"shortname": "EDSA",
 		"country": "Philippines"
 	},
 	"tplex": {
 		"fullname": "Tarlac-Pangasinan-La Unioin Expressway",
+		"shortname": "TPLEx",
 		"country": "Philippines"
 	},
 	"nlex": {
 		"fullname": "North Luzon Expressway",
+		"shortname": "NLEx",
 		"country": "Philippines"
 	},
 	"cavitex": {
 		"fullname": "Manila-Cavite Toll Expressway",
+		"shortname": "CAVITEx",
 		"country": "Philippines"
 	},
 	"naiax": {
 		"fullname": "Ninoy Aquino International Airport Expressway",
+		"shortname": "NLEx",
 		"country": "Philippines"
 	},
 	"slex": {
 		"fullname": "South Luzon Expressway",
+		"shortname": "SLEx",
 		"country": "Philippines"
 	},
 	"superhighway": {
-		"fullname": "Apolinario Mabini Superhighway",
+		"fullname": "Southern Tagalog Arterial Road",
+		"shortname": "STAR Tollway",
 		"country": "Philippines"
 	},
 	"calax": {
 		"fullname": "Cavite-Laguna Expressway",
+		"shortname": "CALAx",
 		"country": "Philippines"
 	},
 	"skyway_3": {
 		"fullname": "Metro Manila Skyway Stage 3",
+		"shortname": "Skyway 3",
+		"country": "Philippines"
+	},
+	"sctex": {
+		"fullname": "Subic–Clark–Tarlac Expressway",
+		"shortname": "SCTEx",
+		"country": "Philippines"
+	},
+	"sfex": {
+		"fullname": "Subic Freeport Expressway",
+		"shortname": "SFEx",
+		"country": "Philippines"
+	},
+	"c5x": {
+		"fullname": "C-5 Southlink Expressway",
+		"shortname": "C-5",
 		"country": "Philippines"
 	}
 }

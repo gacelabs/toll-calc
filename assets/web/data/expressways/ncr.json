@@ -2,20 +2,20 @@
 	"north": [
 		{
             "region": "NCR",
-            "entry": "Caloocan (North)",
+            "entry": "(North) Caloocan",
             "came_from": "north",
             "province": ["NCR"],
-            "nearest": ["Valenzuela", "Quezon"],
+            "nearest": ["Valenzuela", "Novaliches"],
 			"tolls": [
                 { "fee": 0, "exit": "nlex" }
             ]
         },
         {
             "region": "NCR",
-            "entry": "Caloocan (South)",
+            "entry": "(South) Caloocan",
             "came_from": "south",
             "province": ["NCR"],
-            "nearest": ["Manila"],
+            "nearest": ["Manila", "Quezon"],
 			"tolls": [
                 { "fee": 0, "exit": "nlex" }
             ]
@@ -25,7 +25,7 @@
             "entry": "Valenzuela",
             "came_from": "north",
             "province": ["NCR"],
-            "nearest": ["Caloocan (North)", "Caloocan (South)"],
+            "nearest": ["Malabon", "(South) Caloocan"],
 			"tolls": [
                 { "fee": 0, "exit": "nlex" }
             ]
@@ -35,7 +35,7 @@
             "entry": "Navotas",
             "came_from": "north",
             "province": ["NCR"],
-            "nearest": ["Malabon", "Caloocan (South)"],
+            "nearest": ["Malabon"],
 			"tolls": [
                 { "fee": 0, "exit": "nlex" }
             ]
@@ -45,7 +45,7 @@
             "entry": "Malabon",
             "came_from": "north",
             "province": ["NCR"],
-            "nearest": ["Caloocan (South)", "Navotas", "Manila"],
+            "nearest": ["(South) Caloocan", "Manila"],
 			"tolls": [
                 { "fee": 0, "exit": "nlex" }
             ]
@@ -55,7 +55,7 @@
             "entry": "Quezon",
             "came_from": "north",
             "province": ["NCR"],
-            "nearest": ["Caloocan (South)", "Marikina", "San Juan"],
+            "nearest": ["(South) Caloocan", "Marikina", "San Juan", "San Mateo"],
 			"tolls": [
                 { "fee": 0, "exit": "nlex" }
             ]
@@ -65,7 +65,7 @@
             "entry": "Marikina",
             "came_from": "south",
             "province": ["NCR", "RIZAL"],
-            "nearest": ["Antipolo", "San Juan"],
+            "nearest": ["Antipolo", "San Juan", "San Mateo"],
 			"tolls": [
                 { "fee": 0, "exit": "nlex" }
             ]
@@ -75,7 +75,7 @@
             "entry": "Manila",
             "came_from": "south",
             "province": ["NCR"],
-            "nearest": ["Pasay"],
+            "nearest": ["Pasay", "Makati", "Mandaluyong"],
 			"tolls": [
                 { "fee": 0, "exit": "nlex" }
             ]
@@ -85,7 +85,7 @@
             "entry": "Mandaluyong",
             "came_from": "south",
             "province": ["NCR"],
-            "nearest": ["Pasay", "Makati"],
+            "nearest": ["Makati", "Pasig"],
 			"tolls": [
                 { "fee": 0, "exit": "nlex" }
             ]
@@ -169,7 +169,7 @@
             "entry": "Muntinlupa",
             "came_from": "south",
             "province": ["NCR", "CAVITE", "LAGUNA"],
-            "nearest": ["Bacoor", "San Pedro"],
+            "nearest": ["San Pedro"],
 			"tolls": [
                 { "fee": 0, "exit": "skyway" },
                 { "fee": 0, "exit": "nlex" }
@@ -179,17 +179,17 @@
 	"south": [
 		{
             "region": "NCR",
-            "entry": "Caloocan (North)",
+            "entry": "(North) Caloocan",
             "came_from": "north",
             "province": ["BULACAN"],
-            "nearest": ["San Jose del Monte"],
+            "nearest": ["San Jose del Monte", "Marilao"],
 			"tolls": [
                 { "fee": 0, "exit": "slex" }
             ]
         },
         {
             "region": "NCR",
-            "entry": "Caloocan (South)",
+            "entry": "(South) Caloocan",
             "came_from": "south",
             "province": ["NCR"],
             "nearest": ["Valenzuela", "Malabon"],
@@ -202,7 +202,7 @@
             "entry": "Valenzuela",
             "came_from": "north",
             "province": ["NCR", "BULACAN"],
-            "nearest": ["Meycauayan", "Caloocan (North)"],
+            "nearest": ["Marilao", "(North) Caloocan"],
 			"tolls": [
                 { "fee": 0, "exit": "slex" }
             ]
@@ -232,7 +232,7 @@
             "entry": "Quezon",
             "came_from": "north",
             "province": ["NCR"],
-            "nearest": ["Caloocan (North)", "San Jose del Monte"],
+            "nearest": ["Novaliches", "(North) Caloocan", "San Jose del Monte"],
 			"tolls": [
                 { "fee": 0, "exit": "slex" }
             ]
@@ -252,7 +252,7 @@
             "entry": "Manila",
             "came_from": "south",
             "province": ["NCR"],
-            "nearest": ["Caloocan (South)", "Quezon"],
+            "nearest": ["(South) Caloocan", "Quezon"],
 			"tolls": [
                 { "fee": 0, "exit": "slex" }
             ]
@@ -262,7 +262,7 @@
             "entry": "Mandaluyong",
             "came_from": "south",
             "province": ["NCR"],
-            "nearest": ["San Juan", "Quezon"],
+            "nearest": ["Manila", "San Juan", "Quezon"],
 			"tolls": [
                 { "fee": 0, "exit": "slex" }
             ]

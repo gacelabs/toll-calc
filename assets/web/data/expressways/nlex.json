@@ -4,7 +4,7 @@
             "region": "NCR",
             "entry": "Balintawak",
             "province": ["NCR"],
-            "nearest": ["Caloocan", "Las Piñas", "Makati", "Malabon", "Mandaluyong", "Manila", "Marikina", "Muntinlupa", "Navotas", "Parañaque", "Pasay", "Pasig", "Pateros", "Quezon", "San Juan", "Taguig", "Valenzuela", "Antipolo"],
+            "nearest": ["(South) Caloocan"],
             "tolls": [
                 { "exit": "Balintawak", "fee": 0 },
                 { "exit": "Mindanao Avenue", "fee": 69 },
@@ -509,7 +509,7 @@
         {
             "region": "III",
             "entry": "Tipo / SFEX",
-            "province": ["BATAAN", "PAMPANGA"],
+            "province": ["BATAAN", "PAMPANGA", "ZAMBALES"],
             "nearest": ["Subic", "Olongapo"],
             "tolls": [
                 { "exit": "Tipo / SFEX", "fee": 0 },
@@ -693,7 +693,7 @@
             "region": "NCR",
             "entry": "Balintawak",
             "province": ["NCR", "BULACAN"],
-            "nearest": ["Caloocan", "Las Piñas", "Makati", "Malabon", "Mandaluyong", "Manila", "Marikina", "Muntinlupa", "Navotas", "Parañaque", "Pasay", "Pasig", "Pateros", "Quezon", "San Juan", "Taguig", "Valenzuela"],
+            "nearest": ["(South) Caloocan"],
             "tolls": [
                 { "exit": "Balintawak", "fee": 0 },
                 { "exit": "Mindanao Avenue", "fee": 172 },
@@ -1198,7 +1198,7 @@
         {
             "region": "III",
             "entry": "Tipo / SFEX",
-            "province": ["BATAAN", "PAMPANGA"],
+            "province": ["BATAAN", "PAMPANGA", "ZAMBALES"],
             "nearest": ["Subic", "Olongapo"],
             "tolls": [
                 { "exit": "Tipo / SFEX", "fee": 0 },
@@ -1382,7 +1382,7 @@
             "region": "NCR",
             "entry": "Balintawak",
             "province": ["NCR", "BULACAN"],
-            "nearest": ["Caloocan", "Las Piñas", "Makati", "Malabon", "Mandaluyong", "Manila", "Marikina", "Muntinlupa", "Navotas", "Parañaque", "Pasay", "Pasig", "Pateros", "Quezon", "San Juan", "Taguig", "Valenzuela"],
+            "nearest": ["(South) Caloocan"],
             "tolls": [
                 { "exit": "Balintawak", "fee": 0 },
                 { "exit": "Mindanao Avenue", "fee": 206 },
@@ -1887,7 +1887,7 @@
         {
             "region": "III",
             "entry": "Tipo / SFEX",
-            "province": ["BATAAN", "PAMPANGA"],
+            "province": ["BATAAN", "PAMPANGA", "ZAMBALES"],
             "nearest": ["Subic", "Olongapo"],
             "tolls": [
                 { "exit": "Tipo / SFEX", "fee": 0 },
