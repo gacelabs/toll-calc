@@ -831,7 +831,7 @@ function runDetailedRoutes() {
 					} else {
 						var wayCount = oFromGate.details.class_1.length;
 						var sText = isOR ? '<small class="text-info">Click below to expand</small>' : '';
-						var uiRoutes = sText + '<ul style="cursor: pointer;" onclick="runCollapseEvent(this);"><li>There ' + (wayCount > 1 ? 'are ' : 'is ') + '<b>' + (wayCount > 1 ? wayCount + ' ways' : 'way') + '</b> to enter <b>' + sLastPoint + '</b></li></ul><ul class="expandable"' + (isOR ? ' style="display: none;"' : '') + '>';
+						var uiRoutes = sText + '<ul style="cursor: pointer;" onclick="runCollapseEvent(this);"><li>There ' + (wayCount > 1 ? 'are ' : 'is ') + '<b>' + (wayCount > 1 ? wayCount + ' ways' : 'way') + '</b> to enter <b>' + oFromGate.exit + '</b></li></ul><ul class="expandable"' + (isOR ? ' style="display: none;"' : '') + '>';
 						for (var classname in oFromGate.details) {
 							var oToll = oFromGate.details[classname];
 							var uiTolls = '';
