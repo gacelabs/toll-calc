@@ -1456,3 +1456,7 @@ svg {
 .timeline-body ul li.toll.route {
   list-style-type: none !important;
 }
+
+.routes-results .timeline-intro-head{
+  font-size: xx-large !important;
+}

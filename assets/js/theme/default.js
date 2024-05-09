@@ -805,7 +805,7 @@ function runDetailedRoutes() {
 				var oDestination = routes[1];
 
 				var uiFromContent = uiRoute.find('.page-content:first').clone(true).removeClass('hide');
-				uiFromContent.find('.page-header .timeline-intro-head').html('From ' + oOrigin.from/*  + ' To ' + oDestination.to */);
+				uiFromContent.find('.page-header .timeline-intro-head').html('From ' + oOrigin.from + '<sup class="text-danger"><big>*</big></sup>');
 				var uiFromTimeline = uiFromContent.find('.page-body .timeline').clone(true).removeClass('hide');
 
 				for (var x in oOrigin.routes) {
@@ -859,7 +859,7 @@ function runDetailedRoutes() {
 				uiRoute.append(uiFromContent);
 
 				var uiToContent = uiRoute.find('.page-content:first').clone(true).removeClass('hide');
-				uiToContent.find('.page-header .timeline-intro-head').addClass('mt-3').html('To ' + oDestination.to);
+				uiToContent.find('.page-header .timeline-intro-head').addClass('mt-3').html('To ' + oDestination.to + '<sup class="text-danger"><big>*</big></sup>');
 				var uiToTimeline = uiToContent.find('.page-body .timeline').clone(true).removeClass('hide');
 
 				for (var x in oDestination.routes) {
