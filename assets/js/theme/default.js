@@ -459,6 +459,19 @@ var getSearchResults = function (origin_data, dest_data, oThis, isTest) {
 					Notification.requestPermission().then(function (permission) {
 						if (permission === "granted") {
 							showToast({ content: 'We will notify you in regarding routes & data updates.', type: 'success' });
+							var notify_no_records = [{ origin: origin_data, destination: dest_data, date: new Date().getTime() }];
+							var prev_records = localStorage.getItem('notify_no_records');
+							if (prev_records != null) {
+								var arPrevData = JSON.parse(prev_records);
+								if (Object.keys(arPrevData).length) {
+									for (var x in arPrevData) {
+										if (arPrevData[x].origin.name != origin_data.name && arPrevData[x].destination.name != dest_data.name) {
+											notify_no_records.push(arPrevData[x]);
+										}
+									}
+								}
+							}
+							localStorage.setItem('notify_no_records', JSON.stringify(notify_no_records));
 						}
 					});
 				}
