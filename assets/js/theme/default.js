@@ -458,7 +458,7 @@ var getSearchResults = function (origin_data, dest_data, oThis, isTest) {
 				} else {
 					Notification.requestPermission().then(function (permission) {
 						if (permission === "granted") {
-							showToast({ content: 'We will notify you in regarding routes & data updates.', type: 'success' });
+							showToast({ content: 'We will notify you in regarding routes & data updates of your query.', type: 'success' });
 							var notify_no_records = [{ origin: origin_data, destination: dest_data, date: new Date().getTime() }];
 							var prev_records = localStorage.getItem('notify_no_records');
 							if (prev_records != null) {

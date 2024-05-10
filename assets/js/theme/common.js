@@ -73,6 +73,7 @@ function showToast(params) {
 			break;
 	}
 	$('.toast-container').prepend(toastClone);
+	toastClone.toast({ delay: 7000 });
 	toastClone.toast('show');
 	if (typeof params.closure == 'function') {
 		params.closure();
