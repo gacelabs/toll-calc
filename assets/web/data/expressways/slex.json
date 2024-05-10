@@ -6,22 +6,22 @@
             "province": ["NCR"],
             "nearest": ["Quezon", "Makati", "Pasay"],
             "tolls": [
-                { "exit": "Skyway", "fee": 0 },
-                { "exit": "Bicutan", "fee": 72 },
-                { "exit": "Sucat", "fee": 118 },
-                { "exit": "Alabang", "fee": 164 },
-                { "exit": "Filinvest", "fee": 169 },
-                { "exit": "MCX", "fee": 201 },
-                { "exit": "Susana Heights", "fee": 182 },
-                { "exit": "San Pedro", "fee": 188 },
-                { "exit": "Southwoods", "fee": 202 },
-                { "exit": "Carmona", "fee": 208 },
-                { "exit": "Mamplasan", "fee": 218 },
-                { "exit": "Santa Rosa", "fee": 227 },
-                { "exit": "ABI/Greenfield", "fee": 239 },
-                { "exit": "Cabuyao", "fee": 247 },
-                { "exit": "Silangan", "fee": 252 },
-                { "exit": "Calamba", "fee": 270 }
+                { "exit": "Skyway", "fee": 0, "province": "NCR" },
+                { "exit": "Bicutan", "fee": 72, "province": "NCR" },
+                { "exit": "Sucat", "fee": 118, "province": "NCR" },
+                { "exit": "Alabang", "fee": 164, "province": "NCR" },
+                { "exit": "Filinvest", "fee": 169, "province": "NCR" },
+                { "exit": "MCX", "fee": 201, "province": "NCR" },
+                { "exit": "Susana Heights", "fee": 182, "province": "NCR" },
+                { "exit": "San Pedro", "fee": 188, "province": "LAGUNA" },
+                { "exit": "Southwoods", "fee": 202, "province": "LAGUNA" },
+                { "exit": "Carmona", "fee": 208, "province": "LAGUNA" },
+                { "exit": "Mamplasan", "fee": 218, "province": "LAGUNA" },
+                { "exit": "Santa Rosa", "fee": 227, "province": "LAGUNA" },
+                { "exit": "ABI/Greenfield", "fee": 239, "province": "LAGUNA" },
+                { "exit": "Cabuyao", "fee": 247, "province": "LAGUNA" },
+                { "exit": "Silangan", "fee": 252, "province": "LAGUNA" },
+                { "exit": "Calamba", "fee": 270, "province": "LAGUNA" }
             ]
         },
         {
@@ -30,23 +30,23 @@
             "province": ["NCR"],
             "nearest": ["Quezon", "Makati", "Pasay"],
             "tolls": [
-                { "exit": "Magallanes", "fee": 0 },
-                { "exit": "Merville", "fee": 49 },
-                { "exit": "Bicutan", "fee": 49 },
-                { "exit": "Sucat", "fee": 84 },
-                { "exit": "Alabang", "fee": 118 },
-                { "exit": "Filinvest", "fee": 123 },
-                { "exit": "MCX", "fee": 155 },
-                { "exit": "Susana Heights", "fee": 136 },
-                { "exit": "San Pedro", "fee": 142 },
-                { "exit": "Southwoods", "fee": 156 },
-                { "exit": "Carmona", "fee": 162 },
-                { "exit": "Mamplasan", "fee": 172 },
-                { "exit": "Santa Rosa", "fee": 181 },
-                { "exit": "ABI/Greenfield", "fee": 193 },
-                { "exit": "Cabuyao", "fee": 201 },
-                { "exit": "Silangan", "fee": 206 },
-                { "exit": "Calamba", "fee": 224 }
+                { "exit": "Magallanes", "fee": 0, "province": "NCR" },
+                { "exit": "Merville", "fee": 49, "province": "NCR" },
+                { "exit": "Bicutan", "fee": 49, "province": "NCR" },
+                { "exit": "Sucat", "fee": 84, "province": "NCR" },
+                { "exit": "Alabang", "fee": 118, "province": "NCR" },
+                { "exit": "Filinvest", "fee": 123, "province": "NCR" },
+                { "exit": "MCX", "fee": 155, "province": "NCR" },
+                { "exit": "Susana Heights", "fee": 136, "province": "NCR" },
+                { "exit": "San Pedro", "fee": 142, "province": "LAGUNA" },
+                { "exit": "Southwoods", "fee": 156, "province": "LAGUNA" },
+                { "exit": "Carmona", "fee": 162, "province": "LAGUNA" },
+                { "exit": "Mamplasan", "fee": 172, "province": "LAGUNA" },
+                { "exit": "Santa Rosa", "fee": 181, "province": "LAGUNA" },
+                { "exit": "ABI/Greenfield", "fee": 193, "province": "LAGUNA" },
+                { "exit": "Cabuyao", "fee": 201, "province": "LAGUNA" },
+                { "exit": "Silangan", "fee": 206, "province": "LAGUNA" },
+                { "exit": "Calamba", "fee": 224, "province": "LAGUNA" }
             ]
         },
         {
@@ -55,22 +55,22 @@
             "province": ["NCR"],
             "nearest": ["Taguig", "Pasig", "Quezon"],
             "tolls": [
-                { "exit": "C5", "fee": 0 },
-                { "exit": "Bicutan", "fee": 49 },
-                { "exit": "Sucat", "fee": 84 },
-                { "exit": "Alabang", "fee": 118 },
-                { "exit": "Filinvest", "fee": 123 },
-                { "exit": "MCX", "fee": 155 },
-                { "exit": "Susana Heights", "fee": 136 },
-                { "exit": "San Pedro", "fee": 142 },
-                { "exit": "Southwoods", "fee": 156 },
-                { "exit": "Carmona", "fee": 162 },
-                { "exit": "Mamplasan", "fee": 172 },
-                { "exit": "Santa Rosa", "fee": 181 },
-                { "exit": "ABI/Greenfield", "fee": 193 },
-                { "exit": "Cabuyao", "fee": 201 },
-                { "exit": "Silangan", "fee": 206 },
-                { "exit": "Calamba", "fee": 224 }
+                { "exit": "C5", "fee": 0, "province": "NCR" },
+                { "exit": "Bicutan", "fee": 49, "province": "NCR" },
+                { "exit": "Sucat", "fee": 84, "province": "NCR" },
+                { "exit": "Alabang", "fee": 118, "province": "NCR" },
+                { "exit": "Filinvest", "fee": 123, "province": "NCR" },
+                { "exit": "MCX", "fee": 155, "province": "NCR" },
+                { "exit": "Susana Heights", "fee": 136, "province": "NCR" },
+                { "exit": "San Pedro", "fee": 142, "province": "LAGUNA" },
+                { "exit": "Southwoods", "fee": 156, "province": "LAGUNA" },
+                { "exit": "Carmona", "fee": 162, "province": "LAGUNA" },
+                { "exit": "Mamplasan", "fee": 172, "province": "LAGUNA" },
+                { "exit": "Santa Rosa", "fee": 181, "province": "LAGUNA" },
+                { "exit": "ABI/Greenfield", "fee": 193, "province": "LAGUNA" },
+                { "exit": "Cabuyao", "fee": 201, "province": "LAGUNA" },
+                { "exit": "Silangan", "fee": 206, "province": "LAGUNA" },
+                { "exit": "Calamba", "fee": 224, "province": "LAGUNA" }
             ]
         },
         {
@@ -79,21 +79,21 @@
             "province": ["NCR"],
             "nearest": ["Parañaque", "Taguig"],
             "tolls": [
-                { "exit": "Bicutan", "fee": 0 },
-                { "exit": "Sucat", "fee": 34 },
-                { "exit": "Alabang", "fee": 69 },
-                { "exit": "Filinvest", "fee": 74 },
-                { "exit": "MCX", "fee": 106 },
-                { "exit": "Susana Heights", "fee": 87 },
-                { "exit": "San Pedro", "fee": 93 },
-                { "exit": "Southwoods", "fee": 107 },
-                { "exit": "Carmona", "fee": 113 },
-                { "exit": "Mamplasan", "fee": 123 },
-                { "exit": "Santa Rosa", "fee": 132 },
-                { "exit": "ABI/Greenfield", "fee": 144 },
-                { "exit": "Cabuyao", "fee": 152 },
-                { "exit": "Silangan", "fee": 157 },
-                { "exit": "Calamba", "fee": 175 }
+                { "exit": "Bicutan", "fee": 0, "province": "NCR" },
+                { "exit": "Sucat", "fee": 34, "province": "NCR" },
+                { "exit": "Alabang", "fee": 69, "province": "NCR" },
+                { "exit": "Filinvest", "fee": 74, "province": "NCR" },
+                { "exit": "MCX", "fee": 106, "province": "NCR" },
+                { "exit": "Susana Heights", "fee": 87, "province": "NCR" },
+                { "exit": "San Pedro", "fee": 93, "province": "LAGUNA" },
+                { "exit": "Southwoods", "fee": 107, "province": "LAGUNA" },
+                { "exit": "Carmona", "fee": 113, "province": "LAGUNA" },
+                { "exit": "Mamplasan", "fee": 123, "province": "LAGUNA" },
+                { "exit": "Santa Rosa", "fee": 132, "province": "LAGUNA" },
+                { "exit": "ABI/Greenfield", "fee": 144, "province": "LAGUNA" },
+                { "exit": "Cabuyao", "fee": 152, "province": "LAGUNA" },
+                { "exit": "Silangan", "fee": 157, "province": "LAGUNA" },
+                { "exit": "Calamba", "fee": 175, "province": "LAGUNA" }
             ]
         },
         {
@@ -102,20 +102,20 @@
             "province": ["NCR"],
             "nearest": ["Parañaque", "Muntinlupa"],
             "tolls": [
-                { "exit": "Sucat", "fee": 0 },
-                { "exit": "Alabang", "fee": 34 },
-                { "exit": "Filinvest", "fee": 39 },
-                { "exit": "MCX", "fee": 71 },
-                { "exit": "Susana Heights", "fee": 52 },
-                { "exit": "San Pedro", "fee": 58 },
-                { "exit": "Southwoods", "fee": 72 },
-                { "exit": "Carmona", "fee": 78 },
-                { "exit": "Mamplasan", "fee": 88 },
-                { "exit": "Santa Rosa", "fee": 97 },
-                { "exit": "ABI/Greenfield", "fee": 109 },
-                { "exit": "Cabuyao", "fee": 117 },
-                { "exit": "Silangan", "fee": 122 },
-                { "exit": "Calamba", "fee": 140 }
+                { "exit": "Sucat", "fee": 0, "province": "NCR" },
+                { "exit": "Alabang", "fee": 34, "province": "NCR" },
+                { "exit": "Filinvest", "fee": 39, "province": "NCR" },
+                { "exit": "MCX", "fee": 71, "province": "NCR" },
+                { "exit": "Susana Heights", "fee": 52, "province": "NCR" },
+                { "exit": "San Pedro", "fee": 58, "province": "LAGUNA" },
+                { "exit": "Southwoods", "fee": 72, "province": "LAGUNA" },
+                { "exit": "Carmona", "fee": 78, "province": "LAGUNA" },
+                { "exit": "Mamplasan", "fee": 88, "province": "LAGUNA" },
+                { "exit": "Santa Rosa", "fee": 97, "province": "LAGUNA" },
+                { "exit": "ABI/Greenfield", "fee": 109, "province": "LAGUNA" },
+                { "exit": "Cabuyao", "fee": 117, "province": "LAGUNA" },
+                { "exit": "Silangan", "fee": 122, "province": "LAGUNA" },
+                { "exit": "Calamba", "fee": 140, "province": "LAGUNA" }
             ]
         },
         {
@@ -124,19 +124,19 @@
             "province": ["NCR"],
             "nearest": ["Muntinlupa"],
             "tolls": [
-                { "exit": "Alabang", "fee": 0 },
-                { "exit": "Filinvest", "fee": 5 },
-                { "exit": "MCX", "fee": 37 },
-                { "exit": "Susana Heights", "fee": 18 },
-                { "exit": "San Pedro", "fee": 24 },
-                { "exit": "Southwoods", "fee": 38 },
-                { "exit": "Carmona", "fee": 44 },
-                { "exit": "Mamplasan", "fee": 54 },
-                { "exit": "Santa Rosa", "fee": 63 },
-                { "exit": "ABI/Greenfield", "fee": 75 },
-                { "exit": "Cabuyao", "fee": 83 },
-                { "exit": "Silangan", "fee": 88 },
-                { "exit": "Calamba", "fee": 106 }
+                { "exit": "Alabang", "fee": 0, "province": "NCR" },
+                { "exit": "Filinvest", "fee": 5, "province": "NCR" },
+                { "exit": "MCX", "fee": 37, "province": "NCR" },
+                { "exit": "Susana Heights", "fee": 18, "province": "NCR" },
+                { "exit": "San Pedro", "fee": 24, "province": "LAGUNA" },
+                { "exit": "Southwoods", "fee": 38, "province": "LAGUNA" },
+                { "exit": "Carmona", "fee": 44, "province": "LAGUNA" },
+                { "exit": "Mamplasan", "fee": 54, "province": "LAGUNA" },
+                { "exit": "Santa Rosa", "fee": 63, "province": "LAGUNA" },
+                { "exit": "ABI/Greenfield", "fee": 75, "province": "LAGUNA" },
+                { "exit": "Cabuyao", "fee": 83, "province": "LAGUNA" },
+                { "exit": "Silangan", "fee": 88, "province": "LAGUNA" },
+                { "exit": "Calamba", "fee": 106, "province": "LAGUNA" }
             ]
         },
         {
@@ -145,18 +145,18 @@
             "province": ["NCR"],
             "nearest": ["Muntinlupa"],
             "tolls": [
-                { "exit": "Filinvest", "fee": 0 },
-                { "exit": "MCX", "fee": 32 },
-                { "exit": "Susana Heights", "fee": 13 },
-                { "exit": "San Pedro", "fee": 19 },
-                { "exit": "Southwoods", "fee": 34 },
-                { "exit": "Carmona", "fee": 39 },
-                { "exit": "Mamplasan", "fee": 49 },
-                { "exit": "Santa Rosa", "fee": 58 },
-                { "exit": "ABI/Greenfield", "fee": 70 },
-                { "exit": "Cabuyao", "fee": 78 },
-                { "exit": "Silangan", "fee": 84 },
-                { "exit": "Calamba", "fee": 101 }
+                { "exit": "Filinvest", "fee": 0, "province": "NCR" },
+                { "exit": "MCX", "fee": 32, "province": "NCR" },
+                { "exit": "Susana Heights", "fee": 13, "province": "NCR" },
+                { "exit": "San Pedro", "fee": 19, "province": "LAGUNA" },
+                { "exit": "Southwoods", "fee": 34, "province": "LAGUNA" },
+                { "exit": "Carmona", "fee": 39, "province": "LAGUNA" },
+                { "exit": "Mamplasan", "fee": 49, "province": "LAGUNA" },
+                { "exit": "Santa Rosa", "fee": 58, "province": "LAGUNA" },
+                { "exit": "ABI/Greenfield", "fee": 70, "province": "LAGUNA" },
+                { "exit": "Cabuyao", "fee": 78, "province": "LAGUNA" },
+                { "exit": "Silangan", "fee": 84, "province": "LAGUNA" },
+                { "exit": "Calamba", "fee": 101, "province": "LAGUNA" }
             ]
         },
         {
@@ -165,17 +165,17 @@
             "province": ["NCR"],
             "nearest": ["Muntinlupa"],
             "tolls": [
-                { "exit": "MCX", "fee": 0 },
-                { "exit": "Susana Heights", "fee": 19 },
-                { "exit": "San Pedro", "fee": 25 },
-                { "exit": "Southwoods", "fee": 40 },
-                { "exit": "Carmona", "fee": 45 },
-                { "exit": "Mamplasan", "fee": 55 },
-                { "exit": "Santa Rosa", "fee": 64 },
-                { "exit": "ABI/Greenfield", "fee": 76 },
-                { "exit": "Cabuyao", "fee": 84 },
-                { "exit": "Silangan", "fee": 90 },
-                { "exit": "Calamba", "fee": 107 }
+                { "exit": "MCX", "fee": 0, "province": "NCR" },
+                { "exit": "Susana Heights", "fee": 19, "province": "NCR" },
+                { "exit": "San Pedro", "fee": 25, "province": "LAGUNA" },
+                { "exit": "Southwoods", "fee": 40, "province": "LAGUNA" },
+                { "exit": "Carmona", "fee": 45, "province": "LAGUNA" },
+                { "exit": "Mamplasan", "fee": 55, "province": "LAGUNA" },
+                { "exit": "Santa Rosa", "fee": 64, "province": "LAGUNA" },
+                { "exit": "ABI/Greenfield", "fee": 76, "province": "LAGUNA" },
+                { "exit": "Cabuyao", "fee": 84, "province": "LAGUNA" },
+                { "exit": "Silangan", "fee": 90, "province": "LAGUNA" },
+                { "exit": "Calamba", "fee": 107, "province": "LAGUNA" }
             ]
         },
         {
@@ -184,16 +184,16 @@
             "province": ["NCR"],
             "nearest": ["Muntinlupa"],
             "tolls": [
-                { "exit": "Susana Heights", "fee": 0 },
-                { "exit": "San Pedro", "fee": 6 },
-                { "exit": "Southwoods", "fee": 21 },
-                { "exit": "Carmona", "fee": 26 },
-                { "exit": "Mamplasan", "fee": 36 },
-                { "exit": "Santa Rosa", "fee": 45 },
-                { "exit": "ABI/Greenfield", "fee": 57 },
-                { "exit": "Cabuyao", "fee": 65 },
-                { "exit": "Silangan", "fee": 71 },
-                { "exit": "Calamba", "fee": 88 }
+                { "exit": "Susana Heights", "fee": 0, "province": "NCR" },
+                { "exit": "San Pedro", "fee": 6, "province": "LAGUNA" },
+                { "exit": "Southwoods", "fee": 21, "province": "LAGUNA" },
+                { "exit": "Carmona", "fee": 26, "province": "LAGUNA" },
+                { "exit": "Mamplasan", "fee": 36, "province": "LAGUNA" },
+                { "exit": "Santa Rosa", "fee": 45, "province": "LAGUNA" },
+                { "exit": "ABI/Greenfield", "fee": 57, "province": "LAGUNA" },
+                { "exit": "Cabuyao", "fee": 65, "province": "LAGUNA" },
+                { "exit": "Silangan", "fee": 71, "province": "LAGUNA" },
+                { "exit": "Calamba", "fee": 88, "province": "LAGUNA" }
             ]
         },
         {
@@ -202,15 +202,15 @@
             "province": ["LAGUNA"],
             "nearest": ["San Pedro", "Biñan"],
             "tolls": [
-                { "exit": "San Pedro", "fee": 0 },
-                { "exit": "Southwoods", "fee": 15 },
-                { "exit": "Carmona", "fee": 20 },
-                { "exit": "Mamplasan", "fee": 30 },
-                { "exit": "Santa Rosa", "fee": 39 },
-                { "exit": "ABI/Greenfield", "fee": 51 },
-                { "exit": "Cabuyao", "fee": 59 },
-                { "exit": "Silangan", "fee": 65 },
-                { "exit": "Calamba", "fee": 82 }
+                { "exit": "San Pedro", "fee": 0, "province": "LAGUNA" },
+                { "exit": "Southwoods", "fee": 15, "province": "LAGUNA" },
+                { "exit": "Carmona", "fee": 20, "province": "LAGUNA" },
+                { "exit": "Mamplasan", "fee": 30, "province": "LAGUNA" },
+                { "exit": "Santa Rosa", "fee": 39, "province": "LAGUNA" },
+                { "exit": "ABI/Greenfield", "fee": 51, "province": "LAGUNA" },
+                { "exit": "Cabuyao", "fee": 59, "province": "LAGUNA" },
+                { "exit": "Silangan", "fee": 65, "province": "LAGUNA" },
+                { "exit": "Calamba", "fee": 82, "province": "LAGUNA" }
             ]
         },
         {
@@ -219,14 +219,14 @@
             "province": ["CAVITE", "LAGUNA"],
             "nearest": ["Biñan", "Carmona"],
             "tolls": [
-                { "exit": "Southwoods", "fee": 0 },
-                { "exit": "Carmona", "fee": 6 },
-                { "exit": "Mamplasan", "fee": 16 },
-                { "exit": "Santa Rosa", "fee": 24 },
-                { "exit": "ABI/Greenfield", "fee": 37 },
-                { "exit": "Cabuyao", "fee": 45 },
-                { "exit": "Silangan", "fee": 50 },
-                { "exit": "Calamba", "fee": 68 }
+                { "exit": "Southwoods", "fee": 0, "province": "LAGUNA" },
+                { "exit": "Carmona", "fee": 6, "province": "LAGUNA" },
+                { "exit": "Mamplasan", "fee": 16, "province": "LAGUNA" },
+                { "exit": "Santa Rosa", "fee": 24, "province": "LAGUNA" },
+                { "exit": "ABI/Greenfield", "fee": 37, "province": "LAGUNA" },
+                { "exit": "Cabuyao", "fee": 45, "province": "LAGUNA" },
+                { "exit": "Silangan", "fee": 50, "province": "LAGUNA" },
+                { "exit": "Calamba", "fee": 68, "province": "LAGUNA" }
             ]
         },
         {
@@ -235,13 +235,13 @@
             "province": ["CAVITE", "LAGUNA"],
             "nearest": ["Carmona", "Biñan"],
             "tolls": [
-                { "exit": "Carmona", "fee": 0 },
-                { "exit": "Mamplasan", "fee": 10 },
-                { "exit": "Santa Rosa", "fee": 19 },
-                { "exit": "ABI/Greenfield", "fee": 31 },
-                { "exit": "Cabuyao", "fee": 39 },
-                { "exit": "Silangan", "fee": 44 },
-                { "exit": "Calamba", "fee": 62 }
+                { "exit": "Carmona", "fee": 0, "province": "LAGUNA" },
+                { "exit": "Mamplasan", "fee": 10, "province": "LAGUNA" },
+                { "exit": "Santa Rosa", "fee": 19, "province": "LAGUNA" },
+                { "exit": "ABI/Greenfield", "fee": 31, "province": "LAGUNA" },
+                { "exit": "Cabuyao", "fee": 39, "province": "LAGUNA" },
+                { "exit": "Silangan", "fee": 44, "province": "LAGUNA" },
+                { "exit": "Calamba", "fee": 62, "province": "LAGUNA" }
             ]
         },
         {
@@ -250,12 +250,12 @@
             "province": ["LAGUNA"],
             "nearest": ["Biñan", "Santa Rosa"],
             "tolls": [
-                { "exit": "Mamplasan", "fee": 0 },
-                { "exit": "Santa Rosa", "fee": 9 },
-                { "exit": "ABI/Greenfield", "fee": 21 },
-                { "exit": "Cabuyao", "fee": 29 },
-                { "exit": "Silangan", "fee": 35 },
-                { "exit": "Calamba", "fee": 52 }
+                { "exit": "Mamplasan", "fee": 0, "province": "LAGUNA" },
+                { "exit": "Santa Rosa", "fee": 9, "province": "LAGUNA" },
+                { "exit": "ABI/Greenfield", "fee": 21, "province": "LAGUNA" },
+                { "exit": "Cabuyao", "fee": 29, "province": "LAGUNA" },
+                { "exit": "Silangan", "fee": 35, "province": "LAGUNA" },
+                { "exit": "Calamba", "fee": 52, "province": "LAGUNA" }
             ]
         },
         {
@@ -264,11 +264,11 @@
             "province": ["LAGUNA"],
             "nearest": ["Santa Rosa", "Cabuyao"],
             "tolls": [
-                { "exit": "Santa Rosa", "fee": 0 },
-                { "exit": "ABI/Greenfield", "fee": 12 },
-                { "exit": "Cabuyao", "fee": 20 },
-                { "exit": "Silangan", "fee": 26 },
-                { "exit": "Calamba", "fee": 43 }
+                { "exit": "Santa Rosa", "fee": 0, "province": "LAGUNA" },
+                { "exit": "ABI/Greenfield", "fee": 12, "province": "LAGUNA" },
+                { "exit": "Cabuyao", "fee": 20, "province": "LAGUNA" },
+                { "exit": "Silangan", "fee": 26, "province": "LAGUNA" },
+                { "exit": "Calamba", "fee": 43, "province": "LAGUNA" }
             ]
         },
         {
@@ -277,10 +277,10 @@
             "province": ["LAGUNA"],
             "nearest": ["Santa Rosa", "Cabuyao"],
             "tolls": [
-                { "exit": "ABI/Greenfield", "fee": 0 },
-                { "exit": "Cabuyao", "fee": 8 },
-                { "exit": "Silangan", "fee": 13 },
-                { "exit": "Calamba", "fee": 31 }
+                { "exit": "ABI/Greenfield", "fee": 0, "province": "LAGUNA" },
+                { "exit": "Cabuyao", "fee": 8, "province": "LAGUNA" },
+                { "exit": "Silangan", "fee": 13, "province": "LAGUNA" },
+                { "exit": "Calamba", "fee": 31, "province": "LAGUNA" }
             ]
         },
         {
@@ -289,9 +289,9 @@
             "province": ["LAGUNA"],
             "nearest": ["Cabuyao", "Calamba"],
             "tolls": [
-                { "exit": "Cabuyao", "fee": 0 },
-                { "exit": "Silangan", "fee": 5 },
-                { "exit": "Calamba", "fee": 23 }
+                { "exit": "Cabuyao", "fee": 0, "province": "LAGUNA" },
+                { "exit": "Silangan", "fee": 5, "province": "LAGUNA" },
+                { "exit": "Calamba", "fee": 23, "province": "LAGUNA" }
             ]
         },
         {
@@ -300,8 +300,8 @@
             "province": ["LAGUNA"],
             "nearest": ["Cabuyao", "Calamba"],
             "tolls": [
-                { "exit": "Silangan", "fee": 0 },
-                { "exit": "Calamba", "fee": 18 }
+                { "exit": "Silangan", "fee": 0, "province": "LAGUNA" },
+                { "exit": "Calamba", "fee": 18, "province": "LAGUNA" }
             ]
         },
         {
@@ -310,25 +310,25 @@
             "province": ["LAGUNA", "BATANGAS"],
             "nearest": ["Calamba", "Los Baños"],
             "tolls": [
-                { "exit": "Skyway", "fee": 270 },
-                { "exit": "Magallanes", "fee": 224 },
-                { "exit": "C5", "fee": 224 },
-                { "exit": "Bicutan", "fee": 175 },
-                { "exit": "Sucat", "fee": 140 },
-                { "exit": "Alabang", "fee": 106 },
-                { "exit": "Filinvest", "fee": 101 },
-                { "exit": "MCX", "fee": 107 },
-                { "exit": "Susana Heights", "fee": 88 },
-                { "exit": "San Pedro", "fee": 82 },
-                { "exit": "Southwoods", "fee": 68 },
-                { "exit": "Carmona", "fee": 62 },
-                { "exit": "Mamplasan", "fee": 52 },
-                { "exit": "Santa Rosa", "fee": 43 },
-                { "exit": "ABI/Greenfield", "fee": 31 },
-                { "exit": "Cabuyao", "fee": 23 },
-                { "exit": "Silangan", "fee": 18 },
-                { "exit": "Calamba", "fee": 0 },
-                { "exit": "Santo Tomas", "fee": 29 }
+                { "exit": "Skyway", "fee": 270, "province": "NCR" },
+                { "exit": "Magallanes", "fee": 224, "province": "NCR" },
+                { "exit": "C5", "fee": 224, "province": "NCR" },
+                { "exit": "Bicutan", "fee": 175, "province": "NCR" },
+                { "exit": "Sucat", "fee": 140, "province": "NCR" },
+                { "exit": "Alabang", "fee": 106, "province": "NCR" },
+                { "exit": "Filinvest", "fee": 101, "province": "NCR" },
+                { "exit": "MCX", "fee": 107, "province": "NCR" },
+                { "exit": "Susana Heights", "fee": 88, "province": "NCR" },
+                { "exit": "San Pedro", "fee": 82, "province": "LAGUNA" },
+                { "exit": "Southwoods", "fee": 68, "province": "LAGUNA" },
+                { "exit": "Carmona", "fee": 62, "province": "LAGUNA" },
+                { "exit": "Mamplasan", "fee": 52, "province": "LAGUNA" },
+                { "exit": "Santa Rosa", "fee": 43, "province": "LAGUNA" },
+                { "exit": "ABI/Greenfield", "fee": 31, "province": "LAGUNA" },
+                { "exit": "Cabuyao", "fee": 23, "province": "LAGUNA" },
+                { "exit": "Silangan", "fee": 18, "province": "LAGUNA" },
+                { "exit": "Calamba", "fee": 0, "province": "LAGUNA" },
+                { "exit": "Santo Tomas", "fee": 29, "province": "BATANGAS" }
             ]
         },
         {
@@ -337,8 +337,8 @@
             "province": ["BATANGAS"],
             "nearest": ["Santo Tomas", "Tanauan"],
             "tolls": [
-                { "exit": "Calamba", "fee": 29 },
-                { "exit": "Santo Tomas", "fee": 0 }
+                { "exit": "Calamba", "fee": 29, "province": "LAGUNA" },
+                { "exit": "Santo Tomas", "fee": 0, "province": "BATANGAS" }
             ]
         }
 	],
@@ -349,22 +349,22 @@
             "province": ["NCR"],
             "nearest": ["Quezon", "Makati", "Pasay"],
             "tolls": [
-                { "exit": "Skyway", "fee": 0 },
-                { "exit": "Bicutan", "fee": 145 },
-                { "exit": "Sucat", "fee": 237 },
-                { "exit": "Alabang", "fee": 329 },
-                { "exit": "Filinvest", "fee": 338 },
-                { "exit": "MCX", "fee": 403 },
-                { "exit": "Susana Heights", "fee": 364 },
-                { "exit": "San Pedro", "fee": 376 },
-                { "exit": "Southwoods", "fee": 405 },
-                { "exit": "Carmona", "fee": 417 },
-                { "exit": "Mamplasan", "fee": 437 },
-                { "exit": "Santa Rosa", "fee": 454 },
-                { "exit": "ABI/Greenfield", "fee": 479 },
-                { "exit": "Cabuyao", "fee": 495 },
-                { "exit": "Silangan", "fee": 506 },
-                { "exit": "Calamba", "fee": 541 }
+                { "exit": "Skyway", "fee": 0, "province": "NCR" },
+                { "exit": "Bicutan", "fee": 145, "province": "NCR" },
+                { "exit": "Sucat", "fee": 237, "province": "NCR" },
+                { "exit": "Alabang", "fee": 329, "province": "NCR" },
+                { "exit": "Filinvest", "fee": 338, "province": "NCR" },
+                { "exit": "MCX", "fee": 403, "province": "NCR" },
+                { "exit": "Susana Heights", "fee": 364, "province": "NCR" },
+                { "exit": "San Pedro", "fee": 376, "province": "LAGUNA" },
+                { "exit": "Southwoods", "fee": 405, "province": "LAGUNA" },
+                { "exit": "Carmona", "fee": 417, "province": "LAGUNA" },
+                { "exit": "Mamplasan", "fee": 437, "province": "LAGUNA" },
+                { "exit": "Santa Rosa", "fee": 454, "province": "LAGUNA" },
+                { "exit": "ABI/Greenfield", "fee": 479, "province": "LAGUNA" },
+                { "exit": "Cabuyao", "fee": 495, "province": "LAGUNA" },
+                { "exit": "Silangan", "fee": 506, "province": "LAGUNA" },
+                { "exit": "Calamba", "fee": 541, "province": "LAGUNA" }
             ]
         },
         {
@@ -373,23 +373,23 @@
             "province": ["NCR"],
             "nearest": ["Quezon", "Makati", "Pasay"],
             "tolls": [
-                { "exit": "Magallanes", "fee": 0 },
-                { "exit": "Merville", "fee": 98 },
-                { "exit": "Bicutan", "fee": 98 },
-                { "exit": "Sucat", "fee": 168 },
-                { "exit": "Alabang", "fee": 237 },
-                { "exit": "Filinvest", "fee": 246 },
-                { "exit": "MCX", "fee": 311 },
-                { "exit": "Susana Heights", "fee": 272 },
-                { "exit": "San Pedro", "fee": 284 },
-                { "exit": "Southwoods", "fee": 313 },
-                { "exit": "Carmona", "fee": 325 },
-                { "exit": "Mamplasan", "fee": 345 },
-                { "exit": "Santa Rosa", "fee": 362 },
-                { "exit": "ABI/Greenfield", "fee": 387 },
-                { "exit": "Cabuyao", "fee": 403 },
-                { "exit": "Silangan", "fee": 414 },
-                { "exit": "Calamba", "fee": 449 }
+                { "exit": "Magallanes", "fee": 0, "province": "NCR" },
+                { "exit": "Merville", "fee": 98, "province": "NCR" },
+                { "exit": "Bicutan", "fee": 98, "province": "NCR" },
+                { "exit": "Sucat", "fee": 168, "province": "NCR" },
+                { "exit": "Alabang", "fee": 237, "province": "NCR" },
+                { "exit": "Filinvest", "fee": 246, "province": "NCR" },
+                { "exit": "MCX", "fee": 311, "province": "NCR" },
+                { "exit": "Susana Heights", "fee": 272, "province": "NCR" },
+                { "exit": "San Pedro", "fee": 284, "province": "LAGUNA" },
+                { "exit": "Southwoods", "fee": 313, "province": "LAGUNA" },
+                { "exit": "Carmona", "fee": 325, "province": "LAGUNA" },
+                { "exit": "Mamplasan", "fee": 345, "province": "LAGUNA" },
+                { "exit": "Santa Rosa", "fee": 362, "province": "LAGUNA" },
+                { "exit": "ABI/Greenfield", "fee": 387, "province": "LAGUNA" },
+                { "exit": "Cabuyao", "fee": 403, "province": "LAGUNA" },
+                { "exit": "Silangan", "fee": 414, "province": "LAGUNA" },
+                { "exit": "Calamba", "fee": 449, "province": "LAGUNA" }
             ]
         },
         {
@@ -398,22 +398,22 @@
             "province": ["NCR"],
             "nearest": ["Taguig", "Pasig"],
             "tolls": [
-                { "exit": "C5", "fee": 0 },
-                { "exit": "Bicutan", "fee": 98 },
-                { "exit": "Sucat", "fee": 168 },
-                { "exit": "Alabang", "fee": 237 },
-                { "exit": "Filinvest", "fee": 246 },
-                { "exit": "MCX", "fee": 311 },
-                { "exit": "Susana Heights", "fee": 272 },
-                { "exit": "San Pedro", "fee": 284 },
-                { "exit": "Southwoods", "fee": 313 },
-                { "exit": "Carmona", "fee": 325 },
-                { "exit": "Mamplasan", "fee": 345 },
-                { "exit": "Santa Rosa", "fee": 362 },
-                { "exit": "ABI/Greenfield", "fee": 387 },
-                { "exit": "Cabuyao", "fee": 403 },
-                { "exit": "Silangan", "fee": 414 },
-                { "exit": "Calamba", "fee": 449 }
+                { "exit": "C5", "fee": 0, "province": "NCR" },
+                { "exit": "Bicutan", "fee": 98, "province": "NCR" },
+                { "exit": "Sucat", "fee": 168, "province": "NCR" },
+                { "exit": "Alabang", "fee": 237, "province": "NCR" },
+                { "exit": "Filinvest", "fee": 246, "province": "NCR" },
+                { "exit": "MCX", "fee": 311, "province": "NCR" },
+                { "exit": "Susana Heights", "fee": 272, "province": "NCR" },
+                { "exit": "San Pedro", "fee": 284, "province": "LAGUNA" },
+                { "exit": "Southwoods", "fee": 313, "province": "LAGUNA" },
+                { "exit": "Carmona", "fee": 325, "province": "LAGUNA" },
+                { "exit": "Mamplasan", "fee": 345, "province": "LAGUNA" },
+                { "exit": "Santa Rosa", "fee": 362, "province": "LAGUNA" },
+                { "exit": "ABI/Greenfield", "fee": 387, "province": "LAGUNA" },
+                { "exit": "Cabuyao", "fee": 403, "province": "LAGUNA" },
+                { "exit": "Silangan", "fee": 414, "province": "LAGUNA" },
+                { "exit": "Calamba", "fee": 449, "province": "LAGUNA" }
             ]
         },
         {
@@ -422,21 +422,21 @@
             "province": ["NCR"],
             "nearest": ["Parañaque", "Taguig"],
             "tolls": [
-                { "exit": "Bicutan", "fee": 0 },
-                { "exit": "Sucat", "fee": 69 },
-                { "exit": "Alabang", "fee": 138 },
-                { "exit": "Filinvest", "fee": 147 },
-                { "exit": "MCX", "fee": 212 },
-                { "exit": "Susana Heights", "fee": 173 },
-                { "exit": "San Pedro", "fee": 185 },
-                { "exit": "Southwoods", "fee": 214 },
-                { "exit": "Carmona", "fee": 226 },
-                { "exit": "Mamplasan", "fee": 246 },
-                { "exit": "Santa Rosa", "fee": 263 },
-                { "exit": "ABI/Greenfield", "fee": 288 },
-                { "exit": "Cabuyao", "fee": 304 },
-                { "exit": "Silangan", "fee": 315 },
-                { "exit": "Calamba", "fee": 350 }
+                { "exit": "Bicutan", "fee": 0, "province": "NCR" },
+                { "exit": "Sucat", "fee": 69, "province": "NCR" },
+                { "exit": "Alabang", "fee": 138, "province": "NCR" },
+                { "exit": "Filinvest", "fee": 147, "province": "NCR" },
+                { "exit": "MCX", "fee": 212, "province": "NCR" },
+                { "exit": "Susana Heights", "fee": 173, "province": "NCR" },
+                { "exit": "San Pedro", "fee": 185, "province": "LAGUNA" },
+                { "exit": "Southwoods", "fee": 214, "province": "LAGUNA" },
+                { "exit": "Carmona", "fee": 226, "province": "LAGUNA" },
+                { "exit": "Mamplasan", "fee": 246, "province": "LAGUNA" },
+                { "exit": "Santa Rosa", "fee": 263, "province": "LAGUNA" },
+                { "exit": "ABI/Greenfield", "fee": 288, "province": "LAGUNA" },
+                { "exit": "Cabuyao", "fee": 304, "province": "LAGUNA" },
+                { "exit": "Silangan", "fee": 315, "province": "LAGUNA" },
+                { "exit": "Calamba", "fee": 350, "province": "LAGUNA" }
             ]
         },
         {
@@ -445,20 +445,20 @@
             "province": ["NCR"],
             "nearest": ["Parañaque", "Muntinlupa"],
             "tolls": [
-                { "exit": "Sucat", "fee": 0 },
-                { "exit": "Alabang", "fee": 69 },
-                { "exit": "Filinvest", "fee": 78 },
-                { "exit": "MCX", "fee": 143 },
-                { "exit": "Susana Heights", "fee": 104 },
-                { "exit": "San Pedro", "fee": 116 },
-                { "exit": "Southwoods", "fee": 145 },
-                { "exit": "Carmona", "fee": 157 },
-                { "exit": "Mamplasan", "fee": 177 },
-                { "exit": "Santa Rosa", "fee": 194 },
-                { "exit": "ABI/Greenfield", "fee": 219 },
-                { "exit": "Cabuyao", "fee": 235 },
-                { "exit": "Silangan", "fee": 246 },
-                { "exit": "Calamba", "fee": 281 }
+                { "exit": "Sucat", "fee": 0, "province": "NCR" },
+                { "exit": "Alabang", "fee": 69, "province": "NCR" },
+                { "exit": "Filinvest", "fee": 78, "province": "NCR" },
+                { "exit": "MCX", "fee": 143, "province": "NCR" },
+                { "exit": "Susana Heights", "fee": 104, "province": "NCR" },
+                { "exit": "San Pedro", "fee": 116, "province": "LAGUNA" },
+                { "exit": "Southwoods", "fee": 145, "province": "LAGUNA" },
+                { "exit": "Carmona", "fee": 157, "province": "LAGUNA" },
+                { "exit": "Mamplasan", "fee": 177, "province": "LAGUNA" },
+                { "exit": "Santa Rosa", "fee": 194, "province": "LAGUNA" },
+                { "exit": "ABI/Greenfield", "fee": 219, "province": "LAGUNA" },
+                { "exit": "Cabuyao", "fee": 235, "province": "LAGUNA" },
+                { "exit": "Silangan", "fee": 246, "province": "LAGUNA" },
+                { "exit": "Calamba", "fee": 281, "province": "LAGUNA" }
             ]
         },
         {
@@ -467,19 +467,19 @@
             "province": ["NCR"],
             "nearest": ["Muntinlupa"],
             "tolls": [
-                { "exit": "Alabang", "fee": 0 },
-                { "exit": "Filinvest", "fee": 9 },
-                { "exit": "MCX", "fee": 74 },
-                { "exit": "Susana Heights", "fee": 35 },
-                { "exit": "San Pedro", "fee": 47 },
-                { "exit": "Southwoods", "fee": 76 },
-                { "exit": "Carmona", "fee": 88 },
-                { "exit": "Mamplasan", "fee": 108 },
-                { "exit": "Santa Rosa", "fee": 125 },
-                { "exit": "ABI/Greenfield", "fee": 150 },
-                { "exit": "Cabuyao", "fee": 166 },
-                { "exit": "Silangan", "fee": 177 },
-                { "exit": "Calamba", "fee": 212 }
+                { "exit": "Alabang", "fee": 0, "province": "NCR" },
+                { "exit": "Filinvest", "fee": 9, "province": "NCR" },
+                { "exit": "MCX", "fee": 74, "province": "NCR" },
+                { "exit": "Susana Heights", "fee": 35, "province": "NCR" },
+                { "exit": "San Pedro", "fee": 47, "province": "LAGUNA" },
+                { "exit": "Southwoods", "fee": 76, "province": "LAGUNA" },
+                { "exit": "Carmona", "fee": 88, "province": "LAGUNA" },
+                { "exit": "Mamplasan", "fee": 108, "province": "LAGUNA" },
+                { "exit": "Santa Rosa", "fee": 125, "province": "LAGUNA" },
+                { "exit": "ABI/Greenfield", "fee": 150, "province": "LAGUNA" },
+                { "exit": "Cabuyao", "fee": 166, "province": "LAGUNA" },
+                { "exit": "Silangan", "fee": 177, "province": "LAGUNA" },
+                { "exit": "Calamba", "fee": 212, "province": "LAGUNA" }
             ]
         },
         {
@@ -488,18 +488,18 @@
             "province": ["NCR"],
             "nearest": ["Muntinlupa"],
             "tolls": [
-                { "exit": "Filinvest", "fee": 0 },
-                { "exit": "MCX", "fee": 65 },
-                { "exit": "Susana Heights", "fee": 26 },
-                { "exit": "San Pedro", "fee": 38 },
-                { "exit": "Southwoods", "fee": 67 },
-                { "exit": "Carmona", "fee": 79 },
-                { "exit": "Mamplasan", "fee": 98 },
-                { "exit": "Santa Rosa", "fee": 116 },
-                { "exit": "ABI/Greenfield", "fee": 141 },
-                { "exit": "Cabuyao", "fee": 157 },
-                { "exit": "Silangan", "fee": 168 },
-                { "exit": "Calamba", "fee": 203 }
+                { "exit": "Filinvest", "fee": 0, "province": "NCR" },
+                { "exit": "MCX", "fee": 65, "province": "NCR" },
+                { "exit": "Susana Heights", "fee": 26, "province": "NCR" },
+                { "exit": "San Pedro", "fee": 38, "province": "LAGUNA" },
+                { "exit": "Southwoods", "fee": 67, "province": "LAGUNA" },
+                { "exit": "Carmona", "fee": 79, "province": "LAGUNA" },
+                { "exit": "Mamplasan", "fee": 98, "province": "LAGUNA" },
+                { "exit": "Santa Rosa", "fee": 116, "province": "LAGUNA" },
+                { "exit": "ABI/Greenfield", "fee": 141, "province": "LAGUNA" },
+                { "exit": "Cabuyao", "fee": 157, "province": "LAGUNA" },
+                { "exit": "Silangan", "fee": 168, "province": "LAGUNA" },
+                { "exit": "Calamba", "fee": 203, "province": "LAGUNA" }
             ]
         },
         {
@@ -508,17 +508,17 @@
             "province": ["NCR"],
             "nearest": ["Muntinlupa"],
             "tolls": [
-                { "exit": "MCX", "fee": 0 },
-                { "exit": "Susana Heights", "fee": 39 },
-                { "exit": "San Pedro", "fee": 51 },
-                { "exit": "Southwoods", "fee": 80 },
-                { "exit": "Carmona", "fee": 92 },
-                { "exit": "Mamplasan", "fee": 111 },
-                { "exit": "Santa Rosa", "fee": 129 },
-                { "exit": "ABI/Greenfield", "fee": 154 },
-                { "exit": "Cabuyao", "fee": 170 },
-                { "exit": "Silangan", "fee": 181 },
-                { "exit": "Calamba", "fee": 216 }
+                { "exit": "MCX", "fee": 0, "province": "NCR" },
+                { "exit": "Susana Heights", "fee": 39, "province": "NCR" },
+                { "exit": "San Pedro", "fee": 51, "province": "LAGUNA" },
+                { "exit": "Southwoods", "fee": 80, "province": "LAGUNA" },
+                { "exit": "Carmona", "fee": 92, "province": "LAGUNA" },
+                { "exit": "Mamplasan", "fee": 111, "province": "LAGUNA" },
+                { "exit": "Santa Rosa", "fee": 129, "province": "LAGUNA" },
+                { "exit": "ABI/Greenfield", "fee": 154, "province": "LAGUNA" },
+                { "exit": "Cabuyao", "fee": 170, "province": "LAGUNA" },
+                { "exit": "Silangan", "fee": 181, "province": "LAGUNA" },
+                { "exit": "Calamba", "fee": 216, "province": "LAGUNA" }
             ]
         },
         {
@@ -527,16 +527,16 @@
             "province": ["NCR"],
             "nearest": ["Muntinlupa"],
             "tolls": [
-                { "exit": "Susana Heights", "fee": 0 },
-                { "exit": "San Pedro", "fee": 12 },
-                { "exit": "Southwoods", "fee": 41 },
-                { "exit": "Carmona", "fee": 53 },
-                { "exit": "Mamplasan", "fee": 72 },
-                { "exit": "Santa Rosa", "fee": 90 },
-                { "exit": "ABI/Greenfield", "fee": 115 },
-                { "exit": "Cabuyao", "fee": 131 },
-                { "exit": "Silangan", "fee": 142 },
-                { "exit": "Calamba", "fee": 177 }
+                { "exit": "Susana Heights", "fee": 0, "province": "NCR" },
+                { "exit": "San Pedro", "fee": 12, "province": "LAGUNA" },
+                { "exit": "Southwoods", "fee": 41, "province": "LAGUNA" },
+                { "exit": "Carmona", "fee": 53, "province": "LAGUNA" },
+                { "exit": "Mamplasan", "fee": 72, "province": "LAGUNA" },
+                { "exit": "Santa Rosa", "fee": 90, "province": "LAGUNA" },
+                { "exit": "ABI/Greenfield", "fee": 115, "province": "LAGUNA" },
+                { "exit": "Cabuyao", "fee": 131, "province": "LAGUNA" },
+                { "exit": "Silangan", "fee": 142, "province": "LAGUNA" },
+                { "exit": "Calamba", "fee": 177, "province": "LAGUNA" }
             ]
         },
         {
@@ -545,15 +545,15 @@
             "province": ["LAGUNA"],
             "nearest": ["San Pedro", "Biñan"],
             "tolls": [
-                { "exit": "San Pedro", "fee": 0 },
-                { "exit": "Southwoods", "fee": 29 },
-                { "exit": "Carmona", "fee": 41 },
-                { "exit": "Mamplasan", "fee": 61 },
-                { "exit": "Santa Rosa", "fee": 78 },
-                { "exit": "ABI/Greenfield", "fee": 103 },
-                { "exit": "Cabuyao", "fee": 119 },
-                { "exit": "Silangan", "fee": 130 },
-                { "exit": "Calamba", "fee": 165 }
+                { "exit": "San Pedro", "fee": 0, "province": "LAGUNA" },
+                { "exit": "Southwoods", "fee": 29, "province": "LAGUNA" },
+                { "exit": "Carmona", "fee": 41, "province": "LAGUNA" },
+                { "exit": "Mamplasan", "fee": 61, "province": "LAGUNA" },
+                { "exit": "Santa Rosa", "fee": 78, "province": "LAGUNA" },
+                { "exit": "ABI/Greenfield", "fee": 103, "province": "LAGUNA" },
+                { "exit": "Cabuyao", "fee": 119, "province": "LAGUNA" },
+                { "exit": "Silangan", "fee": 130, "province": "LAGUNA" },
+                { "exit": "Calamba", "fee": 165, "province": "LAGUNA" }
             ]
         },
         {
@@ -562,14 +562,14 @@
             "province": ["CAVITE", "LAGUNA"],
             "nearest": ["Biñan", "Carmona"],
             "tolls": [
-                { "exit": "Southwoods", "fee": 0 },
-                { "exit": "Carmona", "fee": 12 },
-                { "exit": "Mamplasan", "fee": 31 },
-                { "exit": "Santa Rosa", "fee": 49 },
-                { "exit": "ABI/Greenfield", "fee": 74 },
-                { "exit": "Cabuyao", "fee": 90 },
-                { "exit": "Silangan", "fee": 100 },
-                { "exit": "Calamba", "fee": 136 }
+                { "exit": "Southwoods", "fee": 0, "province": "LAGUNA" },
+                { "exit": "Carmona", "fee": 12, "province": "LAGUNA" },
+                { "exit": "Mamplasan", "fee": 31, "province": "LAGUNA" },
+                { "exit": "Santa Rosa", "fee": 49, "province": "LAGUNA" },
+                { "exit": "ABI/Greenfield", "fee": 74, "province": "LAGUNA" },
+                { "exit": "Cabuyao", "fee": 90, "province": "LAGUNA" },
+                { "exit": "Silangan", "fee": 100, "province": "LAGUNA" },
+                { "exit": "Calamba", "fee": 136, "province": "LAGUNA" }
             ]
         },
         {
@@ -578,13 +578,13 @@
             "province": ["CAVITE", "LAGUNA"],
             "nearest": ["Carmona", "Biñan"],
             "tolls": [
-                { "exit": "Carmona", "fee": 0 },
-                { "exit": "Mamplasan", "fee": 20 },
-                { "exit": "Santa Rosa", "fee": 37 },
-                { "exit": "ABI/Greenfield", "fee": 62 },
-                { "exit": "Cabuyao", "fee": 78 },
-                { "exit": "Silangan", "fee": 89 },
-                { "exit": "Calamba", "fee": 124 }
+                { "exit": "Carmona", "fee": 0, "province": "LAGUNA" },
+                { "exit": "Mamplasan", "fee": 20, "province": "LAGUNA" },
+                { "exit": "Santa Rosa", "fee": 37, "province": "LAGUNA" },
+                { "exit": "ABI/Greenfield", "fee": 62, "province": "LAGUNA" },
+                { "exit": "Cabuyao", "fee": 78, "province": "LAGUNA" },
+                { "exit": "Silangan", "fee": 89, "province": "LAGUNA" },
+                { "exit": "Calamba", "fee": 124, "province": "LAGUNA" }
             ]
         },
         {
@@ -593,12 +593,12 @@
             "province": ["LAGUNA"],
             "nearest": ["Biñan", "Santa Rosa"],
             "tolls": [
-                { "exit": "Mamplasan", "fee": 0 },
-                { "exit": "Santa Rosa", "fee": 17 },
-                { "exit": "ABI/Greenfield", "fee": 42 },
-                { "exit": "Cabuyao", "fee": 58 },
-                { "exit": "Silangan", "fee": 69 },
-                { "exit": "Calamba", "fee": 104 }
+                { "exit": "Mamplasan", "fee": 0, "province": "LAGUNA" },
+                { "exit": "Santa Rosa", "fee": 17, "province": "LAGUNA" },
+                { "exit": "ABI/Greenfield", "fee": 42, "province": "LAGUNA" },
+                { "exit": "Cabuyao", "fee": 58, "province": "LAGUNA" },
+                { "exit": "Silangan", "fee": 69, "province": "LAGUNA" },
+                { "exit": "Calamba", "fee": 104, "province": "LAGUNA" }
             ]
         },
         {
@@ -607,11 +607,11 @@
             "province": ["LAGUNA"],
             "nearest": ["Santa Rosa", "Cabuyao"],
             "tolls": [
-                { "exit": "Santa Rosa", "fee": 0 },
-                { "exit": "ABI/Greenfield", "fee": 25 },
-                { "exit": "Cabuyao", "fee": 41 },
-                { "exit": "Silangan", "fee": 52 },
-                { "exit": "Calamba", "fee": 87 }
+                { "exit": "Santa Rosa", "fee": 0, "province": "LAGUNA" },
+                { "exit": "ABI/Greenfield", "fee": 25, "province": "LAGUNA" },
+                { "exit": "Cabuyao", "fee": 41, "province": "LAGUNA" },
+                { "exit": "Silangan", "fee": 52, "province": "LAGUNA" },
+                { "exit": "Calamba", "fee": 87, "province": "LAGUNA" }
             ]
         },
         {
@@ -620,10 +620,10 @@
             "province": ["LAGUNA"],
             "nearest": ["Santa Rosa", "Cabuyao"],
             "tolls": [
-                { "exit": "ABI/Greenfield", "fee": 0 },
-                { "exit": "Cabuyao", "fee": 16 },
-                { "exit": "Silangan", "fee": 27 },
-                { "exit": "Calamba", "fee": 62 }
+                { "exit": "ABI/Greenfield", "fee": 0, "province": "LAGUNA" },
+                { "exit": "Cabuyao", "fee": 16, "province": "LAGUNA" },
+                { "exit": "Silangan", "fee": 27, "province": "LAGUNA" },
+                { "exit": "Calamba", "fee": 62, "province": "LAGUNA" }
             ]
         },
         {
@@ -632,9 +632,9 @@
             "province": ["LAGUNA"],
             "nearest": ["Cabuyao", "Calamba"],
             "tolls": [
-                { "exit": "Cabuyao", "fee": 0 },
-                { "exit": "Silangan", "fee": 11 },
-                { "exit": "Calamba", "fee": 46 }
+                { "exit": "Cabuyao", "fee": 0, "province": "LAGUNA" },
+                { "exit": "Silangan", "fee": 11, "province": "LAGUNA" },
+                { "exit": "Calamba", "fee": 46, "province": "LAGUNA" }
             ]
         },
         {
@@ -643,8 +643,8 @@
             "province": ["LAGUNA"],
             "nearest": ["Cabuyao", "Calamba"],
             "tolls": [
-                { "exit": "Silangan", "fee": 0 },
-                { "exit": "Calamba", "fee": 35 }
+                { "exit": "Silangan", "fee": 0, "province": "LAGUNA" },
+                { "exit": "Calamba", "fee": 35, "province": "LAGUNA" }
             ]
         },
         {
@@ -653,25 +653,25 @@
             "province": ["LAGUNA", "BATANGAS"],
             "nearest": ["Calamba", "Los Baños"],
             "tolls": [
-                { "exit": "Skyway", "fee": 541 },
-                { "exit": "Magallanes", "fee": 449 },
-                { "exit": "C5", "fee": 449 },
-                { "exit": "Bicutan", "fee": 350 },
-                { "exit": "Sucat", "fee": 281 },
-                { "exit": "Alabang", "fee": 212 },
-                { "exit": "Filinvest", "fee": 203 },
-                { "exit": "MCX", "fee": 216 },
-                { "exit": "Susana Heights", "fee": 177 },
-                { "exit": "San Pedro", "fee": 165 },
-                { "exit": "Southwoods", "fee": 136 },
-                { "exit": "Carmona", "fee": 124 },
-                { "exit": "Mamplasan", "fee": 104 },
-                { "exit": "Santa Rosa", "fee": 87 },
-                { "exit": "ABI/Greenfield", "fee": 62 },
-                { "exit": "Cabuyao", "fee": 46 },
-                { "exit": "Silangan", "fee": 35 },
-                { "exit": "Calamba", "fee": 0 },
-                { "exit": "Santo Tomas", "fee": 57 }
+                { "exit": "Skyway", "fee": 541, "province": "NCR" },
+                { "exit": "Magallanes", "fee": 449, "province": "NCR" },
+                { "exit": "C5", "fee": 449, "province": "NCR" },
+                { "exit": "Bicutan", "fee": 350, "province": "NCR" },
+                { "exit": "Sucat", "fee": 281, "province": "NCR" },
+                { "exit": "Alabang", "fee": 212, "province": "NCR" },
+                { "exit": "Filinvest", "fee": 203, "province": "NCR" },
+                { "exit": "MCX", "fee": 216, "province": "NCR" },
+                { "exit": "Susana Heights", "fee": 177, "province": "NCR" },
+                { "exit": "San Pedro", "fee": 165, "province": "LAGUNA" },
+                { "exit": "Southwoods", "fee": 136, "province": "LAGUNA" },
+                { "exit": "Carmona", "fee": 124, "province": "LAGUNA" },
+                { "exit": "Mamplasan", "fee": 104, "province": "LAGUNA" },
+                { "exit": "Santa Rosa", "fee": 87, "province": "LAGUNA" },
+                { "exit": "ABI/Greenfield", "fee": 62, "province": "LAGUNA" },
+                { "exit": "Cabuyao", "fee": 46, "province": "LAGUNA" },
+                { "exit": "Silangan", "fee": 35, "province": "LAGUNA" },
+                { "exit": "Calamba", "fee": 0, "province": "LAGUNA" },
+                { "exit": "Santo Tomas", "fee": 57, "province": "BATANGAS" }
             ]
         },
         {
@@ -680,8 +680,8 @@
             "province": ["BATANGAS"],
             "nearest": ["Santo Tomas", "Tanauan"],
             "tolls": [
-                { "exit": "Calamba", "fee": 57 },
-                { "exit": "Santo Tomas", "fee": 0 }
+                { "exit": "Calamba", "fee": 57, "province": "LAGUNA" },
+                { "exit": "Santo Tomas", "fee": 0, "province": "BATANGAS" }
             ]
         }
 	],
@@ -692,22 +692,22 @@
             "province": ["NCR"],
             "nearest": ["Quezon", "Makati", "Pasay"],
             "tolls": [
-                { "exit": "Skyway", "fee": 0 },
-                { "exit": "Bicutan", "fee": 218 },
-                { "exit": "Sucat", "fee": 356 },
-                { "exit": "Alabang", "fee": 493 },
-                { "exit": "Filinvest", "fee": 507 },
-                { "exit": "MCX", "fee": 604 },
-                { "exit": "Susana Heights", "fee": 546 },
-                { "exit": "San Pedro", "fee": 564 },
-                { "exit": "Southwoods", "fee": 608 },
-                { "exit": "Carmona", "fee": 625 },
-                { "exit": "Mamplasan", "fee": 654 },
-                { "exit": "Santa Rosa", "fee": 681 },
-                { "exit": "ABI/Greenfield", "fee": 718 },
-                { "exit": "Cabuyao", "fee": 742 },
-                { "exit": "Silangan", "fee": 758 },
-                { "exit": "Calamba", "fee": 811 }
+                { "exit": "Skyway", "fee": 0, "province": "NCR" },
+                { "exit": "Bicutan", "fee": 218, "province": "NCR" },
+                { "exit": "Sucat", "fee": 356, "province": "NCR" },
+                { "exit": "Alabang", "fee": 493, "province": "NCR" },
+                { "exit": "Filinvest", "fee": 507, "province": "NCR" },
+                { "exit": "MCX", "fee": 604, "province": "NCR" },
+                { "exit": "Susana Heights", "fee": 546, "province": "NCR" },
+                { "exit": "San Pedro", "fee": 564, "province": "LAGUNA" },
+                { "exit": "Southwoods", "fee": 608, "province": "LAGUNA" },
+                { "exit": "Carmona", "fee": 625, "province": "LAGUNA" },
+                { "exit": "Mamplasan", "fee": 654, "province": "LAGUNA" },
+                { "exit": "Santa Rosa", "fee": 681, "province": "LAGUNA" },
+                { "exit": "ABI/Greenfield", "fee": 718, "province": "LAGUNA" },
+                { "exit": "Cabuyao", "fee": 742, "province": "LAGUNA" },
+                { "exit": "Silangan", "fee": 758, "province": "LAGUNA" },
+                { "exit": "Calamba", "fee": 811, "province": "LAGUNA" }
             ]
         },
         {
@@ -716,23 +716,23 @@
             "province": ["NCR"],
             "nearest": ["Quezon", "Makati", "Pasay"],
             "tolls": [
-                { "exit": "Magallanes", "fee": 0 },
-                { "exit": "Merville", "fee": 147 },
-                { "exit": "Bicutan", "fee": 147 },
-                { "exit": "Sucat", "fee": 252 },
-                { "exit": "Alabang", "fee": 356 },
-                { "exit": "Filinvest", "fee": 370 },
-                { "exit": "MCX", "fee": 467 },
-                { "exit": "Susana Heights", "fee": 409 },
-                { "exit": "San Pedro", "fee": 427 },
-                { "exit": "Southwoods", "fee": 471 },
-                { "exit": "Carmona", "fee": 488 },
-                { "exit": "Mamplasan", "fee": 517 },
-                { "exit": "Santa Rosa", "fee": 544 },
-                { "exit": "ABI/Greenfield", "fee": 581 },
-                { "exit": "Cabuyao", "fee": 605 },
-                { "exit": "Silangan", "fee": 621 },
-                { "exit": "Calamba", "fee": 674 }
+                { "exit": "Magallanes", "fee": 0, "province": "NCR" },
+                { "exit": "Merville", "fee": 147, "province": "NCR" },
+                { "exit": "Bicutan", "fee": 147, "province": "NCR" },
+                { "exit": "Sucat", "fee": 252, "province": "NCR" },
+                { "exit": "Alabang", "fee": 356, "province": "NCR" },
+                { "exit": "Filinvest", "fee": 370, "province": "NCR" },
+                { "exit": "MCX", "fee": 467, "province": "NCR" },
+                { "exit": "Susana Heights", "fee": 409, "province": "NCR" },
+                { "exit": "San Pedro", "fee": 427, "province": "LAGUNA" },
+                { "exit": "Southwoods", "fee": 471, "province": "LAGUNA" },
+                { "exit": "Carmona", "fee": 488, "province": "LAGUNA" },
+                { "exit": "Mamplasan", "fee": 517, "province": "LAGUNA" },
+                { "exit": "Santa Rosa", "fee": 544, "province": "LAGUNA" },
+                { "exit": "ABI/Greenfield", "fee": 581, "province": "LAGUNA" },
+                { "exit": "Cabuyao", "fee": 605, "province": "LAGUNA" },
+                { "exit": "Silangan", "fee": 621, "province": "LAGUNA" },
+                { "exit": "Calamba", "fee": 674, "province": "LAGUNA" }
             ]
         },
         {
@@ -741,22 +741,22 @@
             "province": ["NCR"],
             "nearest": ["Taguig", "Pasig"],
             "tolls": [
-                { "exit": "C5", "fee": 0 },
-                { "exit": "Bicutan", "fee": 147 },
-                { "exit": "Sucat", "fee": 252 },
-                { "exit": "Alabang", "fee": 356 },
-                { "exit": "Filinvest", "fee": 370 },
-                { "exit": "MCX", "fee": 467 },
-                { "exit": "Susana Heights", "fee": 409 },
-                { "exit": "San Pedro", "fee": 427 },
-                { "exit": "Southwoods", "fee": 471 },
-                { "exit": "Carmona", "fee": 488 },
-                { "exit": "Mamplasan", "fee": 517 },
-                { "exit": "Santa Rosa", "fee": 544 },
-                { "exit": "ABI/Greenfield", "fee": 581 },
-                { "exit": "Cabuyao", "fee": 605 },
-                { "exit": "Silangan", "fee": 621 },
-                { "exit": "Calamba", "fee": 674 }
+                { "exit": "C5", "fee": 0, "province": "NCR" },
+                { "exit": "Bicutan", "fee": 147, "province": "NCR" },
+                { "exit": "Sucat", "fee": 252, "province": "NCR" },
+                { "exit": "Alabang", "fee": 356, "province": "NCR" },
+                { "exit": "Filinvest", "fee": 370, "province": "NCR" },
+                { "exit": "MCX", "fee": 467, "province": "NCR" },
+                { "exit": "Susana Heights", "fee": 409, "province": "NCR" },
+                { "exit": "San Pedro", "fee": 427, "province": "LAGUNA" },
+                { "exit": "Southwoods", "fee": 471, "province": "LAGUNA" },
+                { "exit": "Carmona", "fee": 488, "province": "LAGUNA" },
+                { "exit": "Mamplasan", "fee": 517, "province": "LAGUNA" },
+                { "exit": "Santa Rosa", "fee": 544, "province": "LAGUNA" },
+                { "exit": "ABI/Greenfield", "fee": 581, "province": "LAGUNA" },
+                { "exit": "Cabuyao", "fee": 605, "province": "LAGUNA" },
+                { "exit": "Silangan", "fee": 621, "province": "LAGUNA" },
+                { "exit": "Calamba", "fee": 674, "province": "LAGUNA" }
             ]
         },
         {
@@ -765,21 +765,21 @@
             "province": ["NCR"],
             "nearest": ["Parañaque", "Taguig"],
             "tolls": [
-                { "exit": "Bicutan", "fee": 0 },
-                { "exit": "Sucat", "fee": 104 },
-                { "exit": "Alabang", "fee": 208 },
-                { "exit": "Filinvest", "fee": 222 },
-                { "exit": "MCX", "fee": 319 },
-                { "exit": "Susana Heights", "fee": 261 },
-                { "exit": "San Pedro", "fee": 279 },
-                { "exit": "Southwoods", "fee": 323 },
-                { "exit": "Carmona", "fee": 340 },
-                { "exit": "Mamplasan", "fee": 369 },
-                { "exit": "Santa Rosa", "fee": 396 },
-                { "exit": "ABI/Greenfield", "fee": 433 },
-                { "exit": "Cabuyao", "fee": 457 },
-                { "exit": "Silangan", "fee": 473 },
-                { "exit": "Calamba", "fee": 526 }
+                { "exit": "Bicutan", "fee": 0, "province": "NCR" },
+                { "exit": "Sucat", "fee": 104, "province": "NCR" },
+                { "exit": "Alabang", "fee": 208, "province": "NCR" },
+                { "exit": "Filinvest", "fee": 222, "province": "NCR" },
+                { "exit": "MCX", "fee": 319, "province": "NCR" },
+                { "exit": "Susana Heights", "fee": 261, "province": "NCR" },
+                { "exit": "San Pedro", "fee": 279, "province": "LAGUNA" },
+                { "exit": "Southwoods", "fee": 323, "province": "LAGUNA" },
+                { "exit": "Carmona", "fee": 340, "province": "LAGUNA" },
+                { "exit": "Mamplasan", "fee": 369, "province": "LAGUNA" },
+                { "exit": "Santa Rosa", "fee": 396, "province": "LAGUNA" },
+                { "exit": "ABI/Greenfield", "fee": 433, "province": "LAGUNA" },
+                { "exit": "Cabuyao", "fee": 457, "province": "LAGUNA" },
+                { "exit": "Silangan", "fee": 473, "province": "LAGUNA" },
+                { "exit": "Calamba", "fee": 526, "province": "LAGUNA" }
             ]
         },
         {
@@ -788,20 +788,20 @@
             "province": ["NCR"],
             "nearest": ["Parañaque", "Muntinlupa"],
             "tolls": [
-                { "exit": "Sucat", "fee": 0 },
-                { "exit": "Alabang", "fee": 104 },
-                { "exit": "Filinvest", "fee": 118 },
-                { "exit": "MCX", "fee": 215 },
-                { "exit": "Susana Heights", "fee": 157 },
-                { "exit": "San Pedro", "fee": 175 },
-                { "exit": "Southwoods", "fee": 219 },
-                { "exit": "Carmona", "fee": 236 },
-                { "exit": "Mamplasan", "fee": 265 },
-                { "exit": "Santa Rosa", "fee": 292 },
-                { "exit": "ABI/Greenfield", "fee": 329 },
-                { "exit": "Cabuyao", "fee": 353 },
-                { "exit": "Silangan", "fee": 369 },
-                { "exit": "Calamba", "fee": 422 }
+                { "exit": "Sucat", "fee": 0, "province": "NCR" },
+                { "exit": "Alabang", "fee": 104, "province": "NCR" },
+                { "exit": "Filinvest", "fee": 118, "province": "NCR" },
+                { "exit": "MCX", "fee": 215, "province": "NCR" },
+                { "exit": "Susana Heights", "fee": 157, "province": "NCR" },
+                { "exit": "San Pedro", "fee": 175, "province": "LAGUNA" },
+                { "exit": "Southwoods", "fee": 219, "province": "LAGUNA" },
+                { "exit": "Carmona", "fee": 236, "province": "LAGUNA" },
+                { "exit": "Mamplasan", "fee": 265, "province": "LAGUNA" },
+                { "exit": "Santa Rosa", "fee": 292, "province": "LAGUNA" },
+                { "exit": "ABI/Greenfield", "fee": 329, "province": "LAGUNA" },
+                { "exit": "Cabuyao", "fee": 353, "province": "LAGUNA" },
+                { "exit": "Silangan", "fee": 369, "province": "LAGUNA" },
+                { "exit": "Calamba", "fee": 422, "province": "LAGUNA" }
             ]
         },
         {
@@ -810,19 +810,19 @@
             "province": ["NCR"],
             "nearest": ["Muntinlupa"],
             "tolls": [
-                { "exit": "Alabang", "fee": 0 },
-                { "exit": "Filinvest", "fee": 14 },
-                { "exit": "MCX", "fee": 111 },
-                { "exit": "Susana Heights", "fee": 53 },
-                { "exit": "San Pedro", "fee": 71 },
-                { "exit": "Southwoods", "fee": 115 },
-                { "exit": "Carmona", "fee": 132 },
-                { "exit": "Mamplasan", "fee": 161 },
-                { "exit": "Santa Rosa", "fee": 188 },
-                { "exit": "ABI/Greenfield", "fee": 225 },
-                { "exit": "Cabuyao", "fee": 249 },
-                { "exit": "Silangan", "fee": 265 },
-                { "exit": "Calamba", "fee": 318 }
+                { "exit": "Alabang", "fee": 0, "province": "NCR" },
+                { "exit": "Filinvest", "fee": 14, "province": "NCR" },
+                { "exit": "MCX", "fee": 111, "province": "NCR" },
+                { "exit": "Susana Heights", "fee": 53, "province": "NCR" },
+                { "exit": "San Pedro", "fee": 71, "province": "LAGUNA" },
+                { "exit": "Southwoods", "fee": 115, "province": "LAGUNA" },
+                { "exit": "Carmona", "fee": 132, "province": "LAGUNA" },
+                { "exit": "Mamplasan", "fee": 161, "province": "LAGUNA" },
+                { "exit": "Santa Rosa", "fee": 188, "province": "LAGUNA" },
+                { "exit": "ABI/Greenfield", "fee": 225, "province": "LAGUNA" },
+                { "exit": "Cabuyao", "fee": 249, "province": "LAGUNA" },
+                { "exit": "Silangan", "fee": 265, "province": "LAGUNA" },
+                { "exit": "Calamba", "fee": 318, "province": "LAGUNA" }
             ]
         },
         {
@@ -831,18 +831,18 @@
             "province": ["NCR"],
             "nearest": ["Muntinlupa"],
             "tolls": [
-                { "exit": "Filinvest", "fee": 0 },
-                { "exit": "MCX", "fee": 97 },
-                { "exit": "Susana Heights", "fee": 39 },
-                { "exit": "San Pedro", "fee": 57 },
-                { "exit": "Southwoods", "fee": 101 },
-                { "exit": "Carmona", "fee": 118 },
-                { "exit": "Mamplasan", "fee": 148 },
-                { "exit": "Santa Rosa", "fee": 174 },
-                { "exit": "ABI/Greenfield", "fee": 211 },
-                { "exit": "Cabuyao", "fee": 235 },
-                { "exit": "Silangan", "fee": 251 },
-                { "exit": "Calamba", "fee": 304 }
+                { "exit": "Filinvest", "fee": 0, "province": "NCR" },
+                { "exit": "MCX", "fee": 97, "province": "NCR" },
+                { "exit": "Susana Heights", "fee": 39, "province": "NCR" },
+                { "exit": "San Pedro", "fee": 57, "province": "LAGUNA" },
+                { "exit": "Southwoods", "fee": 101, "province": "LAGUNA" },
+                { "exit": "Carmona", "fee": 118, "province": "LAGUNA" },
+                { "exit": "Mamplasan", "fee": 148, "province": "LAGUNA" },
+                { "exit": "Santa Rosa", "fee": 174, "province": "LAGUNA" },
+                { "exit": "ABI/Greenfield", "fee": 211, "province": "LAGUNA" },
+                { "exit": "Cabuyao", "fee": 235, "province": "LAGUNA" },
+                { "exit": "Silangan", "fee": 251, "province": "LAGUNA" },
+                { "exit": "Calamba", "fee": 304, "province": "LAGUNA" }
             ]
         },
         {
@@ -851,17 +851,17 @@
             "province": ["NCR"],
             "nearest": ["Muntinlupa"],
             "tolls": [
-                { "exit": "MCX", "fee": 0 },
-                { "exit": "Susana Heights", "fee": 58 },
-                { "exit": "San Pedro", "fee": 76 },
-                { "exit": "Southwoods", "fee": 120 },
-                { "exit": "Carmona", "fee": 137 },
-                { "exit": "Mamplasan", "fee": 167 },
-                { "exit": "Santa Rosa", "fee": 193 },
-                { "exit": "ABI/Greenfield", "fee": 230 },
-                { "exit": "Cabuyao", "fee": 254 },
-                { "exit": "Silangan", "fee": 271 },
-                { "exit": "Calamba", "fee": 323 }
+                { "exit": "MCX", "fee": 0, "province": "NCR" },
+                { "exit": "Susana Heights", "fee": 58, "province": "NCR" },
+                { "exit": "San Pedro", "fee": 76, "province": "LAGUNA" },
+                { "exit": "Southwoods", "fee": 120, "province": "LAGUNA" },
+                { "exit": "Carmona", "fee": 137, "province": "LAGUNA" },
+                { "exit": "Mamplasan", "fee": 167, "province": "LAGUNA" },
+                { "exit": "Santa Rosa", "fee": 193, "province": "LAGUNA" },
+                { "exit": "ABI/Greenfield", "fee": 230, "province": "LAGUNA" },
+                { "exit": "Cabuyao", "fee": 254, "province": "LAGUNA" },
+                { "exit": "Silangan", "fee": 271, "province": "LAGUNA" },
+                { "exit": "Calamba", "fee": 323, "province": "LAGUNA" }
             ]
         },
         {
@@ -870,16 +870,16 @@
             "province": ["NCR"],
             "nearest": ["Muntinlupa"],
             "tolls": [
-                { "exit": "Susana Heights", "fee": 0 },
-                { "exit": "San Pedro", "fee": 18 },
-                { "exit": "Southwoods", "fee": 62 },
-                { "exit": "Carmona", "fee": 79 },
-                { "exit": "Mamplasan", "fee": 109 },
-                { "exit": "Santa Rosa", "fee": 135 },
-                { "exit": "ABI/Greenfield", "fee": 172 },
-                { "exit": "Cabuyao", "fee": 196 },
-                { "exit": "Silangan", "fee": 213 },
-                { "exit": "Calamba", "fee": 265 }
+                { "exit": "Susana Heights", "fee": 0, "province": "NCR" },
+                { "exit": "San Pedro", "fee": 18, "province": "LAGUNA" },
+                { "exit": "Southwoods", "fee": 62, "province": "LAGUNA" },
+                { "exit": "Carmona", "fee": 79, "province": "LAGUNA" },
+                { "exit": "Mamplasan", "fee": 109, "province": "LAGUNA" },
+                { "exit": "Santa Rosa", "fee": 135, "province": "LAGUNA" },
+                { "exit": "ABI/Greenfield", "fee": 172, "province": "LAGUNA" },
+                { "exit": "Cabuyao", "fee": 196, "province": "LAGUNA" },
+                { "exit": "Silangan", "fee": 213, "province": "LAGUNA" },
+                { "exit": "Calamba", "fee": 265, "province": "LAGUNA" }
             ]
         },
         {
@@ -888,15 +888,15 @@
             "province": ["LAGUNA"],
             "nearest": ["San Pedro", "Biñan"],
             "tolls": [
-                { "exit": "San Pedro", "fee": 0 },
-                { "exit": "Southwoods", "fee": 44 },
-                { "exit": "Carmona", "fee": 61 },
-                { "exit": "Mamplasan", "fee": 91 },
-                { "exit": "Santa Rosa", "fee": 117 },
-                { "exit": "ABI/Greenfield", "fee": 154 },
-                { "exit": "Cabuyao", "fee": 178 },
-                { "exit": "Silangan", "fee": 195 },
-                { "exit": "Calamba", "fee": 247 }
+                { "exit": "San Pedro", "fee": 0, "province": "LAGUNA" },
+                { "exit": "Southwoods", "fee": 44, "province": "LAGUNA" },
+                { "exit": "Carmona", "fee": 61, "province": "LAGUNA" },
+                { "exit": "Mamplasan", "fee": 91, "province": "LAGUNA" },
+                { "exit": "Santa Rosa", "fee": 117, "province": "LAGUNA" },
+                { "exit": "ABI/Greenfield", "fee": 154, "province": "LAGUNA" },
+                { "exit": "Cabuyao", "fee": 178, "province": "LAGUNA" },
+                { "exit": "Silangan", "fee": 195, "province": "LAGUNA" },
+                { "exit": "Calamba", "fee": 247, "province": "LAGUNA" }
             ]
         },
         {
@@ -905,14 +905,14 @@
             "province": ["CAVITE", "LAGUNA"],
             "nearest": ["Biñan", "Carmona"],
             "tolls": [
-                { "exit": "Southwoods", "fee": 0 },
-                { "exit": "Carmona", "fee": 17 },
-                { "exit": "Mamplasan", "fee": 47 },
-                { "exit": "Santa Rosa", "fee": 73 },
-                { "exit": "ABI/Greenfield", "fee": 110 },
-                { "exit": "Cabuyao", "fee": 134 },
-                { "exit": "Silangan", "fee": 151 },
-                { "exit": "Calamba", "fee": 203 }
+                { "exit": "Southwoods", "fee": 0, "province": "LAGUNA" },
+                { "exit": "Carmona", "fee": 17, "province": "LAGUNA" },
+                { "exit": "Mamplasan", "fee": 47, "province": "LAGUNA" },
+                { "exit": "Santa Rosa", "fee": 73, "province": "LAGUNA" },
+                { "exit": "ABI/Greenfield", "fee": 110, "province": "LAGUNA" },
+                { "exit": "Cabuyao", "fee": 134, "province": "LAGUNA" },
+                { "exit": "Silangan", "fee": 151, "province": "LAGUNA" },
+                { "exit": "Calamba", "fee": 203, "province": "LAGUNA" }
             ]
         },
         {
@@ -921,13 +921,13 @@
             "province": ["CAVITE", "LAGUNA"],
             "nearest": ["Carmona", "Biñan"],
             "tolls": [
-                { "exit": "Carmona", "fee": 0 },
-                { "exit": "Mamplasan", "fee": 29 },
-                { "exit": "Santa Rosa", "fee": 56 },
-                { "exit": "ABI/Greenfield", "fee": 93 },
-                { "exit": "Cabuyao", "fee": 117 },
-                { "exit": "Silangan", "fee": 133 },
-                { "exit": "Calamba", "fee": 186 }
+                { "exit": "Carmona", "fee": 0, "province": "LAGUNA" },
+                { "exit": "Mamplasan", "fee": 29, "province": "LAGUNA" },
+                { "exit": "Santa Rosa", "fee": 56, "province": "LAGUNA" },
+                { "exit": "ABI/Greenfield", "fee": 93, "province": "LAGUNA" },
+                { "exit": "Cabuyao", "fee": 117, "province": "LAGUNA" },
+                { "exit": "Silangan", "fee": 133, "province": "LAGUNA" },
+                { "exit": "Calamba", "fee": 186, "province": "LAGUNA" }
             ]
         },
         {
@@ -936,12 +936,12 @@
             "province": ["LAGUNA"],
             "nearest": ["Biñan", "Santa Rosa"],
             "tolls": [
-                { "exit": "Mamplasan", "fee": 0 },
-                { "exit": "Santa Rosa", "fee": 26 },
-                { "exit": "ABI/Greenfield", "fee": 64 },
-                { "exit": "Cabuyao", "fee": 87 },
-                { "exit": "Silangan", "fee": 104 },
-                { "exit": "Calamba", "fee": 157 }
+                { "exit": "Mamplasan", "fee": 0, "province": "LAGUNA" },
+                { "exit": "Santa Rosa", "fee": 26, "province": "LAGUNA" },
+                { "exit": "ABI/Greenfield", "fee": 64, "province": "LAGUNA" },
+                { "exit": "Cabuyao", "fee": 87, "province": "LAGUNA" },
+                { "exit": "Silangan", "fee": 104, "province": "LAGUNA" },
+                { "exit": "Calamba", "fee": 157, "province": "LAGUNA" }
             ]
         },
         {
@@ -950,11 +950,11 @@
             "province": ["LAGUNA"],
             "nearest": ["Santa Rosa", "Cabuyao"],
             "tolls": [
-                { "exit": "Santa Rosa", "fee": 0 },
-                { "exit": "ABI/Greenfield", "fee": 37 },
-                { "exit": "Cabuyao", "fee": 61 },
-                { "exit": "Silangan", "fee": 78 },
-                { "exit": "Calamba", "fee": 130 }
+                { "exit": "Santa Rosa", "fee": 0, "province": "LAGUNA" },
+                { "exit": "ABI/Greenfield", "fee": 37, "province": "LAGUNA" },
+                { "exit": "Cabuyao", "fee": 61, "province": "LAGUNA" },
+                { "exit": "Silangan", "fee": 78, "province": "LAGUNA" },
+                { "exit": "Calamba", "fee": 130, "province": "LAGUNA" }
             ]
         },
         {
@@ -963,10 +963,10 @@
             "province": ["LAGUNA"],
             "nearest": ["Santa Rosa", "Cabuyao"],
             "tolls": [
-                { "exit": "ABI/Greenfield", "fee": 0 },
-                { "exit": "Cabuyao", "fee": 24 },
-                { "exit": "Silangan", "fee": 40 },
-                { "exit": "Calamba", "fee": 93 }
+                { "exit": "ABI/Greenfield", "fee": 0, "province": "LAGUNA" },
+                { "exit": "Cabuyao", "fee": 24, "province": "LAGUNA" },
+                { "exit": "Silangan", "fee": 40, "province": "LAGUNA" },
+                { "exit": "Calamba", "fee": 93, "province": "LAGUNA" }
             ]
         },
         {
@@ -975,9 +975,9 @@
             "province": ["LAGUNA"],
             "nearest": ["Cabuyao", "Calamba"],
             "tolls": [
-                { "exit": "Cabuyao", "fee": 0 },
-                { "exit": "Silangan", "fee": 16 },
-                { "exit": "Calamba", "fee": 69 }
+                { "exit": "Cabuyao", "fee": 0, "province": "LAGUNA" },
+                { "exit": "Silangan", "fee": 16, "province": "LAGUNA" },
+                { "exit": "Calamba", "fee": 69, "province": "LAGUNA" }
             ]
         },
         {
@@ -986,8 +986,8 @@
             "province": ["LAGUNA"],
             "nearest": ["Cabuyao", "Calamba"],
             "tolls": [
-                { "exit": "Silangan", "fee": 0 },
-                { "exit": "Calamba", "fee": 53 }
+                { "exit": "Silangan", "fee": 0, "province": "LAGUNA" },
+                { "exit": "Calamba", "fee": 53, "province": "LAGUNA" }
             ]
         },
         {
@@ -996,25 +996,25 @@
             "province": ["LAGUNA", "BATANGAS"],
             "nearest": ["Calamba", "Los Baños"],
             "tolls": [
-                { "exit": "Skyway", "fee": 811 },
-                { "exit": "Magallanes", "fee": 674 },
-                { "exit": "C5", "fee": 674 },
-                { "exit": "Bicutan", "fee": 526 },
-                { "exit": "Sucat", "fee": 422 },
-                { "exit": "Alabang", "fee": 318 },
-                { "exit": "Filinvest", "fee": 304 },
-                { "exit": "MCX", "fee": 323 },
-                { "exit": "Susana Heights", "fee": 265 },
-                { "exit": "San Pedro", "fee": 247 },
-                { "exit": "Southwoods", "fee": 203 },
-                { "exit": "Carmona", "fee": 186 },
-                { "exit": "Mamplasan", "fee": 157 },
-                { "exit": "Santa Rosa", "fee": 130 },
-                { "exit": "ABI/Greenfield", "fee": 93 },
-                { "exit": "Cabuyao", "fee": 69 },
-                { "exit": "Silangan", "fee": 53 },
-                { "exit": "Calamba", "fee": 0 },
-                { "exit": "Santo Tomas", "fee": 86 }
+                { "exit": "Skyway", "fee": 811, "province": "NCR" },
+                { "exit": "Magallanes", "fee": 674, "province": "NCR" },
+                { "exit": "C5", "fee": 674, "province": "NCR" },
+                { "exit": "Bicutan", "fee": 526, "province": "NCR" },
+                { "exit": "Sucat", "fee": 422, "province": "NCR" },
+                { "exit": "Alabang", "fee": 318, "province": "NCR" },
+                { "exit": "Filinvest", "fee": 304, "province": "NCR" },
+                { "exit": "MCX", "fee": 323, "province": "NCR" },
+                { "exit": "Susana Heights", "fee": 265, "province": "NCR" },
+                { "exit": "San Pedro", "fee": 247, "province": "LAGUNA" },
+                { "exit": "Southwoods", "fee": 203, "province": "LAGUNA" },
+                { "exit": "Carmona", "fee": 186, "province": "LAGUNA" },
+                { "exit": "Mamplasan", "fee": 157, "province": "LAGUNA" },
+                { "exit": "Santa Rosa", "fee": 130, "province": "LAGUNA" },
+                { "exit": "ABI/Greenfield", "fee": 93, "province": "LAGUNA" },
+                { "exit": "Cabuyao", "fee": 69, "province": "LAGUNA" },
+                { "exit": "Silangan", "fee": 53, "province": "LAGUNA" },
+                { "exit": "Calamba", "fee": 0, "province": "LAGUNA" },
+                { "exit": "Santo Tomas", "fee": 86, "province": "BATANGAS" }
             ]
         },
         {
@@ -1023,8 +1023,8 @@
             "province": ["BATANGAS"],
             "nearest": ["Santo Tomas", "Tanauan"],
             "tolls": [
-                { "exit": "Calamba", "fee": 86 },
-                { "exit": "Santo Tomas", "fee": 0 }
+                { "exit": "Calamba", "fee": 86, "province": "LAGUNA" },
+                { "exit": "Santo Tomas", "fee": 0, "province": "BATANGAS" }
             ]
         }
 	]

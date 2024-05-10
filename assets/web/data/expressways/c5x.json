@@ -6,9 +6,9 @@
             "province": ["NCR"],
             "nearest": ["Taguig", "Pateros", "Pasig"],
             "tolls": [
-                { "exit": "Taguig Toll Plaza", "fee": 0 },
-                { "exit": "Merville Toll Plaza", "fee": 35 },
-                { "exit": "Sucat Toll Plaza", "fee": 35 }
+                { "exit": "Taguig Toll Plaza", "fee": 0, "province": "NCR" },
+                { "exit": "Merville Toll Plaza", "fee": 35, "province": "NCR" },
+                { "exit": "Sucat Toll Plaza", "fee": 35, "province": "NCR" }
             ]
         },
 		{
@@ -17,8 +17,8 @@
             "province": ["NCR"],
             "nearest": ["Pasay", "Taguig"],
             "tolls": [
-                { "exit": "Merville Toll Plaza", "fee": 0 },
-                { "exit": "Sucat Toll Plaza", "fee": 35 }
+                { "exit": "Merville Toll Plaza", "fee": 0, "province": "NCR" },
+                { "exit": "Sucat Toll Plaza", "fee": 35, "province": "NCR" }
             ]
         },
 		{
@@ -27,9 +27,9 @@
             "province": ["NCR"],
             "nearest": ["Parañaque", "Pasay"],
             "tolls": [
-                { "exit": "Taguig Toll Plaza", "fee": 35 },
-                { "exit": "Merville Toll Plaza", "fee": 35 },
-                { "exit": "Sucat Toll Plaza", "fee": 0 }
+                { "exit": "Taguig Toll Plaza", "fee": 35, "province": "NCR" },
+                { "exit": "Merville Toll Plaza", "fee": 35, "province": "NCR" },
+                { "exit": "Sucat Toll Plaza", "fee": 0, "province": "NCR" }
             ]
         }
 	],
@@ -40,9 +40,9 @@
             "province": ["NCR"],
             "nearest": ["Taguig", "Pateros", "Pasig"],
             "tolls": [
-                { "exit": "Taguig Toll Plaza", "fee": 0 },
-                { "exit": "Merville Toll Plaza", "fee": 69 },
-                { "exit": "Sucat Toll Plaza", "fee": 69 }
+                { "exit": "Taguig Toll Plaza", "fee": 0, "province": "NCR" },
+                { "exit": "Merville Toll Plaza", "fee": 69, "province": "NCR" },
+                { "exit": "Sucat Toll Plaza", "fee": 69, "province": "NCR" }
             ]
         },
 		{
@@ -51,8 +51,8 @@
             "province": ["NCR"],
             "nearest": ["Pasay", "Taguig"],
             "tolls": [
-                { "exit": "Merville Toll Plaza", "fee": 0 },
-                { "exit": "Sucat Toll Plaza", "fee": 69 }
+                { "exit": "Merville Toll Plaza", "fee": 0, "province": "NCR" },
+                { "exit": "Sucat Toll Plaza", "fee": 69, "province": "NCR" }
             ]
         },
 		{
@@ -61,9 +61,9 @@
             "province": ["NCR"],
             "nearest": ["Parañaque", "Pasay"],
             "tolls": [
-                { "exit": "Taguig Toll Plaza", "fee": 69 },
-                { "exit": "Merville Toll Plaza", "fee": 69 },
-                { "exit": "Sucat Toll Plaza", "fee": 0 }
+                { "exit": "Taguig Toll Plaza", "fee": 69, "province": "NCR" },
+                { "exit": "Merville Toll Plaza", "fee": 69, "province": "NCR" },
+                { "exit": "Sucat Toll Plaza", "fee": 0, "province": "NCR" }
             ]
         }
 	],
@@ -74,9 +74,9 @@
             "province": ["NCR"],
             "nearest": ["Taguig", "Pateros", "Pasig"],
             "tolls": [
-                { "exit": "Taguig Toll Plaza", "fee": 0 },
-                { "exit": "Merville Toll Plaza", "fee": 104 },
-                { "exit": "Sucat Toll Plaza", "fee": 104 }
+                { "exit": "Taguig Toll Plaza", "fee": 0, "province": "NCR" },
+                { "exit": "Merville Toll Plaza", "fee": 104, "province": "NCR" },
+                { "exit": "Sucat Toll Plaza", "fee": 104, "province": "NCR" }
             ]
         },
 		{
@@ -85,8 +85,8 @@
             "province": ["NCR"],
             "nearest": ["Pasay", "Taguig"],
             "tolls": [
-                { "exit": "Merville Toll Plaza", "fee": 0 },
-                { "exit": "Sucat Toll Plaza", "fee": 104 }
+                { "exit": "Merville Toll Plaza", "fee": 0, "province": "NCR" },
+                { "exit": "Sucat Toll Plaza", "fee": 104, "province": "NCR" }
             ]
         },
 		{
@@ -95,9 +95,9 @@
             "province": ["NCR"],
             "nearest": ["Parañaque", "Pasay"],
             "tolls": [
-                { "exit": "Taguig Toll Plaza", "fee": 104 },
-                { "exit": "Merville Toll Plaza", "fee": 104 },
-                { "exit": "Sucat Toll Plaza", "fee": 0 }
+                { "exit": "Taguig Toll Plaza", "fee": 104, "province": "NCR" },
+                { "exit": "Merville Toll Plaza", "fee": 104, "province": "NCR" },
+                { "exit": "Sucat Toll Plaza", "fee": 0, "province": "NCR" }
             ]
         }
 	]

@@ -91,7 +91,7 @@ var initMainFunctions = function () {
 				if (origin.attr('data-set') != undefined && dest.attr('data-set') != undefined) {
 					var origin_data = JSON.parse(origin.attr('data-set'));
 					var dest_data = JSON.parse(dest.attr('data-set'));
-					getSearchResults(origin_data, dest_data, this);
+					getSearchResults(origin_data, dest_data, this, true);
 				} else {
 					showToast({ content: 'Please enter the origin and detination routes you want to know', type: 'info' });
 				}
@@ -131,19 +131,18 @@ function generateNCRRoutes(direction, oData) {
 	return result;
 }
 
-var generateRoutes = function (oData, gointTo, urBoundTo) {
-	// console.log(oData, gointTo, urBoundTo);
+var generateRoutes = function (oData, oData2) {
+	// console.log(oData, oData2, urBoundTo);
 	var oRoutes = {};
 	var oTollways = oData.tollways;
 	var oTollSubjects = (oData.toll_subjects != undefined && oData.toll_subjects.length) ? oData.toll_subjects : false;
 	// var urBoundTo = $('[name="bound"]:checked').val();
-	if (urBoundTo == undefined) {
-		var urBoundTo = 'north';
-		if (oData.start == 'north' && gointTo == 'south') {
-			urBoundTo = 'south';
-		} else if (oData.start == gointTo) {
-			urBoundTo = oData.start;
-		}
+	var gointTo = oData2.start;
+	var urBoundTo = 'north';
+	if (oData.start == 'north' && gointTo == 'south') {
+		urBoundTo = 'south';
+	} else if (oData.start == gointTo) {
+		urBoundTo = oData.start;
 	}
 	console.log('started:', $.trim(oData.start), ', bound to:', $.trim(urBoundTo), 'ended:', $.trim(gointTo));
 
@@ -181,10 +180,14 @@ var generateRoutes = function (oData, gointTo, urBoundTo) {
 						// console.log(urBoundTo, gointTo);
 						if (urBoundTo == gointTo) {
 							var sEntry = oTolls[oTolls.length - 1].exit;
+							var sEntryProvince = oTolls[oTolls.length - 1].province;
 							var sExit = oTolls[0].exit;
+							var sExitProvince = oTolls[0].province;
 						} else {
 							var sEntry = oTolls[0].exit;
+							var sEntryProvince = oTolls[0].province;
 							var sExit = oTolls[oTolls.length - 1].exit;
+							var sExitProvince = oTolls[oTolls.length - 1].province;
 						}
 						var iFee = oTolls[oTolls.length - 1].fee == 0 ? oTolls[0].fee : oTolls[oTolls.length - 1].fee;
 						if (gointTo == 'north') {
@@ -193,9 +196,11 @@ var generateRoutes = function (oData, gointTo, urBoundTo) {
 
 						if (sEntry != sExit) {
 							oRoutes[toll][class_name].push({
-								'entry': sEntry,
 								'tolls': oTolls,
+								'entry': sEntry,
+								'entry_province': sEntryProvince,
 								'exit': sExit,
+								'exit_province': sExitProvince,
 								'fee': iFee,
 								'start': oData.start,
 								'ended': gointTo,
@@ -245,6 +250,7 @@ var generateRoutes = function (oData, gointTo, urBoundTo) {
 							for (var x in result.data) {
 								var oResult = result.data[x];
 								var sEntry = oResult.entry;
+								var sEntryProvince = oResult.province[0];
 								var oTolls = oResult.tolls;
 
 								if (oGuideTolls != false) {
@@ -258,41 +264,53 @@ var generateRoutes = function (oData, gointTo, urBoundTo) {
 									}
 
 									if (toSouth) {
+										var sExitProvince = oTolls[0].province;
 										var sExit = oTolls[0].exit;
 										var iFee = oTolls[0].fee == 0 ? oTolls[oTolls.length - 1].fee : oTolls[0].fee;
 									} else {
 										var sExit = oGuideClass.entry;
 										var iFee = oTolls[oTolls.length - 1].fee == 0 ? oTolls[0].fee : oTolls[oTolls.length - 1].fee;
+										var sExitProvince = oTolls[oTolls.length - 1].fee == 0 ? oTolls[oTolls.length - 1].province : oTolls[0].province;
 									}
 								} else {
 									if (oData.start == 'south' && gointTo == 'north') {
 										// sEntry = oTolls[oTolls.length - 1].exit;
 										sExit = oTolls[0].exit;
+										var sExitProvince = oTolls[0].exit;
 										iFee = oTolls[0].fee == 0 ? oTolls[oTolls.length - 1].fee : oTolls[0].fee;
 									} else if (oData.start == 'north' && gointTo == 'south') {
 										sEntry = oTolls[0].exit;
+										sEntryProvince = oTolls[0].province;
 										sExit = oTolls[oTolls.length - 1].exit;
+										var sExitProvince = oTolls[oTolls.length - 1].province;
 										iFee = oTolls[oTolls.length - 1].fee == 0 ? oTolls[0].fee : oTolls[oTolls.length - 1].fee;
 									} else {
 										if (gointTo == 'north') {
 											sEntry = oTolls[0].exit;
+											sEntryProvince = oTolls[0].province;
 											sExit = oTolls[oTolls.length - 1].exit;
+											var sExitProvince = oTolls[oTolls.length - 1].province;
 											iFee = oTolls[oTolls.length - 1].fee == 0 ? oTolls[0].fee : oTolls[oTolls.length - 1].fee;
 										} else {
 											sEntry = oTolls[oTolls.length - 1].exit;
+											sEntryProvince = oTolls[oTolls.length - 1].province;
 											sExit = oTolls[0].exit;
+											var sExitProvince = oTolls[0].province;
 											iFee = oTolls[0].fee == 0 ? oTolls[oTolls.length - 1].fee : oTolls[0].fee;
 										}
 									}
 								}
 								if (sEntry == sExit) {
 									sEntry = oResult.entry;
+									sEntryProvince = oResult.province[0];
 								}
 
 								oRoutes[toll][class_name].push({
-									'entry': sEntry,
 									'tolls': oTolls,
+									'entry': sEntry,
+									'entry_province': sEntryProvince,
 									'exit': sExit,
+									'exit_province': sExitProvince,
 									'fee': iFee,
 									'start': oData.start,
 									'ended': gointTo,
@@ -314,7 +332,7 @@ var generateRoutes = function (oData, gointTo, urBoundTo) {
 			}
 		}
 	}
-	// console.log(oRoutes);
+	console.log(oRoutes);
 	return oRoutes;
 }
 
@@ -388,10 +406,10 @@ var runCitySearchData = function () {
 	}
 }
 
-var getSearchResults = function (origin_data, dest_data, oThis) {
+var getSearchResults = function (origin_data, dest_data, oThis, isTest) {
 	// console.log(origin_data, dest_data, oThis);
-	var originRoutes = generateRoutes(origin_data, dest_data.start);
-	var destinationRoutes = generateRoutes(dest_data, origin_data.start);
+	var originRoutes = generateRoutes(origin_data, dest_data);
+	var destinationRoutes = generateRoutes(dest_data, origin_data);
 	// console.log(originRoutes, destinationRoutes);
 
 	var oAllData = runNCRData(origin_data, originRoutes, dest_data, destinationRoutes);
@@ -408,8 +426,10 @@ var getSearchResults = function (origin_data, dest_data, oThis) {
 		if (oThis != true) {
 			// window.location = '/results?origin=' + encodeURI($.trim(origin.val())) + '&destination=' + encodeURI($.trim(dest.val()));
 			isSubmitting = true;
-			$('.tc1-loader-overlay').addClass('is-open');
-			$(oThis).submit();
+			if (isTest != true) {
+				$('.tc1-loader-overlay').addClass('is-open');
+				$(oThis).submit();
+			}
 		} else {
 			switch (window.location.pathname) {
 				case '/results':
@@ -512,7 +532,7 @@ var runSearchResults = function () {
 				var dest_data = JSON.parse(dest.attr('data-set'));
 				// console.log(origin_data, dest_data);
 				setTimeout(() => {
-					getSearchResults(origin_data, dest_data, true);
+					getSearchResults(origin_data, dest_data, true, true);
 				}, 333);
 			}
 		});
@@ -559,7 +579,7 @@ var renderSearchResults = function () {
 			// timelineTitle += ' - ' + classname.ucWords().replace('_', ' ');
 			oCloneTimeline.find('.timeline-inverted .timeline-title').html('Take ' + timelineTitle);
 			oDetailedRoute[route] = {};
-			var cnt = 0, sEnter = '';
+			var cnt = 0, sEnter = '', sEntryProvince = '';
 			for (var classname in oItems) {
 				var oRoute = oItems[classname];
 				oDetailedRoute[route][classname] = [];
@@ -569,26 +589,28 @@ var renderSearchResults = function () {
 						var toLook = oRoute[i].entry;
 						oDetailedRoute[route][classname].push({
 							entry: oRoute[i].exit,
+							entry_province: oRoute[i].exit_province,
 							exit: oRoute[i].entry,
+							exit_province: oRoute[i].entry_province,
 							fee: oRoute[i].fee,
-							region: oRoute[i].region
 						});
 					} else {
 						var toLook = oRoute[i].exit;
 						oDetailedRoute[route][classname].push({
 							entry: oRoute[i].entry,
+							entry_province: oRoute[i].entry_province,
 							exit: oRoute[i].exit,
+							exit_province: oRoute[i].exit_province,
 							fee: oRoute[i].fee,
-							region: oRoute[i].region
 						});
 					}
 					if (route == 'ncr') {
 						toLook = ($.inArray(toLook, ['nlex', 'slex']) >= 0) ? toLook.toUpperCase() : toLook;
 					}
-					var travelTo = ((route == 'ncr' && $.inArray(toLook.toLowerCase(), ['nlex', 'slex']) < 0) ? toLook + ' City</b>' : toLook + '</b> tollgate');
+					var travelTo = ((route == 'ncr' && $.inArray(toLook.toLowerCase(), ['nlex', 'slex', 'skyway']) < 0) ? toLook + ' City</b>' : toLook + '</b> tollgate');
 					if (pUI.indexOf(toLook) < 0) {
 						if (route == 'ncr') {
-							pUI += '<li>Travel to <b>' + travelTo + '</li>'
+							pUI += '<li>Travel to <b>' + travelTo.ucWords() + '</li>'
 						} else {
 							pUI += '<li>Enter <b>' + travelTo + '</li>'
 						}
@@ -596,18 +618,22 @@ var renderSearchResults = function () {
 				}
 				if (cnt == 0) {
 					sEnter = oRoute[i].entry;
+					sEntryProvince = oRoute[i].entry_province;
 					oCloneTimeline.find('.timeline-inverted .timeline-body').append(pUI + '</ul>');
 				}
 				cnt++;
 				// break;
 			}
 			var sExit = oRoute[i].exit;
+			var sExitProvince = oRoute[i].exit_province;
 			uiOrigin.find('.page-body').append(oCloneTimeline.removeClass('hide'));
 
 			oDetailedOrigin.push({
 				'expressway': 'Take ' + timelineTitle,
-				'enter': route == 'ncr' ? ($.inArray(sEnter.toLowerCase(), ['nlex', 'slex']) >= 0 ? sEnter.toUpperCase() + ' tollgate' : sEnter + ' City') : sEnter + ' tollgate',
-				'exit': route == 'ncr' ? ($.inArray(sExit.toLowerCase(), ['nlex', 'slex']) >= 0 ? sExit.toUpperCase() + ' tollgate' : sExit + ' City') : sExit + ' tollgate',
+				'enter': route == 'ncr' ? ($.inArray(sEnter.toLowerCase(), ['nlex', 'slex', 'skyway']) >= 0 ? sEnter.toUpperCase() + ' tollgate' : sEnter + ' City') : sEnter + ' tollgate',
+				'enter_province': sEntryProvince,
+				'exit': route == 'ncr' ? ($.inArray(sExit.toLowerCase(), ['nlex', 'slex', 'skyway']) >= 0 ? sExit.toUpperCase() + ' tollgate' : sExit + ' City') : sExit + ' tollgate',
+				'exit_province': sExitProvince,
 				'way': route,
 				'details': oDetailedRoute[route]
 			});
@@ -633,7 +659,7 @@ var renderSearchResults = function () {
 			oCloneTimeline.find('.timeline-inverted .timeline-title').html((route == 'ncr' ? 'Upon ' : 'Take ') + timelineTitle);
 
 			oDetailedRoute[route] = {};
-			var cnt = 0, sEnter = '';
+			var cnt = 0, sEnter = '', sEntryProvince = '';
 			for (var classname in oItems) {
 				var oRoute = oItems[classname];
 				oDetailedRoute[route][classname] = [];
@@ -645,25 +671,27 @@ var renderSearchResults = function () {
 						if (sameProvince) {
 							oDetailedRoute[route][classname].push({
 								entry: oRoute[i].entry,
+								entry_province: oRoute[i].entry_province,
 								exit: oRoute[i].exit,
+								exit_province: oRoute[i].exit_province,
 								fee: oRoute[i].fee,
-								region: oRoute[i].region
 							});
 						} else {
 							oDetailedRoute[route][classname].push({
 								entry: oRoute[i].exit,
+								entry_province: oRoute[i].exit_province,
 								exit: oRoute[i].entry,
+								exit_province: oRoute[i].entry_province,
 								fee: oRoute[i].fee,
-								region: oRoute[i].region
 							});
 						}
 						if (route == 'ncr') {
 							toLook = ($.inArray(toLook, ['nlex', 'slex']) >= 0) ? toLook.toUpperCase() : toLook;
 						}
-						var travelTo = ((route == 'ncr' && $.inArray(toLook.toLowerCase(), ['nlex', 'slex']) < 0) ? toLook + ' City</b>' : toLook + '</b> tollgate');
+						var travelTo = ((route == 'ncr' && $.inArray(toLook.toLowerCase(), ['nlex', 'slex', 'skyway']) < 0) ? toLook + ' City</b>' : toLook + '</b> tollgate');
 						if (pUI.indexOf(toLook) < 0) {
 							if (route == 'ncr') {
-								pUI += '<li>Travel to <b>' + travelTo + '</li>'
+								pUI += '<li>Travel to <b>' + travelTo.ucWords() + '</li>'
 							} else {
 								if (origin_data.start == 'north') {
 									pUI += '<li>Exit through <b>' + travelTo + '</li>'
@@ -676,18 +704,22 @@ var renderSearchResults = function () {
 				}
 				if (cnt == 0) {
 					sEnter = oRoute[i].exit;
+					sEntryProvince = oRoute[i].exit_province;
 					oCloneTimeline.find('.timeline-inverted .timeline-body').append(pUI + '</ul>');
 				}
 				cnt++;
 				// break;
 			}
 			var sExit = oRoute[i].entry;
+			var sExitProvince = oRoute[i].entry_province;
 			uiDestination.find('.page-body').append(oCloneTimeline.removeClass('hide'));
 
 			oDetailedDestination.push({
 				'expressway': (route == 'ncr' ? 'Upon ' : 'Take ') + timelineTitle,
-				'enter': route == 'ncr' ? ($.inArray(sEnter.toLowerCase(), ['nlex', 'slex']) >= 0 ? sEnter.toUpperCase() + ' tollgate' : sEnter + ' City') : sEnter + ' tollgate',
-				'exit': route == 'ncr' ? ($.inArray(sExit.toLowerCase(), ['nlex', 'slex']) >= 0 ? sExit.toUpperCase() + ' tollgate' : sExit + ' City') : sExit + ' tollgate',
+				'enter': route == 'ncr' ? ($.inArray(sEnter.toLowerCase(), ['nlex', 'slex', 'skyway']) >= 0 ? sEnter.toUpperCase() + ' tollgate' : sEnter + ' City') : sEnter + ' tollgate',
+				'enter_province': sEntryProvince,
+				'exit': route == 'ncr' ? ($.inArray(sExit.toLowerCase(), ['nlex', 'slex', 'skyway']) >= 0 ? sExit.toUpperCase() + ' tollgate' : sExit + ' City') : sExit + ' tollgate',
+				'exit_province': sExitProvince,
 				'way': route,
 				'details': oDetailedRoute[route]
 			});
@@ -830,7 +862,7 @@ function runDetailedRoutes() {
 					if (sWay == 'ncr') {
 						sPrefix = 'Travel from ';
 						sSuffix = 'enter ';
-						var uiRoutes = '<ul><li>' + sPrefix + '<b>' + oFromGate.enter + '</b> and ' + sSuffix + '<b>' + oFromGate.exit + '</b></li><li class="toll" style="margin-left: 15px;"><a href="https://www.google.com/maps/dir/' + oFromGate.enter + '/' + oFromGate.exit + '" target="_blank"><b>Show Direction Map</b></a></li></ul>';
+						var uiRoutes = '<ul><li>' + sPrefix + '<b>' + oFromGate.enter + '</b> and ' + sSuffix + '<b>' + oFromGate.exit + '</b></li><li class="toll" style="margin-left: 15px;"><a href="https://www.google.com/maps/dir/' + oFromGate.enter + ',' + oFromGate.enter_province + '/' + oFromGate.exit + ',' + oFromGate.exit_province + '" target="_blank"><b>Show Direction Map</b></a></li></ul>';
 						uiTimeline.find('.timeline-body').html(uiRoutes);
 					} else {
 						var wayCount = oFromGate.details.class_1.length;
@@ -845,7 +877,7 @@ function runDetailedRoutes() {
 									uiTolls += '<li class="toll" style="margin-left: 15px; margin-top: 10px;"><b>' + classname.ucWords().replace('_', ' ') + ' - Vehicles:</b></li>';
 								}
 								var iFee = new Intl.NumberFormat('en-PH', { style: 'currency', currency: 'PHP' }).format(oItem.fee);
-								uiTolls += '<li class="toll route" style="margin-left: 30px;">' + (wayCount > 1 ? (parseInt(i) + 1) + '. ' : '') + 'Enter ' + oItem.entry + ' and exit ' + oItem.exit + '</li><li class="toll fee" style="margin-left: 45px;"><b>Fee: ' + iFee + '</b></li><li class="toll fee" style="margin-left: 45px;"><a href="https://www.google.com/maps/dir/' + oItem.entry + '/' + oItem.exit + ',Region ' + oItem.region + '" target="_blank"><b>Show Direction Map</b></a></li>';
+								uiTolls += '<li class="toll route" style="margin-left: 30px;">' + (wayCount > 1 ? (parseInt(i) + 1) + '. ' : '') + 'Enter ' + oItem.entry + ' and exit ' + oItem.exit + '</li><li class="toll fee" style="margin-left: 45px;"><b>Fee: ' + iFee + '</b></li><li class="toll fee" style="margin-left: 45px;"><a href="https://www.google.com/maps/dir/' + oItem.entry + ',' + oItem.entry_province + '/' + oItem.exit + ',' + oItem.exit_province + '" target="_blank"><b>Show Direction Map</b></a></li>';
 							}
 							uiRoutes += uiTolls;
 						}
@@ -884,7 +916,7 @@ function runDetailedRoutes() {
 					if (sWay == 'ncr') {
 						sPrefix = 'Travel from ';
 						sSuffix = 'enter ';
-						var uiRoutes = '<ul><li>' + sPrefix + '<b>' + oToGate.enter + '</b> and ' + sSuffix + '<b>' + oToGate.exit + '</b></li><li class="toll" style="margin-left: 15px;"><a href="https://www.google.com/maps/dir/' + oToGate.enter + '/' + oToGate.exit + '" target="_blank"><b>Show Direction Map</b></a></li></ul>';
+						var uiRoutes = '<ul><li>' + sPrefix + '<b>' + oToGate.enter + '</b> and ' + sSuffix + '<b>' + oToGate.exit + '</b></li><li class="toll" style="margin-left: 15px;"><a href="https://www.google.com/maps/dir/' + oToGate.enter + ',' + oToGate.enter_province + '/' + oToGate.exit + ',' + oToGate.exit_province + '" target="_blank"><b>Show Direction Map</b></a></li></ul>';
 						uiTimeline.find('.timeline-body').html(uiRoutes);
 					} else {
 						var wayCount = oToGate.details.class_1.length;
@@ -899,7 +931,7 @@ function runDetailedRoutes() {
 									uiTolls += '<li class="toll" style="margin-left: 15px; margin-top: 10px;"><b>' + classname.ucWords().replace('_', ' ') + ' - Vehicles:</b></li>';
 								}
 								var iFee = new Intl.NumberFormat('en-PH', { style: 'currency', currency: 'PHP' }).format(oItem.fee);
-								uiTolls += '<li class="toll route" style="margin-left: 30px;">' + (wayCount > 1 ? (parseInt(i) + 1) + '. ' : '') + 'Enter ' + oItem.entry + ' and exit ' + oItem.exit + '</li><li class="toll fee" style="margin-left: 45px;"><b>Fee: ' + iFee + '</b></li><li class="toll fee" style="margin-left: 45px;"><a href="https://www.google.com/maps/dir/' + oItem.entry + '/' + oItem.exit + ',Region ' + oItem.region + '" target="_blank"><b>Show Direction Map</b></a></li>';
+								uiTolls += '<li class="toll route" style="margin-left: 30px;">' + (wayCount > 1 ? (parseInt(i) + 1) + '. ' : '') + 'Enter ' + oItem.entry + ' and exit ' + oItem.exit + '</li><li class="toll fee" style="margin-left: 45px;"><b>Fee: ' + iFee + '</b></li><li class="toll fee" style="margin-left: 45px;"><a href="https://www.google.com/maps/dir/' + oItem.entry + ',' + oItem.entry_province + '/' + oItem.exit + ',' + oItem.exit_province + '" target="_blank"><b>Show Direction Map</b></a></li>';
 							}
 							uiRoutes += uiTolls;
 						}

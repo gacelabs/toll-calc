@@ -6,8 +6,8 @@
             "province": ["NCR"],
             "nearest": ["Pasay City", "Parañaque City"],
             "tolls": [
-                { "exit": "Short Segment", "fee": 35 },
-                { "exit": "Full Segment", "fee": 45 }
+                { "exit": "Short Segment", "fee": 35, "province": "NCR" },
+                { "exit": "Full Segment", "fee": 45, "province": "NCR" }
             ]
         }
 	],
@@ -18,8 +18,8 @@
             "province": ["NCR"],
             "nearest": ["Pasay City", "Parañaque City"],
             "tolls": [
-                { "exit": "Short Segment", "fee": 69 },
-                { "exit": "Full Segment", "fee": 90 }
+                { "exit": "Short Segment", "fee": 69, "province": "NCR" },
+                { "exit": "Full Segment", "fee": 90, "province": "NCR" }
             ]
         }
 	],
@@ -30,8 +30,8 @@
             "province": ["NCR"],
             "nearest": ["Pasay City", "Parañaque City"],
             "tolls": [
-                { "exit": "Short Segment", "fee": 104 },
-                { "exit": "Full Segment", "fee": 134 }
+                { "exit": "Short Segment", "fee": 104, "province": "NCR" },
+                { "exit": "Full Segment", "fee": 134, "province": "NCR" }
             ]
         }
 	]

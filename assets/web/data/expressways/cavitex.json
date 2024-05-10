@@ -6,7 +6,7 @@
             "province": ["NCR", "CAVITE"],
             "nearest": ["Parañaque City", "Las Piñas City"],
             "tolls": [
-                { "exit": "Any point of Cavite", "fee": 8 }
+                { "exit": "Any point in Cavite", "fee": 8, "province": "CAVITE" }
             ]
         },
 		{
@@ -15,7 +15,7 @@
             "province": ["NCR", "CAVITE", "RIZAL"],
             "nearest": ["Antipolo", "Taguig City", "Parañaque City"],
             "tolls": [
-                { "exit": "Any point of Cavite", "fee": 22 }
+                { "exit": "Any point in Cavite", "fee": 22, "province": "CAVITE" }
             ]
         },
 		{
@@ -24,7 +24,7 @@
             "province": ["NCR", "CAVITE"],
             "nearest": ["Parañaque City", "Pasay City"],
             "tolls": [
-                { "exit": "Any point of Cavite", "fee": 22 }
+                { "exit": "Any point in Cavite", "fee": 22, "province": "CAVITE" }
             ]
         },
 		{
@@ -33,7 +33,7 @@
             "province": ["NCR", "CAVITE"],
             "nearest": ["Parañaque City", "Las Piñas City"],
             "tolls": [
-                { "exit": "Any point of Cavite", "fee": 35 }
+                { "exit": "Any point in Cavite", "fee": 35, "province": "CAVITE" }
             ]
         },
 		{
@@ -42,7 +42,7 @@
             "province": ["CAVITE", "NCR"],
             "nearest": ["Kawit", "Bacoor"],
             "tolls": [
-                { "exit": "Any point of Cavite", "fee": 73 }
+                { "exit": "Any point in Cavite", "fee": 73, "province": "CAVITE" }
             ]
         }
 	],
@@ -53,7 +53,7 @@
             "province": ["NCR", "CAVITE", "RIZAL"],
             "nearest": ["Antipolo", "Taguig City", "Parañaque City"],
             "tolls": [
-                { "exit": "Any point of Cavite", "fee": 44 }
+                { "exit": "Any point in Cavite", "fee": 44, "province": "CAVITE" }
             ]
         },
 		{
@@ -62,7 +62,7 @@
             "province": ["NCR", "CAVITE"],
             "nearest": ["Parañaque City", "Pasay City"],
             "tolls": [
-                { "exit": "Any point of Cavite", "fee": 44 }
+                { "exit": "Any point in Cavite", "fee": 44, "province": "CAVITE" }
             ]
         },
 		{
@@ -71,7 +71,7 @@
             "province": ["NCR", "CAVITE"],
             "nearest": ["Parañaque City", "Las Piñas City"],
             "tolls": [
-                { "exit": "Any point of Cavite", "fee": 70 }
+                { "exit": "Any point in Cavite", "fee": 70, "province": "CAVITE" }
             ]
         },
 		{
@@ -80,7 +80,7 @@
             "province": ["CAVITE", "NCR"],
             "nearest": ["Kawit", "Bacoor"],
             "tolls": [
-                { "exit": "Any point of Cavite", "fee": 146 }
+                { "exit": "Any point in Cavite", "fee": 146, "province": "CAVITE" }
             ]
         }
 	],
@@ -91,7 +91,7 @@
             "province": ["NCR", "CAVITE", "RIZAL"],
             "nearest": ["Antipolo", "Taguig City", "Parañaque City"],
             "tolls": [
-                { "exit": "Any point of Cavite", "fee": 66 }
+                { "exit": "Any point in Cavite", "fee": 66, "province": "CAVITE" }
             ]
         },
 		{
@@ -100,7 +100,7 @@
             "province": ["NCR", "CAVITE"],
             "nearest": ["Parañaque City", "Pasay City"],
             "tolls": [
-                { "exit": "Any point of Cavite", "fee": 66 }
+                { "exit": "Any point in Cavite", "fee": 66, "province": "CAVITE" }
             ]
         },
 		{
@@ -109,7 +109,7 @@
             "province": ["NCR", "CAVITE"],
             "nearest": ["Parañaque City", "Las Piñas City"],
             "tolls": [
-                { "exit": "Any point of Cavite", "fee": 104 }
+                { "exit": "Any point in Cavite", "fee": 104, "province": "CAVITE" }
             ]
         },
 		{
@@ -118,7 +118,7 @@
             "province": ["CAVITE", "NCR"],
             "nearest": ["Kawit", "Bacoor"],
             "tolls": [
-                { "exit": "Any point of Cavite", "fee": 219 }
+                { "exit": "Any point in Cavite", "fee": 219, "province": "CAVITE" }
             ]
         }
 	]

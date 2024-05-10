@@ -6,13 +6,13 @@
             "province": ["BATANGAS", "LAGUNA", "CAVITE"],
             "nearest": ["Santo Tomas", "Tanauan", "Santa Rosa"],
             "tolls": [
-                { "exit": "Santo Tomas", "fee": 0 },
-                { "exit": "Tanauan", "fee": 12 },
-                { "exit": "Malvar", "fee": 27 },
-                { "exit": "Santo Toribio", "fee": 45 },
-                { "exit": "Lipa", "fee": 55 },
-                { "exit": "Ibaan", "fee": 83 },
-                { "exit": "Batangas", "fee": 104 }
+                { "exit": "Santo Tomas", "fee": 0, "province": "BATANGAS" },
+                { "exit": "Tanauan", "fee": 12, "province": "BATANGAS" },
+                { "exit": "Malvar", "fee": 27, "province": "BATANGAS" },
+                { "exit": "Santo Toribio", "fee": 45, "province": "BATANGAS" },
+                { "exit": "Lipa", "fee": 55, "province": "BATANGAS" },
+                { "exit": "Ibaan", "fee": 83, "province": "BATANGAS" },
+                { "exit": "Batangas", "fee": 104, "province": "BATANGAS" }
             ]
         },
         {
@@ -21,12 +21,12 @@
             "province": ["BATANGAS", "LAGUNA"],
             "nearest": ["Tanauan", "Santo Tomas", "Santa Rosa"],
             "tolls": [
-                { "exit": "Tanauan", "fee": 0 },
-                { "exit": "Malvar", "fee": 14 },
-                { "exit": "Santo Toribio", "fee": 32 },
-                { "exit": "Lipa", "fee": 43 },
-                { "exit": "Ibaan", "fee": 71 },
-                { "exit": "Batangas", "fee": 91 }
+                { "exit": "Tanauan", "fee": 0, "province": "BATANGAS" },
+                { "exit": "Malvar", "fee": 14, "province": "BATANGAS" },
+                { "exit": "Santo Toribio", "fee": 32, "province": "BATANGAS" },
+                { "exit": "Lipa", "fee": 43, "province": "BATANGAS" },
+                { "exit": "Ibaan", "fee": 71, "province": "BATANGAS" },
+                { "exit": "Batangas", "fee": 91, "province": "BATANGAS" }
             ]
         },
         {
@@ -35,11 +35,11 @@
             "province": ["BATANGAS", "LAGUNA"],
             "nearest": ["Malvar", "Tanauan"],
             "tolls": [
-                { "exit": "Malvar", "fee": 0 },
-                { "exit": "Santo Toribio", "fee": 18 },
-                { "exit": "Lipa", "fee": 28 },
-                { "exit": "Ibaan", "fee": 56 },
-                { "exit": "Batangas", "fee": 77 }
+                { "exit": "Malvar", "fee": 0, "province": "BATANGAS" },
+                { "exit": "Santo Toribio", "fee": 18, "province": "BATANGAS" },
+                { "exit": "Lipa", "fee": 28, "province": "BATANGAS" },
+                { "exit": "Ibaan", "fee": 56, "province": "BATANGAS" },
+                { "exit": "Batangas", "fee": 77, "province": "BATANGAS" }
             ]
         },
         {
@@ -48,10 +48,10 @@
             "province": ["BATANGAS"],
             "nearest": ["Lipa", "Malvar", "Agoncillo"],
             "tolls": [
-                { "exit": "Santo Toribio", "fee": 0 },
-                { "exit": "Lipa", "fee": 10 },
-                { "exit": "Ibaan", "fee": 38 },
-                { "exit": "Batangas", "fee": 59 }
+                { "exit": "Santo Toribio", "fee": 0, "province": "BATANGAS" },
+                { "exit": "Lipa", "fee": 10, "province": "BATANGAS" },
+                { "exit": "Ibaan", "fee": 38, "province": "BATANGAS" },
+                { "exit": "Batangas", "fee": 59, "province": "BATANGAS" }
             ]
         },
         {
@@ -60,9 +60,9 @@
             "province": ["BATANGAS"],
             "nearest": ["Lipa", "Balete", "Agoncillo"],
             "tolls": [
-                { "exit": "Lipa", "fee": 0 },
-                { "exit": "Ibaan", "fee": 28 },
-                { "exit": "Batangas", "fee": 49 }
+                { "exit": "Lipa", "fee": 0, "province": "BATANGAS" },
+                { "exit": "Ibaan", "fee": 28, "province": "BATANGAS" },
+                { "exit": "Batangas", "fee": 49, "province": "BATANGAS" }
             ]
         },
         {
@@ -71,8 +71,8 @@
             "province": ["BATANGAS"],
             "nearest": ["Ibaan", "Rosario", "Alitagtag"],
             "tolls": [
-                { "exit": "Ibaan", "fee": 0 },
-                { "exit": "Batangas", "fee": 2 }
+                { "exit": "Ibaan", "fee": 0, "province": "BATANGAS" },
+                { "exit": "Batangas", "fee": 2, "province": "BATANGAS" }
             ]
         },
         {
@@ -81,13 +81,13 @@
             "province": ["BATANGAS"],
             "nearest": ["Batangas City", "San Pascual"],
             "tolls": [
-                { "exit": "Santo Tomas", "fee": 104 },
-                { "exit": "Tanauan", "fee": 91 },
-                { "exit": "Malvar", "fee": 77 },
-                { "exit": "Santo Toribio", "fee": 59 },
-                { "exit": "Lipa", "fee": 49 },
-                { "exit": "Ibaan", "fee": 2 },
-                { "exit": "Batangas", "fee": 0 }
+                { "exit": "Santo Tomas", "fee": 104, "province": "BATANGAS" },
+                { "exit": "Tanauan", "fee": 91, "province": "BATANGAS" },
+                { "exit": "Malvar", "fee": 77, "province": "BATANGAS" },
+                { "exit": "Santo Toribio", "fee": 59, "province": "BATANGAS" },
+                { "exit": "Lipa", "fee": 49, "province": "BATANGAS" },
+                { "exit": "Ibaan", "fee": 2, "province": "BATANGAS" },
+                { "exit": "Batangas", "fee": 0, "province": "BATANGAS" }
             ]
         }
 	],
@@ -98,13 +98,13 @@
             "province": ["BATANGAS", "LAGUNA", "CAVITE"],
             "nearest": ["Santo Tomas", "Tanauan", "Santa Rosa"],
             "tolls": [
-                { "exit": "Santo Tomas", "fee": 0 },
-                { "exit": "Tanauan", "fee": 25 },
-                { "exit": "Malvar", "fee": 53 },
-                { "exit": "Santo Toribio", "fee": 89 },
-                { "exit": "Lipa", "fee": 110 },
-                { "exit": "Ibaan", "fee": 166 },
-                { "exit": "Batangas", "fee": 208 }
+                { "exit": "Santo Tomas", "fee": 0, "province": "BATANGAS" },
+                { "exit": "Tanauan", "fee": 25, "province": "BATANGAS" },
+                { "exit": "Malvar", "fee": 53, "province": "BATANGAS" },
+                { "exit": "Santo Toribio", "fee": 89, "province": "BATANGAS" },
+                { "exit": "Lipa", "fee": 110, "province": "BATANGAS" },
+                { "exit": "Ibaan", "fee": 166, "province": "BATANGAS" },
+                { "exit": "Batangas", "fee": 208, "province": "BATANGAS" }
             ]
         },
         {
@@ -113,12 +113,12 @@
             "province": ["BATANGAS", "LAGUNA"],
             "nearest": ["Tanauan", "Santo Tomas", "Santa Rosa"],
             "tolls": [
-                { "exit": "Tanauan", "fee": 0 },
-                { "exit": "Malvar", "fee": 29 },
-                { "exit": "Santo Toribio", "fee": 65 },
-                { "exit": "Lipa", "fee": 85 },
-                { "exit": "Ibaan", "fee": 142 },
-                { "exit": "Batangas", "fee": 183 }
+                { "exit": "Tanauan", "fee": 0, "province": "BATANGAS" },
+                { "exit": "Malvar", "fee": 29, "province": "BATANGAS" },
+                { "exit": "Santo Toribio", "fee": 65, "province": "BATANGAS" },
+                { "exit": "Lipa", "fee": 85, "province": "BATANGAS" },
+                { "exit": "Ibaan", "fee": 142, "province": "BATANGAS" },
+                { "exit": "Batangas", "fee": 183, "province": "BATANGAS" }
             ]
         },
         {
@@ -127,11 +127,11 @@
             "province": ["BATANGAS", "LAGUNA"],
             "nearest": ["Malvar", "Tanauan"],
             "tolls": [
-                { "exit": "Malvar", "fee": 0 },
-                { "exit": "Santo Toribio", "fee": 36 },
-                { "exit": "Lipa", "fee": 57 },
-                { "exit": "Ibaan", "fee": 113 },
-                { "exit": "Batangas", "fee": 154 }
+                { "exit": "Malvar", "fee": 0, "province": "BATANGAS" },
+                { "exit": "Santo Toribio", "fee": 36, "province": "BATANGAS" },
+                { "exit": "Lipa", "fee": 57, "province": "BATANGAS" },
+                { "exit": "Ibaan", "fee": 113, "province": "BATANGAS" },
+                { "exit": "Batangas", "fee": 154, "province": "BATANGAS" }
             ]
         },
         {
@@ -140,10 +140,10 @@
             "province": ["BATANGAS"],
             "nearest": ["Lipa", "Malvar", "Agoncillo"],
             "tolls": [
-                { "exit": "Santo Toribio", "fee": 0 },
-                { "exit": "Lipa", "fee": 21 },
-                { "exit": "Ibaan", "fee": 77 },
-                { "exit": "Batangas", "fee": 118 }
+                { "exit": "Santo Toribio", "fee": 0, "province": "BATANGAS" },
+                { "exit": "Lipa", "fee": 21, "province": "BATANGAS" },
+                { "exit": "Ibaan", "fee": 77, "province": "BATANGAS" },
+                { "exit": "Batangas", "fee": 118, "province": "BATANGAS" }
             ]
         },
         {
@@ -152,9 +152,9 @@
             "province": ["BATANGAS"],
             "nearest": ["Lipa", "Balete", "Agoncillo"],
             "tolls": [
-                { "exit": "Lipa", "fee": 0 },
-                { "exit": "Ibaan", "fee": 56 },
-                { "exit": "Batangas", "fee": 98 }
+                { "exit": "Lipa", "fee": 0, "province": "BATANGAS" },
+                { "exit": "Ibaan", "fee": 56, "province": "BATANGAS" },
+                { "exit": "Batangas", "fee": 98, "province": "BATANGAS" }
             ]
         },
         {
@@ -163,8 +163,8 @@
             "province": ["BATANGAS"],
             "nearest": ["Ibaan", "Rosario", "Alitagtag"],
             "tolls": [
-                { "exit": "Ibaan", "fee": 0 },
-                { "exit": "Batangas", "fee": 41 }
+                { "exit": "Ibaan", "fee": 0, "province": "BATANGAS" },
+                { "exit": "Batangas", "fee": 41, "province": "BATANGAS" }
             ]
         },
         {
@@ -173,13 +173,13 @@
             "province": ["BATANGAS"],
             "nearest": ["Batangas City", "San Pascual"],
             "tolls": [
-                { "exit": "Santo Tomas", "fee": 208 },
-                { "exit": "Tanauan", "fee": 183 },
-                { "exit": "Malvar", "fee": 154 },
-                { "exit": "Santo Toribio", "fee": 118 },
-                { "exit": "Lipa", "fee": 98 },
-                { "exit": "Ibaan", "fee": 41 },
-                { "exit": "Batangas", "fee": 0 }
+                { "exit": "Santo Tomas", "fee": 208, "province": "BATANGAS" },
+                { "exit": "Tanauan", "fee": 183, "province": "BATANGAS" },
+                { "exit": "Malvar", "fee": 154, "province": "BATANGAS" },
+                { "exit": "Santo Toribio", "fee": 118, "province": "BATANGAS" },
+                { "exit": "Lipa", "fee": 98, "province": "BATANGAS" },
+                { "exit": "Ibaan", "fee": 41, "province": "BATANGAS" },
+                { "exit": "Batangas", "fee": 0, "province": "BATANGAS" }
             ]
         }
 	],
@@ -190,13 +190,13 @@
             "province": ["BATANGAS", "LAGUNA", "CAVITE"],
             "nearest": ["Santo Tomas", "Tanauan", "Santa Rosa"],
             "tolls": [
-                { "exit": "Santo Tomas", "fee": 0 },
-                { "exit": "Tanauan", "fee": 37 },
-                { "exit": "Malvar", "fee": 80 },
-                { "exit": "Santo Toribio", "fee": 134 },
-                { "exit": "Lipa", "fee": 165 },
-                { "exit": "Ibaan", "fee": 249 },
-                { "exit": "Batangas", "fee": 311 }
+                { "exit": "Santo Tomas", "fee": 0, "province": "BATANGAS" },
+                { "exit": "Tanauan", "fee": 37, "province": "BATANGAS" },
+                { "exit": "Malvar", "fee": 80, "province": "BATANGAS" },
+                { "exit": "Santo Toribio", "fee": 134, "province": "BATANGAS" },
+                { "exit": "Lipa", "fee": 165, "province": "BATANGAS" },
+                { "exit": "Ibaan", "fee": 249, "province": "BATANGAS" },
+                { "exit": "Batangas", "fee": 311, "province": "BATANGAS" }
             ]
         },
         {
@@ -205,12 +205,12 @@
             "province": ["BATANGAS", "LAGUNA"],
             "nearest": ["Tanauan", "Santo Tomas", "Santa Rosa"],
             "tolls": [
-                { "exit": "Tanauan", "fee": 0 },
-                { "exit": "Malvar", "fee": 43 },
-                { "exit": "Santo Toribio", "fee": 97 },
-                { "exit": "Lipa", "fee": 128 },
-                { "exit": "Ibaan", "fee": 212 },
-                { "exit": "Batangas", "fee": 274 }
+                { "exit": "Tanauan", "fee": 0, "province": "BATANGAS" },
+                { "exit": "Malvar", "fee": 43, "province": "BATANGAS" },
+                { "exit": "Santo Toribio", "fee": 97, "province": "BATANGAS" },
+                { "exit": "Lipa", "fee": 128, "province": "BATANGAS" },
+                { "exit": "Ibaan", "fee": 212, "province": "BATANGAS" },
+                { "exit": "Batangas", "fee": 274, "province": "BATANGAS" }
             ]
         },
         {
@@ -219,11 +219,11 @@
             "province": ["BATANGAS", "LAGUNA"],
             "nearest": ["Malvar", "Tanauan"],
             "tolls": [
-                { "exit": "Malvar", "fee": 0 },
-                { "exit": "Santo Toribio", "fee": 54 },
-                { "exit": "Lipa", "fee": 85 },
-                { "exit": "Ibaan", "fee": 169 },
-                { "exit": "Batangas", "fee": 232 }
+                { "exit": "Malvar", "fee": 0, "province": "BATANGAS" },
+                { "exit": "Santo Toribio", "fee": 54, "province": "BATANGAS" },
+                { "exit": "Lipa", "fee": 85, "province": "BATANGAS" },
+                { "exit": "Ibaan", "fee": 169, "province": "BATANGAS" },
+                { "exit": "Batangas", "fee": 232, "province": "BATANGAS" }
             ]
         },
         {
@@ -232,10 +232,10 @@
             "province": ["BATANGAS"],
             "nearest": ["Lipa", "Malvar", "Agoncillo"],
             "tolls": [
-                { "exit": "Santo Toribio", "fee": 0 },
-                { "exit": "Lipa", "fee": 31 },
-                { "exit": "Ibaan", "fee": 115 },
-                { "exit": "Batangas", "fee": 178 }
+                { "exit": "Santo Toribio", "fee": 0, "province": "BATANGAS" },
+                { "exit": "Lipa", "fee": 31, "province": "BATANGAS" },
+                { "exit": "Ibaan", "fee": 115, "province": "BATANGAS" },
+                { "exit": "Batangas", "fee": 178, "province": "BATANGAS" }
             ]
         },
         {
@@ -244,9 +244,9 @@
             "province": ["BATANGAS"],
             "nearest": ["Lipa", "Balete", "Agoncillo"],
             "tolls": [
-                { "exit": "Lipa", "fee": 0 },
-                { "exit": "Ibaan", "fee": 85 },
-                { "exit": "Batangas", "fee": 147 }
+                { "exit": "Lipa", "fee": 0, "province": "BATANGAS" },
+                { "exit": "Ibaan", "fee": 85, "province": "BATANGAS" },
+                { "exit": "Batangas", "fee": 147, "province": "BATANGAS" }
             ]
         },
         {
@@ -255,8 +255,8 @@
             "province": ["BATANGAS"],
             "nearest": ["Ibaan", "Rosario", "Alitagtag"],
             "tolls": [
-                { "exit": "Ibaan", "fee": 0 },
-                { "exit": "Batangas", "fee": 62 }
+                { "exit": "Ibaan", "fee": 0, "province": "BATANGAS" },
+                { "exit": "Batangas", "fee": 62, "province": "BATANGAS" }
             ]
         },
         {
@@ -265,13 +265,13 @@
             "province": ["BATANGAS"],
             "nearest": ["Batangas City", "San Pascual"],
             "tolls": [
-                { "exit": "Santo Tomas", "fee": 311 },
-                { "exit": "Tanauan", "fee": 274 },
-                { "exit": "Malvar", "fee": 232 },
-                { "exit": "Santo Toribio", "fee": 178 },
-                { "exit": "Lipa", "fee": 147 },
-                { "exit": "Ibaan", "fee": 62 },
-                { "exit": "Batangas", "fee": 0 }
+                { "exit": "Santo Tomas", "fee": 311, "province": "BATANGAS" },
+                { "exit": "Tanauan", "fee": 274, "province": "BATANGAS" },
+                { "exit": "Malvar", "fee": 232, "province": "BATANGAS" },
+                { "exit": "Santo Toribio", "fee": 178, "province": "BATANGAS" },
+                { "exit": "Lipa", "fee": 147, "province": "BATANGAS" },
+                { "exit": "Ibaan", "fee": 62, "province": "BATANGAS" },
+                { "exit": "Batangas", "fee": 0, "province": "BATANGAS" }
             ]
         }
 	]
