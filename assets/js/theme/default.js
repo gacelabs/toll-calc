@@ -98,7 +98,7 @@ var initMainFunctions = function () {
 				if (origin.attr('data-set') != undefined && dest.attr('data-set') != undefined) {
 					var origin_data = JSON.parse(origin.attr('data-set'));
 					var dest_data = JSON.parse(dest.attr('data-set'));
-					getSearchResults(origin_data, dest_data, this, true);
+					getSearchResults(origin_data, dest_data, this/* , true */);
 				} else {
 					showToast({ content: 'Please enter the origin and detination routes you want to know', type: 'info' });
 				}
@@ -539,7 +539,7 @@ var runSearchResults = function () {
 				var dest_data = JSON.parse(dest.attr('data-set'));
 				// console.log(origin_data, dest_data);
 				setTimeout(() => {
-					getSearchResults(origin_data, dest_data, true, true);
+					getSearchResults(origin_data, dest_data, true/* , true */);
 				}, 333);
 			}
 		});
@@ -614,7 +614,7 @@ var renderSearchResults = function () {
 					if (route == 'ncr') {
 						toLook = ($.inArray(toLook, ['nlex', 'slex']) >= 0) ? toLook.toUpperCase() : toLook;
 					}
-					var travelTo = ((route == 'ncr' && $.inArray(toLook.toLowerCase(), ['nlex', 'slex', 'skyway']) < 0) ? toLook + ' City</b>' : toLook + '</b> tollgate');
+					var travelTo = ((route == 'ncr' && $.inArray(toLook.toLowerCase(), ['balintawak', 'skyway alabang', 'skyway']) < 0) ? toLook + ' City</b>' : toLook + '</b> tollgate');
 					if (pUI.indexOf(toLook) < 0) {
 						if (route == 'ncr') {
 							pUI += '<li>Travel to <b>' + travelTo.ucWords() + '</li>'
@@ -637,9 +637,9 @@ var renderSearchResults = function () {
 
 			oDetailedOrigin.push({
 				'expressway': 'Take ' + timelineTitle,
-				'enter': route == 'ncr' ? ($.inArray(sEnter.toLowerCase(), ['nlex', 'slex', 'skyway']) >= 0 ? sEnter.toUpperCase() + ' tollgate' : sEnter + ' City') : sEnter + ' tollgate',
+				'enter': route == 'ncr' ? ($.inArray(sEnter.toLowerCase(), ['balintawak', 'skyway alabang', 'skyway']) >= 0 ? sEnter.toUpperCase() + ' tollgate' : sEnter + ' City') : sEnter + ' tollgate',
 				'enter_province': sEntryProvince,
-				'exit': route == 'ncr' ? ($.inArray(sExit.toLowerCase(), ['nlex', 'slex', 'skyway']) >= 0 ? sExit.toUpperCase() + ' tollgate' : sExit + ' City') : sExit + ' tollgate',
+				'exit': route == 'ncr' ? ($.inArray(sExit.toLowerCase(), ['balintawak', 'skyway alabang', 'skyway']) >= 0 ? sExit.toUpperCase() + ' tollgate' : sExit + ' City') : sExit + ' tollgate',
 				'exit_province': sExitProvince,
 				'way': route,
 				'details': oDetailedRoute[route]
@@ -695,7 +695,7 @@ var renderSearchResults = function () {
 						if (route == 'ncr') {
 							toLook = ($.inArray(toLook, ['nlex', 'slex']) >= 0) ? toLook.toUpperCase() : toLook;
 						}
-						var travelTo = ((route == 'ncr' && $.inArray(toLook.toLowerCase(), ['nlex', 'slex', 'skyway']) < 0) ? toLook + ' City</b>' : toLook + '</b> tollgate');
+						var travelTo = ((route == 'ncr' && $.inArray(toLook.toLowerCase(), ['balintawak', 'skyway alabang', 'skyway']) < 0) ? toLook + ' City</b>' : toLook + '</b> tollgate');
 						if (pUI.indexOf(toLook) < 0) {
 							if (route == 'ncr') {
 								pUI += '<li>Travel to <b>' + travelTo.ucWords() + '</li>'
@@ -723,9 +723,9 @@ var renderSearchResults = function () {
 
 			oDetailedDestination.push({
 				'expressway': (route == 'ncr' ? 'Upon ' : 'Take ') + timelineTitle,
-				'enter': route == 'ncr' ? ($.inArray(sEnter.toLowerCase(), ['nlex', 'slex', 'skyway']) >= 0 ? sEnter.toUpperCase() + ' tollgate' : sEnter + ' City') : sEnter + ' tollgate',
+				'enter': route == 'ncr' ? ($.inArray(sEnter.toLowerCase(), ['balintawak', 'skyway alabang', 'skyway']) >= 0 ? sEnter.toUpperCase() + ' tollgate' : sEnter + ' City') : sEnter + ' tollgate',
 				'enter_province': sEntryProvince,
-				'exit': route == 'ncr' ? ($.inArray(sExit.toLowerCase(), ['nlex', 'slex', 'skyway']) >= 0 ? sExit.toUpperCase() + ' tollgate' : sExit + ' City') : sExit + ' tollgate',
+				'exit': route == 'ncr' ? ($.inArray(sExit.toLowerCase(), ['balintawak', 'skyway alabang', 'skyway']) >= 0 ? sExit.toUpperCase() + ' tollgate' : sExit + ' City') : sExit + ' tollgate',
 				'exit_province': sExitProvince,
 				'way': route,
 				'details': oDetailedRoute[route]

@@ -2,32 +2,32 @@
 	"class_1": [
         {
             "region": "NCR",
-            "entry": "Buendia Avenue",
+            "entry": "Buendia Avenue Skyway",
             "province": ["NCR"],
             "nearest": ["Makati", "Pasay"],
             "tolls": [
-                { "exit": "Buendia Avenue", "fee": 0, "province": "NCR" },
-                { "exit": "Quirino", "fee": 105, "province": "NCR" },
+                { "exit": "Buendia Avenue Skyway", "fee": 0, "province": "NCR" },
+                { "exit": "Quirino Avenue Skyway", "fee": 105, "province": "NCR" },
                 { "exit": "Plaza Azul/Nagtahan", "fee": 105, "province": "NCR" },
-                { "exit": "Quezon Avenue", "fee": 264, "province": "NCR" },
+                { "exit": "Quezon Avenue Skyway", "fee": 264, "province": "NCR" },
                 { "exit": "Sgt. Rivera - A.Bonifacio", "fee": 264, "province": "NCR" },
                 { "exit": "A.Bonifacio - Balintawak", "fee": 264, "province": "NCR" },
-                { "exit": "NLEX", "fee": 264, "province": "NCR" }
+                { "exit": "NLEX - Balintawak", "fee": 264, "province": "NCR" }
             ],
             "bound": "north"
         },
         {
             "region": "NCR",
-            "entry": "Quirino",
+            "entry": "Quirino Avenue Skyway",
             "province": ["NCR"],
             "nearest": ["Makati", "Pasay"],
             "tolls": [
-                { "exit": "Quirino", "fee": 0, "province": "NCR" },
+                { "exit": "Quirino Avenue Skyway", "fee": 0, "province": "NCR" },
                 { "exit": "Plaza Azul/Nagtahan", "fee": 105, "province": "NCR" },
-                { "exit": "Quezon Avenue", "fee": 264, "province": "NCR" },
+                { "exit": "Quezon Avenue Skyway", "fee": 264, "province": "NCR" },
                 { "exit": "Sgt. Rivera - A.Bonifacio", "fee": 264, "province": "NCR" },
                 { "exit": "A.Bonifacio - Balintawak", "fee": 264, "province": "NCR" },
-                { "exit": "NLEX", "fee": 264, "province": "NCR" }
+                { "exit": "NLEX - Balintawak", "fee": 264, "province": "NCR" }
             ],
             "bound": "north"
         },
@@ -38,10 +38,10 @@
             "nearest": ["Manila", "Mandaluyong", "San Juan"],
             "tolls": [
                 { "exit": "Plaza Azul/Nagtahan", "fee": 0, "province": "NCR" },
-                { "exit": "Quezon Avenue", "fee": 264, "province": "NCR" },
+                { "exit": "Quezon Avenue Skyway", "fee": 264, "province": "NCR" },
                 { "exit": "Sgt. Rivera - A.Bonifacio", "fee": 264, "province": "NCR" },
                 { "exit": "A.Bonifacio - Balintawak", "fee": 264, "province": "NCR" },
-                { "exit": "NLEX", "fee": 264, "province": "NCR" }
+                { "exit": "NLEX - Balintawak", "fee": 264, "province": "NCR" }
             ],
             "bound": "north"
         },
@@ -52,55 +52,55 @@
             "nearest": ["Manila", "Quezon", "San Juan"],
             "tolls": [
                 { "exit": "E. Rodriguez", "fee": 0, "province": "NCR" },
-                { "exit": "Quezon Avenue", "fee": 129, "province": "NCR" },
+                { "exit": "Quezon Avenue Skyway", "fee": 129, "province": "NCR" },
                 { "exit": "Sgt. Rivera - A.Bonifacio", "fee": 129, "province": "NCR" },
                 { "exit": "A.Bonifacio - Balintawak", "fee": 129, "province": "NCR" },
-                { "exit": "NLEX", "fee": 129, "province": "NCR" }
+                { "exit": "NLEX - Balintawak", "fee": 129, "province": "NCR" }
             ],
             "bound": "north"
         },
         {
             "region": "NCR",
-            "entry": "Quezon Avenue",
+            "entry": "Quezon Avenue Skyway",
             "province": ["NCR"],
             "nearest": ["Caloocan", "Manila", "Quezon"],
             "tolls": [
-                { "exit": "Quezon Avenue", "fee": 0, "province": "NCR" },
+                { "exit": "Quezon Avenue Skyway", "fee": 0, "province": "NCR" },
                 { "exit": "Sgt. Rivera - A.Bonifacio", "fee": 129, "province": "NCR" },
                 { "exit": "A.Bonifacio - Balintawak", "fee": 129, "province": "NCR" },
-                { "exit": "NLEX", "fee": 129, "province": "NCR" }
+                { "exit": "NLEX - Balintawak", "fee": 129, "province": "NCR" }
             ],
             "bound": "north"
         },
         {
             "region": "NCR",
-            "entry": "NLEX",
+            "entry": "NLEX - Balintawak",
             "province": ["NCR", "BULACAN"],
             "nearest": ["Valenzuela", "Caloocan", "Quezon"],
             "tolls": [
                 { "exit": "A.Bonifacio - Balintawak", "fee": 129, "province": "NCR" },
-                { "exit": "Quezon Avenue", "fee": 129, "province": "NCR" },
+                { "exit": "Quezon Avenue Skyway", "fee": 129, "province": "NCR" },
                 { "exit": "E. Rodriguez",  "fee": 129, "province": "NCR" },
                 { "exit": "Plaza Azul/Nagtahan", "fee": 264, "province": "NCR" },
-                { "exit": "Quirino", "fee": 264, "province": "NCR" },
-                { "exit": "Buendia Avenue", "fee": 264, "province": "NCR" },
-                { "exit": "NLEX", "fee": 0, "province": "NCR" }
+                { "exit": "Quirino Avenue Skyway", "fee": 264, "province": "NCR" },
+                { "exit": "Buendia Avenue Skyway", "fee": 264, "province": "NCR" },
+                { "exit": "NLEX - Balintawak", "fee": 0, "province": "NCR" }
             ],
             "bound": "north"
         },
         {
             "region": "NCR",
-            "entry": "NLEX",
+            "entry": "NLEX - Balintawak",
             "province": ["NCR", "BULACAN"],
             "nearest": ["Valenzuela", "Caloocan", "Quezon"],
             "tolls": [
-                { "exit": "NLEX", "fee": 0, "province": "NCR" },
+                { "exit": "NLEX - Balintawak", "fee": 0, "province": "NCR" },
                 { "exit": "A.Bonifacio - Balintawak", "fee": 129, "province": "NCR" },
-                { "exit": "Quezon Avenue", "fee": 129, "province": "NCR" },
+                { "exit": "Quezon Avenue Skyway", "fee": 129, "province": "NCR" },
                 { "exit": "E. Rodriguez",  "fee": 129, "province": "NCR" },
                 { "exit": "Plaza Azul/Nagtahan", "fee": 264, "province": "NCR" },
                 { "exit": "Plaza Dilao", "fee": 264, "province": "NCR" },
-                { "exit": "Buendia Avenue", "fee": 264, "province": "NCR" }
+                { "exit": "Buendia Avenue Skyway", "fee": 264, "province": "NCR" }
             ],
             "bound": "south"
         },
@@ -111,11 +111,11 @@
             "nearest": ["Quezon", "Caloocan"],
             "tolls": [
                 { "exit": "A.Bonifacio - Balintawak", "fee": 0, "province": "NCR" },
-                { "exit": "Quezon Avenue", "fee": 129, "province": "NCR" },
+                { "exit": "Quezon Avenue Skyway", "fee": 129, "province": "NCR" },
                 { "exit": "E. Rodriguez",  "fee": 129, "province": "NCR" },
                 { "exit": "Plaza Azul/Nagtahan", "fee": 264, "province": "NCR" },
                 { "exit": "Plaza Dilao", "fee": 264, "province": "NCR" },
-                { "exit": "Buendia Avenue", "fee": 264, "province": "NCR" }
+                { "exit": "Buendia Avenue Skyway", "fee": 264, "province": "NCR" }
             ],
             "bound": "south"
         },
@@ -126,25 +126,25 @@
             "nearest": ["Quezon", "Manila"],
             "tolls": [
                 { "exit": "Sgt. Rivera - A.Bonifacio", "fee": 0, "province": "NCR" },
-                { "exit": "Quezon Avenue", "fee": 129, "province": "NCR" },
+                { "exit": "Quezon Avenue Skyway", "fee": 129, "province": "NCR" },
                 { "exit": "E. Rodriguez",  "fee": 129, "province": "NCR" },
                 { "exit": "Plaza Azul/Nagtahan", "fee": 264, "province": "NCR" },
                 { "exit": "Plaza Dilao", "fee": 264, "province": "NCR" },
-                { "exit": "Buendia Avenue", "fee": 264, "province": "NCR" }
+                { "exit": "Buendia Avenue Skyway", "fee": 264, "province": "NCR" }
             ],
             "bound": "south"
         },
         {
             "region": "NCR",
-            "entry": "Quezon Avenue",
+            "entry": "Quezon Avenue Skyway",
             "province": ["NCR"],
             "nearest": ["Caloocan", "Manila", "Quezon"],
             "tolls": [
-                { "exit": "Quezon Avenue", "fee": 0, "province": "NCR" },
+                { "exit": "Quezon Avenue Skyway", "fee": 0, "province": "NCR" },
                 { "exit": "E. Rodriguez",  "fee": 129, "province": "NCR" },
                 { "exit": "Plaza Azul/Nagtahan", "fee": 264, "province": "NCR" },
                 { "exit": "Plaza Dilao", "fee": 264, "province": "NCR" },
-                { "exit": "Buendia Avenue", "fee": 264, "province": "NCR" }
+                { "exit": "Buendia Avenue Skyway", "fee": 264, "province": "NCR" }
             ],
             "bound": "south"
         },
@@ -155,18 +155,18 @@
             "nearest": ["Manila", "Mandaluyong", "Makati"],
             "tolls": [
                 { "exit": "Plaza Dilao", "fee": 0, "province": "NCR" },
-                { "exit": "Buendia Avenue", "fee": 105, "province": "NCR" }
+                { "exit": "Buendia Avenue Skyway", "fee": 105, "province": "NCR" }
             ],
             "bound": "south"
         },
         {
             "region": "NCR",
-            "entry": "Quirino",
+            "entry": "Quirino Avenue Skyway",
             "province": ["NCR"],
             "nearest": ["Makati", "Pasay"],
             "tolls": [
-                { "exit": "Quirino", "fee": 0, "province": "NCR" },
-                { "exit": "Buendia Avenue", "fee": 105, "province": "NCR" }
+                { "exit": "Quirino Avenue Skyway", "fee": 0, "province": "NCR" },
+                { "exit": "Buendia Avenue Skyway", "fee": 105, "province": "NCR" }
             ],
             "bound": "south"
         }
@@ -174,32 +174,32 @@
 	"class_2": [
         {
             "region": "NCR",
-            "entry": "Buendia Avenue",
+            "entry": "Buendia Avenue Skyway",
             "province": ["NCR"],
             "nearest": ["Makati", "Pasay"],
             "tolls": [
-                { "exit": "Buendia Avenue", "fee": 0, "province": "NCR" },
-                { "exit": "Quirino", "fee": 210, "province": "NCR" },
+                { "exit": "Buendia Avenue Skyway", "fee": 0, "province": "NCR" },
+                { "exit": "Quirino Avenue Skyway", "fee": 210, "province": "NCR" },
                 { "exit": "Plaza Azul/Nagtahan", "fee": 210, "province": "NCR" },
-                { "exit": "Quezon Avenue", "fee": 528, "province": "NCR" },
+                { "exit": "Quezon Avenue Skyway", "fee": 528, "province": "NCR" },
                 { "exit": "Sgt. Rivera - A.Bonifacio", "fee": 528, "province": "NCR" },
                 { "exit": "A.Bonifacio - Balintawak", "fee": 528, "province": "NCR" },
-                { "exit": "NLEX", "fee": 528, "province": "NCR" }
+                { "exit": "NLEX - Balintawak", "fee": 528, "province": "NCR" }
             ],
             "bound": "north"
         },
         {
             "region": "NCR",
-            "entry": "Quirino",
+            "entry": "Quirino Avenue Skyway",
             "province": ["NCR"],
             "nearest": ["Makati", "Pasay"],
             "tolls": [
-                { "exit": "Quirino", "fee": 0, "province": "NCR" },
+                { "exit": "Quirino Avenue Skyway", "fee": 0, "province": "NCR" },
                 { "exit": "Plaza Azul/Nagtahan", "fee": 210, "province": "NCR" },
-                { "exit": "Quezon Avenue", "fee": 528, "province": "NCR" },
+                { "exit": "Quezon Avenue Skyway", "fee": 528, "province": "NCR" },
                 { "exit": "Sgt. Rivera - A.Bonifacio", "fee": 528, "province": "NCR" },
                 { "exit": "A.Bonifacio - Balintawak", "fee": 528, "province": "NCR" },
-                { "exit": "NLEX", "fee": 528, "province": "NCR" }
+                { "exit": "NLEX - Balintawak", "fee": 528, "province": "NCR" }
             ],
             "bound": "north"
         },
@@ -210,10 +210,10 @@
             "nearest": ["Manila", "Mandaluyong", "San Juan"],
             "tolls": [
                 { "exit": "Plaza Azul/Nagtahan", "fee": 0, "province": "NCR" },
-                { "exit": "Quezon Avenue", "fee": 528, "province": "NCR" },
+                { "exit": "Quezon Avenue Skyway", "fee": 528, "province": "NCR" },
                 { "exit": "Sgt. Rivera - A.Bonifacio", "fee": 528, "province": "NCR" },
                 { "exit": "A.Bonifacio - Balintawak", "fee": 528, "province": "NCR" },
-                { "exit": "NLEX", "fee": 528, "province": "NCR" }
+                { "exit": "NLEX - Balintawak", "fee": 528, "province": "NCR" }
             ],
             "bound": "north"
         },
@@ -224,55 +224,55 @@
             "nearest": ["Manila", "Quezon", "San Juan"],
             "tolls": [
                 { "exit": "E. Rodriguez", "fee": 0, "province": "NCR" },
-                { "exit": "Quezon Avenue", "fee": 258, "province": "NCR" },
+                { "exit": "Quezon Avenue Skyway", "fee": 258, "province": "NCR" },
                 { "exit": "Sgt. Rivera - A.Bonifacio", "fee": 258, "province": "NCR" },
                 { "exit": "A.Bonifacio - Balintawak", "fee": 258, "province": "NCR" },
-                { "exit": "NLEX", "fee": 258, "province": "NCR" }
+                { "exit": "NLEX - Balintawak", "fee": 258, "province": "NCR" }
             ],
             "bound": "north"
         },
         {
             "region": "NCR",
-            "entry": "Quezon Avenue",
+            "entry": "Quezon Avenue Skyway",
             "province": ["NCR"],
             "nearest": ["Caloocan", "Manila", "Quezon"],
             "tolls": [
-                { "exit": "Quezon Avenue", "fee": 0, "province": "NCR" },
+                { "exit": "Quezon Avenue Skyway", "fee": 0, "province": "NCR" },
                 { "exit": "Sgt. Rivera - A.Bonifacio", "fee": 258, "province": "NCR" },
                 { "exit": "A.Bonifacio - Balintawak", "fee": 258, "province": "NCR" },
-                { "exit": "NLEX", "fee": 258, "province": "NCR" }
+                { "exit": "NLEX - Balintawak", "fee": 258, "province": "NCR" }
             ],
             "bound": "north"
         },
         {
             "region": "NCR",
-            "entry": "NLEX",
+            "entry": "NLEX - Balintawak",
             "province": ["NCR", "BULACAN"],
             "nearest": ["Valenzuela", "Caloocan", "Quezon"],
             "tolls": [
                 { "exit": "A.Bonifacio - Balintawak", "fee": 258, "province": "NCR" },
-                { "exit": "Quezon Avenue", "fee": 258, "province": "NCR" },
+                { "exit": "Quezon Avenue Skyway", "fee": 258, "province": "NCR" },
                 { "exit": "E. Rodriguez",  "fee": 258, "province": "NCR" },
                 { "exit": "Plaza Azul/Nagtahan", "fee": 528, "province": "NCR" },
                 { "exit": "Plaza Dilao", "fee": 528, "province": "NCR" },
-                { "exit": "Buendia Avenue", "fee": 528, "province": "NCR" },
-                { "exit": "NLEX", "fee": 0, "province": "NCR" }
+                { "exit": "Buendia Avenue Skyway", "fee": 528, "province": "NCR" },
+                { "exit": "NLEX - Balintawak", "fee": 0, "province": "NCR" }
             ],
             "bound": "north"
         },
         {
             "region": "NCR",
-            "entry": "NLEX",
+            "entry": "NLEX - Balintawak",
             "province": ["NCR", "BULACAN"],
             "nearest": ["Valenzuela", "Caloocan", "Quezon"],
             "tolls": [
-                { "exit": "NLEX", "fee": 0, "province": "NCR" },
+                { "exit": "NLEX - Balintawak", "fee": 0, "province": "NCR" },
                 { "exit": "A.Bonifacio - Balintawak", "fee": 258, "province": "NCR" },
-                { "exit": "Quezon Avenue", "fee": 258, "province": "NCR" },
+                { "exit": "Quezon Avenue Skyway", "fee": 258, "province": "NCR" },
                 { "exit": "E. Rodriguez",  "fee": 258, "province": "NCR" },
                 { "exit": "Plaza Azul/Nagtahan", "fee": 528, "province": "NCR" },
                 { "exit": "Plaza Dilao", "fee": 528, "province": "NCR" },
-                { "exit": "Buendia Avenue", "fee": 528, "province": "NCR" }
+                { "exit": "Buendia Avenue Skyway", "fee": 528, "province": "NCR" }
             ],
             "bound": "south"
         },
@@ -283,11 +283,11 @@
             "nearest": ["Quezon", "Caloocan"],
             "tolls": [
                 { "exit": "A.Bonifacio - Balintawak", "fee": 0, "province": "NCR" },
-                { "exit": "Quezon Avenue", "fee": 258, "province": "NCR" },
+                { "exit": "Quezon Avenue Skyway", "fee": 258, "province": "NCR" },
                 { "exit": "E. Rodriguez",  "fee": 258, "province": "NCR" },
                 { "exit": "Plaza Azul/Nagtahan", "fee": 528, "province": "NCR" },
                 { "exit": "Plaza Dilao", "fee": 528, "province": "NCR" },
-                { "exit": "Buendia Avenue", "fee": 528, "province": "NCR" }
+                { "exit": "Buendia Avenue Skyway", "fee": 528, "province": "NCR" }
             ],
             "bound": "south"
         },
@@ -298,25 +298,25 @@
             "nearest": ["Quezon", "Manila"],
             "tolls": [
                 { "exit": "Sgt. Rivera - A.Bonifacio", "fee": 0, "province": "NCR" },
-                { "exit": "Quezon Avenue", "fee": 258, "province": "NCR" },
+                { "exit": "Quezon Avenue Skyway", "fee": 258, "province": "NCR" },
                 { "exit": "E. Rodriguez",  "fee": 258, "province": "NCR" },
                 { "exit": "Plaza Azul/Nagtahan", "fee": 528, "province": "NCR" },
                 { "exit": "Plaza Dilao", "fee": 528, "province": "NCR" },
-                { "exit": "Buendia Avenue", "fee": 528, "province": "NCR" }
+                { "exit": "Buendia Avenue Skyway", "fee": 528, "province": "NCR" }
             ],
             "bound": "south"
         },
         {
             "region": "NCR",
-            "entry": "Quezon Avenue",
+            "entry": "Quezon Avenue Skyway",
             "province": ["NCR"],
             "nearest": ["Caloocan", "Manila", "Quezon"],
             "tolls": [
-                { "exit": "Quezon Avenue", "fee": 0, "province": "NCR" },
+                { "exit": "Quezon Avenue Skyway", "fee": 0, "province": "NCR" },
                 { "exit": "E. Rodriguez",  "fee": 258, "province": "NCR" },
                 { "exit": "Plaza Azul/Nagtahan", "fee": 528, "province": "NCR" },
                 { "exit": "Plaza Dilao", "fee": 528, "province": "NCR" },
-                { "exit": "Buendia Avenue", "fee": 528, "province": "NCR" }
+                { "exit": "Buendia Avenue Skyway", "fee": 528, "province": "NCR" }
             ],
             "bound": "south"
         },
@@ -327,18 +327,18 @@
             "nearest": ["Manila", "Mandaluyong", "Makati"],
             "tolls": [
                 { "exit": "Plaza Dilao", "fee": 0, "province": "NCR" },
-                { "exit": "Buendia Avenue", "fee": 210, "province": "NCR" }
+                { "exit": "Buendia Avenue Skyway", "fee": 210, "province": "NCR" }
             ],
             "bound": "south"
         },
         {
             "region": "NCR",
-            "entry": "Quirino",
+            "entry": "Quirino Avenue Skyway",
             "province": ["NCR"],
             "nearest": ["Makati", "Pasay"],
             "tolls": [
-                { "exit": "Quirino", "fee": 0, "province": "NCR" },
-                { "exit": "Buendia Avenue", "fee": 210, "province": "NCR" }
+                { "exit": "Quirino Avenue Skyway", "fee": 0, "province": "NCR" },
+                { "exit": "Buendia Avenue Skyway", "fee": 210, "province": "NCR" }
             ],
             "bound": "south"
         }
@@ -346,32 +346,32 @@
 	"class_3": [
         {
             "region": "NCR",
-            "entry": "Buendia Avenue",
+            "entry": "Buendia Avenue Skyway",
             "province": ["NCR"],
             "nearest": ["Makati", "Pasay"],
             "tolls": [
-                { "exit": "Buendia Avenue", "fee": 0, "province": "NCR" },
-                { "exit": "Quirino", "fee": 315, "province": "NCR" },
+                { "exit": "Buendia Avenue Skyway", "fee": 0, "province": "NCR" },
+                { "exit": "Quirino Avenue Skyway", "fee": 315, "province": "NCR" },
                 { "exit": "Plaza Azul/Nagtahan", "fee": 315, "province": "NCR" },
-                { "exit": "Quezon Avenue", "fee": 792, "province": "NCR" },
+                { "exit": "Quezon Avenue Skyway", "fee": 792, "province": "NCR" },
                 { "exit": "Sgt. Rivera - A.Bonifacio", "fee": 792, "province": "NCR" },
                 { "exit": "A.Bonifacio - Balintawak", "fee": 792, "province": "NCR" },
-                { "exit": "NLEX", "fee": 792, "province": "NCR" }
+                { "exit": "NLEX - Balintawak", "fee": 792, "province": "NCR" }
             ],
             "bound": "north"
         },
         {
             "region": "NCR",
-            "entry": "Quirino",
+            "entry": "Quirino Avenue Skyway",
             "province": ["NCR"],
             "nearest": ["Makati", "Pasay"],
             "tolls": [
-                { "exit": "Quirino", "fee": 0, "province": "NCR" },
+                { "exit": "Quirino Avenue Skyway", "fee": 0, "province": "NCR" },
                 { "exit": "Plaza Azul/Nagtahan", "fee": 315, "province": "NCR" },
-                { "exit": "Quezon Avenue", "fee": 792, "province": "NCR" },
+                { "exit": "Quezon Avenue Skyway", "fee": 792, "province": "NCR" },
                 { "exit": "Sgt. Rivera - A.Bonifacio", "fee": 792, "province": "NCR" },
                 { "exit": "A.Bonifacio - Balintawak", "fee": 792, "province": "NCR" },
-                { "exit": "NLEX", "fee": 792, "province": "NCR" }
+                { "exit": "NLEX - Balintawak", "fee": 792, "province": "NCR" }
             ],
             "bound": "north"
         },
@@ -382,10 +382,10 @@
             "nearest": ["Manila", "Mandaluyong", "San Juan"],
             "tolls": [
                 { "exit": "Plaza Azul/Nagtahan", "fee": 0, "province": "NCR" },
-                { "exit": "Quezon Avenue", "fee": 792, "province": "NCR" },
+                { "exit": "Quezon Avenue Skyway", "fee": 792, "province": "NCR" },
                 { "exit": "Sgt. Rivera - A.Bonifacio", "fee": 792, "province": "NCR" },
                 { "exit": "A.Bonifacio - Balintawak", "fee": 792, "province": "NCR" },
-                { "exit": "NLEX", "fee": 792, "province": "NCR" }
+                { "exit": "NLEX - Balintawak", "fee": 792, "province": "NCR" }
             ],
             "bound": "north"
         },
@@ -396,55 +396,55 @@
             "nearest": ["Manila", "Quezon", "San Juan"],
             "tolls": [
                 { "exit": "E. Rodriguez", "fee": 0, "province": "NCR" },
-                { "exit": "Quezon Avenue", "fee": 387, "province": "NCR" },
+                { "exit": "Quezon Avenue Skyway", "fee": 387, "province": "NCR" },
                 { "exit": "Sgt. Rivera - A.Bonifacio", "fee": 387, "province": "NCR" },
                 { "exit": "A.Bonifacio - Balintawak", "fee": 387, "province": "NCR" },
-                { "exit": "NLEX", "fee": 387, "province": "NCR" }
+                { "exit": "NLEX - Balintawak", "fee": 387, "province": "NCR" }
             ],
             "bound": "north"
         },
         {
             "region": "NCR",
-            "entry": "Quezon Avenue",
+            "entry": "Quezon Avenue Skyway",
             "province": ["NCR"],
             "nearest": ["Caloocan", "Manila", "Quezon"],
             "tolls": [
-                { "exit": "Quezon Avenue", "fee": 0, "province": "NCR" },
+                { "exit": "Quezon Avenue Skyway", "fee": 0, "province": "NCR" },
                 { "exit": "Sgt. Rivera - A.Bonifacio", "fee": 387, "province": "NCR" },
                 { "exit": "A.Bonifacio - Balintawak", "fee": 387, "province": "NCR" },
-                { "exit": "NLEX", "fee": 387, "province": "NCR" }
+                { "exit": "NLEX - Balintawak", "fee": 387, "province": "NCR" }
             ],
             "bound": "north"
         },
         {
             "region": "NCR",
-            "entry": "NLEX",
+            "entry": "NLEX - Balintawak",
             "province": ["NCR", "BULACAN"],
             "nearest": ["Valenzuela", "Caloocan", "Quezon"],
             "tolls": [
                 { "exit": "A.Bonifacio - Balintawak", "fee": 387, "province": "NCR" },
-                { "exit": "Quezon Avenue", "fee": 387, "province": "NCR" },
+                { "exit": "Quezon Avenue Skyway", "fee": 387, "province": "NCR" },
                 { "exit": "E. Rodriguez",  "fee": 387, "province": "NCR" },
                 { "exit": "Plaza Azul/Nagtahan", "fee": 792, "province": "NCR" },
                 { "exit": "Plaza Dilao", "fee": 792, "province": "NCR" },
-                { "exit": "Buendia Avenue", "fee": 792, "province": "NCR" },
-                { "exit": "NLEX", "fee": 0, "province": "NCR" }
+                { "exit": "Buendia Avenue Skyway", "fee": 792, "province": "NCR" },
+                { "exit": "NLEX - Balintawak", "fee": 0, "province": "NCR" }
             ],
             "bound": "north"
         },
         {
             "region": "NCR",
-            "entry": "NLEX",
+            "entry": "NLEX - Balintawak",
             "province": ["NCR", "BULACAN"],
             "nearest": ["Valenzuela", "Caloocan", "Quezon"],
             "tolls": [
-                { "exit": "NLEX", "fee": 0, "province": "NCR" },
+                { "exit": "NLEX - Balintawak", "fee": 0, "province": "NCR" },
                 { "exit": "A.Bonifacio - Balintawak", "fee": 387, "province": "NCR" },
-                { "exit": "Quezon Avenue", "fee": 387, "province": "NCR" },
+                { "exit": "Quezon Avenue Skyway", "fee": 387, "province": "NCR" },
                 { "exit": "E. Rodriguez",  "fee": 387, "province": "NCR" },
                 { "exit": "Plaza Azul/Nagtahan", "fee": 792, "province": "NCR" },
                 { "exit": "Plaza Dilao", "fee": 792, "province": "NCR" },
-                { "exit": "Buendia Avenue", "fee": 792, "province": "NCR" }
+                { "exit": "Buendia Avenue Skyway", "fee": 792, "province": "NCR" }
             ],
             "bound": "south"
         },
@@ -455,11 +455,11 @@
             "nearest": ["Quezon", "Caloocan"],
             "tolls": [
                 { "exit": "A.Bonifacio - Balintawak", "fee": 0, "province": "NCR" },
-                { "exit": "Quezon Avenue", "fee": 387, "province": "NCR" },
+                { "exit": "Quezon Avenue Skyway", "fee": 387, "province": "NCR" },
                 { "exit": "E. Rodriguez",  "fee": 387, "province": "NCR" },
                 { "exit": "Plaza Azul/Nagtahan", "fee": 792, "province": "NCR" },
                 { "exit": "Plaza Dilao", "fee": 792, "province": "NCR" },
-                { "exit": "Buendia Avenue", "fee": 792, "province": "NCR" }
+                { "exit": "Buendia Avenue Skyway", "fee": 792, "province": "NCR" }
             ],
             "bound": "south"
         },
@@ -470,25 +470,25 @@
             "nearest": ["Quezon", "Manila"],
             "tolls": [
                 { "exit": "Sgt. Rivera - A.Bonifacio", "fee": 0, "province": "NCR" },
-                { "exit": "Quezon Avenue", "fee": 387, "province": "NCR" },
+                { "exit": "Quezon Avenue Skyway", "fee": 387, "province": "NCR" },
                 { "exit": "E. Rodriguez",  "fee": 387, "province": "NCR" },
                 { "exit": "Plaza Azul/Nagtahan", "fee": 792, "province": "NCR" },
                 { "exit": "Plaza Dilao", "fee": 792, "province": "NCR" },
-                { "exit": "Buendia Avenue", "fee": 792, "province": "NCR" }
+                { "exit": "Buendia Avenue Skyway", "fee": 792, "province": "NCR" }
             ],
             "bound": "south"
         },
         {
             "region": "NCR",
-            "entry": "Quezon Avenue",
+            "entry": "Quezon Avenue Skyway",
             "province": ["NCR"],
             "nearest": ["Caloocan", "Manila", "Quezon"],
             "tolls": [
-                { "exit": "Quezon Avenue", "fee": 0, "province": "NCR" },
+                { "exit": "Quezon Avenue Skyway", "fee": 0, "province": "NCR" },
                 { "exit": "E. Rodriguez",  "fee": 387, "province": "NCR" },
                 { "exit": "Plaza Azul/Nagtahan", "fee": 792, "province": "NCR" },
                 { "exit": "Plaza Dilao", "fee": 792, "province": "NCR" },
-                { "exit": "Buendia Avenue", "fee": 792, "province": "NCR" }
+                { "exit": "Buendia Avenue Skyway", "fee": 792, "province": "NCR" }
             ],
             "bound": "south"
         },
@@ -499,18 +499,18 @@
             "nearest": ["Manila", "Mandaluyong", "Makati"],
             "tolls": [
                 { "exit": "Plaza Dilao", "fee": 0, "province": "NCR" },
-                { "exit": "Buendia Avenue", "fee": 315, "province": "NCR" }
+                { "exit": "Buendia Avenue Skyway", "fee": 315, "province": "NCR" }
             ],
             "bound": "south"
         },
         {
             "region": "NCR",
-            "entry": "Quirino",
+            "entry": "Quirino Avenue Skyway",
             "province": ["NCR"],
             "nearest": ["Makati", "Pasay"],
             "tolls": [
-                { "exit": "Quirino", "fee": 0, "province": "NCR" },
-                { "exit": "Buendia Avenue", "fee": 315, "province": "NCR" }
+                { "exit": "Quirino Avenue Skyway", "fee": 0, "province": "NCR" },
+                { "exit": "Buendia Avenue Skyway", "fee": 315, "province": "NCR" }
             ],
             "bound": "south"
         }
