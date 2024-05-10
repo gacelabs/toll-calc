@@ -452,7 +452,7 @@ var getSearchResults = function (origin_data, dest_data, oThis, isTest) {
 			content: 'We are trying to gather accurate data for this query, We will inform you as soon as we have gathered the data. Thanks!',
 			type: 'alert',
 			closure: function () {
-				if ("Notification" in window) {
+				if ("Notification" in window == false) {
 					console.error("This browser does not support desktop notification");
 					showToast({ content: 'This browser does not support desktop notification', type: 'bad' });
 				} else {
