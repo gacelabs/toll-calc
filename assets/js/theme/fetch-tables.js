@@ -5,7 +5,14 @@
 		case '/routes':
 			break;
 		default:
+			var prev_records = localStorage.getItem('notify_no_records');
+			if (prev_records != null) {
+				var arPrevData = JSON.parse(prev_records);
+			}
 			localStorage.clear();
+			if (typeof arPrevData != 'undefined') {
+				localStorage.setItem('notify_no_records', JSON.stringify(arPrevData));
+			}
 			/* if (isSessionExpired()) {
 				localStorage.clear();
 				dataObject = {};
