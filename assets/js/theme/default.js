@@ -6,6 +6,8 @@ var initMainFunctions = function () {
 		'href': 'https://www.facebook.com/groups/tollfeecalculator/',
 		'target': '_blank',
 	});
+
+	$('.social05 h3:first p').html("Join the ultimate destination for Philippine road warriors!<br>Whether you're navigating the North Luzon Expressway or cruising through the Southern Tagalog Arterial Road,<br>this community is your pit stop for toll fee insights, travel hacks, and highway adventures.<br>Buckle up and join us on the journey!");
 	
 	$('[data-for]').on('click', function (e) {
 		var ui = $('#' + $(e.target).data('for'));
