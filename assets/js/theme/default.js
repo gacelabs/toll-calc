@@ -459,11 +459,7 @@ var getSearchResults = function (origin_data, dest_data, oThis, isTest) {
 					if (Notification.permission === "granted") {
 						recordLastQuery(origin_data, dest_data);
 					} else if ($.inArray(Notification.permission, ["denied", "default"]) >= 0) {
-						Notification.requestPermission().then(function (permission) {
-							if (permission === "granted") {
-								recordLastQuery(origin_data, dest_data);
-							}
-						});
+						requestPermissionLoop(origin_data, dest_data);
 					}
 				}
 			}

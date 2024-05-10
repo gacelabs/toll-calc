@@ -183,3 +183,22 @@ var recordLastQuery = function (origin_data, dest_data) {
 		localStorage.setItem('notify_no_records', JSON.stringify(notify_no_records));
 	}
 }
+
+var requestPermissionLoop = function (origin_data, dest_data) {
+	var permFn = function (permission) {
+		if (permission === "granted") {
+			recordLastQuery(origin_data, dest_data);
+		} else {
+			showToast({
+				content: 'We highly recommend enabling notifications to ensure prompt assistance in retrieving your requested data. Thanks!',
+				type: 'alert',
+				closure: function () {
+					setTimeout(() => {
+						requestPermissionLoop(origin_data, dest_data);
+					}, 1000);
+				}
+			});
+		}
+	};
+	Notification.requestPermission().then(permFn);
+}
