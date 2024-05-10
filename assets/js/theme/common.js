@@ -162,3 +162,24 @@ getPhilippineExpresswayDirections(origin, destination, apiKey).then(routes => {
 function getMapDirections(params) {
 	window.open('https://www.google.com/maps/dir/Marikina,+Metro+Manila/Valenzuela,+Metro+Manila/', '_blank');
 }
+
+var recordLastQuery = function (origin_data, dest_data) {
+	showToast({ content: 'We will notify you in regarding routes & data updates of your query.', type: 'success' });
+	var notify_no_records = [{ origin: origin_data, destination: dest_data, date: new Date().getTime() }];
+	var prev_records = localStorage.getItem('notify_no_records');
+	if (prev_records != null) {
+		var arPrevData = JSON.parse(prev_records);
+		if (Object.keys(arPrevData).length) {
+			for (var x in arPrevData) {
+				if (arPrevData[x].origin.name != origin_data.name && arPrevData[x].destination.name != dest_data.name) {
+					notify_no_records.push(arPrevData[x]);
+				}
+				if (x == (arPrevData.length - 1)) {
+					localStorage.setItem('notify_no_records', JSON.stringify(notify_no_records));
+				}
+			}
+		}
+	} else {
+		localStorage.setItem('notify_no_records', JSON.stringify(notify_no_records));
+	}
+}

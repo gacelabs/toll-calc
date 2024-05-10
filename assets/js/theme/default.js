@@ -456,24 +456,15 @@ var getSearchResults = function (origin_data, dest_data, oThis, isTest) {
 					console.error("This browser does not support desktop notification");
 					showToast({ content: 'This browser does not support desktop notification', type: 'bad' });
 				} else {
-					Notification.requestPermission().then(function (permission) {
-						if (permission === "granted") {
-							showToast({ content: 'We will notify you in regarding routes & data updates of your query.', type: 'success' });
-							var notify_no_records = [{ origin: origin_data, destination: dest_data, date: new Date().getTime() }];
-							var prev_records = localStorage.getItem('notify_no_records');
-							if (prev_records != null) {
-								var arPrevData = JSON.parse(prev_records);
-								if (Object.keys(arPrevData).length) {
-									for (var x in arPrevData) {
-										if (arPrevData[x].origin.name != origin_data.name && arPrevData[x].destination.name != dest_data.name) {
-											notify_no_records.push(arPrevData[x]);
-										}
-									}
-								}
+					if (Notification.permission === "granted") {
+						recordLastQuery(origin_data, dest_data);
+					} else if ($.inArray(Notification.permission, ["denied", "default"]) >= 0) {
+						Notification.requestPermission().then(function (permission) {
+							if (permission === "granted") {
+								recordLastQuery(origin_data, dest_data);
 							}
-							localStorage.setItem('notify_no_records', JSON.stringify(notify_no_records));
-						}
-					});
+						});
+					}
 				}
 			}
 		});
