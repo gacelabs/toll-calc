@@ -171,7 +171,7 @@ var recordLastQuery = function (origin_data, dest_data) {
 		var arPrevData = JSON.parse(prev_records);
 		if (Object.keys(arPrevData).length) {
 			for (var x in arPrevData) {
-				if (arPrevData[x].origin.name != origin_data.name && arPrevData[x].destination.name != dest_data.name) {
+				if (arPrevData[x].origin.name != origin_data.name || arPrevData[x].destination.name != dest_data.name) {
 					notify_no_records.push(arPrevData[x]);
 				}
 				if (x == (arPrevData.length - 1)) {
