@@ -3,7 +3,7 @@ var isSubmitting = false;
 
 var initMainFunctions = function () {
 	$('.socicon.socicon-facebook').parent('a').attr({
-		'href': 'https://www.facebook.com/groups/tollfeecalculator/',
+		'href': 'https://www.facebook.com/groups/phtollfeecalculator/',
 		'target': '_blank',
 	});
 
