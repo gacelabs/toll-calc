@@ -1460,3 +1460,16 @@ svg {
 .routes-results .timeline-intro-head{
   font-size: xx-large !important;
 }
+
+.soc-item:has(.socicon:not(.socicon-facebook)), .iconfont-wrapper:has(.socicon:not(.socicon-facebook)) {
+  display: none !important;
+}
+
+.social05 h3::before {
+  content: "Follow Our Community Site";
+  font-weight: bolder;
+}
+
+.social05 h3 strong {
+  display: none;
+}

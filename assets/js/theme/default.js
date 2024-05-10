@@ -2,6 +2,11 @@ var originJoinedData, destJoinedData;
 var isSubmitting = false;
 
 var initMainFunctions = function () {
+	$('.socicon.socicon-facebook').parent('a').attr({
+		'href': 'https://www.facebook.com/groups/tollfeecalculator/',
+		'target': '_blank',
+	});
+	
 	$('[data-for]').on('click', function (e) {
 		var ui = $('#' + $(e.target).data('for'));
 		if (ui.length) {
