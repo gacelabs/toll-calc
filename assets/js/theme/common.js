@@ -73,7 +73,7 @@ function showToast(params) {
 			break;
 	}
 	$('.toast-container').prepend(toastClone);
-	toastClone.toast({ delay: 7000 });
+	toastClone.toast({ delay: 13000 });
 	toastClone.toast('show');
 	if (typeof params.closure == 'function') {
 		params.closure();
@@ -184,19 +184,19 @@ var recordLastQuery = function (origin_data, dest_data) {
 	}
 }
 
-var requestPermissionLoop = function (origin_data, dest_data) {
+var requestPermission = function (origin_data, dest_data) {
 	var permFn = function (permission) {
 		if (permission === "granted") {
 			recordLastQuery(origin_data, dest_data);
 		} else {
 			showToast({
-				content: 'We highly recommend enabling notifications to ensure prompt assistance in retrieving your requested data. Thanks!',
-				type: 'alert',
+				content: 'We highly recommend enabling notifications to ensure prompt assistance in retrieving all your requested query. Thanks!',
+				type: 'info'/* ,
 				closure: function () {
 					setTimeout(() => {
-						requestPermissionLoop(origin_data, dest_data);
+						requestPermission(origin_data, dest_data);
 					}, 1000);
-				}
+				} */
 			});
 		}
 	};

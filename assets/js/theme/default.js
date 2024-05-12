@@ -449,7 +449,7 @@ var getSearchResults = function (origin_data, dest_data, oThis, isTest) {
 		}
 	} else {
 		showToast({
-			content: 'We are trying to gather accurate data for this query, We will inform you as soon as we have gathered the data. Thanks!',
+			content: 'We are trying to gather accurate data from these queries, We will inform you as soon as we have gathered the data. Thanks!',
 			type: 'alert',
 			closure: function () {
 				if ("Notification" in window == false) {
@@ -459,7 +459,7 @@ var getSearchResults = function (origin_data, dest_data, oThis, isTest) {
 					if (Notification.permission === "granted") {
 						recordLastQuery(origin_data, dest_data);
 					} else if ($.inArray(Notification.permission, ["denied", "default"]) >= 0) {
-						requestPermissionLoop(origin_data, dest_data);
+						requestPermission(origin_data, dest_data);
 					}
 				}
 			}
@@ -838,6 +838,10 @@ function runDetailedRoutes() {
 		if (routes.length) {
 			console.log(routes);
 			runSearchResults();
+
+			var edsaRouteGMap = '';
+			var usualRouteGMap = '';
+
 			setTimeout(() => {
 				var uiRoute = $('.routes-results');
 				var oOrigin = routes[0];
@@ -869,12 +873,14 @@ function runDetailedRoutes() {
 					if (sWay == 'ncr') {
 						sPrefix = 'Travel from ';
 						sSuffix = 'enter ';
-						var uiRoutes = '<ul><li>' + sPrefix + '<b>' + oFromGate.enter + '</b> and ' + sSuffix + '<b>' + oFromGate.exit + '</b></li><li class="toll" style="margin-left: 15px;"><a href="https://www.google.com/maps/dir/' + oFromGate.enter + ',' + oFromGate.enter_province + '/' + oFromGate.exit + ',' + oFromGate.exit_province + '" target="_blank"><b>Show Direction Map</b></a></li></ul>';
+						var uiRoutes = '<ul><li>' + sPrefix + '<b>' + oFromGate.enter + '</b> and ' + sSuffix + '<b>' + oFromGate.exit + '</b></li></ul>';
 						uiTimeline.find('.timeline-body').html(uiRoutes);
+						edsaRouteGMap += '/' + oFromGate.enter + ',' + oFromGate.enter_province + '/' + oFromGate.exit + ',' + oFromGate.exit_province;
 					} else {
 						var wayCount = oFromGate.details.class_1.length;
 						var sText = isOR ? '<small class="text-info">Click below to expand</small>' : '';
 						var uiRoutes = sText + '<ul style="cursor: pointer;" onclick="runCollapseEvent(this);"><li>There ' + (wayCount > 1 ? 'are ' : 'is ') + '<b>' + (wayCount > 1 ? wayCount + ' ways' : 'way') + '</b> to enter <b>' + oFromGate.exit + '</b></li></ul><ul class="expandable"' + (isOR ? ' style="display: none;"' : '') + '>';
+						var cnt = 0;
 						for (var classname in oFromGate.details) {
 							var oToll = oFromGate.details[classname];
 							var uiTolls = '';
@@ -882,11 +888,16 @@ function runDetailedRoutes() {
 								var oItem = oToll[i];
 								if (i == 0) {
 									uiTolls += '<li class="toll" style="margin-left: 15px; margin-top: 10px;"><b>' + classname.ucWords().replace('_', ' ') + ' - Vehicles:</b></li>';
+									if (cnt == 0) {
+										edsaRouteGMap += '/' + oItem.entry + ',' + oItem.entry_province + '/' + oItem.exit + ',' + oItem.exit_province;
+										usualRouteGMap += '/' + oItem.entry + ',' + oItem.entry_province + '/' + oItem.exit + ',' + oItem.exit_province;
+									}
 								}
 								var iFee = new Intl.NumberFormat('en-PH', { style: 'currency', currency: 'PHP' }).format(oItem.fee);
-								uiTolls += '<li class="toll route" style="margin-left: 30px;">' + (wayCount > 1 ? (parseInt(i) + 1) + '. ' : '') + 'Enter ' + oItem.entry + ' and exit ' + oItem.exit + '</li><li class="toll fee" style="margin-left: 45px;"><b>Fee: ' + iFee + '</b></li><li class="toll fee" style="margin-left: 45px;"><a href="https://www.google.com/maps/dir/' + oItem.entry + ',' + oItem.entry_province + '/' + oItem.exit + ',' + oItem.exit_province + '" target="_blank"><b>Show Direction Map</b></a></li>';
+								uiTolls += '<li class="toll route" style="margin-left: 30px;">' + (wayCount > 1 ? (parseInt(i) + 1) + '. ' : '') + 'Enter ' + oItem.entry + ' and exit ' + oItem.exit + '</li><li class="toll fee" style="margin-left: 45px;"><b>Fee: ' + iFee + '</b></li>';
 							}
 							uiRoutes += uiTolls;
+							cnt++;
 						}
 						uiTimeline.find('.timeline-body').html('</ul>' + uiRoutes + '</ul>');
 					}
@@ -923,12 +934,14 @@ function runDetailedRoutes() {
 					if (sWay == 'ncr') {
 						sPrefix = 'Travel from ';
 						sSuffix = 'enter ';
-						var uiRoutes = '<ul><li>' + sPrefix + '<b>' + oToGate.enter + '</b> and ' + sSuffix + '<b>' + oToGate.exit + '</b></li><li class="toll" style="margin-left: 15px;"><a href="https://www.google.com/maps/dir/' + oToGate.enter + ',' + oToGate.enter_province + '/' + oToGate.exit + ',' + oToGate.exit_province + '" target="_blank"><b>Show Direction Map</b></a></li></ul>';
+						var uiRoutes = '<ul><li>' + sPrefix + '<b>' + oToGate.enter + '</b> and ' + sSuffix + '<b>' + oToGate.exit + '</b></li></ul>';
 						uiTimeline.find('.timeline-body').html(uiRoutes);
+						edsaRouteGMap += '/' + oToGate.enter + ',' + oToGate.enter_province + '/' + oToGate.exit + ',' + oToGate.exit_province;
 					} else {
 						var wayCount = oToGate.details.class_1.length;
 						var sText = isOR ? '<small class="text-info">Click below to expand</small>' : '';
 						var uiRoutes = sText + '<ul style="cursor: pointer;" onclick="runCollapseEvent(this);"><li>There ' + (wayCount > 1 ? 'are ' : 'is ') + '<b>' + (wayCount > 1 ? wayCount + ' ways' : 'way') + '</b> to enter <b>' + oToGate.exit + '</b></li></ul><ul class="expandable"' + (isOR ? ' style="display: none;"' : '') + '>';
+						var cnt = 0;
 						for (var classname in oToGate.details) {
 							var oToll = oToGate.details[classname];
 							var uiTolls = '';
@@ -936,11 +949,16 @@ function runDetailedRoutes() {
 								var oItem = oToll[i];
 								if (i == 0) {
 									uiTolls += '<li class="toll" style="margin-left: 15px; margin-top: 10px;"><b>' + classname.ucWords().replace('_', ' ') + ' - Vehicles:</b></li>';
+									if (cnt == 0) {
+										edsaRouteGMap += '/' + oItem.entry + ',' + oItem.entry_province + '/' + oItem.exit + ',' + oItem.exit_province;
+										usualRouteGMap += '/' + oItem.entry + ',' + oItem.entry_province + '/' + oItem.exit + ',' + oItem.exit_province;
+									}
 								}
 								var iFee = new Intl.NumberFormat('en-PH', { style: 'currency', currency: 'PHP' }).format(oItem.fee);
-								uiTolls += '<li class="toll route" style="margin-left: 30px;">' + (wayCount > 1 ? (parseInt(i) + 1) + '. ' : '') + 'Enter ' + oItem.entry + ' and exit ' + oItem.exit + '</li><li class="toll fee" style="margin-left: 45px;"><b>Fee: ' + iFee + '</b></li><li class="toll fee" style="margin-left: 45px;"><a href="https://www.google.com/maps/dir/' + oItem.entry + ',' + oItem.entry_province + '/' + oItem.exit + ',' + oItem.exit_province + '" target="_blank"><b>Show Direction Map</b></a></li>';
+								uiTolls += '<li class="toll route" style="margin-left: 30px;">' + (wayCount > 1 ? (parseInt(i) + 1) + '. ' : '') + 'Enter ' + oItem.entry + ' and exit ' + oItem.exit + '</li><li class="toll fee" style="margin-left: 45px;"><b>Fee: ' + iFee + '</b></li>';
 							}
 							uiRoutes += uiTolls;
+							cnt++;
 						}
 						uiTimeline.find('.timeline-body').html('</ul>' + uiRoutes + '</ul>');
 					}
@@ -949,6 +967,19 @@ function runDetailedRoutes() {
 				}
 				uiToContent.find('.page-body .timeline.hide').remove();
 				uiRoute.append(uiToContent);
+
+				var sATag = '';
+				if (edsaRouteGMap != '') {
+					edsaRouteGMap = 'https://www.google.com/maps/dir' + edsaRouteGMap + '/' + oDestination.to + '/?avoid=ferries';
+					sATag += '<a class="btn btn-primary display-7" id="edsa-gmap" href="' + edsaRouteGMap + '" target="_blank">Show EDSA Direction Map</a>';
+					// edsaRouteGMap = 'https://www.google.com/maps/embed/v1/directions?origin=' + oOrigin.from + '&destination=' + oDestination.to + '&avoid=ferries&key=AIzaSyBhhweoHnG_0_-8l-fAPe3_zZol5aAvNsY';
+					// sATag += '<iframe id="iframeid" width="450" height="250" style="border:0" src="' + edsaRouteGMap + '">Show EDSA Direction Map</iframe>';
+				}
+				if (usualRouteGMap != '') {
+					usualRouteGMap = 'https://www.google.com/maps/dir' + usualRouteGMap + '/' + oDestination.to + '/';
+					sATag += '<a class="btn btn-primary display-7" id="edsa-gmap" href="' + usualRouteGMap + '" target="_blank">Show Full Direction Map</a>';
+				}
+				uiRoute.parent().append($('<div class="col-lg-12 col-md-12 col-sm-12 align-center mbr-section-btn">' + sATag + '</div>'));
 
 				$('.timeline-body').disableSelection();
 				$('.tc1-loader-overlay').removeClass('is-open');

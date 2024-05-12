@@ -50,7 +50,7 @@
             "region": "III",
             "entry": "Argonaut Bridge",
             "province": ["ZAMBALES"],
-            "nearest": ["Olongapo"],
+            "nearest": ["Olongapo", "Subic"],
             "tolls": [
                 { "exit": "Subic–Tipo toll plaza", "fee": 27, "province": "BATAAN" },
                 { "exit": "Jadjad Bridge", "fee": 27, "province": "BATAAN" },
@@ -110,7 +110,7 @@
             "region": "III",
             "entry": "Argonaut Bridge",
             "province": ["ZAMBALES"],
-            "nearest": ["Olongapo"],
+            "nearest": ["Olongapo", "Subic"],
             "tolls": [
                 { "exit": "Subic–Tipo toll plaza", "fee": 67, "province": "BATAAN" },
                 { "exit": "Jadjad Bridge", "fee": 67, "province": "BATAAN" },
@@ -170,7 +170,7 @@
             "region": "III",
             "entry": "Argonaut Bridge",
             "province": ["ZAMBALES"],
-            "nearest": ["Olongapo"],
+            "nearest": ["Olongapo", "Subic"],
             "tolls": [
                 { "exit": "Subic–Tipo toll plaza", "fee": 80, "province": "BATAAN" },
                 { "exit": "Jadjad Bridge", "fee": 80, "province": "BATAAN" },
