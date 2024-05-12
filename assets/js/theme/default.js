@@ -177,13 +177,41 @@ var generateRoutes = function (oData, oData2) {
 					if (oData.endline == true) {
 						// console.log(urBoundTo, gointTo, oOrig);
 						// console.log(oClass.data);
-						if (oData.start == 'south') { // started from south
-							var key = oClass.data.length - 1;
-							if (toll === 'slex') key -= 1;
+
+						var oCondition = [
+							{ field: 'nearest', operator: 'in like', value: '%' + oData2.old_name + '%' },
+							{ field: 'province', operator: 'in', value: oData2.province },
+						];
+						var query = {
+							select: { fields: '*' },
+							where: {
+								condition: oCondition
+							}
+						};
+
+						var result = oClass.execute(query);
+						var key = 0;
+
+						if (result.data.length) {
+							if (oData.start == 'south') { // started from south
+								var key = result.data.length - 1;
+								if (toll === 'slex') key -= 1;
+							}
+
+							console.log(result, oTolls, key);
+							var oTolls = result.data[key].tolls;
 						} else {
-							var key = 0;
+							var oClass = new JSONQuery(oClasses);
+
+							if (oData.start == 'south') { // started from south
+								var key = oClass.data.length - 1;
+								if (toll === 'slex') key -= 1;
+							}
+
+							var oTolls = oClass.data[key].tolls;
 						}
-						var oTolls = oClass.data[key].tolls;
+						console.log(result, oTolls, key);
+
 						// console.log(urBoundTo, gointTo);
 						if (urBoundTo == gointTo) {
 							var sEntry = oTolls[oTolls.length - 1].exit;
@@ -226,6 +254,18 @@ var generateRoutes = function (oData, oData2) {
 							}
 						};
 						var result = oClass.execute(query);
+
+						if (result.data.length == 0 && toll == 'ncr') {
+							var oClass = new JSONQuery(oClasses);
+							var result = oClass.execute({
+								select: { fields: '*' },
+								where: {
+									condition: [
+										{ field: 'entry', operator: '=', value: oData.old_name },
+									]
+								}
+							});
+						}
 
 						// console.log(result.data);
 						if (result.data.length) {
@@ -873,13 +913,15 @@ function runDetailedRoutes() {
 					if (sWay == 'ncr') {
 						sPrefix = 'Travel from ';
 						sSuffix = 'enter ';
-						var uiRoutes = '<ul><li>' + sPrefix + '<b>' + oFromGate.enter + '</b> and ' + sSuffix + '<b>' + oFromGate.exit + '</b></li></ul>';
+						var uiRoutes = '<ul><li>' + sPrefix + '<b>' + oFromGate.enter + '</b> and ' + sSuffix + '<b>' + oFromGate.exit.ucWords() + '</b></li></ul>';
 						uiTimeline.find('.timeline-body').html(uiRoutes);
-						edsaRouteGMap += '/' + oFromGate.enter + ',' + oFromGate.enter_province + '/' + oFromGate.exit + ',' + oFromGate.exit_province;
+						if (isOR) {
+							edsaRouteGMap += '/' + oFromGate.enter + ',' + oFromGate.enter_province + '/' + oFromGate.exit + ',' + oFromGate.exit_province;
+						}
 					} else {
 						var wayCount = oFromGate.details.class_1.length;
 						var sText = isOR ? '<small class="text-info">Click below to expand</small>' : '';
-						var uiRoutes = sText + '<ul style="cursor: pointer;" onclick="runCollapseEvent(this);"><li>There ' + (wayCount > 1 ? 'are ' : 'is ') + '<b>' + (wayCount > 1 ? wayCount + ' ways' : 'way') + '</b> to enter <b>' + oFromGate.exit + '</b></li></ul><ul class="expandable"' + (isOR ? ' style="display: none;"' : '') + '>';
+						var uiRoutes = sText + '<ul style="cursor: pointer;" onclick="runCollapseEvent(this);"><li>There ' + (wayCount > 1 ? 'are ' : 'is one ') + '<b>' + (wayCount > 1 ? wayCount + ' ways' : 'way') + '</b> to enter <b>' + oFromGate.exit + '</b></li></ul><ul class="expandable"' + (isOR ? ' style="display: none;"' : '') + '>';
 						var cnt = 0;
 						for (var classname in oFromGate.details) {
 							var oToll = oFromGate.details[classname];
@@ -889,8 +931,11 @@ function runDetailedRoutes() {
 								if (i == 0) {
 									uiTolls += '<li class="toll" style="margin-left: 15px; margin-top: 10px;"><b>' + classname.ucWords().replace('_', ' ') + ' - Vehicles:</b></li>';
 									if (cnt == 0) {
-										edsaRouteGMap += '/' + oItem.entry + ',' + oItem.entry_province + '/' + oItem.exit + ',' + oItem.exit_province;
+										if (isOR) {
+											edsaRouteGMap += '/' + oItem.entry + ',' + oItem.entry_province + '/' + oItem.exit + ',' + oItem.exit_province;
+										}
 										usualRouteGMap += '/' + oItem.entry + ',' + oItem.entry_province + '/' + oItem.exit + ',' + oItem.exit_province;
+										// console.log(usualRouteGMap);
 									}
 								}
 								var iFee = new Intl.NumberFormat('en-PH', { style: 'currency', currency: 'PHP' }).format(oItem.fee);
@@ -936,11 +981,13 @@ function runDetailedRoutes() {
 						sSuffix = 'enter ';
 						var uiRoutes = '<ul><li>' + sPrefix + '<b>' + oToGate.enter + '</b> and ' + sSuffix + '<b>' + oToGate.exit + '</b></li></ul>';
 						uiTimeline.find('.timeline-body').html(uiRoutes);
-						edsaRouteGMap += '/' + oToGate.enter + ',' + oToGate.enter_province + '/' + oToGate.exit + ',' + oToGate.exit_province;
+						if (isOR) {
+							edsaRouteGMap += '/' + oToGate.enter + ',' + oToGate.enter_province + '/' + oToGate.exit + ',' + oToGate.exit_province;
+						}
 					} else {
 						var wayCount = oToGate.details.class_1.length;
 						var sText = isOR ? '<small class="text-info">Click below to expand</small>' : '';
-						var uiRoutes = sText + '<ul style="cursor: pointer;" onclick="runCollapseEvent(this);"><li>There ' + (wayCount > 1 ? 'are ' : 'is ') + '<b>' + (wayCount > 1 ? wayCount + ' ways' : 'way') + '</b> to enter <b>' + oToGate.exit + '</b></li></ul><ul class="expandable"' + (isOR ? ' style="display: none;"' : '') + '>';
+						var uiRoutes = sText + '<ul style="cursor: pointer;" onclick="runCollapseEvent(this);"><li>There ' + (wayCount > 1 ? 'are ' : 'is one ') + '<b>' + (wayCount > 1 ? wayCount + ' ways' : 'way') + '</b> to enter <b>' + oToGate.exit + '</b></li></ul><ul class="expandable"' + (isOR ? ' style="display: none;"' : '') + '>';
 						var cnt = 0;
 						for (var classname in oToGate.details) {
 							var oToll = oToGate.details[classname];
@@ -950,8 +997,11 @@ function runDetailedRoutes() {
 								if (i == 0) {
 									uiTolls += '<li class="toll" style="margin-left: 15px; margin-top: 10px;"><b>' + classname.ucWords().replace('_', ' ') + ' - Vehicles:</b></li>';
 									if (cnt == 0) {
-										edsaRouteGMap += '/' + oItem.entry + ',' + oItem.entry_province + '/' + oItem.exit + ',' + oItem.exit_province;
+										if (isOR) {
+											edsaRouteGMap += '/' + oItem.entry + ',' + oItem.entry_province + '/' + oItem.exit + ',' + oItem.exit_province;
+										}
 										usualRouteGMap += '/' + oItem.entry + ',' + oItem.entry_province + '/' + oItem.exit + ',' + oItem.exit_province;
+										// console.log(usualRouteGMap);
 									}
 								}
 								var iFee = new Intl.NumberFormat('en-PH', { style: 'currency', currency: 'PHP' }).format(oItem.fee);
@@ -972,11 +1022,9 @@ function runDetailedRoutes() {
 				if (edsaRouteGMap != '') {
 					edsaRouteGMap = 'https://www.google.com/maps/dir' + edsaRouteGMap + '/' + oDestination.to + '/?avoid=ferries';
 					sATag += '<a class="btn btn-primary display-7" id="edsa-gmap" href="' + edsaRouteGMap + '" target="_blank">Show EDSA Direction Map</a>';
-					// edsaRouteGMap = 'https://www.google.com/maps/embed/v1/directions?origin=' + oOrigin.from + '&destination=' + oDestination.to + '&avoid=ferries&key=AIzaSyBhhweoHnG_0_-8l-fAPe3_zZol5aAvNsY';
-					// sATag += '<iframe id="iframeid" width="450" height="250" style="border:0" src="' + edsaRouteGMap + '">Show EDSA Direction Map</iframe>';
 				}
 				if (usualRouteGMap != '') {
-					usualRouteGMap = 'https://www.google.com/maps/dir' + usualRouteGMap + '/' + oDestination.to + '/';
+					usualRouteGMap = 'https://www.google.com/maps/dir' + usualRouteGMap + '/' + oDestination.to + '/?avoid=ferries';
 					sATag += '<a class="btn btn-primary display-7" id="edsa-gmap" href="' + usualRouteGMap + '" target="_blank">Show Full Direction Map</a>';
 				}
 				uiRoute.parent().append($('<div class="col-lg-12 col-md-12 col-sm-12 align-center mbr-section-btn">' + sATag + '</div>'));

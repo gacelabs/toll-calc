@@ -100,7 +100,7 @@
             "region": "NCR",
             "entry": "Sucat",
             "province": ["NCR"],
-            "nearest": ["Parañaque", "Muntinlupa"],
+            "nearest": ["Parañaque"],
             "tolls": [
                 { "exit": "Sucat", "fee": 0, "province": "NCR" },
                 { "exit": "Alabang", "fee": 34, "province": "NCR" },
@@ -162,8 +162,8 @@
         {
             "region": "NCR",
             "entry": "MCX",
-            "province": ["NCR"],
-            "nearest": ["Muntinlupa"],
+            "province": ["LAGUNA"],
+            "nearest": ["San Pedro"],
             "tolls": [
                 { "exit": "MCX", "fee": 0, "province": "NCR" },
                 { "exit": "Susana Heights", "fee": 19, "province": "NCR" },
@@ -181,8 +181,8 @@
         {
             "region": "IV-A",
             "entry": "Susana Heights",
-            "province": ["NCR"],
-            "nearest": ["Muntinlupa"],
+            "province": ["LAGUNA"],
+            "nearest": ["San Pedro"],
             "tolls": [
                 { "exit": "Susana Heights", "fee": 0, "province": "NCR" },
                 { "exit": "San Pedro", "fee": 6, "province": "LAGUNA" },
@@ -443,7 +443,7 @@
             "region": "NCR",
             "entry": "Sucat",
             "province": ["NCR"],
-            "nearest": ["Parañaque", "Muntinlupa"],
+            "nearest": ["Parañaque"],
             "tolls": [
                 { "exit": "Sucat", "fee": 0, "province": "NCR" },
                 { "exit": "Alabang", "fee": 69, "province": "NCR" },
@@ -505,8 +505,8 @@
         {
             "region": "NCR",
             "entry": "MCX",
-            "province": ["NCR"],
-            "nearest": ["Muntinlupa"],
+            "province": ["LAGUNA"],
+            "nearest": ["San Pedro"],
             "tolls": [
                 { "exit": "MCX", "fee": 0, "province": "NCR" },
                 { "exit": "Susana Heights", "fee": 39, "province": "NCR" },
@@ -524,8 +524,8 @@
         {
             "region": "IV-A",
             "entry": "Susana Heights",
-            "province": ["NCR"],
-            "nearest": ["Muntinlupa"],
+            "province": ["LAGUNA"],
+            "nearest": ["San Pedro"],
             "tolls": [
                 { "exit": "Susana Heights", "fee": 0, "province": "NCR" },
                 { "exit": "San Pedro", "fee": 12, "province": "LAGUNA" },
@@ -543,7 +543,7 @@
             "region": "IV-A",
             "entry": "San Pedro",
             "province": ["LAGUNA"],
-            "nearest": ["San Pedro", "Biñan"],
+            "nearest": ["Biñan"],
             "tolls": [
                 { "exit": "San Pedro", "fee": 0, "province": "LAGUNA" },
                 { "exit": "Southwoods", "fee": 29, "province": "LAGUNA" },
@@ -786,7 +786,7 @@
             "region": "NCR",
             "entry": "Sucat",
             "province": ["NCR"],
-            "nearest": ["Parañaque", "Muntinlupa"],
+            "nearest": ["Parañaque"],
             "tolls": [
                 { "exit": "Sucat", "fee": 0, "province": "NCR" },
                 { "exit": "Alabang", "fee": 104, "province": "NCR" },
@@ -848,8 +848,8 @@
         {
             "region": "NCR",
             "entry": "MCX",
-            "province": ["NCR"],
-            "nearest": ["Muntinlupa"],
+            "province": ["LAGUNA"],
+            "nearest": ["San Pedro"],
             "tolls": [
                 { "exit": "MCX", "fee": 0, "province": "NCR" },
                 { "exit": "Susana Heights", "fee": 58, "province": "NCR" },
@@ -867,8 +867,8 @@
         {
             "region": "IV-A",
             "entry": "Susana Heights",
-            "province": ["NCR"],
-            "nearest": ["Muntinlupa"],
+            "province": ["LAGUNA"],
+            "nearest": ["San Pedro"],
             "tolls": [
                 { "exit": "Susana Heights", "fee": 0, "province": "NCR" },
                 { "exit": "San Pedro", "fee": 18, "province": "LAGUNA" },

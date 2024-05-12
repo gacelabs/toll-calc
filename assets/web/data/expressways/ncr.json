@@ -179,7 +179,7 @@
             "province": ["BULACAN"],
             "nearest": ["San Jose del Monte", "Marilao"],
 			"tolls": [
-                { "fee": 0, "exit": "Skyway Alabang", "province": "NCR" }
+                { "fee": 0, "exit": "Skyway Toll Plaza", "province": "NCR" }
             ]
         },
         {
@@ -189,7 +189,7 @@
             "province": ["NCR"],
             "nearest": ["Valenzuela", "Malabon"],
 			"tolls": [
-                { "fee": 0, "exit": "Skyway Alabang", "province": "NCR" }
+                { "fee": 0, "exit": "Skyway Toll Plaza", "province": "NCR" }
             ]
         },
 		{
@@ -199,7 +199,7 @@
             "province": ["NCR", "BULACAN"],
             "nearest": ["Marilao", "(North) Caloocan"],
 			"tolls": [
-                { "fee": 0, "exit": "Skyway Alabang", "province": "NCR" }
+                { "fee": 0, "exit": "Skyway Toll Plaza", "province": "NCR" }
             ]
         },
 		{
@@ -209,7 +209,7 @@
             "province": ["NCR", "BULACAN"],
             "nearest": ["Obando", "Valenzuela"],
 			"tolls": [
-                { "fee": 0, "exit": "Skyway Alabang", "province": "NCR" }
+                { "fee": 0, "exit": "Skyway Toll Plaza", "province": "NCR" }
             ]
         },
 		{
@@ -219,7 +219,7 @@
             "province": ["NCR"],
             "nearest": ["Navotas", "Valenzuela"],
 			"tolls": [
-                { "fee": 0, "exit": "Skyway Alabang", "province": "NCR" }
+                { "fee": 0, "exit": "Skyway Toll Plaza", "province": "NCR" }
             ]
         },
 		{
@@ -229,7 +229,7 @@
             "province": ["NCR"],
             "nearest": ["Novaliches", "(North) Caloocan", "San Jose del Monte"],
 			"tolls": [
-                { "fee": 0, "exit": "Skyway Alabang", "province": "NCR" }
+                { "fee": 0, "exit": "Skyway Toll Plaza", "province": "NCR" }
             ]
         },
 		{
@@ -239,7 +239,7 @@
             "province": ["NCR", "RIZAL"],
             "nearest": ["San Mateo", "Antipolo"],
 			"tolls": [
-                { "fee": 0, "exit": "Skyway Alabang", "province": "NCR" }
+                { "fee": 0, "exit": "Skyway Toll Plaza", "province": "NCR" }
             ]
         },
 		{
@@ -249,7 +249,7 @@
             "province": ["NCR"],
             "nearest": ["(South) Caloocan", "Quezon"],
 			"tolls": [
-                { "fee": 0, "exit": "Skyway Alabang", "province": "NCR" }
+                { "fee": 0, "exit": "Skyway Toll Plaza", "province": "NCR" }
             ]
         },
 		{
@@ -259,7 +259,7 @@
             "province": ["NCR"],
             "nearest": ["Manila", "San Juan", "Quezon"],
 			"tolls": [
-                { "fee": 0, "exit": "Skyway Alabang", "province": "NCR" }
+                { "fee": 0, "exit": "Skyway Toll Plaza", "province": "NCR" }
             ]
         },
 		{
@@ -269,7 +269,7 @@
             "province": ["NCR", "RIZAL"],
             "nearest": ["Taytay", "Cainta"],
 			"tolls": [
-                { "fee": 0, "exit": "Skyway Alabang", "province": "NCR" }
+                { "fee": 0, "exit": "Skyway Toll Plaza", "province": "NCR" }
             ]
         },
 		{
@@ -279,7 +279,7 @@
             "province": ["NCR"],
             "nearest": ["Pasig"],
 			"tolls": [
-                { "fee": 0, "exit": "Skyway Alabang", "province": "NCR" }
+                { "fee": 0, "exit": "Skyway Toll Plaza", "province": "NCR" }
             ]
         },
 		{
@@ -289,7 +289,7 @@
             "province": ["NCR"],
             "nearest": ["Mandaluyong"],
 			"tolls": [
-                { "fee": 0, "exit": "Skyway Alabang", "province": "NCR" }
+                { "fee": 0, "exit": "Skyway Toll Plaza", "province": "NCR" }
             ]
         },
 		{
@@ -299,7 +299,7 @@
             "province": ["NCR"],
             "nearest": ["Makati", "Manila"],
 			"tolls": [
-                { "fee": 0, "exit": "Skyway Alabang", "province": "NCR" }
+                { "fee": 0, "exit": "Skyway Toll Plaza", "province": "NCR" }
             ]
         },
 		{
@@ -309,7 +309,7 @@
             "province": ["NCR"],
             "nearest": ["Pateros", "Makati"],
 			"tolls": [
-                { "fee": 0, "exit": "Skyway Alabang", "province": "NCR" }
+                { "fee": 0, "exit": "Skyway Toll Plaza", "province": "NCR" }
             ]
         },
 		{
@@ -319,7 +319,7 @@
             "province": ["NCR"],
             "nearest": ["Taguig", "Pasay"],
 			"tolls": [
-                { "fee": 0, "exit": "Skyway Alabang", "province": "NCR" }
+                { "fee": 0, "exit": "Bicutan", "province": "NCR" }
             ]
         },
 		{
@@ -329,7 +329,7 @@
             "province": ["NCR", "CAVITE"],
             "nearest": ["Parañaque"],
 			"tolls": [
-                { "fee": 0, "exit": "Skyway Alabang", "province": "NCR" }
+                { "fee": 0, "exit": "Sucat", "province": "NCR" }
             ]
         },
 		{
@@ -339,7 +339,7 @@
             "province": ["NCR", "CAVITE"],
             "nearest": ["Las Piñas", "Parañaque"],
 			"tolls": [
-                { "fee": 0, "exit": "Skyway Alabang", "province": "NCR" }
+                { "fee": 0, "exit": "SLEx Alabang Toll Plaza", "province": "NCR" }
             ]
         }
 	]
