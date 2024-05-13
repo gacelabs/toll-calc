@@ -1,3 +1,10 @@
+$(document).ready(function () {
+	$('.socicon.socicon-facebook').parent('a').attr({
+		'href': 'https://www.facebook.com/groups/phtollfeecalculator/',
+		'target': '_blank',
+	});
+});
+
 String.prototype.ucWords = function () {
 	return this.toLowerCase().replace(/\b[a-z]/g, function (letter) {
 		return letter.toUpperCase();
