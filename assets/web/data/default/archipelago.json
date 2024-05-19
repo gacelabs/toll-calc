@@ -12,7 +12,7 @@
 	{"province": "PANGASINAN", "island": "luzon","tollways": ["tplex", "nlex"], "endline": false, "start": "north", "region": "I"},
 	
 	{"province": "BATANES", "island": "luzon","tollways": ["tplex", "nlex"], "endline": true, "start": "north", "region": "II"},
-	{"province": "CAGAYAN", "island": "luzon","tollways": ["tplex", "nlex"], "endline": true, "start": "north", "region": "II"},
+	{"province": "CAGAYAN", "island": "luzon","tollways": ["tplex", "nlex"], "endline": false, "start": "north", "region": "II"},
 	{"province": "ISABELA", "island": "luzon","tollways": ["tplex", "nlex"], "endline": true, "start": "north", "region": "II"},
 	{"province": "NUEVA VIZCAYA", "island": "luzon","tollways": ["tplex", "nlex"], "endline": true, "start": "north", "region": "II"},
 	{"province": "QUIRINO", "island": "luzon","tollways": ["tplex", "nlex"], "endline": true, "start": "north", "region": "II"},

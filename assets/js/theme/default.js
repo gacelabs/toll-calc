@@ -205,7 +205,7 @@ var generateRoutes = function (oData, oData2) {
 
 							var oTolls = oClass.data[key].tolls;
 						}
-						console.log(result, oTolls, key);
+						console.log(result, oTolls, key, toll);
 
 						// console.log(urBoundTo, gointTo);
 						if (urBoundTo == gointTo) {
@@ -250,19 +250,30 @@ var generateRoutes = function (oData, oData2) {
 						};
 						var result = oClass.execute(query);
 
-						if (result.data.length == 0 && toll == 'ncr') {
+						if (result.data.length == 0) {
 							var oClass = new JSONQuery(oClasses);
-							var result = oClass.execute({
-								select: { fields: '*' },
-								where: {
-									condition: [
-										{ field: 'entry', operator: '=', value: oData.old_name },
-									]
-								}
-							});
+							if (toll == 'ncr') {
+								var result = oClass.execute({
+									select: { fields: '*' },
+									where: {
+										condition: [
+											{ field: 'entry', operator: '=', value: oData.old_name },
+										]
+									}
+								});
+							} else {
+								var result = oClass.execute({
+									select: { fields: '*' },
+									where: {
+										condition: [
+											{ field: 'province', operator: 'in', value: oData.province },
+										]
+									}
+								});
+							}
 						}
 
-						// console.log(result.data);
+						console.log(result, toll);
 						if (result.data.length) {
 							if (toll == 'skyway_3') {
 								query.where = {

@@ -88,7 +88,7 @@
         {
             "regions": ["I"],
             "entry": "Carmen",
-            "province": ["PANGASINAN", "TARLAC"],
+            "province": ["PANGASINAN", "TARLAC", "CAGAYAN"],
             "nearest": ["Carmen", "Urdaneta City"],
             "tolls": [
                 { "exit": "Carmen", "fee": 0, "province": "TARLAC" },
@@ -102,7 +102,7 @@
         {
             "regions": ["I"],
             "entry": "Urdaneta",
-            "province": ["PANGASINAN", "LA UNION"],
+            "province": ["PANGASINAN", "LA UNION", "CAGAYAN"],
             "nearest": ["Urdaneta City", "Villasis"],
             "tolls": [
                 { "exit": "Urdaneta", "fee": 0, "province": "PANGASINAN" },
@@ -115,7 +115,7 @@
         {
             "regions": ["I"],
             "entry": "Binalonan",
-            "province": ["PANGASINAN", "LA UNION"],
+            "province": ["PANGASINAN", "LA UNION", "CAGAYAN"],
             "nearest": ["Binalonan", "Pozorrubio"],
             "tolls": [
                 { "exit": "Binalonan", "fee": 0, "province": "PANGASINAN" },
@@ -254,7 +254,7 @@
         {
             "regions": ["I"],
             "entry": "Carmen",
-            "province": ["PANGASINAN", "TARLAC"],
+            "province": ["PANGASINAN", "TARLAC", "CAGAYAN"],
             "nearest": ["Carmen", "Urdaneta City"],
             "tolls": [
                 { "exit": "Carmen", "fee": 0, "province": "TARLAC" },
@@ -268,7 +268,7 @@
         {
             "regions": ["I"],
             "entry": "Urdaneta",
-            "province": ["PANGASINAN", "LA UNION"],
+            "province": ["PANGASINAN", "LA UNION", "CAGAYAN"],
             "nearest": ["Urdaneta City", "Villasis"],
             "tolls": [
                 { "exit": "Urdaneta", "fee": 0, "province": "PANGASINAN" },
@@ -281,7 +281,7 @@
         {
             "regions": ["I"],
             "entry": "Binalonan",
-            "province": ["PANGASINAN", "LA UNION"],
+            "province": ["PANGASINAN", "LA UNION", "CAGAYAN"],
             "nearest": ["Binalonan", "Pozorrubio"],
             "tolls": [
                 { "exit": "Binalonan", "fee": 0, "province": "PANGASINAN" },
@@ -420,7 +420,7 @@
         {
             "regions": ["I"],
             "entry": "Carmen",
-            "province": ["PANGASINAN", "TARLAC"],
+            "province": ["PANGASINAN", "TARLAC", "CAGAYAN"],
             "nearest": ["Carmen", "Urdaneta City"],
             "tolls": [
                 { "exit": "Carmen", "fee": 0, "province": "TARLAC" },
@@ -434,7 +434,7 @@
         {
             "regions": ["I"],
             "entry": "Urdaneta",
-            "province": ["PANGASINAN", "LA UNION"],
+            "province": ["PANGASINAN", "LA UNION", "CAGAYAN"],
             "nearest": ["Urdaneta City", "Villasis"],
             "tolls": [
                 { "exit": "Urdaneta", "fee": 0, "province": "PANGASINAN" },
@@ -447,7 +447,7 @@
         {
             "regions": ["I"],
             "entry": "Binalonan",
-            "province": ["PANGASINAN", "LA UNION"],
+            "province": ["PANGASINAN", "LA UNION", "CAGAYAN"],
             "nearest": ["Binalonan", "Pozorrubio"],
             "tolls": [
                 { "exit": "Binalonan", "fee": 0, "province": "PANGASINAN" },
