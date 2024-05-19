@@ -871,6 +871,7 @@ function runDetailedRoutes() {
 					var sPrefix = 'Enter ';
 					var sSuffix = 'exit to ';
 					var ifToNorth = oDestination.bound == 'north';
+
 					if (sWay == 'ncr') {
 						sPrefix = 'Travel from ';
 						sSuffix = 'enter ';
@@ -882,15 +883,12 @@ function runDetailedRoutes() {
 							var uiRoutes = '<ul><li>' + sPrefix + '<b>' + oFromGate.enter + '</b> and ' + sSuffix + '<b>' + oFromGate.exit.ucWords() + '</b></li></ul>';
 						}
 						uiTimeline.find('.timeline-body').html(uiRoutes);
-						if (isOR) {
-							edsaRouteGMap += '/' + oFromGate.enter + ',' + oFromGate.enter_province + '/' + oFromGate.exit + ',' + oFromGate.exit_province;
-						}
 					} else {
 						var wayCount = oFromGate.details.class_1.length;
 						var sText = isOR ? '<small class="text-info">Click below to expand</small>' : '';
 						var uiRoutes = sText + '<ul style="cursor: pointer;" onclick="runCollapseEvent(this);"><li>There ' + (wayCount > 1 ? 'are <b>' : 'is <b>one shortest ') + (wayCount > 1 ? wayCount + ' ways' : 'way') + /* '</b> to enter <b>' + oFromGate.exit + */ '</b></li></ul><ul class="expandable"' + (isOR ? ' style="display: none;"' : '') + '>';
 						var cnt = 0;
-						var sSavedEntry = '';
+						// var sSavedEntry = '';
 						for (var classname in oFromGate.details) {
 							var oToll = oFromGate.details[classname];
 							var uiTolls = '';
@@ -898,14 +896,6 @@ function runDetailedRoutes() {
 							if (cnt == 0) {
 								for (var i in oToll) {
 									var oItem = oToll[i];
-									if (i == 0 && cnt == 0) {
-										if (isOR) {
-											edsaRouteGMap += '/' + oItem.entry + ',' + oItem.entry_province + '/' + oItem.exit + ',' + oItem.exit_province;
-										}
-										usualRouteGMap += '/' + oItem.entry + ',' + oItem.entry_province + '/' + oItem.exit + ',' + oItem.exit_province;
-										// console.log(usualRouteGMap);
-										// sSavedEntry = oItem.entry;
-									}
 									var iFeePrime = new Intl.NumberFormat('en-PH', { style: 'currency', currency: 'PHP' }).format(oItem.fee);
 									if (iFeePrime) {
 										var sShortestWay = (i == 0 && wayCount > 1) ? '<small class="text-info">Sorted from the shortest way possible</small>' : '';
@@ -965,9 +955,6 @@ function runDetailedRoutes() {
 						sSuffix = 'enter ';
 						var uiRoutes = '<ul><li>' + sPrefix + '<b>' + oToGate.enter + '</b> and ' + sSuffix + '<b>' + oToGate.exit + '</b></li></ul>';
 						uiTimeline.find('.timeline-body').html(uiRoutes);
-						if (isOR) {
-							edsaRouteGMap += '/' + oToGate.enter + ',' + oToGate.enter_province + '/' + oToGate.exit + ',' + oToGate.exit_province;
-						}
 					} else {
 						var wayCount = oToGate.details.class_1.length;
 						var sText = isOR ? '<small class="text-info">Click below to expand</small>' : '';
@@ -980,13 +967,6 @@ function runDetailedRoutes() {
 							if (cnt == 0) {
 								for (var i in oToll) {
 									var oItem = oToll[i];
-									if (i == 0 && cnt == 0) {
-										if (isOR) {
-											edsaRouteGMap += '/' + oItem.entry + ',' + oItem.entry_province + '/' + oItem.exit + ',' + oItem.exit_province;
-										}
-										usualRouteGMap += '/' + oItem.entry + ',' + oItem.entry_province + '/' + oItem.exit + ',' + oItem.exit_province;
-										// console.log(usualRouteGMap);
-									}
 									uiTolls += '<li class="toll route" style="margin-left: 15px;"><strong>' + (wayCount > 1 ? (parseInt(i) + 1) + '. ' : '') + '</strong><b> Enter ' + oItem.entry + ' and exit ' + oItem.exit + '</b></li>';
 									for (var cn in oFromGate.details) {
 										var oT = oFromGate.details[cn];
@@ -1007,14 +987,8 @@ function runDetailedRoutes() {
 				uiRoute.append(uiToContent);
 
 				var sATag = '';
-				if (edsaRouteGMap != '') {
-					edsaRouteGMap = 'https://www.google.com/maps/dir' + edsaRouteGMap + '/' + oDestination.to + '/?avoid=ferries';
-					sATag += '<a class="btn btn-primary display-7" id="edsa-gmap" href="' + edsaRouteGMap + '" target="_blank">Show EDSA Direction Map</a>';
-				}
-				if (usualRouteGMap != '') {
-					usualRouteGMap = 'https://www.google.com/maps/dir' + usualRouteGMap + '/' + oDestination.to + '/?avoid=ferries';
-					sATag += '<a class="btn btn-primary display-7" id="edsa-gmap" href="' + usualRouteGMap + '" target="_blank">Show Full Direction Map</a>';
-				}
+				usualRouteGMap = 'https://www.google.com/maps?saddr=' + oOrigin.from + '&daddr=' + '/' + oDestination.to + '/&dirflg=d&avoid=f&layer=c';
+				sATag += '<a class="btn btn-primary display-7" id="full-gmap" href="' + usualRouteGMap + '" target="_blank">Show Full Direction Map</a>';
 				uiRoute.parent().append($('<div class="col-lg-12 col-md-12 col-sm-12 align-center mbr-section-btn">' + sATag + '</div>'));
 
 				$('.timeline-body').disableSelection();
