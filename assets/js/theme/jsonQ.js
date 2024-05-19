@@ -3,6 +3,7 @@ class JSONQuery {
 		this.data = data;
 		this.view = data;
 		this.query = null;
+		this.output = [];
 	}
 
 	select(fields) {

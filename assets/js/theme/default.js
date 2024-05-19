@@ -273,7 +273,7 @@ var generateRoutes = function (oData, oData2) {
 							}
 						}
 
-						console.log(result, toll);
+						console.log(result, toll, class_name);
 						if (result.data.length) {
 							if (toll == 'skyway_3') {
 								query.where = {
@@ -691,7 +691,7 @@ var renderSearchResults = function () {
 				'details': oDetailedRoute[route]
 			});
 		}
-		oFinalDetailed.push({ from: origin.val(), routes: oDetailedOrigin, province: origin_data.province });
+		oFinalDetailed.push({ from: origin.val(), routes: oDetailedOrigin, province: origin_data.province, bound: origin_data.start, entry: oDetailedOrigin[0].enter, begun: origin_data.old_name });
 		// console.log(oFinalDetailed);
 		// console.log(uiOrigin.get(0));
 
@@ -777,7 +777,7 @@ var renderSearchResults = function () {
 				'details': oDetailedRoute[route]
 			});
 		}
-		oFinalDetailed.push({ to: dest.val(), routes: oDetailedDestination, province: dest_data.province });
+		oFinalDetailed.push({ to: dest.val(), routes: oDetailedDestination, province: dest_data.province, bound: dest_data.start, entry: oDetailedDestination[0].enter, begun: dest_data.old_name });
 		console.log(oFinalDetailed);
 		localStorage.setItem('detailed_routes', JSON.stringify(oFinalDetailed));
 
@@ -790,52 +790,6 @@ var renderSearchResults = function () {
 }
 
 function runNCRData(origin_data, originRoutes, dest_data, destinationRoutes) {
-	// if ($.inArray('ncr', origin_data.tollways) >= 0 || $.inArray('ncr', dest_data.tollways) >= 0) {
-		/* var bBetweenMain = (originRoutes.slex != undefined && destinationRoutes.nlex != undefined)
-			|| (originRoutes.nlex != undefined && destinationRoutes.slex != undefined)
-			|| (originRoutes.nlex != undefined && destinationRoutes.tplex != undefined)
-			|| (originRoutes.slex != undefined && destinationRoutes.tplex != undefined)
-			|| (originRoutes.tplex != undefined && destinationRoutes.nlex != undefined)
-			|| (originRoutes.tplex != undefined && destinationRoutes.slex != undefined)
-			;
-
-		var bNoNcr = originRoutes.ncr == undefined || destinationRoutes.ncr == undefined;
-		var result = { data: [] };
-		if (bBetweenMain) {
-			var direction = origin_data.start;
-			if (bNoNcr) {
-				if (destinationRoutes.ncr == undefined) {
-					direction = dest_data.start;
-				}
-			}
-			if (direction == 'south') {
-				result = generateNCRRoutes(direction, dest_data);
-			} else {
-				result = generateNCRRoutes(direction, origin_data);
-			}
-			// console.log(result);
-			if (result.data.length) {
-				var oPush = {
-					'entry': result.data[0].entry,
-					'tolls': result.data[0].tolls,
-					'exit': result.data[0].tolls[result.data[0].tolls.length - 1].exit,
-					'fee': result.data[0].tolls[result.data[0].tolls.length - 1].fee,
-					'start': direction,
-					'ended': direction == 'north' ? 'south' : direction,
-				};
-
-				if (direction == 'north') {
-					originRoutes['ncr'] = {};
-					originRoutes['ncr'][direction] = [];
-					originRoutes['ncr'][direction].push(oPush);
-				} else {
-					destinationRoutes['ncr'] = {};
-					destinationRoutes['ncr'][direction] = [];
-					destinationRoutes['ncr'][direction].push(oPush);
-				}
-			}
-		} */
-
 		var bothExpress = (originRoutes.nlex != undefined && destinationRoutes.slex != undefined)
 			|| (originRoutes.slex != undefined && destinationRoutes.nlex != undefined)
 			;
@@ -916,10 +870,17 @@ function runDetailedRoutes() {
 					
 					var sPrefix = 'Enter ';
 					var sSuffix = 'exit to ';
+					var ifToNorth = oDestination.bound == 'north';
 					if (sWay == 'ncr') {
 						sPrefix = 'Travel from ';
 						sSuffix = 'enter ';
-						var uiRoutes = '<ul><li>' + sPrefix + '<b>' + oFromGate.enter + '</b> and ' + sSuffix + '<b>' + oFromGate.exit.ucWords() + '</b></li></ul>';
+						if (ifToNorth == true) {
+							var uiRoutes = '<ul><li><b>Current location</b> travel up to ' + '<b>NLEX ' + oFromGate.exit.ucWords() + '</b></li></ul>';
+						} else if (ifToNorth == false) {
+							var uiRoutes = '<ul><li><b>Current location</b> travel up to ' + '<b>SLEX ' + oFromGate.exit.ucWords() + '</b></li></ul>';
+						} else {
+							var uiRoutes = '<ul><li>' + sPrefix + '<b>' + oFromGate.enter + '</b> and ' + sSuffix + '<b>' + oFromGate.exit.ucWords() + '</b></li></ul>';
+						}
 						uiTimeline.find('.timeline-body').html(uiRoutes);
 						if (isOR) {
 							edsaRouteGMap += '/' + oFromGate.enter + ',' + oFromGate.enter_province + '/' + oFromGate.exit + ',' + oFromGate.exit_province;
@@ -927,8 +888,9 @@ function runDetailedRoutes() {
 					} else {
 						var wayCount = oFromGate.details.class_1.length;
 						var sText = isOR ? '<small class="text-info">Click below to expand</small>' : '';
-						var uiRoutes = sText + '<ul style="cursor: pointer;" onclick="runCollapseEvent(this);"><li>There ' + (wayCount > 1 ? 'are ' : 'is one ') + '<b>' + (wayCount > 1 ? wayCount + ' ways' : 'way') + '</b> to enter <b>' + oFromGate.exit + '</b></li></ul><ul class="expandable"' + (isOR ? ' style="display: none;"' : '') + '>';
+						var uiRoutes = sText + '<ul style="cursor: pointer;" onclick="runCollapseEvent(this);"><li>There ' + (wayCount > 1 ? 'are <b>' : 'is <b>one shortest ') + (wayCount > 1 ? wayCount + ' ways' : 'way') + /* '</b> to enter <b>' + oFromGate.exit + */ '</b></li></ul><ul class="expandable"' + (isOR ? ' style="display: none;"' : '') + '>';
 						var cnt = 0;
+						var sSavedEntry = '';
 						for (var classname in oFromGate.details) {
 							var oToll = oFromGate.details[classname];
 							var uiTolls = '';
@@ -942,12 +904,24 @@ function runDetailedRoutes() {
 										}
 										usualRouteGMap += '/' + oItem.entry + ',' + oItem.entry_province + '/' + oItem.exit + ',' + oItem.exit_province;
 										// console.log(usualRouteGMap);
+										// sSavedEntry = oItem.entry;
 									}
-									uiTolls += '<li class="toll route" style="margin-left: 15px;"><strong>' + (wayCount > 1 ? (parseInt(i) + 1) + '. ' : '') + '</strong><b> Enter ' + oItem.entry + ' and exit ' + oItem.exit + '</b></li>';
-									for (var cn in oFromGate.details) {
-										var oT = oFromGate.details[cn];
-										var iFee = new Intl.NumberFormat('en-PH', { style: 'currency', currency: 'PHP' }).format(oT[i].fee);
-										uiTolls += '<li class="toll fee" style="margin-left: 30px;"><b>' + cn.ucWords().replace('_', ' ') + ' - </b>Vehicle Fee: <b>' + iFee + '</b></li>';
+									var iFeePrime = new Intl.NumberFormat('en-PH', { style: 'currency', currency: 'PHP' }).format(oItem.fee);
+									if (iFeePrime) {
+										var sShortestWay = (i == 0 && wayCount > 1) ? '<small class="text-info">Sorted from the shortest way possible</small>' : '';
+										// var sCurrent = (i != 0) ? sSavedEntry : 'Current location';
+										if (ifToNorth) {
+											uiTolls += sShortestWay + '<li class="toll route" style="margin-left: 15px;"><strong>' + (wayCount > 1 ? (parseInt(i) + 1) + '. ' : '') + '</strong>Take <b> ' + oOrigin.begun + ' roads</b> travel up to <b>' + oItem.entry + '</b></li>';
+										} else {
+											uiTolls += sShortestWay + '<li class="toll route" style="margin-left: 15px;"><strong>' + (wayCount > 1 ? (parseInt(i) + 1) + '. ' : '') + '</strong><b> Enter ' + oItem.entry + ' and exit ' + oItem.exit + '</b></li>';
+										}
+										for (var cn in oFromGate.details) {
+											var oT = oFromGate.details[cn];
+											if (oT[i].fee) {
+												var iFee = new Intl.NumberFormat('en-PH', { style: 'currency', currency: 'PHP' }).format(oT[i].fee);
+												uiTolls += '<li class="toll fee" style="margin-left: 30px;"><b>' + cn.ucWords().replace('_', ' ') + ' - </b>Vehicle Fee: <b>' + iFee + '</b></li>';
+											}
+										}
 									}
 								}
 							}
@@ -997,7 +971,7 @@ function runDetailedRoutes() {
 					} else {
 						var wayCount = oToGate.details.class_1.length;
 						var sText = isOR ? '<small class="text-info">Click below to expand</small>' : '';
-						var uiRoutes = sText + '<ul style="cursor: pointer;" onclick="runCollapseEvent(this);"><li>There ' + (wayCount > 1 ? 'are ' : 'is one ') + '<b>' + (wayCount > 1 ? wayCount + ' ways' : 'way') + '</b> to enter <b>' + oToGate.exit + '</b></li></ul><ul class="expandable"' + (isOR ? ' style="display: none;"' : '') + '>';
+						var uiRoutes = sText + '<ul style="cursor: pointer;" onclick="runCollapseEvent(this);"><li>There ' + (wayCount > 1 ? 'are <b>' : 'is <b>one shortest ') + (wayCount > 1 ? wayCount + ' ways' : 'way') + /* '</b> to enter <b>' + oToGate.exit + */ '</b></li></ul><ul class="expandable"' + (isOR ? ' style="display: none;"' : '') + '>';
 						var cnt = 0;
 						for (var classname in oToGate.details) {
 							var oToll = oToGate.details[classname];

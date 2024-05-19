@@ -4,7 +4,7 @@
             "region": "NCR",
             "entry": "Balintawak",
             "province": ["NCR"],
-            "nearest": ["(South) Caloocan"],
+            "nearest": ["(South) Caloocan", "Manila", "Malabon"],
             "tolls": [
                 { "exit": "Balintawak", "fee": 0, "province": "NCR" },
                 { "exit": "Mindanao Avenue", "fee": 69, "province": "NCR" },
@@ -117,7 +117,7 @@
         {
             "region": "NCR",
             "entry": "Valenzuela",
-            "province": ["NCR", "BULACAN"],
+            "province": ["NCR"],
             "nearest": ["Valenzuela"],
             "tolls": [
                 { "exit": "Valenzuela", "fee": 0, "province": "NCR" },
@@ -153,7 +153,7 @@
         {
             "region": "III",
             "entry": "Meycauayan",
-            "province": ["BULACAN", "NCR"],
+            "province": ["BULACAN"],
             "nearest": ["Meycauayan", "Marilao", "San Jose del Monte"],
             "tolls": [
                 { "exit": "Meycauayan", "fee": 0, "province": "BULACAN" },
@@ -187,7 +187,7 @@
         {
             "region": "III",
             "entry": "Marilao",
-            "province": ["BULACAN", "NCR"],
+            "province": ["BULACAN"],
             "nearest": ["Meycauayan", "Marilao", "San Jose del Monte"],
             "tolls": [
                 { "exit": "Marilao", "fee": 0, "province": "BULACAN" },
@@ -220,7 +220,7 @@
         {
             "region": "III",
             "entry": "Ciudad de Victoria",
-            "province": ["BULACAN", "NCR"],
+            "province": ["BULACAN"],
             "nearest": ["Bocaue", "Santa Maria"],
             "tolls": [
                 { "exit": "Ciudad de Victoria", "fee": 0, "province": "BULACAN" },
@@ -252,7 +252,7 @@
         {
             "region": "III",
             "entry": "Bocaue",
-            "province": ["BULACAN", "NCR"],
+            "province": ["BULACAN"],
             "nearest": ["Bocaue", "Marilao", "San Jose del Monte"],
             "tolls": [
                 { "exit": "Bocaue", "fee": 0, "province": "BULACAN" },
@@ -283,7 +283,7 @@
         {
             "region": "III",
             "entry": "Tambubong",
-            "province": ["BULACAN", "NCR"],
+            "province": ["BULACAN"],
             "nearest": ["San Rafael", "Bocaue"],
             "tolls": [
                 { "exit": "Tambubong", "fee": 0, "province": "BULACAN" },
@@ -313,7 +313,7 @@
         {
             "region": "III",
             "entry": "Balagtas",
-            "province": ["BULACAN", "NCR"],
+            "province": ["BULACAN"],
             "nearest": ["Balagtas", "Guiguinto"],
             "tolls": [
                 { "exit": "Balagtas", "fee": 0, "province": "BULACAN" },
@@ -693,7 +693,7 @@
             "region": "NCR",
             "entry": "Balintawak",
             "province": ["NCR", "BULACAN"],
-            "nearest": ["(South) Caloocan"],
+            "nearest": ["(South) Caloocan", "Manila", "Malabon"],
             "tolls": [
                 { "exit": "Balintawak", "fee": 0, "province": "NCR" },
                 { "exit": "Mindanao Avenue", "fee": 172, "province": "NCR" },
@@ -806,7 +806,7 @@
         {
             "region": "NCR",
             "entry": "Valenzuela",
-            "province": ["NCR", "BULACAN"],
+            "province": ["NCR"],
             "nearest": ["Valenzuela"],
             "tolls": [
                 { "exit": "Valenzuela", "fee": 0, "province": "NCR" },
@@ -842,7 +842,7 @@
         {
             "region": "III",
             "entry": "Meycauayan",
-            "province": ["BULACAN", "NCR"],
+            "province": ["BULACAN"],
             "nearest": ["Meycauayan", "Marilao", "San Jose del Monte"],
             "tolls": [
                 { "exit": "Meycauayan", "fee": 0, "province": "BULACAN" },
@@ -876,7 +876,7 @@
         {
             "region": "III",
             "entry": "Marilao",
-            "province": ["BULACAN", "NCR"],
+            "province": ["BULACAN"],
             "nearest": ["Meycauayan", "Marilao", "San Jose del Monte"],
             "tolls": [
                 { "exit": "Marilao", "fee": 0, "province": "BULACAN" },
@@ -909,7 +909,7 @@
         {
             "region": "III",
             "entry": "Ciudad de Victoria",
-            "province": ["BULACAN", "NCR"],
+            "province": ["BULACAN"],
             "nearest": ["Bocaue", "Santa Maria"],
             "tolls": [
                 { "exit": "Ciudad de Victoria", "fee": 10, "province": "BULACAN" },
@@ -941,7 +941,7 @@
         {
             "region": "III",
             "entry": "Bocaue",
-            "province": ["BULACAN", "NCR"],
+            "province": ["BULACAN"],
             "nearest": ["Bocaue", "Marilao", "San Jose del Monte"],
             "tolls": [
                 { "exit": "Bocaue", "fee": 0, "province": "BULACAN" },
@@ -972,7 +972,7 @@
         {
             "region": "III",
             "entry": "Tambubong",
-            "province": ["BULACAN", "NCR"],
+            "province": ["BULACAN"],
             "nearest": ["San Rafael", "Bocaue"],
             "tolls": [
                 { "exit": "Tambubong", "fee": 0, "province": "BULACAN" },
@@ -1002,7 +1002,7 @@
         {
             "region": "III",
             "entry": "Balagtas",
-            "province": ["BULACAN", "NCR"],
+            "province": ["BULACAN"],
             "nearest": ["Balagtas", "Guiguinto"],
             "tolls": [
                 { "exit": "Balagtas", "fee": 0, "province": "BULACAN" },
@@ -1382,7 +1382,7 @@
             "region": "NCR",
             "entry": "Balintawak",
             "province": ["NCR", "BULACAN"],
-            "nearest": ["(South) Caloocan"],
+            "nearest": ["(South) Caloocan", "Manila", "Malabon"],
             "tolls": [
                 { "exit": "Balintawak", "fee": 0, "province": "NCR" },
                 { "exit": "Mindanao Avenue", "fee": 206, "province": "NCR" },
@@ -1495,7 +1495,7 @@
         {
             "region": "NCR",
             "entry": "Valenzuela",
-            "province": ["NCR", "BULACAN"],
+            "province": ["NCR"],
             "nearest": ["Valenzuela"],
             "tolls": [
                 { "exit": "Valenzuela", "fee": 0, "province": "NCR" },
@@ -1531,7 +1531,7 @@
         {
             "region": "III",
             "entry": "Meycauayan",
-            "province": ["BULACAN", "NCR"],
+            "province": ["BULACAN"],
             "nearest": ["Meycauayan", "Marilao", "San Jose del Monte"],
             "tolls": [
                 { "exit": "Meycauayan", "fee": 0, "province": "BULACAN" },
@@ -1565,7 +1565,7 @@
         {
             "region": "III",
             "entry": "Marilao",
-            "province": ["BULACAN", "NCR"],
+            "province": ["BULACAN"],
             "nearest": ["Meycauayan", "Marilao", "San Jose del Monte"],
             "tolls": [
                 { "exit": "Marilao", "fee": 0, "province": "BULACAN" },
@@ -1598,7 +1598,7 @@
         {
             "region": "III",
             "entry": "Ciudad de Victoria",
-            "province": ["BULACAN", "NCR"],
+            "province": ["BULACAN"],
             "nearest": ["Bocaue", "Santa Maria"],
             "tolls": [
                 { "exit": "Ciudad de Victoria", "fee": 20, "province": "BULACAN" },
@@ -1630,7 +1630,7 @@
         {
             "region": "III",
             "entry": "Bocaue",
-            "province": ["BULACAN", "NCR"],
+            "province": ["BULACAN"],
             "nearest": ["Bocaue", "Marilao", "San Jose del Monte"],
             "tolls": [
                 { "exit": "Bocaue", "fee": 10, "province": "BULACAN" },
@@ -1661,7 +1661,7 @@
         {
             "region": "III",
             "entry": "Tambubong",
-            "province": ["BULACAN", "NCR"],
+            "province": ["BULACAN"],
             "nearest": ["San Rafael", "Bocaue"],
             "tolls": [
                 { "exit": "Tambubong", "fee": 0, "province": "BULACAN" },
@@ -1691,7 +1691,7 @@
         {
             "region": "III",
             "entry": "Balagtas",
-            "province": ["BULACAN", "NCR"],
+            "province": ["BULACAN"],
             "nearest": ["Balagtas", "Guiguinto"],
             "tolls": [
                 { "exit": "Balagtas", "fee": 0, "province": "BULACAN" },
