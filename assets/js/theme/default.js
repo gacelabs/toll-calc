@@ -921,20 +921,24 @@ function runDetailedRoutes() {
 						for (var classname in oFromGate.details) {
 							var oToll = oFromGate.details[classname];
 							var uiTolls = '';
-							for (var i in oToll) {
-								var oItem = oToll[i];
-								if (i == 0) {
-									uiTolls += '<li class="toll" style="margin-left: 15px; margin-top: 10px;"><b>' + classname.ucWords().replace('_', ' ') + ' - Vehicles:</b></li>';
-									if (cnt == 0) {
+
+							if (cnt == 0) {
+								for (var i in oToll) {
+									var oItem = oToll[i];
+									if (i == 0 && cnt == 0) {
 										if (isOR) {
 											edsaRouteGMap += '/' + oItem.entry + ',' + oItem.entry_province + '/' + oItem.exit + ',' + oItem.exit_province;
 										}
 										usualRouteGMap += '/' + oItem.entry + ',' + oItem.entry_province + '/' + oItem.exit + ',' + oItem.exit_province;
 										// console.log(usualRouteGMap);
 									}
+									uiTolls += '<li class="toll route" style="margin-left: 15px;"><strong>' + (wayCount > 1 ? (parseInt(i) + 1) + '. ' : '') + '</strong><b> Enter ' + oItem.entry + ' and exit ' + oItem.exit + '</b></li>';
+									for (var cn in oFromGate.details) {
+										var oT = oFromGate.details[cn];
+										var iFee = new Intl.NumberFormat('en-PH', { style: 'currency', currency: 'PHP' }).format(oT[i].fee);
+										uiTolls += '<li class="toll fee" style="margin-left: 30px;"><b>' + cn.ucWords().replace('_', ' ') + ' - </b>Vehicle Fee: <b>' + iFee + '</b></li>';
+									}
 								}
-								var iFee = new Intl.NumberFormat('en-PH', { style: 'currency', currency: 'PHP' }).format(oItem.fee);
-								uiTolls += '<li class="toll route" style="margin-left: 30px;">' + (wayCount > 1 ? (parseInt(i) + 1) + '. ' : '') + 'Enter ' + oItem.entry + ' and exit ' + oItem.exit + '</li><li class="toll fee" style="margin-left: 45px;"><b>Fee: ' + iFee + '</b></li>';
 							}
 							uiRoutes += uiTolls;
 							cnt++;
@@ -987,20 +991,24 @@ function runDetailedRoutes() {
 						for (var classname in oToGate.details) {
 							var oToll = oToGate.details[classname];
 							var uiTolls = '';
-							for (var i in oToll) {
-								var oItem = oToll[i];
-								if (i == 0) {
-									uiTolls += '<li class="toll" style="margin-left: 15px; margin-top: 10px;"><b>' + classname.ucWords().replace('_', ' ') + ' - Vehicles:</b></li>';
-									if (cnt == 0) {
+
+							if (cnt == 0) {
+								for (var i in oToll) {
+									var oItem = oToll[i];
+									if (i == 0 && cnt == 0) {
 										if (isOR) {
 											edsaRouteGMap += '/' + oItem.entry + ',' + oItem.entry_province + '/' + oItem.exit + ',' + oItem.exit_province;
 										}
 										usualRouteGMap += '/' + oItem.entry + ',' + oItem.entry_province + '/' + oItem.exit + ',' + oItem.exit_province;
 										// console.log(usualRouteGMap);
 									}
+									uiTolls += '<li class="toll route" style="margin-left: 15px;"><strong>' + (wayCount > 1 ? (parseInt(i) + 1) + '. ' : '') + '</strong><b> Enter ' + oItem.entry + ' and exit ' + oItem.exit + '</b></li>';
+									for (var cn in oFromGate.details) {
+										var oT = oFromGate.details[cn];
+										var iFee = new Intl.NumberFormat('en-PH', { style: 'currency', currency: 'PHP' }).format(oT[i].fee);
+										uiTolls += '<li class="toll fee" style="margin-left: 30px;"><b>' + cn.ucWords().replace('_', ' ') + ' - </b>Vehicle Fee: <b>' + iFee + '</b></li>';
+									}
 								}
-								var iFee = new Intl.NumberFormat('en-PH', { style: 'currency', currency: 'PHP' }).format(oItem.fee);
-								uiTolls += '<li class="toll route" style="margin-left: 30px;">' + (wayCount > 1 ? (parseInt(i) + 1) + '. ' : '') + 'Enter ' + oItem.entry + ' and exit ' + oItem.exit + '</li><li class="toll fee" style="margin-left: 45px;"><b>Fee: ' + iFee + '</b></li>';
 							}
 							uiRoutes += uiTolls;
 							cnt++;
