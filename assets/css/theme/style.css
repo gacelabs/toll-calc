@@ -1474,7 +1474,7 @@ svg {
   display: none;
 }
 
-.ad-container {
+.adsbygoogle {
     min-width: 300px; /* Adjust as needed */
     display: block;
 }
