@@ -1473,3 +1473,8 @@ svg {
 .social05 h3 strong {
   display: none;
 }
+
+.ad-container {
+    min-width: 300px; /* Adjust as needed */
+    display: block;
+}
